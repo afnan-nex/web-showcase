@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Catalog — Atlas Academy</title>
+  <meta name="description" content="Explore masterclasses across Web Development, Python, UI/UX, Typography, Digital Marketing, and Business Strategy." />
+  
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-mark">A</div>
+        <span>ATLAS ACADEMY</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="courses.html" class="nav-link active">Courses</a></li>
+          <li><a href="instructors.html" class="nav-link">Instructors</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="student-dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="profile.html" class="nav-link">Profile</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-pill-btn" onclick="openQuickSearch()" aria-label="Search Catalog">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search catalog...</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+
+        <a href="student-dashboard.html" class="user-menu-btn" aria-label="Student Dashboard">
+          <img id="header-user-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Avatar" class="user-avatar-sm" />
+          <span id="header-user-name" class="user-menu-name">Julian</span>
+        </a>
+
+        <button class="mobile-menu-toggle" onclick="openMobileDrawer()" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Courses Page Header -->
+  <div class="dashboard-hero" style="padding: 48px 0 32px;">
+    <div class="container">
+      <div class="eyebrow">Academic Curriculum Catalog</div>
+      <h1 style="font-size: 2.4rem; margin-bottom: 12px;">All Courses & Executive Programs</h1>
+      <p style="color: var(--text-secondary); max-width: 680px; font-size: 1rem;">
+        Master production-grade architectures and leadership systems. Filter by technical discipline, experience tier, and duration.
+      </p>
+    </div>
+  </div>
+
+  <!-- Search & Multi-Facet Filter Bar -->
+  <section class="section" style="padding-top: 32px; padding-bottom: 80px;">
+    <div class="container">
+      
+      <!-- Top Filters Grid -->
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-medium); border-radius: var(--radius-lg); padding: 20px; margin-bottom: 32px; display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 16px; align-items: center;">
+        
+        <!-- Keyword Search Input -->
+        <div style="position: relative;">
+          <input type="text" id="course-search-input" placeholder="Search keywords, topics, instructors..." style="width: 100%; padding: 10px 14px 10px 38px; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); font-size: 0.9rem; color: var(--text-primary);" />
+          <span style="position: absolute; left: 12px; top: 50%; transform: translateY(-50%); color: var(--text-muted); pointer-events: none;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </span>
+        </div>
+
+        <!-- Discipline / Category Filter -->
+        <div>
+          <select id="filter-category" style="width: 100%; padding: 10px 14px; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); font-size: 0.875rem; color: var(--text-primary); cursor: pointer;" aria-label="Filter by Discipline">
+            <option value="all">All Disciplines</option>
+            <option value="web-dev">Web Development</option>
+            <option value="python">Python & Data</option>
+            <option value="ui-ux">UI/UX & Product Design</option>
+            <option value="graphic-design">Graphic Design</option>
+            <option value="digital-marketing">Digital Marketing</option>
+            <option value="business">Business Strategy</option>
+          </select>
+        </div>
+
+        <!-- Skill Level Filter -->
+        <div>
+          <select id="filter-level" style="width: 100%; padding: 10px 14px; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); font-size: 0.875rem; color: var(--text-primary); cursor: pointer;" aria-label="Filter by Level">
+            <option value="all">All Skill Levels</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+        </div>
+
+        <!-- Sorting Order -->
+        <div>
+          <select id="filter-sort" style="width: 100%; padding: 10px 14px; background: var(--bg-surface-elevated); border: 1px solid var(--border-subtle); border-radius: var(--radius-md); font-size: 0.875rem; color: var(--text-primary); cursor: pointer;" aria-label="Sort Courses">
+            <option value="popular">Most Popular</option>
+            <option value="rating">Highest Rated</option>
+            <option value="duration">Longest Duration</option>
+            <option value="price-asc">Price: Low to High</option>
+            <option value="price-desc">Price: High to Low</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Filter Chips & Status Bar -->
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+        <div style="display: flex; align-items: center; gap: 12px;">
+          <span id="results-count-badge" class="badge badge-outline" style="font-family: var(--font-mono); font-size: 0.8rem;">
+            Showing 8 Courses
+          </span>
+          <button id="clear-filters-btn" class="btn btn-ghost btn-sm" style="display: none; color: var(--accent-primary);" onclick="clearAllFilters()">
+            Clear Filters ✕
+          </button>
+        </div>
+
+        <!-- Discipline Pills -->
+        <div style="display: flex; gap: 8px; flex-wrap: wrap;" id="category-pills-bar">
+          <!-- Rendered via JS -->
+        </div>
+      </div>
+
+      <!-- Course Cards Grid -->
+      <div class="grid grid-cols-3" id="courses-catalog-grid">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Empty Results State -->
+      <div id="courses-empty-state" class="empty-state" style="display: none; margin-top: 32px;">
+        <div class="empty-state-icon">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        </div>
+        <div class="empty-state-title">No matching courses found</div>
+        <p class="empty-state-desc">We couldn't find any courses matching your specific search filters. Try adjusting your query or resetting all filters.</p>
+        <button class="btn btn-outline" onclick="clearAllFilters()">Reset All Filters</button>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-mark">A</div>
+            <span>ATLAS ACADEMY</span>
+          </a>
+          <p>The executive and technical learning institution for modern engineers, designers, and tech leaders.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Disciplines</div>
+          <ul class="footer-links">
+            <li><a href="courses.html?cat=web-dev" class="footer-link">Web Development</a></li>
+            <li><a href="courses.html?cat=python" class="footer-link">Python & Data</a></li>
+            <li><a href="courses.html?cat=ui-ux" class="footer-link">UI/UX & Product Design</a></li>
+            <li><a href="courses.html?cat=graphic-design" class="footer-link">Brand Typography</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="student-dashboard.html" class="footer-link">Student Dashboard</a></li>
+            <li><a href="instructors.html" class="footer-link">Faculty Directory</a></li>
+            <li><a href="pricing.html" class="footer-link">Membership Plans</a></li>
+            <li><a href="profile.html" class="footer-link">Student Profile</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Institution</div>
+          <ul class="footer-links">
+            <li><button class="footer-link" style="text-align: left;" onclick="openAcademicCouncilModal()">Academic Council</button></li>
+            <li><button class="footer-link" style="text-align: left;" onclick="openReimbursementModal()">Corporate Reimbursement</button></li>
+            <li><a href="certificate.html" class="footer-link">Verify Credentials</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Atlas Academy, Inc. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/pages/courses.js"></script>
+</body>
+</html>

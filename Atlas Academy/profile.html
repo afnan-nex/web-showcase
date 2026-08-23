@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Fellow Profile & Workspace — Atlas Academy</title>
+  <meta name="description" content="Manage personal profile settings, study goals, notes repository, bookmarks, and JSON data export." />
+  
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-mark">A</div>
+        <span>ATLAS ACADEMY</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="courses.html" class="nav-link">Courses</a></li>
+          <li><a href="instructors.html" class="nav-link">Instructors</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="student-dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="profile.html" class="nav-link active">Profile</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-pill-btn" onclick="openQuickSearch()" aria-label="Search Catalog">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search catalog...</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+
+        <a href="profile.html" class="user-menu-btn" aria-label="Student Profile Settings">
+          <img id="header-user-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Avatar" class="user-avatar-sm" />
+          <span id="header-user-name" class="user-menu-name">Julian</span>
+        </a>
+
+        <button class="mobile-menu-toggle" onclick="openMobileDrawer()" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Profile Hero -->
+  <div class="dashboard-hero">
+    <div class="container">
+      <div class="dashboard-welcome">
+        <div class="dashboard-user-meta">
+          <img id="profile-avatar-lg" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Avatar" class="dashboard-avatar-lg" />
+          <div>
+            <div class="eyebrow" style="margin-bottom: 4px;">Fellow Credentials & Settings</div>
+            <h1 id="profile-display-name" style="font-size: 2rem; margin-bottom: 4px;">Julian Hayes</h1>
+            <p id="profile-display-title" style="font-size: 0.875rem; color: var(--text-secondary);">Senior Staff Engineer & Systems Lead • Active Fellow</p>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; flex-wrap: wrap;">
+          <button class="btn btn-outline btn-sm" onclick="exportData()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Export All Data (JSON)
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Profile Main Section -->
+  <section class="section" style="padding-top: 36px; padding-bottom: 80px;">
+    <div class="container">
+      
+      <div style="display: grid; grid-template-columns: 1fr 1.8fr; gap: 36px; align-items: start;">
+        
+        <!-- Left: Edit Profile & Study Preferences -->
+        <div>
+          <div class="card" style="padding: 28px; margin-bottom: 24px;">
+            <h3 style="font-size: 1.15rem; margin-bottom: 20px;">Profile Information</h3>
+
+            <form id="profile-form" onsubmit="saveProfileChanges(event)">
+              <div style="display: flex; flex-direction: column; gap: 16px; margin-bottom: 24px;">
+                <div>
+                  <label style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-muted); text-transform: uppercase;">Full Legal Name (For Diplomas)</label>
+                  <input type="text" id="input-name" value="Julian Hayes" style="width: 100%; padding: 10px 12px; background: var(--bg-surface-elevated); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); margin-top: 4px; color: var(--text-primary);" required />
+                </div>
+
+                <div>
+                  <label style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-muted); text-transform: uppercase;">Professional Title / Role</label>
+                  <input type="text" id="input-title" value="Senior Staff Engineer & Systems Lead" style="width: 100%; padding: 10px 12px; background: var(--bg-surface-elevated); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); margin-top: 4px; color: var(--text-primary);" />
+                </div>
+
+                <div>
+                  <label style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-muted); text-transform: uppercase;">Work Email</label>
+                  <input type="email" id="input-email" value="julian.hayes@atlas-fellow.io" style="width: 100%; padding: 10px 12px; background: var(--bg-surface-elevated); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); margin-top: 4px; color: var(--text-primary);" />
+                </div>
+
+                <div>
+                  <label style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-muted); text-transform: uppercase;">Weekly Study Target (Hours)</label>
+                  <input type="number" id="input-goal" min="1" max="50" value="10" style="width: 100%; padding: 10px 12px; background: var(--bg-surface-elevated); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); margin-top: 4px; color: var(--text-primary);" />
+                </div>
+              </div>
+
+              <button type="submit" class="btn btn-primary btn-md w-full">
+                Save Profile Changes
+              </button>
+            </form>
+          </div>
+
+          <!-- Data Portability & Backup Box -->
+          <div class="card" style="padding: 24px;">
+            <h4 style="font-size: 1rem; margin-bottom: 12px;">Data Portability & Management</h4>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 16px;">
+              Your study notes, progress marks, and quiz attempts are saved in your local browser state. Export your full dataset anytime.
+            </p>
+
+            <div style="display: flex; flex-direction: column; gap: 10px;">
+              <button class="btn btn-outline btn-sm" onclick="exportData()">
+                Export JSON State
+              </button>
+
+              <label class="btn btn-outline btn-sm" style="cursor: pointer; text-align: center;">
+                Import Backup JSON
+                <input type="file" id="import-json-file" accept=".json" style="display: none;" onchange="importData(event)" />
+              </label>
+
+              <button class="btn btn-ghost btn-sm" style="color: var(--accent-danger); font-size: 0.78rem;" onclick="resetDemoData()">
+                Reset to Default Demo State
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Master Notes Repository & Bookmarks -->
+        <div>
+          
+          <!-- Notes Repository Section -->
+          <div style="margin-bottom: 40px;">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 8px;">
+              <div>
+                <h2 style="font-size: 1.4rem;">Master Notes Repository</h2>
+                <div style="font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono); margin-top: 2px;">
+                  All timestamped notes taken across all enrolled masterclasses.
+                </div>
+              </div>
+              <span id="all-notes-count-badge" class="badge badge-accent">2 Notes</span>
+            </div>
+
+            <div id="all-notes-list" style="display: flex; flex-direction: column; gap: 14px;">
+              <!-- Injected via JS -->
+            </div>
+          </div>
+
+          <!-- Bookmarked Courses Section -->
+          <div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+              <div>
+                <h2 style="font-size: 1.4rem;">Saved Courses & Bookmarks</h2>
+                <div style="font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono); margin-top: 2px;">
+                  Quick access to programs bookmarked for future reference.
+                </div>
+              </div>
+            </div>
+
+            <div id="profile-bookmarks-grid" class="grid grid-cols-2" style="gap: 16px;">
+              <!-- Injected via JS -->
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-mark">A</div>
+            <span>ATLAS ACADEMY</span>
+          </a>
+          <p>The executive and technical learning institution for modern engineers, designers, and tech leaders.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Disciplines</div>
+          <ul class="footer-links">
+            <li><a href="courses.html?cat=web-dev" class="footer-link">Web Development</a></li>
+            <li><a href="courses.html?cat=python" class="footer-link">Python & Data</a></li>
+            <li><a href="courses.html?cat=ui-ux" class="footer-link">UI/UX & Product Design</a></li>
+            <li><a href="courses.html?cat=graphic-design" class="footer-link">Brand Typography</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="student-dashboard.html" class="footer-link">Student Dashboard</a></li>
+            <li><a href="instructors.html" class="footer-link">Faculty Directory</a></li>
+            <li><a href="pricing.html" class="footer-link">Membership Plans</a></li>
+            <li><a href="profile.html" class="footer-link">Student Profile</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Institution</div>
+          <ul class="footer-links">
+            <li><button class="footer-link" style="text-align: left;" onclick="openAcademicCouncilModal()">Academic Council</button></li>
+            <li><button class="footer-link" style="text-align: left;" onclick="openReimbursementModal()">Corporate Reimbursement</button></li>
+            <li><a href="certificate.html" class="footer-link">Verify Credentials</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Atlas Academy, Inc. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/pages/profile.js"></script>
+</body>
+</html>

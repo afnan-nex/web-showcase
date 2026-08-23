@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Membership & Pricing — Atlas Academy</title>
+  <meta name="description" content="Transparent, predictable pricing for individual fellows and enterprise engineering teams." />
+  
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-mark">A</div>
+        <span>ATLAS ACADEMY</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="courses.html" class="nav-link">Courses</a></li>
+          <li><a href="instructors.html" class="nav-link">Instructors</a></li>
+          <li><a href="pricing.html" class="nav-link active">Pricing</a></li>
+          <li><a href="student-dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="profile.html" class="nav-link">Profile</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-pill-btn" onclick="openQuickSearch()" aria-label="Search Catalog">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search catalog...</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+
+        <a href="student-dashboard.html" class="user-menu-btn" aria-label="Student Dashboard">
+          <img id="header-user-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Avatar" class="user-avatar-sm" />
+          <span id="header-user-name" class="user-menu-name">Julian</span>
+        </a>
+
+        <button class="mobile-menu-toggle" onclick="openMobileDrawer()" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Pricing Hero & Billing Toggle -->
+  <section class="section" style="padding-top: 56px; padding-bottom: 48px; text-align: center;">
+    <div class="container container-narrow">
+      <div class="eyebrow" style="justify-content: center;">Fellowship Tiers</div>
+      <h1 style="margin-bottom: 16px;">Invest in Uncompromising Mastery</h1>
+      <p style="color: var(--text-secondary); font-size: 1.1rem; max-width: 600px; margin: 0 auto 32px;">
+        Choose the plan suited for your career inflection point. Eligible for full employer continuing education reimbursement.
+      </p>
+
+      <!-- Toggle Container -->
+      <div style="display: inline-flex; align-items: center; gap: 12px; background: var(--bg-surface); padding: 6px 8px; border-radius: var(--radius-full); border: 1px solid var(--border-medium);">
+        <button id="billing-annual-btn" class="btn btn-sm btn-primary" onclick="setBillingCycle('annual')">
+          Annual Billing <span class="badge badge-gold" style="font-size: 0.65rem; padding: 1px 6px; margin-left: 4px;">Save 20%</span>
+        </button>
+        <button id="billing-monthly-btn" class="btn btn-sm btn-ghost" onclick="setBillingCycle('monthly')">
+          Monthly Billing
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing Cards Grid -->
+  <section class="section" style="padding-top: 0; padding-bottom: 72px;">
+    <div class="container">
+      <div class="grid grid-cols-3" id="pricing-plans-grid" style="gap: 32px; align-items: stretch;">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature Comparison Table -->
+  <section class="section" style="background-color: var(--bg-surface-subtle); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div style="text-align: center; margin-bottom: 48px;">
+        <div class="eyebrow" style="justify-content: center;">Detailed Matrix</div>
+        <h2>Plan Comparison</h2>
+      </div>
+
+      <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); overflow-x: auto;">
+        <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.9rem;">
+          <thead>
+            <tr style="border-bottom: 1px solid var(--border-medium); background: var(--bg-surface-elevated);">
+              <th style="padding: 18px 24px; font-weight: 700; color: var(--text-primary);">Features</th>
+              <th style="padding: 18px 24px; font-weight: 600; color: var(--text-secondary); width: 22%;">Individual Single</th>
+              <th style="padding: 18px 24px; font-weight: 700; color: var(--accent-primary); width: 25%;">All-Access Pro</th>
+              <th style="padding: 18px 24px; font-weight: 600; color: var(--text-secondary); width: 22%;">Atlas Enterprise</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr style="border-bottom: 1px solid var(--border-subtle);">
+              <td style="padding: 16px 24px; color: var(--text-primary);">Course Access</td>
+              <td style="padding: 16px 24px; color: var(--text-secondary);">1 Enrolled Course</td>
+              <td style="padding: 16px 24px; color: var(--text-primary); font-weight: 600;">Unlimited Catalog (8+)</td>
+              <td style="padding: 16px 24px; color: var(--text-secondary);">Unlimited Org-Wide</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-subtle);">
+              <td style="padding: 16px 24px; color: var(--text-primary);">Interactive Video & Code Player</td>
+              <td style="padding: 16px 24px; color: var(--accent-success);">✓ Included</td>
+              <td style="padding: 16px 24px; color: var(--accent-success);">✓ Included</td>
+              <td style="padding: 16px 24px; color: var(--accent-success);">✓ Included</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-subtle);">
+              <td style="padding: 16px 24px; color: var(--text-primary);">Verifiable Completion Diploma</td>
+              <td style="padding: 16px 24px; color: var(--accent-success);">✓ Included</td>
+              <td style="padding: 16px 24px; color: var(--accent-success);">✓ Unlimited Certs</td>
+              <td style="padding: 16px 24px; color: var(--accent-success);">✓ Unlimited Certs</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-subtle);">
+              <td style="padding: 16px 24px; color: var(--text-primary);">Monthly Live Instructor Masterminds</td>
+              <td style="padding: 16px 24px; color: var(--text-muted);">—</td>
+              <td style="padding: 16px 24px; color: var(--accent-success);">✓ Included</td>
+              <td style="padding: 16px 24px; color: var(--accent-success);">✓ Dedicated Cohorts</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-subtle);">
+              <td style="padding: 16px 24px; color: var(--text-primary);">Private Executive Peer Slack</td>
+              <td style="padding: 16px 24px; color: var(--text-muted);">—</td>
+              <td style="padding: 16px 24px; color: var(--accent-success);">✓ Included</td>
+              <td style="padding: 16px 24px; color: var(--accent-success);">✓ Private Team Channel</td>
+            </tr>
+            <tr style="border-bottom: 1px solid var(--border-subtle);">
+              <td style="padding: 16px 24px; color: var(--text-primary);">SSO, SCIM & Central Management</td>
+              <td style="padding: 16px 24px; color: var(--text-muted);">—</td>
+              <td style="padding: 16px 24px; color: var(--text-muted);">—</td>
+              <td style="padding: 16px 24px; color: var(--accent-success);">✓ Included (Okta/Google)</td>
+            </tr>
+            <tr>
+              <td style="padding: 16px 24px; color: var(--text-primary);">Corporate Tax Invoicing</td>
+              <td style="padding: 16px 24px; color: var(--accent-success);"><button class="btn-ghost" style="color: var(--accent-primary); font-size: 0.8rem;" onclick="openReimbursementModal()">Receipt Generator</button></td>
+              <td style="padding: 16px 24px; color: var(--accent-success);"><button class="btn-ghost" style="color: var(--accent-primary); font-size: 0.8rem;" onclick="openReimbursementModal()">Receipt Generator</button></td>
+              <td style="padding: 16px 24px; color: var(--accent-success);">✓ Custom Net-30 Terms</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="section">
+    <div class="container container-narrow">
+      <div style="text-align: center; margin-bottom: 48px;">
+        <div class="eyebrow" style="justify-content: center;">Questions & Clarity</div>
+        <h2>Frequently Asked Questions</h2>
+      </div>
+
+      <div id="faq-accordion-container" style="display: flex; flex-direction: column; gap: 16px;">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Checkout / Upgrade Simulation Modal -->
+  <div id="checkout-modal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 520px;">
+      <div class="modal-header">
+        <h3 id="checkout-plan-title">Enroll in Atlas Pro</h3>
+        <button class="modal-close-btn" onclick="closeCheckoutModal()">✕</button>
+      </div>
+      <div class="modal-body">
+        <div style="padding: 16px; background: var(--bg-surface-elevated); border-radius: var(--radius-md); margin-bottom: 20px; border: 1px solid var(--border-subtle);">
+          <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+            <strong id="checkout-summary-name">Atlas All-Access Pro</strong>
+            <strong id="checkout-summary-price">$39 / month</strong>
+          </div>
+          <div style="font-size: 0.8rem; color: var(--text-muted);">
+            Includes 14-day full money-back guarantee. Instant access to all courses, quizzes, and diplomas.
+          </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+          <div>
+            <label style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-muted); text-transform: uppercase;">Fellow Name</label>
+            <input type="text" id="checkout-name" value="Julian Hayes" style="width: 100%; padding: 10px; background: var(--bg-surface-subtle); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); margin-top: 4px; color: var(--text-primary);" />
+          </div>
+          <div>
+            <label style="font-size: 0.78rem; font-family: var(--font-mono); color: var(--text-muted); text-transform: uppercase;">Work Email (for Reimbursement Receipt)</label>
+            <input type="email" id="checkout-email" value="julian.hayes@enterprise.io" style="width: 100%; padding: 10px; background: var(--bg-surface-subtle); border: 1px solid var(--border-medium); border-radius: var(--radius-sm); margin-top: 4px; color: var(--text-primary);" />
+          </div>
+        </div>
+
+        <div style="font-size: 0.75rem; color: var(--text-muted); line-height: 1.4;">
+          🔒 256-bit encrypted checkout simulation. Instant activation.
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-outline btn-sm" onclick="closeCheckoutModal()">Cancel</button>
+        <button class="btn btn-primary btn-sm" onclick="confirmSubscription()">Activate Membership</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-mark">A</div>
+            <span>ATLAS ACADEMY</span>
+          </a>
+          <p>The executive and technical learning institution for modern engineers, designers, and tech leaders.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Disciplines</div>
+          <ul class="footer-links">
+            <li><a href="courses.html?cat=web-dev" class="footer-link">Web Development</a></li>
+            <li><a href="courses.html?cat=python" class="footer-link">Python & Data</a></li>
+            <li><a href="courses.html?cat=ui-ux" class="footer-link">UI/UX & Product Design</a></li>
+            <li><a href="courses.html?cat=graphic-design" class="footer-link">Brand Typography</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="student-dashboard.html" class="footer-link">Student Dashboard</a></li>
+            <li><a href="instructors.html" class="footer-link">Faculty Directory</a></li>
+            <li><a href="pricing.html" class="footer-link">Membership Plans</a></li>
+            <li><a href="profile.html" class="footer-link">Student Profile</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Institution</div>
+          <ul class="footer-links">
+            <li><button class="footer-link" style="text-align: left;" onclick="openAcademicCouncilModal()">Academic Council</button></li>
+            <li><button class="footer-link" style="text-align: left;" onclick="openReimbursementModal()">Corporate Reimbursement</button></li>
+            <li><a href="certificate.html" class="footer-link">Verify Credentials</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Atlas Academy, Inc. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/pages/pricing.js"></script>
+</body>
+</html>

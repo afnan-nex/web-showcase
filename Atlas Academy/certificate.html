@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Official Certificate of Completion — Atlas Academy</title>
+  <meta name="description" content="Verifiable Certificate of Mastery issued by Atlas Academy." />
+  
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/certificate.css" />
+</head>
+<body class="cert-page-body">
+
+  <!-- Top Action Controls Bar (Hidden in Print) -->
+  <div class="cert-controls-bar">
+    <div style="display: flex; align-items: center; gap: 12px;">
+      <a href="student-dashboard.html" class="btn btn-outline btn-sm">
+        ← Back to Dashboard
+      </a>
+      <span class="badge badge-gold">Official Verifiable Credential</span>
+    </div>
+
+    <div style="display: flex; gap: 10px;">
+      <button class="btn btn-outline btn-sm" onclick="copyVerificationUrl()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>
+        Copy Credential Link
+      </button>
+      <button class="btn btn-gold btn-sm" onclick="window.print()">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+        Print / Save PDF
+      </button>
+    </div>
+  </div>
+
+  <!-- Luxury Diploma Canvas Frame -->
+  <div class="diploma-frame" id="diploma-container">
+    <div class="diploma-border-outer">
+      <div class="diploma-border-inner">
+        
+        <!-- Watermark Background -->
+        <div class="diploma-watermark">A</div>
+
+        <div class="diploma-content">
+          
+          <!-- Header Crest & Institution -->
+          <div class="diploma-header-crest">A</div>
+          <div class="diploma-institution-name">Atlas Academy</div>
+          <div class="diploma-sub-header">Board of Academic Fellows & Executive Faculty</div>
+
+          <!-- Preamble -->
+          <div class="diploma-preamble">
+            This official diploma of technical and architectural mastery is conferred upon
+          </div>
+
+          <!-- Recipient Name -->
+          <div id="cert-recipient-name" class="diploma-recipient-name">
+            Julian Hayes
+          </div>
+
+          <!-- Statement -->
+          <div class="diploma-statement">
+            for successfully completing the rigorous curriculum, passing all architectural milestone evaluations, and demonstrating distinguished mastery in
+          </div>
+
+          <!-- Course Title -->
+          <div id="cert-course-title" class="diploma-course-title">
+            Full-Stack TypeScript & Modern Cloud Architecture
+          </div>
+
+          <!-- Footer Signature & Gold Seal -->
+          <div class="diploma-footer">
+            
+            <!-- Lead Faculty Signature -->
+            <div class="diploma-sign-col">
+              <div class="diploma-sign-line">
+                <div id="cert-instructor-name" class="diploma-sign-name">Dr. Alistair Vance</div>
+                <div id="cert-instructor-title" class="diploma-sign-role">Lead Systems Architect & Faculty Dean</div>
+              </div>
+            </div>
+
+            <!-- Gold Embossed Seal -->
+            <div class="diploma-seal-col">
+              <div class="diploma-gold-seal">
+                <div class="diploma-gold-seal-text">Atlas</div>
+                <div style="font-size: 1.1rem; line-height: 1;">★</div>
+                <div class="diploma-gold-seal-text">Mastery</div>
+              </div>
+            </div>
+
+            <!-- Academic Council Signature -->
+            <div class="diploma-sign-col">
+              <div class="diploma-sign-line">
+                <div class="diploma-sign-name">Elena Rostova</div>
+                <div class="diploma-sign-role">Chair of Academic Standards</div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Cryptographic Metadata Row -->
+          <div class="diploma-metadata-row">
+            <div>
+              CREDENTIAL ID: <strong id="cert-id-text" style="color: #0f172a;">ATL-CERT-WEB-101-9841</strong>
+            </div>
+            <div>
+              CURRICULUM DURATION: <strong id="cert-duration-text" style="color: #0f172a;">18h 45m Accredited</strong>
+            </div>
+            <div>
+              DATE CONFERRED: <strong id="cert-date-text" style="color: #0f172a;">August 22, 2026</strong>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/components.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const params = new URLSearchParams(window.location.search);
+      const courseId = params.get("course") || "course-web-101";
+
+      const course = ATLAS_DATA.courses.find(c => c.id === courseId) || ATLAS_DATA.courses[0];
+      const instructor = ATLAS_DATA.instructors.find(i => i.id === course.instructorId);
+      const user = window.atlasState ? window.atlasState.getUser() : { name: "Julian Hayes" };
+
+      const certRecipient = document.getElementById("cert-recipient-name");
+      const certTitle = document.getElementById("cert-course-title");
+      const certInstName = document.getElementById("cert-instructor-name");
+      const certInstTitle = document.getElementById("cert-instructor-title");
+      const certId = document.getElementById("cert-id-text");
+      const certDuration = document.getElementById("cert-duration-text");
+      const certDate = document.getElementById("cert-date-text");
+
+      if (certRecipient) certRecipient.textContent = user.name || "Julian Hayes";
+      if (certTitle) certTitle.textContent = course.title;
+      if (certInstName) certInstName.textContent = instructor ? instructor.name : "Dr. Alistair Vance";
+      if (certInstTitle) certInstTitle.textContent = instructor ? `${instructor.role} • Lead Faculty` : "Faculty Lead";
+      if (certId) certId.textContent = `ATL-CERT-${course.id.replace("course-", "").toUpperCase()}-${Math.floor(1000 + Math.random() * 9000)}`;
+      if (certDuration) certDuration.textContent = `${course.duration} Accredited`;
+      if (certDate) certDate.textContent = new Date().toLocaleDateString("en-US", { year: "numeric", month: "long", day: "numeric" });
+    });
+
+    function copyVerificationUrl() {
+      if (navigator.clipboard) {
+        navigator.clipboard.writeText(window.location.href);
+        window.AtlasToast.show({
+          title: "Credential URL Copied",
+          message: "Permanent verification link copied to clipboard for resume & LinkedIn sharing."
+        });
+      }
+    }
+  </script>
+</body>
+</html>

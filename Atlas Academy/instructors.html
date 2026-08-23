@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Distinguished Faculty — Atlas Academy</title>
+  <meta name="description" content="Meet the industry leads and staff architects heading Atlas Academy's curriculum." />
+  
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-mark">A</div>
+        <span>ATLAS ACADEMY</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="courses.html" class="nav-link">Courses</a></li>
+          <li><a href="instructors.html" class="nav-link active">Instructors</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="student-dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="profile.html" class="nav-link">Profile</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-pill-btn" onclick="openQuickSearch()" aria-label="Search Catalog">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search catalog...</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+
+        <a href="student-dashboard.html" class="user-menu-btn" aria-label="Student Dashboard">
+          <img id="header-user-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Avatar" class="user-avatar-sm" />
+          <span id="header-user-name" class="user-menu-name">Julian</span>
+        </a>
+
+        <button class="mobile-menu-toggle" onclick="openMobileDrawer()" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Faculty Hero -->
+  <div class="dashboard-hero">
+    <div class="container">
+      <div class="eyebrow">Academic Faculty Directory</div>
+      <h1 style="font-size: 2.4rem; margin-bottom: 12px;">Staff Architects & Domain Masters</h1>
+      <p style="color: var(--text-secondary); max-width: 680px; font-size: 1rem;">
+        Learn directly from engineers, designers, and operators who have architected the infrastructure, design systems, and growth engines of premier technology organizations.
+      </p>
+    </div>
+  </div>
+
+  <!-- Faculty Grid Section -->
+  <section class="section" style="padding-top: 48px;">
+    <div class="container">
+      <div class="grid grid-cols-2" id="instructors-list-grid" style="gap: 32px;">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Faculty Philosophy Banner -->
+  <section class="section" style="background-color: var(--bg-surface-subtle); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container container-narrow" style="text-align: center;">
+      <div class="eyebrow" style="justify-content: center;">Teaching Standards</div>
+      <h2 style="margin-bottom: 16px;">Practitioner-Led Instruction</h2>
+      <p style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem; margin-bottom: 32px;">
+        Every Atlas Academy faculty member is an active staff architect or executive in their field. We believe technical instruction is only as valuable as the real-world operational context supporting it.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 14px; flex-wrap: wrap;">
+        <a href="courses.html" class="btn btn-primary">Browse All Faculty Courses</a>
+        <button class="btn btn-outline" onclick="openAcademicCouncilModal()">View Academic Council</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-mark">A</div>
+            <span>ATLAS ACADEMY</span>
+          </a>
+          <p>The executive and technical learning institution for modern engineers, designers, and tech leaders.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Disciplines</div>
+          <ul class="footer-links">
+            <li><a href="courses.html?cat=web-dev" class="footer-link">Web Development</a></li>
+            <li><a href="courses.html?cat=python" class="footer-link">Python & Data</a></li>
+            <li><a href="courses.html?cat=ui-ux" class="footer-link">UI/UX & Product Design</a></li>
+            <li><a href="courses.html?cat=graphic-design" class="footer-link">Brand Typography</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="student-dashboard.html" class="footer-link">Student Dashboard</a></li>
+            <li><a href="instructors.html" class="footer-link">Faculty Directory</a></li>
+            <li><a href="pricing.html" class="footer-link">Membership Plans</a></li>
+            <li><a href="profile.html" class="footer-link">Student Profile</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Institution</div>
+          <ul class="footer-links">
+            <li><button class="footer-link" style="text-align: left;" onclick="openAcademicCouncilModal()">Academic Council</button></li>
+            <li><button class="footer-link" style="text-align: left;" onclick="openReimbursementModal()">Corporate Reimbursement</button></li>
+            <li><a href="certificate.html" class="footer-link">Verify Credentials</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Atlas Academy, Inc. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/pages/instructors.js"></script>
+</body>
+</html>

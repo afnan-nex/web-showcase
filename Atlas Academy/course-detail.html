@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Details — Atlas Academy</title>
+  <meta name="description" content="Detailed curriculum syllabus, learning outcomes, and instructor credentials." />
+  
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/lesson.css" />
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-mark">A</div>
+        <span>ATLAS ACADEMY</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="courses.html" class="nav-link">Courses</a></li>
+          <li><a href="instructors.html" class="nav-link">Instructors</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="student-dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="profile.html" class="nav-link">Profile</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-pill-btn" onclick="openQuickSearch()" aria-label="Search Catalog">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search catalog...</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+
+        <a href="student-dashboard.html" class="user-menu-btn" aria-label="Student Dashboard">
+          <img id="header-user-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Avatar" class="user-avatar-sm" />
+          <span id="header-user-name" class="user-menu-name">Julian</span>
+        </a>
+
+        <button class="mobile-menu-toggle" onclick="openMobileDrawer()" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Course Hero Section -->
+  <section class="section" style="padding-top: 48px; padding-bottom: 48px; background: linear-gradient(180deg, rgba(19, 25, 41, 0.8) 0%, rgba(10, 13, 20, 1) 100%); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div style="display: flex; gap: 8px; align-items: center; margin-bottom: 16px; font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted);">
+        <a href="courses.html" style="color: var(--text-secondary);">Courses</a>
+        <span>/</span>
+        <span id="course-breadcrumb-category" style="color: var(--accent-primary);">Web Development</span>
+      </div>
+
+      <div style="display: grid; grid-template-columns: 1.4fr 0.8fr; gap: 48px; align-items: start;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 16px; flex-wrap: wrap;">
+            <span id="course-badge" class="badge badge-accent">Flagship Program</span>
+            <span id="course-level" class="badge badge-outline">Intermediate</span>
+          </div>
+
+          <h1 id="course-title" style="margin-bottom: 16px;">
+            Full-Stack TypeScript & Modern Cloud Architecture
+          </h1>
+
+          <p id="course-tagline" style="font-size: 1.1rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 28px;">
+            Build type-safe distributed web applications using Node.js, Next.js, GraphQL, Docker, and AWS Serverless primitives.
+          </p>
+
+          <div style="display: flex; align-items: center; gap: 24px; font-family: var(--font-mono); font-size: 0.85rem; color: var(--text-secondary); flex-wrap: wrap;">
+            <div style="display: flex; align-items: center; gap: 6px;">
+              <span style="color: var(--accent-gold);">★</span>
+              <strong id="course-rating" style="color: var(--text-primary);">4.96</strong>
+              <span id="course-reviews-count" style="color: var(--text-muted);">(318 reviews)</span>
+            </div>
+            <div>
+              <strong id="course-students-count" style="color: var(--text-primary);">4,820</strong> students enrolled
+            </div>
+            <div>
+              Duration: <strong id="course-duration" style="color: var(--text-primary);">18h 45m</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Sticky Enrollment Card -->
+        <div style="background: var(--bg-surface); border: 1px solid var(--border-medium); border-radius: var(--radius-xl); padding: 24px; box-shadow: var(--shadow-lg);">
+          <div style="position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 20px;">
+            <img id="course-thumb" src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Thumbnail" style="width: 100%; height: 100%; object-fit: cover;" />
+            <button class="continue-play-overlay" onclick="openSamplePreviewModal()" style="border: none; cursor: pointer;" aria-label="Play Lesson Preview">
+              <div class="play-circle-btn">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+              </div>
+            </button>
+          </div>
+
+          <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px;">
+            <div>
+              <span style="font-size: 0.8rem; color: var(--text-muted); font-family: var(--font-mono); text-transform: uppercase;">Enrollment Fee</span>
+              <div id="course-price-display" style="font-family: var(--font-mono); font-size: 2rem; font-weight: 700; color: var(--text-primary);">$189</div>
+            </div>
+            <span class="badge badge-gold">Lifetime Access</span>
+          </div>
+
+          <!-- Progress Area (If Enrolled) -->
+          <div id="enrollment-progress-box" style="display: none; margin-bottom: 20px; padding: 14px; background: var(--bg-surface-elevated); border-radius: var(--radius-md); border: 1px solid var(--border-subtle);">
+            <div style="display: flex; justify-content: space-between; font-size: 0.8rem; font-family: var(--font-mono); margin-bottom: 6px;">
+              <span>Course Progress</span>
+              <strong id="enrollment-progress-percent" style="color: var(--accent-primary);">0%</strong>
+            </div>
+            <div class="progress-bar-wrap">
+              <div id="enrollment-progress-fill" class="progress-bar-fill" style="width: 0%;"></div>
+            </div>
+          </div>
+
+          <!-- Action Buttons -->
+          <div style="display: flex; flex-direction: column; gap: 12px; margin-bottom: 20px;">
+            <button id="enroll-action-btn" class="btn btn-primary btn-lg w-full" onclick="handleEnrollClick()">
+              Enroll in Masterclass
+            </button>
+            <div style="display: flex; gap: 8px;">
+              <button id="bookmark-action-btn" class="btn btn-outline btn-sm w-full" onclick="handleDetailBookmarkClick()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
+                <span id="bookmark-btn-text">Bookmark</span>
+              </button>
+              <button class="btn btn-outline btn-sm w-full" onclick="handleShareClick()">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+                Share
+              </button>
+            </div>
+          </div>
+
+          <div style="font-size: 0.8rem; color: var(--text-muted); line-height: 1.5; text-align: center; border-top: 1px solid var(--border-subtle); padding-top: 16px;">
+            ✓ 30-Day Money-Back Guarantee • Tax Receipts for Employer Reimbursement
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Detailed Content Grid -->
+  <section class="section" style="padding-top: 48px;">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1.4fr 0.8fr; gap: 48px;">
+        
+        <!-- Left: Overview, Outcomes, Syllabus -->
+        <div>
+          <!-- Course Overview -->
+          <div style="margin-bottom: 48px;">
+            <h2 style="font-size: 1.5rem; margin-bottom: 16px;">Program Overview</h2>
+            <p id="course-overview-text" style="color: var(--text-secondary); line-height: 1.7; font-size: 1rem;">
+              Overview loading...
+            </p>
+          </div>
+
+          <!-- What You'll Learn -->
+          <div style="margin-bottom: 48px; background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 32px;">
+            <h2 style="font-size: 1.35rem; margin-bottom: 20px;">What You Will Master</h2>
+            <div id="course-outcomes-list" style="display: flex; flex-direction: column; gap: 14px;">
+              <!-- Injected via JS -->
+            </div>
+          </div>
+
+          <!-- Curriculum Structure -->
+          <div style="margin-bottom: 48px;">
+            <div style="display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 20px; flex-wrap: wrap; gap: 8px;">
+              <div>
+                <h2 style="font-size: 1.5rem;">Curriculum Syllabus</h2>
+                <div id="curriculum-summary-meta" style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text-muted); margin-top: 4px;">
+                  3 Modules • 9 Lessons • 18h 45m Total Time
+                </div>
+              </div>
+              <button class="btn btn-ghost btn-sm" onclick="expandAllModules()">Expand All Modules</button>
+            </div>
+
+            <!-- Accordion Curriculum Modules -->
+            <div id="curriculum-accordion-container" style="display: flex; flex-direction: column; gap: 12px;">
+              <!-- Injected via JS -->
+            </div>
+          </div>
+
+          <!-- Prerequisites -->
+          <div style="margin-bottom: 48px;">
+            <h2 style="font-size: 1.35rem; margin-bottom: 16px;">Prerequisites & Technical Requirements</h2>
+            <ul id="course-prereqs-list" style="color: var(--text-secondary); padding-left: 20px; line-height: 1.7;">
+              <!-- Injected via JS -->
+            </ul>
+          </div>
+        </div>
+
+        <!-- Right: Faculty Bio & Certification Card -->
+        <div>
+          <!-- Faculty Card -->
+          <div style="background: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 28px; margin-bottom: 24px;">
+            <div class="eyebrow" style="margin-bottom: 16px;">Faculty Lead</div>
+            <div style="display: flex; align-items: center; gap: 16px; margin-bottom: 16px;">
+              <img id="instructor-avatar" src="" alt="Instructor" style="width: 56px; height: 56px; border-radius: 50%; object-fit: cover; border: 2px solid var(--border-medium);" />
+              <div>
+                <h3 id="instructor-name" style="font-size: 1.1rem; margin-bottom: 2px;">Faculty Name</h3>
+                <div id="instructor-title" style="font-size: 0.78rem; color: var(--text-muted);">Title</div>
+              </div>
+            </div>
+            <p id="instructor-bio" style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; margin-bottom: 20px;">
+              Bio loading...
+            </p>
+            <div style="display: flex; justify-content: space-between; padding-top: 14px; border-top: 1px solid var(--border-subtle); font-size: 0.8rem; font-family: var(--font-mono); color: var(--text-muted);">
+              <span id="instructor-students">14,200 Students</span>
+              <span id="instructor-rating" style="color: var(--accent-gold);">★ 4.95 Rating</span>
+            </div>
+          </div>
+
+          <!-- Verifiable Certificate Guarantee -->
+          <div style="background: linear-gradient(135deg, rgba(226, 179, 87, 0.08) 0%, rgba(16, 21, 34, 0.8) 100%); border: 1px solid rgba(226, 179, 87, 0.3); border-radius: var(--radius-lg); padding: 24px;">
+            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
+              <div style="width: 36px; height: 36px; border-radius: 50%; background: var(--accent-gold-subtle); border: 1px solid var(--accent-gold); display: flex; align-items: center; justify-content: center; color: var(--accent-gold);">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="7"></circle><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"></polyline></svg>
+              </div>
+              <h4 style="font-size: 1rem; color: var(--accent-gold);">Official Diploma Issued</h4>
+            </div>
+            <p style="font-size: 0.825rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 16px;">
+              Upon 100% syllabus completion and passing the module quizzes, you will be issued a verifiable high-resolution certificate with permanent credential identifier.
+            </p>
+            <a id="preview-cert-link" href="certificate.html" class="btn btn-outline btn-sm w-full" style="border-color: rgba(226, 179, 87, 0.4); color: var(--accent-gold);">
+              Preview Diploma Template
+            </a>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Sample Video Preview Modal -->
+  <div id="sample-preview-modal" class="modal-overlay">
+    <div class="modal-card" style="max-width: 800px; padding: 0;">
+      <div style="padding: 16px 20px; border-bottom: 1px solid var(--border-subtle); display: flex; align-items: center; justify-content: space-between;">
+        <span style="font-weight: 600; font-size: 0.95rem;">Sample Lesson Preview</span>
+        <button class="modal-close-btn" onclick="closeSamplePreviewModal()">✕</button>
+      </div>
+      <div class="player-container" style="aspect-ratio: 16 / 9;">
+        <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1000&q=80" alt="Preview Video" style="width: 100%; height: 100%; object-fit: cover;" />
+        <div style="position: absolute; inset: 0; background: rgba(0,0,0,0.55); display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 24px;">
+          <div class="play-circle-btn" style="margin-bottom: 16px;">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+          </div>
+          <h3 style="font-size: 1.25rem; margin-bottom: 8px;">Generics, Conditional Types & Template Literals</h3>
+          <p style="font-size: 0.85rem; color: #cbd5e1; max-width: 440px;">Full lesson player is enabled for enrolled fellows. Click Enroll to access interactive notes, transcripts, and quizzes.</p>
+        </div>
+      </div>
+      <div style="padding: 16px 20px; display: flex; justify-content: flex-end; gap: 12px; background: var(--bg-surface-subtle);">
+        <button class="btn btn-outline btn-sm" onclick="closeSamplePreviewModal()">Close Preview</button>
+        <button class="btn btn-accent btn-sm" onclick="handleEnrollClick(); closeSamplePreviewModal();">Enroll Now</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-mark">A</div>
+            <span>ATLAS ACADEMY</span>
+          </a>
+          <p>The executive and technical learning institution for modern engineers, designers, and tech leaders.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Disciplines</div>
+          <ul class="footer-links">
+            <li><a href="courses.html?cat=web-dev" class="footer-link">Web Development</a></li>
+            <li><a href="courses.html?cat=python" class="footer-link">Python & Data</a></li>
+            <li><a href="courses.html?cat=ui-ux" class="footer-link">UI/UX & Product Design</a></li>
+            <li><a href="courses.html?cat=graphic-design" class="footer-link">Brand Typography</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="student-dashboard.html" class="footer-link">Student Dashboard</a></li>
+            <li><a href="instructors.html" class="footer-link">Faculty Directory</a></li>
+            <li><a href="pricing.html" class="footer-link">Membership Plans</a></li>
+            <li><a href="profile.html" class="footer-link">Student Profile</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Institution</div>
+          <ul class="footer-links">
+            <li><button class="footer-link" style="text-align: left;" onclick="openAcademicCouncilModal()">Academic Council</button></li>
+            <li><button class="footer-link" style="text-align: left;" onclick="openReimbursementModal()">Corporate Reimbursement</button></li>
+            <li><a href="certificate.html" class="footer-link">Verify Credentials</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Atlas Academy, Inc. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/pages/course-detail.js"></script>
+</body>
+</html>

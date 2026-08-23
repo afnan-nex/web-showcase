@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Atlas Academy — Executive & Technical Learning Platform</title>
+  <meta name="description" content="Atlas Academy is the premier technical and executive learning institution for modern engineers, designers, and growth leaders." />
+  
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-mark">A</div>
+        <span>ATLAS ACADEMY</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="courses.html" class="nav-link">Courses</a></li>
+          <li><a href="instructors.html" class="nav-link">Instructors</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="student-dashboard.html" class="nav-link">Dashboard</a></li>
+          <li><a href="profile.html" class="nav-link">Profile</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-pill-btn" onclick="openQuickSearch()" aria-label="Search Catalog">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search catalog...</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+
+        <a href="student-dashboard.html" class="user-menu-btn" aria-label="Student Dashboard Profile">
+          <img id="header-user-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Avatar" class="user-avatar-sm" />
+          <span id="header-user-name" class="user-menu-name">Julian</span>
+        </a>
+
+        <button class="mobile-menu-toggle" onclick="openMobileDrawer()" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Editorial Hero Section -->
+  <section class="section" style="padding-top: 64px; padding-bottom: 72px; border-bottom: 1px solid var(--border-subtle); background: radial-gradient(circle at 80% 20%, rgba(30, 41, 59, 0.45) 0%, rgba(10, 13, 20, 0) 70%);">
+    <div class="container">
+      <div style="display: grid; grid-template-columns: 1.2fr 0.8fr; gap: 48px; align-items: center;">
+        <div>
+          <div class="eyebrow">Professional Curriculum • 2026 Academic Catalog</div>
+          <h1 style="margin-bottom: 20px; line-height: 1.15; max-width: 680px;">
+            Rigorous technical craft for modern practitioners.
+          </h1>
+          <p style="font-size: 1.125rem; color: var(--text-secondary); line-height: 1.6; max-width: 580px; margin-bottom: 32px;">
+            Atlas Academy replaces surface-level tutorials with deep systems architecture, mathematical design principles, and enterprise-grade execution taught by industry staff engineers.
+          </p>
+
+          <div style="display: flex; gap: 16px; flex-wrap: wrap; margin-bottom: 40px;">
+            <a href="courses.html" class="btn btn-primary btn-lg">
+              Explore All Programs
+            </a>
+            <a href="instructors.html" class="btn btn-outline btn-lg">
+              Meet the Faculty
+            </a>
+          </div>
+
+          <!-- Proof Points Grid -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; padding-top: 24px; border-top: 1px solid var(--border-subtle);">
+            <div>
+              <div style="font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--text-primary);">6 Disciplines</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">From Cloud to Venture</div>
+            </div>
+            <div>
+              <div style="font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--accent-gold);">4.95 ★</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">Average Cohort Rating</div>
+            </div>
+            <div>
+              <div style="font-family: var(--font-mono); font-size: 1.5rem; font-weight: 700; color: var(--accent-primary);">Verifiable</div>
+              <div style="font-size: 0.8rem; color: var(--text-muted);">100% Milestone Certs</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Featured Card -->
+        <div style="background-color: var(--bg-surface); border: 1px solid var(--border-medium); border-radius: var(--radius-xl); padding: 28px; box-shadow: var(--shadow-lg);">
+          <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 16px;">
+            <span class="badge badge-accent">Featured Flagship</span>
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: var(--text-muted);">Enrolling Now</span>
+          </div>
+
+          <div style="position: relative; aspect-ratio: 16 / 9; border-radius: var(--radius-md); overflow: hidden; margin-bottom: 20px;">
+            <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=800&q=80" alt="Full-Stack TypeScript & Cloud Architecture" style="width: 100%; height: 100%; object-fit: cover;" />
+            <div style="position: absolute; bottom: 12px; left: 12px; background: rgba(10, 13, 20, 0.85); backdrop-filter: blur(8px); padding: 4px 10px; border-radius: 4px; font-family: var(--font-mono); font-size: 0.75rem; color: #ffffff;">
+              18h 45m • 9 Deep Modules
+            </div>
+          </div>
+
+          <h3 style="font-size: 1.25rem; margin-bottom: 8px;">
+            <a href="course-detail.html?id=course-web-101" style="color: var(--text-primary);">Full-Stack TypeScript & Modern Cloud Architecture</a>
+          </h3>
+          <p style="font-size: 0.85rem; color: var(--text-secondary); line-height: 1.5; margin-bottom: 20px;">
+            Construct a resilient, type-safe multi-tenant cloud application with Docker, PostgreSQL connection pooling, and OpenTelemetry tracing.
+          </p>
+
+          <div style="display: flex; align-items: center; justify-content: space-between; padding-top: 16px; border-top: 1px solid var(--border-subtle);">
+            <div style="display: flex; align-items: center; gap: 10px;">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80" alt="Dr. Alistair Vance" style="width: 32px; height: 32px; border-radius: 50%; object-fit: cover;" />
+              <div>
+                <div style="font-size: 0.8rem; font-weight: 600;">Dr. Alistair Vance</div>
+                <div style="font-size: 0.7rem; color: var(--text-muted);">Lead Systems Faculty</div>
+              </div>
+            </div>
+            <a href="course-detail.html?id=course-web-101" class="btn btn-sm btn-accent">
+              View Syllabus
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Disciplines Strip -->
+  <section class="section-tight" style="background-color: var(--bg-surface-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 20px;">
+        <span style="font-family: var(--font-mono); font-size: 0.8rem; text-transform: uppercase; color: var(--text-muted); letter-spacing: 0.1em;">
+          Academic Disciplines
+        </span>
+        <a href="courses.html" style="font-size: 0.85rem; color: var(--accent-primary); font-weight: 600;">Browse all courses →</a>
+      </div>
+
+      <div class="grid grid-cols-3" id="home-categories-grid">
+        <!-- Injected via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Courses Grid -->
+  <section class="section">
+    <div class="container">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 40px; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <div class="eyebrow">Curated Curriculum</div>
+          <h2>Featured Masterclasses</h2>
+        </div>
+        <div style="display: flex; gap: 8px;">
+          <a href="courses.html" class="btn btn-outline btn-sm">View Complete Catalog (8)</a>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-3" id="home-featured-courses-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Editorial Methodology: How Atlas Teaches -->
+  <section class="section" style="background-color: var(--bg-surface-subtle); border-top: 1px solid var(--border-subtle); border-bottom: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div style="max-width: 640px; margin-bottom: 48px;">
+        <div class="eyebrow">Academic Methodology</div>
+        <h2>Engineered for lasting mastery.</h2>
+        <p style="color: var(--text-secondary); margin-top: 12px;">
+          We reject the fragmented "toy project" standard. Every Atlas program is structured around verifiable competencies, production code, and deep architectural rationale.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-3">
+        <div style="background-color: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 32px;">
+          <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(59, 130, 246, 0.1); border: 1px solid rgba(59, 130, 246, 0.3); display: flex; align-items: center; justify-content: center; color: var(--accent-primary); font-family: var(--font-mono); font-weight: 700; margin-bottom: 20px;">
+            01
+          </div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 10px;">Architectural Rationale</h3>
+          <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+            Learn not just <em>how</em> to use a tool, but <em>why</em> distributed systems fail under load, how memory models operate, and how trade-offs shape tech decisions.
+          </p>
+        </div>
+
+        <div style="background-color: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 32px;">
+          <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(226, 179, 87, 0.1); border: 1px solid rgba(226, 179, 87, 0.3); display: flex; align-items: center; justify-content: center; color: var(--accent-gold); font-family: var(--font-mono); font-weight: 700; margin-bottom: 20px;">
+            02
+          </div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 10px;">Interactive Assessments</h3>
+          <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+            Multi-stage scenario evaluations test deep conceptual invariants, boundary cases, and performance diagnostics before you can unlock certificates.
+          </p>
+        </div>
+
+        <div style="background-color: var(--bg-surface); border: 1px solid var(--border-subtle); border-radius: var(--radius-lg); padding: 32px;">
+          <div style="width: 44px; height: 44px; border-radius: var(--radius-md); background: rgba(16, 185, 129, 0.1); border: 1px solid rgba(16, 185, 129, 0.3); display: flex; align-items: center; justify-content: center; color: var(--accent-success); font-family: var(--font-mono); font-weight: 700; margin-bottom: 20px;">
+            03
+          </div>
+          <h3 style="font-size: 1.15rem; margin-bottom: 10px;">Verifiable Credentials</h3>
+          <p style="font-size: 0.875rem; color: var(--text-secondary); line-height: 1.6;">
+            Graduates receive cryptographically identified certificates with permanent verification URLs, printable executive diplomas, and syllabus transcripts.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Faculty Showcase -->
+  <section class="section">
+    <div class="container">
+      <div style="display: flex; align-items: flex-end; justify-content: space-between; margin-bottom: 40px; flex-wrap: wrap; gap: 16px;">
+        <div>
+          <div class="eyebrow">Distinguished Faculty</div>
+          <h2>Taught by Industry Leaders</h2>
+        </div>
+        <a href="instructors.html" class="btn btn-outline btn-sm">View All Faculty →</a>
+      </div>
+
+      <div class="grid grid-cols-3" id="home-faculty-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Executive Testimonials -->
+  <section class="section" style="background-color: var(--bg-surface-subtle); border-top: 1px solid var(--border-subtle);">
+    <div class="container">
+      <div style="text-align: center; max-width: 600px; margin: 0 auto 48px;">
+        <div class="eyebrow" style="justify-content: center;">Peer Endorsements</div>
+        <h2>Trusted by Staff Engineers & Leaders</h2>
+      </div>
+
+      <div class="grid grid-cols-3" id="home-testimonials-grid">
+        <!-- Rendered via JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action Banner -->
+  <section class="section" style="background: radial-gradient(circle at 50% 50%, #172033 0%, #0a0d14 100%); border-top: 1px solid var(--border-medium); text-align: center;">
+    <div class="container container-narrow">
+      <div class="eyebrow" style="justify-content: center;">Begin Your Fellowship</div>
+      <h2 style="margin-bottom: 16px;">Elevate your engineering and design craft today.</h2>
+      <p style="color: var(--text-secondary); font-size: 1.1rem; margin-bottom: 32px;">
+        Join over 14,000 senior practitioners advancing their mastery with Atlas Academy.
+      </p>
+      <div style="display: flex; justify-content: center; gap: 16px; flex-wrap: wrap;">
+        <a href="pricing.html" class="btn btn-primary btn-lg">View All-Access Membership</a>
+        <a href="student-dashboard.html" class="btn btn-outline btn-lg">Open Student Dashboard</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-mark">A</div>
+            <span>ATLAS ACADEMY</span>
+          </a>
+          <p>
+            The executive and technical learning institution for modern engineers, designers, and tech leaders. Built for deep mastery.
+          </p>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Curriculum</div>
+          <ul class="footer-links">
+            <li><a href="courses.html?cat=web-dev" class="footer-link">Web Development</a></li>
+            <li><a href="courses.html?cat=python" class="footer-link">Python & Data</a></li>
+            <li><a href="courses.html?cat=ui-ux" class="footer-link">UI/UX Design Systems</a></li>
+            <li><a href="courses.html?cat=graphic-design" class="footer-link">Brand Typography</a></li>
+            <li><a href="courses.html?cat=digital-marketing" class="footer-link">Growth Engineering</a></li>
+            <li><a href="courses.html?cat=business" class="footer-link">Venture Finance</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Platform</div>
+          <ul class="footer-links">
+            <li><a href="student-dashboard.html" class="footer-link">Student Dashboard</a></li>
+            <li><a href="instructors.html" class="footer-link">Faculty Directory</a></li>
+            <li><a href="pricing.html" class="footer-link">Membership Plans</a></li>
+            <li><a href="profile.html" class="footer-link">Student Profile</a></li>
+            <li><a href="certificate.html" class="footer-link">Verify Credentials</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Institution</div>
+          <ul class="footer-links">
+            <li><button class="footer-link" style="text-align: left;" onclick="openAcademicCouncilModal()">Academic Council</button></li>
+            <li><a href="pricing.html" class="footer-link">Enterprise L&D</a></li>
+            <li><button class="footer-link" style="text-align: left;" onclick="openReimbursementModal()">Corporate Reimbursement</button></li>
+            <li><a href="pricing.html" class="footer-link">Tuition Guarantee</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 Atlas Academy, Inc. All rights reserved.</div>
+        <div style="display: flex; gap: 20px;">
+          <a href="pricing.html" class="footer-link">Terms of Service</a>
+          <a href="pricing.html" class="footer-link">Privacy Policy</a>
+          <a href="certificate.html" class="footer-link">Accreditation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/pages/home.js"></script>
+</body>
+</html>

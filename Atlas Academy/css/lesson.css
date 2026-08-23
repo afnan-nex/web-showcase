@@ -1,0 +1,426 @@
+/* ==========================================================================
+   ATLAS ACADEMY - Classroom & Lesson Player Styles (Production Polish)
+   ========================================================================== */
+
+.lesson-workspace {
+  display: grid;
+  grid-template-columns: 1fr var(--sidebar-width);
+  min-height: calc(100vh - var(--header-height));
+  background-color: var(--bg-body);
+}
+
+.lesson-main-col {
+  display: flex;
+  flex-direction: column;
+  border-right: 1px solid var(--border-subtle);
+  overflow-y: auto;
+  max-height: calc(100vh - var(--header-height));
+}
+
+.lesson-sidebar-col {
+  background-color: var(--bg-surface-subtle);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  max-height: calc(100vh - var(--header-height));
+}
+
+/* Custom Video Player Container */
+.player-container {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background-color: #05070a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.player-canvas-simulation {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.player-overlay-center {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.35);
+  transition: opacity var(--transition-fast);
+  cursor: pointer;
+}
+
+.player-overlay-center.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.player-big-play-btn {
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 32px rgba(255, 255, 255, 0.4);
+  transition: transform var(--transition-fast);
+}
+
+.player-overlay-center:hover .player-big-play-btn {
+  transform: scale(1.08);
+}
+
+/* Controls Bar */
+.player-controls-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.92) 0%, rgba(0, 0, 0, 0.45) 70%, transparent 100%);
+  padding: 16px 20px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+  z-index: 10;
+}
+
+.player-container:hover .player-controls-bar,
+.player-controls-bar:focus-within {
+  opacity: 1;
+}
+
+/* Scrubber / Progress Bar */
+.player-scrubber-track {
+  width: 100%;
+  height: 6px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-full);
+  position: relative;
+  cursor: pointer;
+  transition: height var(--transition-fast);
+}
+
+.player-scrubber-track:hover {
+  height: 8px;
+}
+
+.player-scrubber-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  background: var(--accent-primary);
+  border-radius: var(--radius-full);
+  width: 0%;
+}
+
+.player-scrubber-thumb {
+  position: absolute;
+  top: 50%;
+  right: -6px;
+  transform: translateY(-50%) scale(0);
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.5);
+  transition: transform var(--transition-fast);
+}
+
+.player-scrubber-track:hover .player-scrubber-thumb {
+  transform: translateY(-50%) scale(1);
+}
+
+/* Controls Row */
+.player-controls-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.player-controls-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.player-control-btn {
+  color: #ffffff;
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+  transition: all var(--transition-fast);
+}
+
+.player-control-btn:hover {
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+.player-time-display {
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: #cbd5e1;
+}
+
+.player-speed-select {
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #ffffff;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.player-speed-select option {
+  background-color: #0f172a;
+  color: #ffffff;
+}
+
+/* Lesson Content Area below player */
+.lesson-body {
+  padding: 32px;
+}
+
+.lesson-top-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.lesson-tabs {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 24px;
+  overflow-x: auto;
+}
+
+.lesson-tab-btn {
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  border-bottom: 2px solid transparent;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  white-space: nowrap;
+  transition: all var(--transition-fast);
+}
+
+.lesson-tab-btn:hover {
+  color: var(--text-primary);
+}
+
+.lesson-tab-btn.active {
+  color: var(--accent-primary);
+  border-bottom-color: var(--accent-primary);
+}
+
+/* Notes Drawer */
+.notes-input-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 24px;
+}
+
+.notes-input-box textarea {
+  width: 100%;
+  min-height: 80px;
+  resize: vertical;
+  color: var(--text-primary);
+  font-size: 0.9rem;
+  line-height: 1.5;
+}
+
+.notes-input-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.note-item-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  margin-bottom: 12px;
+  transition: all var(--transition-fast);
+}
+
+.note-item-card:hover {
+  border-color: var(--border-medium);
+}
+
+.note-item-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.note-timestamp-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  padding: 3px 8px;
+  background-color: var(--accent-glow);
+  color: var(--accent-primary);
+  border-radius: 4px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.note-timestamp-badge:hover {
+  background-color: var(--accent-primary);
+  color: #ffffff;
+}
+
+/* Sidebar Syllabus Navigation */
+.syllabus-header {
+  padding: 20px;
+  border-bottom: 1px solid var(--border-subtle);
+  background-color: var(--bg-surface);
+}
+
+.syllabus-course-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 4px;
+}
+
+.syllabus-module-group {
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.syllabus-module-header {
+  padding: 14px 20px;
+  background-color: var(--bg-surface-subtle);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.syllabus-module-header:hover {
+  color: var(--text-primary);
+}
+
+.syllabus-lesson-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 12px 20px;
+  border-left: 3px solid transparent;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.syllabus-lesson-item:hover {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+}
+
+.syllabus-lesson-item.active {
+  background-color: var(--bg-surface-elevated);
+  border-left-color: var(--accent-primary);
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+.syllabus-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 4px;
+  border: 1px solid var(--border-medium);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 2px;
+  transition: all var(--transition-fast);
+  cursor: pointer;
+}
+
+.syllabus-checkbox:hover {
+  border-color: var(--accent-success);
+}
+
+.syllabus-lesson-item.completed .syllabus-checkbox {
+  background-color: var(--accent-success);
+  border-color: var(--accent-success);
+  color: #ffffff;
+}
+
+.syllabus-lesson-meta {
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .lesson-workspace {
+    grid-template-columns: 1fr;
+  }
+  .lesson-main-col {
+    max-height: none;
+    border-right: none;
+  }
+  .lesson-sidebar-col {
+    max-height: none;
+    border-top: 1px solid var(--border-medium);
+  }
+  .lesson-body {
+    padding: 20px 16px;
+  }
+}
+
+@media (max-width: 600px) {
+  .player-controls-row {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .player-time-display {
+    font-size: 0.72rem;
+  }
+  .lesson-top-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}

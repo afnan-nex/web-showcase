@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Student Dashboard — Atlas Academy</title>
+  <meta name="description" content="Manage enrolled masterclasses, track progress, review notes, and claim official certificates." />
+  
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+</head>
+<body>
+
+  <!-- Site Navigation -->
+  <header class="site-header">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-mark">A</div>
+        <span>ATLAS ACADEMY</span>
+      </a>
+
+      <nav>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="courses.html" class="nav-link">Courses</a></li>
+          <li><a href="instructors.html" class="nav-link">Instructors</a></li>
+          <li><a href="pricing.html" class="nav-link">Pricing</a></li>
+          <li><a href="student-dashboard.html" class="nav-link active">Dashboard</a></li>
+          <li><a href="profile.html" class="nav-link">Profile</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <button class="search-pill-btn" onclick="openQuickSearch()" aria-label="Search Catalog">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <span>Search catalog...</span>
+          <kbd>Ctrl K</kbd>
+        </button>
+
+        <a href="profile.html" class="user-menu-btn" aria-label="Student Profile Settings">
+          <img id="header-user-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Avatar" class="user-avatar-sm" />
+          <span id="header-user-name" class="user-menu-name">Julian</span>
+        </a>
+
+        <button class="mobile-menu-toggle" onclick="openMobileDrawer()" aria-label="Open Navigation Menu">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Dashboard Hero & Key Statistics -->
+  <div class="dashboard-hero">
+    <div class="container">
+      
+      <!-- Top Welcome Bar -->
+      <div class="dashboard-welcome">
+        <div class="dashboard-user-meta">
+          <img id="dash-user-avatar" src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Avatar" class="dashboard-avatar-lg" />
+          <div>
+            <div class="eyebrow" style="margin-bottom: 4px;">Fellow Workspace</div>
+            <h1 id="dash-welcome-heading" style="font-size: 2rem; margin-bottom: 4px;">Welcome back, Julian</h1>
+            <p id="dash-user-headline" style="font-size: 0.875rem; color: var(--text-secondary);">Senior Staff Engineer & Systems Lead • Fellow Member</p>
+          </div>
+        </div>
+
+        <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+          <button class="btn btn-outline btn-sm" onclick="exportStudentData()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            Export JSON
+          </button>
+          <a href="courses.html" class="btn btn-primary btn-sm">
+            + Enroll New Course
+          </a>
+        </div>
+      </div>
+
+      <!-- Real-Time Metrics Ribbon -->
+      <div class="dashboard-stats-grid">
+        <div class="stat-card accent-blue">
+          <span class="stat-label">In-Progress Courses</span>
+          <div id="stat-in-progress-count" class="stat-value">2</div>
+          <span id="stat-in-progress-sub" class="stat-subtext">Active learning pathways</span>
+        </div>
+
+        <div class="stat-card accent-gold">
+          <span class="stat-label">Study Streak</span>
+          <div class="stat-value"><span id="stat-streak-days">14</span> <span style="font-size: 1.2rem; color: var(--accent-gold);">🔥 Days</span></div>
+          <span class="stat-subtext">Consistent daily engagement</span>
+        </div>
+
+        <div class="stat-card accent-green">
+          <span class="stat-label">Hours Mastered</span>
+          <div class="stat-value"><span id="stat-hours-learned">13.2</span> <span style="font-size: 1.1rem; color: var(--text-muted);">hrs</span></div>
+          <span class="stat-subtext">Across video & exercises</span>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-label">Diplomas Earned</span>
+          <div id="stat-certs-count" class="stat-value" style="color: var(--accent-gold);">0</div>
+          <span class="stat-subtext">Verifiable credentials</span>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Dashboard Main Workspace -->
+  <section class="section" style="padding-top: 36px; padding-bottom: 80px;">
+    <div class="container">
+      
+      <!-- Primary Continue Learning Banner -->
+      <div id="continue-learning-section">
+        <!-- Rendered via JS -->
+      </div>
+
+      <!-- Dashboard Navigation Tabs -->
+      <div class="dashboard-tabs-nav">
+        <button class="dashboard-tab-btn active" onclick="switchDashboardTab('enrolled')">
+          <span>Enrolled Courses</span>
+          <span id="tab-count-enrolled" class="tab-badge-count">2</span>
+        </button>
+        <button class="dashboard-tab-btn" onclick="switchDashboardTab('upcoming')">
+          <span>Upcoming Lessons</span>
+          <span id="tab-count-upcoming" class="tab-badge-count">3</span>
+        </button>
+        <button class="dashboard-tab-btn" onclick="switchDashboardTab('certificates')">
+          <span>Certificates</span>
+          <span id="tab-count-certificates" class="tab-badge-count">0</span>
+        </button>
+        <button class="dashboard-tab-btn" onclick="switchDashboardTab('bookmarks')">
+          <span>Saved Bookmarks</span>
+          <span id="tab-count-bookmarks" class="tab-badge-count">3</span>
+        </button>
+        <button class="dashboard-tab-btn" onclick="switchDashboardTab('activity')">
+          <span>Activity Feed</span>
+        </button>
+      </div>
+
+      <!-- TAB 1: Enrolled Courses Content -->
+      <div id="tab-content-enrolled" class="tab-content-pane">
+        <div class="grid grid-cols-2" id="enrolled-courses-grid" style="gap: 24px;">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+      <!-- TAB 2: Upcoming Lessons / Schedule -->
+      <div id="tab-content-upcoming" class="tab-content-pane" style="display: none;">
+        <div style="display: flex; flex-direction: column; gap: 16px;" id="upcoming-lessons-list">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+      <!-- TAB 3: Certificates Showcase -->
+      <div id="tab-content-certificates" class="tab-content-pane" style="display: none;">
+        <div id="certificates-display-container">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+      <!-- TAB 4: Bookmarks Repository -->
+      <div id="tab-content-bookmarks" class="tab-content-pane" style="display: none;">
+        <div class="grid grid-cols-3" id="bookmarks-courses-grid">
+          <!-- Injected via JS -->
+        </div>
+      </div>
+
+      <!-- TAB 5: Activity Feed Timeline -->
+      <div id="tab-content-activity" class="tab-content-pane" style="display: none;">
+        <div class="card" style="padding: 32px; max-width: 800px;">
+          <div class="activity-feed" id="dashboard-activity-feed">
+            <!-- Injected via JS -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-mark">A</div>
+            <span>ATLAS ACADEMY</span>
+          </a>
+          <p>The executive and technical learning institution for modern engineers, designers, and tech leaders.</p>
+        </div>
+        <div>
+          <div class="footer-col-title">Disciplines</div>
+          <ul class="footer-links">
+            <li><a href="courses.html?cat=web-dev" class="footer-link">Web Development</a></li>
+            <li><a href="courses.html?cat=python" class="footer-link">Python & Data</a></li>
+            <li><a href="courses.html?cat=ui-ux" class="footer-link">UI/UX & Product Design</a></li>
+            <li><a href="courses.html?cat=graphic-design" class="footer-link">Brand Typography</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links">
+            <li><a href="student-dashboard.html" class="footer-link">Student Dashboard</a></li>
+            <li><a href="instructors.html" class="footer-link">Faculty Directory</a></li>
+            <li><a href="pricing.html" class="footer-link">Membership Plans</a></li>
+            <li><a href="profile.html" class="footer-link">Student Profile</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="footer-col-title">Institution</div>
+          <ul class="footer-links">
+            <li><button class="footer-link" style="text-align: left;" onclick="openAcademicCouncilModal()">Academic Council</button></li>
+            <li><button class="footer-link" style="text-align: left;" onclick="openReimbursementModal()">Corporate Reimbursement</button></li>
+            <li><a href="certificate.html" class="footer-link">Verify Credentials</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>© 2026 Atlas Academy, Inc. All rights reserved.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/components.js"></script>
+  <script src="js/pages/dashboard.js"></script>
+</body>
+</html>

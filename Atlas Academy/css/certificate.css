@@ -1,0 +1,237 @@
+/* ==========================================================================
+   ATLAS ACADEMY - Official Certificate of Completion Stylesheet
+   Luxury Editorial Diploma with Guilloche Borders & Print-Ready Layout
+   ========================================================================== */
+
+.cert-page-body {
+  background-color: #0b0e14;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+}
+
+.cert-controls-bar {
+  width: 100%;
+  max-width: 900px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+  padding: 14px 20px;
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-lg);
+}
+
+.diploma-frame {
+  width: 100%;
+  max-width: 900px;
+  background: #fdfdfc;
+  color: #0f172a;
+  border-radius: 4px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.1);
+  padding: 48px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Guilloche & Classical Border */
+.diploma-border-outer {
+  border: 3px double #b38728;
+  padding: 24px;
+  position: relative;
+}
+
+.diploma-border-inner {
+  border: 1px solid #c5a059;
+  padding: 32px;
+  text-align: center;
+  position: relative;
+  background: radial-gradient(circle at center, #ffffff 0%, #faf8f5 100%);
+}
+
+.diploma-watermark {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: var(--font-serif);
+  font-size: 22rem;
+  font-weight: 800;
+  color: rgba(179, 135, 40, 0.03);
+  pointer-events: none;
+  user-select: none;
+  z-index: 1;
+}
+
+.diploma-content {
+  position: relative;
+  z-index: 2;
+}
+
+.diploma-header-crest {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 16px;
+  background: linear-gradient(135deg, #1e293b, #0f172a);
+  border: 2px solid #b38728;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 800;
+  color: #e2b357;
+  box-shadow: 0 4px 12px rgba(179, 135, 40, 0.2);
+}
+
+.diploma-institution-name {
+  font-family: var(--font-serif);
+  font-size: 2rem;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  color: #1e293b;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+
+.diploma-sub-header {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  letter-spacing: 0.2em;
+  color: #64748b;
+  text-transform: uppercase;
+  margin-bottom: 32px;
+}
+
+.diploma-preamble {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 1.05rem;
+  color: #475569;
+  margin-bottom: 12px;
+}
+
+.diploma-recipient-name {
+  font-family: var(--font-serif);
+  font-size: 2.6rem;
+  font-weight: 700;
+  color: #0f172a;
+  letter-spacing: 0.02em;
+  margin-bottom: 12px;
+  border-bottom: 1px solid #e2e8f0;
+  display: inline-block;
+  padding: 0 40px 8px;
+}
+
+.diploma-statement {
+  font-family: Georgia, serif;
+  font-size: 1rem;
+  color: #475569;
+  max-width: 600px;
+  margin: 0 auto 16px;
+  line-height: 1.6;
+}
+
+.diploma-course-title {
+  font-family: var(--font-serif);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 36px;
+}
+
+.diploma-footer {
+  display: grid;
+  grid-template-columns: 1fr 120px 1fr;
+  align-items: flex-end;
+  margin-top: 48px;
+  padding-top: 16px;
+}
+
+.diploma-sign-col {
+  text-align: center;
+}
+
+.diploma-sign-line {
+  border-top: 1px solid #94a3b8;
+  padding-top: 8px;
+  margin-top: 32px;
+}
+
+.diploma-sign-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #0f172a;
+}
+
+.diploma-sign-role {
+  font-size: 0.75rem;
+  color: #64748b;
+  font-family: var(--font-mono);
+}
+
+.diploma-seal-col {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.diploma-gold-seal {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #f5d77f 0%, #b38728 70%, #8c6514 100%);
+  border: 3px solid #ffffff;
+  box-shadow: 0 4px 16px rgba(179, 135, 40, 0.4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #3d2800;
+  font-family: var(--font-serif);
+  text-align: center;
+}
+
+.diploma-gold-seal-text {
+  font-size: 0.6rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.diploma-metadata-row {
+  margin-top: 36px;
+  padding-top: 16px;
+  border-top: 1px dashed #cbd5e1;
+  display: flex;
+  justify-content: space-between;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  color: #64748b;
+}
+
+/* Print Specific Rules */
+@media print {
+  body {
+    background: transparent !important;
+    padding: 0 !important;
+  }
+  .cert-controls-bar, .site-header, .site-footer {
+    display: none !important;
+  }
+  .diploma-frame {
+    box-shadow: none !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    padding: 20px !important;
+  }
+  @page {
+    size: landscape;
+    margin: 0.5cm;
+  }
+}
