@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Haven Realty | Exceptional Architectural Real Estate</title>
+  <meta name="description" content="Haven Realty is a bespoke brokerage specializing in premier architectural residences, luxury penthouses, and waterfront estates worldwide." />
+  
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/components.css" />
+</head>
+<body>
+
+  <!-- Site Navigation Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <span class="logo-main">HAVEN</span>
+        <span class="logo-sub">REALTY &bull; ESTATES</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="properties.html" class="nav-link">Properties</a>
+        <a href="agents.html" class="nav-link">Advisors</a>
+        <a href="mortgage-calculator.html" class="nav-link">Calculator</a>
+        <a href="sell-property.html" class="nav-link">List With Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <!-- Saved / Portfolio Hub -->
+        <a href="saved-properties.html" class="action-badge-btn" title="Saved Properties Portfolio" aria-label="Saved properties">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="badge-count" id="header-fav-count" style="display: none;">0</span>
+        </a>
+
+        <!-- Comparison Hub -->
+        <a href="saved-properties.html#compare" class="action-badge-btn" title="Property Comparison" aria-label="Compare properties">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          <span class="badge-count" id="header-compare-count" style="display: none;">0</span>
+        </a>
+
+        <a href="properties.html" class="btn btn-primary btn-sm">Explore Collection</a>
+
+        <button class="hamburger-btn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation">
+    <div>
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="site-logo">
+          <span class="logo-main">HAVEN</span>
+          <span class="logo-sub">REALTY</span>
+        </a>
+        <button class="drawer-close-btn" aria-label="Close menu">&times;</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="properties.html" class="nav-link">Properties</a>
+        <a href="agents.html" class="nav-link">Private Advisors</a>
+        <a href="mortgage-calculator.html" class="nav-link">Mortgage Calculator</a>
+        <a href="sell-property.html" class="nav-link">Sell &amp; Valuation</a>
+        <a href="saved-properties.html" class="nav-link">Saved Properties <span id="mobile-fav-count"></span></a>
+        <a href="saved-properties.html#compare" class="nav-link">Comparison Matrix <span id="mobile-compare-count"></span></a>
+        <a href="contact.html" class="nav-link">Contact &amp; Offices</a>
+      </div>
+    </div>
+    <div>
+      <a href="properties.html" class="btn btn-primary" style="width: 100%;">View All Estates</a>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-bg-media">
+        <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?auto=format&fit=crop&w=2000&q=90" alt="Architectural Luxury Residence" class="hero-bg-img" />
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content">
+        <span class="eyebrow" style="color: #E6CEB3;">Private Architectural Brokerage</span>
+        <h1 class="hero-title">Where Visionary Architecture Meets Discerning Ownership</h1>
+        <p class="hero-subtitle">Curating the world’s most distinctive residential compounds, modernist pavilions, and waterfront sanctuaries.</p>
+
+        <!-- Advanced Search Box -->
+        <div class="hero-search-box">
+          <div class="search-tabs">
+            <button type="button" class="search-tab-btn active" data-status="sale">Buy Residence</button>
+            <button type="button" class="search-tab-btn" data-status="rent">Luxury Lease</button>
+            <button type="button" class="search-tab-btn" data-status="all">All Properties</button>
+          </div>
+
+          <form id="hero-search-form" class="search-form-grid" action="properties.html" method="GET">
+            <input type="hidden" name="status" id="hero-search-status" value="sale" />
+
+            <div class="search-field-group">
+              <label class="search-field-label" for="hero-keyword">Location or Keyword</label>
+              <input type="text" id="hero-keyword" name="keyword" class="search-input" placeholder="e.g. Beverly Hills, Penthouse, Ocean..." />
+            </div>
+
+            <div class="search-field-group">
+              <label class="search-field-label" for="hero-type">Property Architecture</label>
+              <select id="hero-type" name="type" class="search-select">
+                <option value="">All Architectures</option>
+                <option value="villa">Modernist Villa &amp; Estate</option>
+                <option value="penthouse">Sky Penthouse</option>
+                <option value="house">Townhouse &amp; Compound</option>
+                <option value="apartment">Architectural Loft</option>
+                <option value="commercial">Trophy Commercial</option>
+              </select>
+            </div>
+
+            <div class="search-field-group">
+              <label class="search-field-label" for="hero-max-price">Maximum Investment</label>
+              <select id="hero-max-price" name="maxPrice" class="search-select">
+                <option value="">No Maximum</option>
+                <option value="10000000">Up to $10,000,000</option>
+                <option value="15000000">Up to $15,000,000</option>
+                <option value="25000000">Up to $25,000,000</option>
+                <option value="50000000">Up to $50,000,000</option>
+              </select>
+            </div>
+
+            <div>
+              <button type="submit" class="btn btn-gold" style="width: 100%;">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+                <span>Search</span>
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Market Statistics Bar -->
+    <section class="stats-bar" aria-label="Haven Market Statistics">
+      <div class="container">
+        <div class="stats-grid" id="market-stats-container">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Curated Properties -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; max-width: 100%;">
+          <div>
+            <span class="eyebrow">Curated Showcase</span>
+            <h2 class="section-title">Featured Private Residences</h2>
+            <p class="section-subtitle">Exemplary properties distinguished by their pedigree, material craftsmanship, and prime positioning.</p>
+          </div>
+          <div>
+            <a href="properties.html" class="btn btn-secondary">Explore All 12+ Estates &rarr;</a>
+          </div>
+        </div>
+
+        <div class="grid-3" id="featured-properties-grid">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Architectural Neighborhoods & Communities -->
+    <section class="section-padding" style="background-color: var(--color-surface-subtle);">
+      <div class="container">
+        <div class="section-header center">
+          <span class="eyebrow">Global Enclaves</span>
+          <h2 class="section-title">Iconic Architectural Neighborhoods</h2>
+          <p class="section-subtitle">From Beverly Hills promontories to historic London mews and alpine ridgelines.</p>
+        </div>
+
+        <div class="grid-3" id="neighborhoods-grid">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Recently Viewed Section (Persisted in localStorage) -->
+    <section class="section-padding" id="recently-viewed-section" style="display: none;">
+      <div class="container">
+        <div class="section-header">
+          <span class="eyebrow">Your Private History</span>
+          <h2 class="section-title">Recently Viewed Residences</h2>
+          <p class="section-subtitle">Properties you have explored during your current session.</p>
+        </div>
+
+        <div class="grid-3" id="recently-viewed-grid">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Private Advisors / Agents Section -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; max-width: 100%;">
+          <div>
+            <span class="eyebrow">Advisory Leadership</span>
+            <h2 class="section-title">Represented by Industry Authorities</h2>
+            <p class="section-subtitle">Our partners pair discreet private client counsel with decades of transactional expertise.</p>
+          </div>
+          <div>
+            <a href="agents.html" class="btn btn-secondary">Meet All Advisors &rarr;</a>
+          </div>
+        </div>
+
+        <div class="grid-3" id="home-agents-grid">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Financial Intelligence & Calculator Teaser -->
+    <section class="section-padding" style="background-color: var(--color-surface-dark); color: #FFFFFF;">
+      <div class="container">
+        <div class="grid-2" style="align-items: center; gap: 4rem;">
+          <div>
+            <span class="eyebrow" style="color: var(--color-gold);">Financial Advisory</span>
+            <h2 style="color: #FFFFFF; margin-bottom: 1.25rem;">Tailored Capital &amp; Mortgage Structuring</h2>
+            <p style="color: #B2B6BA; margin-bottom: 2rem; font-size: 1.05rem;">
+              Navigate complex acquisitions with our interactive financial modeler. Analyze down payment scenarios, jumbo loan interest amortizations, and property tax allocations tailored to prime residential portfolios.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
+              <a href="mortgage-calculator.html" class="btn btn-gold">Launch Mortgage Calculator</a>
+              <a href="contact.html" class="btn btn-secondary-dark">Private Wealth Consultation</a>
+            </div>
+          </div>
+          <div style="background-color: var(--color-surface-dark-card); padding: 2.5rem; border-radius: var(--radius-xs); border: 1px solid var(--color-border-dark);">
+            <h4 style="color: #FFFFFF; margin-bottom: 1.5rem; font-family: var(--font-sans);">Illustrative Asset Acquisition</h4>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.75rem;">
+              <span style="color: #8E9296;">Benchmark Acquisition</span>
+              <strong style="color: #FFFFFF;">$18,500,000</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.75rem;">
+              <span style="color: #8E9296;">25% Private Equity Down</span>
+              <strong style="color: #FFFFFF;">$4,625,000</strong>
+            </div>
+            <div style="display: flex; justify-content: space-between; margin-bottom: 1.5rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.75rem;">
+              <span style="color: #8E9296;">Estimated Monthly P&amp;I (5.8%)</span>
+              <strong style="color: var(--color-gold); font-size: 1.2rem;">$81,240 / mo</strong>
+            </div>
+            <a href="mortgage-calculator.html?price=18500000" class="btn btn-secondary-dark" style="width: 100%;">Customize Financial Variables &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials & Architectural Press -->
+    <section class="section-padding">
+      <div class="container">
+        <div class="section-header center">
+          <span class="eyebrow">Private Client Verdicts</span>
+          <h2 class="section-title">Trusted on Discretion &amp; Execution</h2>
+          <p class="section-subtitle">Excerpts from international family offices, founders, and collectors.</p>
+        </div>
+
+        <div class="grid-3" id="testimonials-grid">
+          <!-- Injected via JavaScript -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Seller Private Listing CTA -->
+    <section class="section-padding" style="background-color: var(--color-gold-light); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+      <div class="container" style="text-align: center; max-width: 800px;">
+        <span class="eyebrow" style="color: var(--color-gold-dark);">Exclusive Representation</span>
+        <h2 style="margin-bottom: 1rem;">Positioning Exceptional Architecture to the Global Elite</h2>
+        <p style="font-size: 1.1rem; margin-bottom: 2.25rem; color: #524E48;">
+          Whether an off-market discrete placement or a global cinematic campaign, Haven Realty achieves unprecedented market velocity.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="sell-property.html" class="btn btn-primary">Request Property Valuation</a>
+          <a href="contact.html" class="btn btn-secondary">Contact Managing Partner</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">
+            <span class="logo-main" style="color: #FFFFFF;">HAVEN</span>
+            <span class="logo-sub">REALTY &bull; ESTATES</span>
+          </a>
+          <p>
+            An independent luxury brokerage dedicated to architectural mastery, historic restorations, and prime international acquisitions.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Portfolio</h4>
+          <ul class="footer-links">
+            <li><a href="properties.html?type=villa">Modernist Villas</a></li>
+            <li><a href="properties.html?type=penthouse">Sky Penthouses</a></li>
+            <li><a href="properties.html?status=rent">Prime Leases</a></li>
+            <li><a href="properties.html?type=commercial">Trophy Commercial</a></li>
+            <li><a href="saved-properties.html">Saved Portfolio</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Client Services</h4>
+          <ul class="footer-links">
+            <li><a href="agents.html">Private Advisory</a></li>
+            <li><a href="mortgage-calculator.html">Mortgage Modeler</a></li>
+            <li><a href="sell-property.html">List Your Residence</a></li>
+            <li><a href="contact.html#offices">Global Flagships</a></li>
+            <li><a href="saved-properties.html#compare">Comparison Matrix</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-newsletter">
+          <h4 class="footer-heading">Private Acquisition Brief</h4>
+          <p>Receive off-market listings and private market intelligence directly to your inbox.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter private email" required />
+            <button type="submit" class="btn btn-gold btn-sm">Join</button>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Haven Realty Global LLC. All rights reserved. Equal Housing Opportunity.</div>
+        <div class="footer-bottom-links">
+          <a href="contact.html#privacy">Privacy Policy</a>
+          <a href="contact.html#terms">Terms of Representation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Appointment Booking Modal (Shared) -->
+  <div class="modal-overlay" id="appointment-modal" role="dialog" aria-modal="true" aria-labelledby="appt-modal-title">
+    <div class="modal-box">
+      <button class="modal-close-btn modal-close-trigger" aria-label="Close modal">&times;</button>
+      <h3 class="modal-title" id="appt-modal-title">Book Private Showing</h3>
+      <p class="modal-subtitle" id="appt-modal-property-title">Select your preferred date and time for a confidential walkthrough.</p>
+
+      <form id="appointment-form">
+        <div class="form-group">
+          <label class="form-label" for="appt-name">Full Name</label>
+          <input type="text" id="appt-name" class="form-control" placeholder="e.g. Sterling Montgomery" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="appt-email">Confidential Email</label>
+          <input type="email" id="appt-email" class="form-control" placeholder="client@domain.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="appt-phone">Contact Number</label>
+          <input type="tel" id="appt-phone" class="form-control" placeholder="+1 (555) 000-0000" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="appt-date">Preferred Date</label>
+          <input type="date" id="appt-date" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Available Showing Times</label>
+          <div class="time-slots-grid" id="appt-time-slots">
+            <!-- Dynamic Slots -->
+          </div>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 1rem;">Confirm Private Showing</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Property Inquiry Modal (Shared) -->
+  <div class="modal-overlay" id="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="inq-modal-title">
+    <div class="modal-box">
+      <button class="modal-close-btn modal-close-trigger" aria-label="Close modal">&times;</button>
+      <h3 class="modal-title" id="inq-modal-title">Request Property Dossier</h3>
+      <p class="modal-subtitle" id="inq-modal-property-title">Our managing advisor will deliver high-resolution floor plans and financial schedules.</p>
+
+      <form id="inquiry-form">
+        <div class="form-group">
+          <label class="form-label" for="inq-type">Inquiry Purpose</label>
+          <select id="inq-type" class="form-control">
+            <option value="Private Showing">Request Private Showing</option>
+            <option value="Digital Dossier">Request Full Architectural Dossier</option>
+            <option value="Make Offer">Submit Purchase Letter of Intent</option>
+            <option value="General Question">General Inquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inq-name">Your Full Name</label>
+          <input type="text" id="inq-name" class="form-control" placeholder="e.g. Helena Vance" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inq-email">Email Address</label>
+          <input type="email" id="inq-email" class="form-control" placeholder="name@company.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inq-phone">Direct Phone</label>
+          <input type="tel" id="inq-phone" class="form-control" placeholder="+1 (555) 123-4567" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inq-message">Confidential Notes / Scheduling Requests</label>
+          <textarea id="inq-message" class="form-control" rows="3" placeholder="Please mention any specific timing, NDA requests, or questions..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width: 100%;">Submit Confidential Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/properties-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      // 1. Render Stats
+      const statsContainer = document.getElementById("market-stats-container");
+      if (statsContainer && HAVEN_STATS) {
+        statsContainer.innerHTML = HAVEN_STATS.map(s => `
+          <div class="stat-item">
+            <div class="stat-value">${s.value}</div>
+            <div class="stat-label">${s.label}</div>
+          </div>
+        `).join("");
+      }
+
+      // 2. Render Featured Properties (First 6)
+      const featuredGrid = document.getElementById("featured-properties-grid");
+      if (featuredGrid && HAVEN_PROPERTIES) {
+        const featuredList = HAVEN_PROPERTIES.filter(p => p.featured).slice(0, 6);
+        featuredGrid.innerHTML = featuredList.map(p => renderPropertyCardHTML(p)).join("");
+      }
+
+      // 3. Render Neighborhoods
+      const neighborhoodGrid = document.getElementById("neighborhoods-grid");
+      if (neighborhoodGrid && HAVEN_NEIGHBORHOODS) {
+        neighborhoodGrid.innerHTML = HAVEN_NEIGHBORHOODS.map(n => `
+          <a href="properties.html?keyword=${encodeURIComponent(n.name)}" class="neighborhood-card">
+            <img src="${n.image}" alt="${n.name}" class="neighborhood-card-img" loading="lazy" />
+            <div class="neighborhood-card-overlay"></div>
+            <div class="neighborhood-card-content">
+              <div class="neighborhood-card-count">${n.count} Exclusive Residences</div>
+              <h3 class="neighborhood-card-title">${n.name}</h3>
+              <div class="neighborhood-card-avg">${n.city} &bull; Avg ${n.avgPrice}</div>
+            </div>
+          </a>
+        `).join("");
+      }
+
+      // 4. Render Recently Viewed (if any)
+      const recentSection = document.getElementById("recently-viewed-section");
+      const recentGrid = document.getElementById("recently-viewed-grid");
+      if (recentSection && recentGrid) {
+        const recentIds = HavenStorage.getRecentlyViewed();
+        if (recentIds && recentIds.length > 0) {
+          const recentProps = recentIds.map(id => HAVEN_PROPERTIES.find(p => p.id === id)).filter(Boolean).slice(0, 3);
+          if (recentProps.length > 0) {
+            recentGrid.innerHTML = recentProps.map(p => renderPropertyCardHTML(p)).join("");
+            recentSection.style.display = "block";
+          }
+        }
+      }
+
+      // 5. Render Advisors (First 3)
+      const homeAgentsGrid = document.getElementById("home-agents-grid");
+      if (homeAgentsGrid && HAVEN_AGENTS) {
+        homeAgentsGrid.innerHTML = HAVEN_AGENTS.slice(0, 3).map(agent => `
+          <article class="agent-card">
+            <div class="agent-card-img-wrap">
+              <img src="${agent.image}" alt="${agent.name}" class="agent-card-img" loading="lazy" />
+            </div>
+            <div class="agent-card-info">
+              <h3 class="agent-card-name">${agent.name}</h3>
+              <div class="agent-card-title">${agent.title}</div>
+              <div class="agent-card-specialty">${agent.specialty}</div>
+              <div class="agent-card-meta">
+                <span>Career Volume: <strong>${agent.salesVolume}</strong></span>
+                <button type="button" class="btn-link" onclick="openAppointmentModal(null, '${agent.id}')">Book Advisory &rarr;</button>
+              </div>
+            </div>
+          </article>
+        `).join("");
+      }
+
+      // 6. Render Testimonials
+      const testimonialsGrid = document.getElementById("testimonials-grid");
+      if (testimonialsGrid && HAVEN_TESTIMONIALS) {
+        testimonialsGrid.innerHTML = HAVEN_TESTIMONIALS.map(t => `
+          <div style="background-color: var(--color-surface); padding: 2.5rem; border: 1px solid var(--color-border); border-radius: var(--radius-xs); display: flex; flex-direction: column; justify-content: space-between;">
+            <p style="font-family: var(--font-serif); font-size: 1.15rem; font-style: italic; color: var(--color-text-primary); line-height: 1.6; margin-bottom: 2rem;">
+              "${t.quote}"
+            </p>
+            <div>
+              <strong style="display: block; font-size: 0.95rem; color: var(--color-text-primary);">${t.author}</strong>
+              <span style="font-size: 0.8rem; color: var(--color-gold-dark);">${t.role} &bull; ${t.location}</span>
+            </div>
+          </div>
+        `).join("");
+      }
+
+      // 7. Hero Search Tab switching
+      const searchTabs = document.querySelectorAll(".search-tab-btn");
+      const statusInput = document.getElementById("hero-search-status");
+      searchTabs.forEach(tab => {
+        tab.addEventListener("click", () => {
+          searchTabs.forEach(t => t.classList.remove("active"));
+          tab.classList.add("active");
+          if (statusInput) statusInput.value = tab.dataset.status;
+        });
+      });
+    });
+  </script>
+</body>
+</html>

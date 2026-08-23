@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Global Flagships &amp; Private Contact | Haven Realty</title>
+  <meta name="description" content="Connect with Haven Realty's international flagships in New York, Beverly Hills, Miami, London, and Zurich." />
+  
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    .office-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xs);
+      padding: 2.5rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: var(--transition-smooth);
+    }
+    .office-card:hover {
+      border-color: var(--color-gold);
+      box-shadow: var(--shadow-md);
+      transform: translateY(-4px);
+    }
+    .office-live-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--color-surface-subtle);
+      padding: 0.35rem 0.75rem;
+      border-radius: var(--radius-full);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-gold-dark);
+      margin-bottom: 1.25rem;
+    }
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--color-success);
+      border-radius: var(--radius-full);
+      animation: pulseDot 2s infinite ease-in-out;
+    }
+    @keyframes pulseDot {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.4; transform: scale(0.8); }
+    }
+    .faq-item {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xs);
+      margin-bottom: 1rem;
+      overflow: hidden;
+    }
+    .faq-question {
+      width: 100%;
+      text-align: left;
+      padding: 1.5rem 2rem;
+      font-family: var(--font-serif);
+      font-size: 1.25rem;
+      color: var(--color-text-primary);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      cursor: pointer;
+    }
+    .faq-question:hover {
+      color: var(--color-gold);
+    }
+    .faq-icon {
+      font-size: 1.5rem;
+      line-height: 1;
+      transition: transform 0.3s ease;
+    }
+    .faq-item.open .faq-icon {
+      transform: rotate(45deg);
+    }
+    .faq-answer {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+      padding: 0 2rem;
+    }
+    .faq-item.open .faq-answer {
+      padding-bottom: 1.75rem;
+    }
+    .faq-answer p {
+      font-size: 0.95rem;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <span class="logo-main">HAVEN</span>
+        <span class="logo-sub">REALTY &bull; ESTATES</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="properties.html" class="nav-link">Properties</a>
+        <a href="agents.html" class="nav-link">Advisors</a>
+        <a href="mortgage-calculator.html" class="nav-link">Calculator</a>
+        <a href="sell-property.html" class="nav-link">List With Us</a>
+        <a href="contact.html" class="nav-link active">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="saved-properties.html" class="action-badge-btn" title="Saved Properties" aria-label="Saved properties">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="badge-count" id="header-fav-count" style="display: none;">0</span>
+        </a>
+
+        <a href="saved-properties.html#compare" class="action-badge-btn" title="Compare Properties" aria-label="Compare properties">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          <span class="badge-count" id="header-compare-count" style="display: none;">0</span>
+        </a>
+
+        <a href="properties.html" class="btn btn-primary btn-sm">Explore Collection</a>
+
+        <button class="hamburger-btn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation">
+    <div>
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="site-logo">
+          <span class="logo-main">HAVEN</span>
+          <span class="logo-sub">REALTY</span>
+        </a>
+        <button class="drawer-close-btn" aria-label="Close menu">&times;</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="properties.html" class="nav-link">Properties</a>
+        <a href="agents.html" class="nav-link">Private Advisors</a>
+        <a href="mortgage-calculator.html" class="nav-link">Mortgage Calculator</a>
+        <a href="sell-property.html" class="nav-link">Sell &amp; Valuation</a>
+        <a href="saved-properties.html" class="nav-link">Saved Properties <span id="mobile-fav-count"></span></a>
+        <a href="saved-properties.html#compare" class="nav-link">Comparison Matrix <span id="mobile-compare-count"></span></a>
+        <a href="contact.html" class="nav-link active">Contact &amp; Offices</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="section-padding" style="padding-top: 3.5rem;">
+    <div class="container">
+
+      <!-- Header -->
+      <div style="margin-bottom: 3.5rem;">
+        <span class="eyebrow">Worldwide Flagships</span>
+        <h1 style="margin-bottom: 0.5rem;">Connect With Private Client Services</h1>
+        <p style="color: var(--color-text-secondary); max-width: 700px;">
+          Direct lines to our managing partners across North America and Europe. Inquiries receive confidential responses within four business hours.
+        </p>
+      </div>
+
+      <!-- Two Column Layout: Inquiry Form + Global Office Clocks -->
+      <div style="display: grid; grid-template-columns: 1.1fr 1fr; gap: 4rem; align-items: flex-start; margin-bottom: 6rem;">
+        
+        <!-- Contact Form -->
+        <div style="background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xs); padding: 3rem;">
+          <h3 style="font-family: var(--font-serif); font-size: 1.85rem; margin-bottom: 0.4rem;">Confidential Direct Inquiry</h3>
+          <p style="font-size: 0.92rem; color: var(--color-text-secondary); margin-bottom: 2rem;">
+            Whether you seek an off-market acquisition or private seller representation, our principals are at your disposal.
+          </p>
+
+          <form id="general-contact-form">
+            <div class="form-group">
+              <label class="form-label" for="contact-topic">Inquiry Nature</label>
+              <select id="contact-topic" class="form-control">
+                <option value="Private Acquisition">Bespoke Acquisition &amp; Search</option>
+                <option value="Seller Advisory">Exclusive Seller Representation</option>
+                <option value="Off-Market Collection">Access Off-Market Inventory</option>
+                <option value="Press & Architecture">Architectural Press &amp; Media</option>
+                <option value="General Consultation">General Executive Inquiries</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="contact-name">Your Full Name</label>
+              <input type="text" id="contact-name" class="form-control" placeholder="e.g. Sterling Montgomery" required />
+            </div>
+
+            <div class="grid-2" style="gap: 1rem; margin-bottom: 1.25rem;">
+              <div class="form-group">
+                <label class="form-label" for="contact-email">Confidential Email</label>
+                <input type="email" id="contact-email" class="form-control" placeholder="name@domain.com" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label" for="contact-phone">Direct Phone</label>
+                <input type="tel" id="contact-phone" class="form-control" placeholder="+1 (555) 000-0000" required />
+              </div>
+            </div>
+
+            <div class="form-group" style="margin-bottom: 2rem;">
+              <label class="form-label" for="contact-message">Inquiry Notes / Specific Requirements</label>
+              <textarea id="contact-message" class="form-control" rows="4" placeholder="Detail any target regions, price parameters, or timeframe preferences..." required></textarea>
+            </div>
+
+            <button type="submit" class="btn btn-gold" style="width: 100%;">Transmit Confidential Inquiry</button>
+          </form>
+        </div>
+
+        <!-- Global Flagships Directory with Live Time Clocks -->
+        <div>
+          <div style="margin-bottom: 2rem;">
+            <span class="eyebrow">Strategic Hubs</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.85rem;">Global Flagship Offices</h3>
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            
+            <div class="office-card">
+              <div>
+                <div class="office-live-badge">
+                  <span class="live-dot"></span>
+                  <span class="office-live-time" data-timezone="America/Los_Angeles">Loading local time...</span>
+                </div>
+                <h4 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 0.35rem;">Beverly Hills Flagship</h4>
+                <p style="font-size: 0.92rem; color: var(--color-text-secondary); margin-bottom: 1rem;">
+                  9601 Wilshire Boulevard, Suite 1200, Beverly Hills, CA 90210
+                </p>
+              </div>
+              <div style="border-top: 1px solid var(--color-border-subtle); padding-top: 1rem; font-size: 0.88rem; display: flex; justify-content: space-between;">
+                <strong>+1 (310) 849-2100</strong>
+                <span style="color: var(--color-gold-dark);">beverlyhills@havenrealty.com</span>
+              </div>
+            </div>
+
+            <div class="office-card">
+              <div>
+                <div class="office-live-badge">
+                  <span class="live-dot"></span>
+                  <span class="office-live-time" data-timezone="America/New_York">Loading local time...</span>
+                </div>
+                <h4 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 0.35rem;">Manhattan &amp; Tribeca Flagship</h4>
+                <p style="font-size: 0.92rem; color: var(--color-text-secondary); margin-bottom: 1rem;">
+                  590 Madison Avenue, 36th Floor, New York, NY 10022
+                </p>
+              </div>
+              <div style="border-top: 1px solid var(--color-border-subtle); padding-top: 1rem; font-size: 0.88rem; display: flex; justify-content: space-between;">
+                <strong>+1 (212) 694-8800</strong>
+                <span style="color: var(--color-gold-dark);">newyork@havenrealty.com</span>
+              </div>
+            </div>
+
+            <div class="office-card">
+              <div>
+                <div class="office-live-badge">
+                  <span class="live-dot"></span>
+                  <span class="office-live-time" data-timezone="Europe/London">Loading local time...</span>
+                </div>
+                <h4 style="font-family: var(--font-serif); font-size: 1.4rem; margin-bottom: 0.35rem;">London Mayfair Flagship</h4>
+                <p style="font-size: 0.92rem; color: var(--color-text-secondary); margin-bottom: 1rem;">
+                  14 Berkeley Square, Mayfair, London, W1J 6AE, UK
+                </p>
+              </div>
+              <div style="border-top: 1px solid var(--color-border-subtle); padding-top: 1rem; font-size: 0.88rem; display: flex; justify-content: space-between;">
+                <strong>+44 20 7946 0900</strong>
+                <span style="color: var(--color-gold-dark);">london@havenrealty.com</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FAQ Accordion -->
+      <section style="margin-top: 4rem; padding-top: 4rem; border-top: 1px solid var(--color-border); max-width: 900px; margin-left: auto; margin-right: auto;">
+        <div class="section-header center">
+          <span class="eyebrow">Frequently Addressed</span>
+          <h2 class="section-title">Private Client Advisory FAQ</h2>
+          <p class="section-subtitle">Common considerations for sovereign entities, family offices, and private collectors.</p>
+        </div>
+
+        <div class="faq-accordion">
+          
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>How does Haven Realty protect client confidentiality?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                We execute binding Non-Disclosure Agreements prior to disclosing sensitive property details, architectural plans, or owner identities. All private walkthroughs are conducted discreetly without public signboards or open marketing where requested.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>Can Haven Realty assist with cross-border tax and legal structuring?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Yes. While we do not provide legal or tax advice directly, our advisory partners collaborate intimately with top-tier international trust officers, private banking syndicates, and wealth attorneys in New York, London, Zurich, and Geneva.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>What is the process for viewing an off-market private residence?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                Prospective buyers submit a verified Letter of Financial Capacity or direct introduction from their private wealth advisor. Upon verification, a private escort and digital dossier access are granted.
+              </p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button type="button" class="faq-question">
+              <span>How do I commission Haven Realty for an exclusive global disposition?</span>
+              <span class="faq-icon">+</span>
+            </button>
+            <div class="faq-answer">
+              <p>
+                You may begin by completing our <a href="sell-property.html" style="color: var(--color-gold); font-weight:600;">Valuation &amp; Representation form</a> or calling our Managing Partner directly. We will prepare an algorithmic comps model and bespoke positioning strategy.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Privacy & Representation Standards Section -->
+      <section id="privacy" style="margin-top: 4rem; padding-top: 3.5rem; border-top: 1px solid var(--color-border); max-width: 900px; margin-left: auto; margin-right: auto;">
+        <span class="eyebrow">Client Privacy Charter</span>
+        <h3 style="font-family: var(--font-serif); font-size: 1.75rem; margin-bottom: 1rem;">Confidentiality &amp; Data Protection</h3>
+        <p style="font-size: 0.92rem; color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+          Haven Realty Global LLC strictly protects the anonymity, portfolio data, and acquisition intents of our clients. In accordance with global financial privacy standards and GDPR compliance, client correspondence, Letters of Financial Capacity, and NDA-backed architectural records are never sold, monetized, or shared with third parties without explicit written consent.
+        </p>
+      </section>
+
+      <section id="terms" style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid var(--color-border-subtle); max-width: 900px; margin-left: auto; margin-right: auto; margin-bottom: 4rem;">
+        <span class="eyebrow">Terms of Representation</span>
+        <h3 style="font-family: var(--font-serif); font-size: 1.75rem; margin-bottom: 1rem;">Brokerage &amp; Fair Housing Protocol</h3>
+        <p style="font-size: 0.92rem; color: var(--color-text-secondary); line-height: 1.8;">
+          Haven Realty is an equal opportunity brokerage. All property marketing, valuations, and private acquisitions adhere strictly to the Federal Fair Housing Act and international real estate transaction ethics. Fictional architectural properties displayed within this demonstration portfolio are designed for high-net-worth demonstration purposes.
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Contact Success Modal -->
+  <div class="modal-overlay" id="contact-success-modal" role="dialog" aria-modal="true" aria-labelledby="contact-modal-title">
+    <div class="modal-box" style="text-align: center;">
+      <button class="modal-close-btn modal-close-trigger" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
+      <div style="width: 60px; height: 60px; border-radius: var(--radius-full); background: var(--color-success-bg); color: var(--color-success); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+      <h3 class="modal-title" id="contact-modal-title">Inquiry Received</h3>
+      <p style="color: var(--color-text-secondary); margin: 0.75rem 0 1.5rem; font-size: 0.95rem;">
+        Your confidential transmission has been delivered directly to our senior leadership.
+      </p>
+      <div style="background: var(--color-surface-subtle); padding: 1.25rem; border-radius: var(--radius-xs); border: 1px solid var(--color-border); margin-bottom: 1.75rem; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 0.85rem; color: var(--color-text-muted);">Tracking Ticket</span>
+        <strong id="contact-ref-id" style="font-size: 1.1rem; color: var(--color-gold-dark);">#HAV-INQ-000000</strong>
+      </div>
+      <button type="button" class="btn btn-primary" style="width: 100%;" onclick="this.closest('.modal-overlay').classList.remove('open')">
+        Close Window
+      </button>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">
+            <span class="logo-main" style="color: #FFFFFF;">HAVEN</span>
+            <span class="logo-sub">REALTY &bull; ESTATES</span>
+          </a>
+          <p>An independent luxury brokerage dedicated to architectural mastery, historic restorations, and prime international acquisitions.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Portfolio</h4>
+          <ul class="footer-links">
+            <li><a href="properties.html?type=villa">Modernist Villas</a></li>
+            <li><a href="properties.html?type=penthouse">Sky Penthouses</a></li>
+            <li><a href="properties.html?status=rent">Prime Leases</a></li>
+            <li><a href="properties.html?type=commercial">Trophy Commercial</a></li>
+            <li><a href="saved-properties.html">Saved Portfolio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Client Services</h4>
+          <ul class="footer-links">
+            <li><a href="agents.html">Private Advisory</a></li>
+            <li><a href="mortgage-calculator.html">Mortgage Modeler</a></li>
+            <li><a href="sell-property.html">List Your Residence</a></li>
+            <li><a href="contact.html#offices">Global Flagships</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-heading">Private Acquisition Brief</h4>
+          <p>Receive off-market listings and private market intelligence directly to your inbox.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter private email" required />
+            <button type="submit" class="btn btn-gold btn-sm">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Haven Realty Global LLC. All rights reserved. Equal Housing Opportunity.</div>
+        <div class="footer-bottom-links">
+          <a href="contact.html#privacy">Privacy Policy</a>
+          <a href="contact.html#terms">Terms of Representation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/properties-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/contact.js"></script>
+</body>
+</html>

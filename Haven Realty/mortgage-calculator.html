@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private Wealth &amp; Mortgage Modeler | Haven Realty</title>
+  <meta name="description" content="Simulate jumbo loan carrying costs, interest amortizations, and annual property taxes tailored to prime residential portfolios." />
+  
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    .mc-grid-layout {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 3.5rem;
+      align-items: flex-start;
+      margin-bottom: 4rem;
+    }
+    .mc-panel {
+      background-color: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xs);
+      padding: 2.5rem;
+    }
+    .mc-term-btn-group {
+      display: flex;
+      gap: 0.5rem;
+    }
+    .mc-term-btn {
+      flex: 1;
+      padding: 0.75rem;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xs);
+      background-color: var(--color-bg);
+      font-size: 0.88rem;
+      font-weight: 600;
+      transition: var(--transition-fast);
+    }
+    .mc-term-btn.active {
+      background-color: var(--color-surface-dark);
+      color: #FFFFFF;
+      border-color: var(--color-surface-dark);
+    }
+    .legend-item {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.6rem 0;
+      border-bottom: 1px solid var(--color-border-subtle);
+      font-size: 0.88rem;
+    }
+    .legend-label {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--color-text-secondary);
+    }
+    .legend-color-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: var(--radius-full);
+    }
+    @media (max-width: 960px) {
+      .mc-grid-layout {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <span class="logo-main">HAVEN</span>
+        <span class="logo-sub">REALTY &bull; ESTATES</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="properties.html" class="nav-link">Properties</a>
+        <a href="agents.html" class="nav-link">Advisors</a>
+        <a href="mortgage-calculator.html" class="nav-link active">Calculator</a>
+        <a href="sell-property.html" class="nav-link">List With Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="saved-properties.html" class="action-badge-btn" title="Saved Properties" aria-label="Saved properties">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="badge-count" id="header-fav-count" style="display: none;">0</span>
+        </a>
+
+        <a href="saved-properties.html#compare" class="action-badge-btn" title="Compare Properties" aria-label="Compare properties">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          <span class="badge-count" id="header-compare-count" style="display: none;">0</span>
+        </a>
+
+        <a href="properties.html" class="btn btn-primary btn-sm">Explore Collection</a>
+
+        <button class="hamburger-btn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation">
+    <div>
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="site-logo">
+          <span class="logo-main">HAVEN</span>
+          <span class="logo-sub">REALTY</span>
+        </a>
+        <button class="drawer-close-btn" aria-label="Close menu">&times;</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="properties.html" class="nav-link">Properties</a>
+        <a href="agents.html" class="nav-link">Private Advisors</a>
+        <a href="mortgage-calculator.html" class="nav-link active">Mortgage Calculator</a>
+        <a href="sell-property.html" class="nav-link">Sell &amp; Valuation</a>
+        <a href="saved-properties.html" class="nav-link">Saved Properties <span id="mobile-fav-count"></span></a>
+        <a href="saved-properties.html#compare" class="nav-link">Comparison Matrix <span id="mobile-compare-count"></span></a>
+        <a href="contact.html" class="nav-link">Contact &amp; Offices</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="section-padding" style="padding-top: 3.5rem;">
+    <div class="container">
+
+      <!-- Header -->
+      <div style="margin-bottom: 3rem;">
+        <span class="eyebrow">Financial Architecture</span>
+        <h1 style="margin-bottom: 0.5rem;">Mortgage &amp; Carrying Cost Modeler</h1>
+        <p style="color: var(--color-text-secondary); max-width: 720px;">
+          Calculate high-value debt servicing, interest-to-principal allocations, property taxes, and complete annual amortization schedules.
+        </p>
+      </div>
+
+      <!-- Main Modeler Grid -->
+      <div class="mc-grid-layout">
+        
+        <!-- Controls Panel -->
+        <div class="mc-panel">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.75rem; border-bottom: 1px solid var(--color-border-subtle); padding-bottom: 1rem;">
+            <h3 style="font-family: var(--font-serif); font-size: 1.4rem;">Acquisition Parameters</h3>
+            <select id="mc-property-select" class="form-control" style="width: auto; max-width: 280px; font-size: 0.82rem;">
+              <!-- Dynamic Property Presets -->
+            </select>
+          </div>
+
+          <!-- Purchase Price -->
+          <div class="form-group" style="margin-bottom: 1.75rem;">
+            <label class="form-label" for="mc-price">Property Acquisition Price ($)</label>
+            <input type="number" id="mc-price" class="form-control" value="18500000" step="50000" />
+            <input type="range" id="mc-price-slider" min="1000000" max="50000000" step="250000" value="18500000" style="width: 100%; margin-top: 0.75rem; accent-color: var(--color-gold);" />
+          </div>
+
+          <!-- Down Payment -->
+          <div class="form-group" style="margin-bottom: 1.75rem;">
+            <div style="display: flex; justify-content: space-between; align-items: baseline;">
+              <label class="form-label" for="mc-down-dollar">Down Payment ($ &amp; %)</label>
+            </div>
+            <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 0.75rem;">
+              <input type="number" id="mc-down-dollar" class="form-control" value="3700000" />
+              <div style="position: relative;">
+                <input type="number" id="mc-down-percent" class="form-control" value="20" min="0" max="100" />
+                <span style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); color: var(--color-text-muted); font-size: 0.88rem;">%</span>
+              </div>
+            </div>
+            <input type="range" id="mc-down-percent-slider" min="5" max="60" step="5" value="20" style="width: 100%; margin-top: 0.75rem; accent-color: var(--color-gold);" />
+          </div>
+
+          <!-- Loan Term -->
+          <div class="form-group" style="margin-bottom: 1.75rem;">
+            <label class="form-label">Loan Duration Term</label>
+            <div class="mc-term-btn-group">
+              <button type="button" class="mc-term-btn" data-term="10">10 Years</button>
+              <button type="button" class="mc-term-btn" data-term="15">15 Years</button>
+              <button type="button" class="mc-term-btn" data-term="20">20 Years</button>
+              <button type="button" class="mc-term-btn active" data-term="30">30 Years</button>
+            </div>
+          </div>
+
+          <!-- Interest Rate -->
+          <div class="form-group" style="margin-bottom: 1.75rem;">
+            <div style="display: flex; justify-content: space-between;">
+              <label class="form-label" for="mc-rate">Interest Rate (%)</label>
+            </div>
+            <input type="number" id="mc-rate" class="form-control" value="6.25" step="0.05" min="1" max="15" />
+            <input type="range" id="mc-rate-slider" min="2.5" max="12" step="0.05" value="6.25" style="width: 100%; margin-top: 0.75rem; accent-color: var(--color-gold);" />
+          </div>
+
+          <!-- Annual Taxes, Insurance & HOA -->
+          <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.75rem;">
+            <div class="form-group">
+              <label class="form-label" for="mc-tax" style="font-size: 0.7rem;">Annual Taxes ($)</label>
+              <input type="number" id="mc-tax" class="form-control" value="148000" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mc-insurance" style="font-size: 0.7rem;">Annual Ins ($)</label>
+              <input type="number" id="mc-insurance" class="form-control" value="28000" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="mc-hoa" style="font-size: 0.7rem;">Monthly HOA ($)</label>
+              <input type="number" id="mc-hoa" class="form-control" value="850" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Output & Chart Panel -->
+        <div class="mc-panel" style="background-color: var(--color-surface-subtle);">
+          <span class="eyebrow" style="margin-bottom: 0.25rem;">Comprehensive Monthly Outlay</span>
+          <div id="mc-total-monthly-output" style="font-family: var(--font-serif); font-size: 3rem; font-weight: 600; color: var(--color-gold-dark); line-height: 1; margin-bottom: 1.5rem;">
+            $0
+          </div>
+
+          <!-- Donut SVG and Breakdown Legend -->
+          <div style="display: grid; grid-template-columns: 160px 1fr; gap: 1.5rem; align-items: center; margin-bottom: 2rem; background: var(--color-surface); padding: 1.5rem; border-radius: var(--radius-xs); border: 1px solid var(--color-border);">
+            <div style="width: 150px; height: 150px;">
+              <svg id="mc-chart-svg" width="150" height="150" viewBox="0 0 200 200"></svg>
+            </div>
+            <div>
+              <div class="legend-item">
+                <span class="legend-label">
+                  <span class="legend-color-dot" style="background: var(--color-gold);"></span>
+                  Principal &amp; Interest
+                </span>
+                <strong id="mc-pi-monthly">$0</strong>
+              </div>
+              <div class="legend-item">
+                <span class="legend-label">
+                  <span class="legend-color-dot" style="background: #121417;"></span>
+                  Property Taxes
+                </span>
+                <strong id="mc-tax-monthly">$0</strong>
+              </div>
+              <div class="legend-item">
+                <span class="legend-label">
+                  <span class="legend-color-dot" style="background: #585A5C;"></span>
+                  Homeowners Ins.
+                </span>
+                <strong id="mc-ins-monthly">$0</strong>
+              </div>
+              <div class="legend-item">
+                <span class="legend-label">
+                  <span class="legend-color-dot" style="background: #8C6F47;"></span>
+                  HOA / Maintenance
+                </span>
+                <strong id="mc-hoa-monthly">$0</strong>
+              </div>
+              <div class="legend-item" style="display: none;">
+                <span class="legend-label">
+                  <span class="legend-color-dot" style="background: #C0392B;"></span>
+                  PMI Insurance
+                </span>
+                <strong id="mc-pmi-monthly">$0</strong>
+              </div>
+            </div>
+          </div>
+
+          <!-- Summary Matrix -->
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1.75rem;">
+            <div style="background: var(--color-surface); padding: 1.25rem; border-radius: var(--radius-xs); border: 1px solid var(--color-border);">
+              <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--color-text-muted);">Total Loan Amount</span>
+              <div id="mc-loan-amount-output" style="font-size: 1.2rem; font-weight: 600; color: var(--color-text-primary); margin-top: 0.25rem;">$0</div>
+            </div>
+            <div style="background: var(--color-surface); padding: 1.25rem; border-radius: var(--radius-xs); border: 1px solid var(--color-border);">
+              <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--color-text-muted);">Total Interest Paid</span>
+              <div id="mc-total-interest-output" style="font-size: 1.2rem; font-weight: 600; color: var(--color-text-primary); margin-top: 0.25rem;">$0</div>
+            </div>
+            <div style="background: var(--color-surface); padding: 1.25rem; border-radius: var(--radius-xs); border: 1px solid var(--color-border);">
+              <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--color-text-muted);">Total Outlay (Principal + Int)</span>
+              <div id="mc-total-repayment-output" style="font-size: 1.2rem; font-weight: 600; color: var(--color-text-primary); margin-top: 0.25rem;">$0</div>
+            </div>
+            <div style="background: var(--color-surface); padding: 1.25rem; border-radius: var(--radius-xs); border: 1px solid var(--color-border);">
+              <span style="font-size: 0.72rem; font-weight: 700; text-transform: uppercase; color: var(--color-text-muted);">Estimated Payoff Date</span>
+              <div id="mc-payoff-date-output" style="font-size: 1.2rem; font-weight: 600; color: var(--color-text-primary); margin-top: 0.25rem;">-</div>
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-gold" style="width: 100%;" onclick="openInquiryModal(null, 'Private Showing')">
+            Discuss Pre-Approval with Private Wealth Advisor
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Full Amortization Schedule Table -->
+      <section style="margin-top: 4rem;">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+          <div>
+            <span class="eyebrow">Debt Amortization</span>
+            <h3 style="font-family: var(--font-serif); font-size: 1.85rem;">Annual Principal &amp; Interest Schedule</h3>
+          </div>
+          <button type="button" class="btn btn-secondary btn-sm" id="mc-export-csv-btn">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg>
+            <span>Export CSV Report</span>
+          </button>
+        </div>
+
+        <div class="comparison-table-wrapper" style="max-height: 480px; overflow-y: auto;">
+          <table class="comparison-table">
+            <thead style="position: sticky; top: 0; z-index: 5;">
+              <tr>
+                <th>Timeline</th>
+                <th>Starting Balance</th>
+                <th>Principal Paid</th>
+                <th>Interest Paid</th>
+                <th>Total Interest to Date</th>
+                <th>Ending Balance</th>
+              </tr>
+            </thead>
+            <tbody id="mc-amortization-tbody">
+              <!-- Injected by JS -->
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">
+            <span class="logo-main" style="color: #FFFFFF;">HAVEN</span>
+            <span class="logo-sub">REALTY &bull; ESTATES</span>
+          </a>
+          <p>An independent luxury brokerage dedicated to architectural mastery, historic restorations, and prime international acquisitions.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Portfolio</h4>
+          <ul class="footer-links">
+            <li><a href="properties.html?type=villa">Modernist Villas</a></li>
+            <li><a href="properties.html?type=penthouse">Sky Penthouses</a></li>
+            <li><a href="properties.html?status=rent">Prime Leases</a></li>
+            <li><a href="properties.html?type=commercial">Trophy Commercial</a></li>
+            <li><a href="saved-properties.html">Saved Portfolio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Client Services</h4>
+          <ul class="footer-links">
+            <li><a href="agents.html">Private Advisory</a></li>
+            <li><a href="mortgage-calculator.html">Mortgage Modeler</a></li>
+            <li><a href="sell-property.html">List Your Residence</a></li>
+            <li><a href="contact.html#offices">Global Flagships</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-heading">Private Acquisition Brief</h4>
+          <p>Receive off-market listings and private market intelligence directly to your inbox.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter private email" required />
+            <button type="submit" class="btn btn-gold btn-sm">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Haven Realty Global LLC. All rights reserved. Equal Housing Opportunity.</div>
+        <div class="footer-bottom-links">
+          <a href="contact.html#privacy">Privacy Policy</a>
+          <a href="contact.html#terms">Terms of Representation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Inquiry Modal -->
+  <div class="modal-overlay" id="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="inq-modal-title">
+    <div class="modal-box">
+      <button class="modal-close-btn modal-close-trigger" aria-label="Close modal">&times;</button>
+      <h3 class="modal-title" id="inq-modal-title">Private Wealth Advisory</h3>
+      <p class="modal-subtitle" id="inq-modal-property-title">Connect with our dedicated capital partners for confidential portfolio financing.</p>
+      <form id="inquiry-form">
+        <div class="form-group">
+          <label class="form-label" for="inq-name">Your Full Name</label>
+          <input type="text" id="inq-name" class="form-control" placeholder="e.g. Helena Vance" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inq-email">Email Address</label>
+          <input type="email" id="inq-email" class="form-control" placeholder="name@company.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inq-phone">Direct Phone</label>
+          <input type="tel" id="inq-phone" class="form-control" placeholder="+1 (555) 123-4567" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inq-message">Financing &amp; Structuring Goals</label>
+          <textarea id="inq-message" class="form-control" rows="3" placeholder="Specify preferred loan-to-value ratio, interest-only options, or foreign national requirements..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width: 100%;">Request Confidential Consultation</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/properties-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/mortgage-calculator.js"></script>
+</body>
+</html>

@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Property Showcase | Haven Realty</title>
+  <meta name="description" content="View comprehensive architectural details, high-resolution photography, floor plans, and financial intelligence for this premier estate." />
+  
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    .breadcrumb-nav {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--color-text-muted);
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .breadcrumb-nav a:hover {
+      color: var(--color-gold);
+    }
+    .detail-top-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      margin-bottom: 2rem;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+    .detail-actions-bar {
+      display: flex;
+      gap: 0.75rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+    .floorplan-tab-btn.active {
+      background-color: var(--color-surface-dark) !important;
+      border-color: var(--color-surface-dark) !important;
+      color: #FFFFFF !important;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <span class="logo-main">HAVEN</span>
+        <span class="logo-sub">REALTY &bull; ESTATES</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="properties.html" class="nav-link active">Properties</a>
+        <a href="agents.html" class="nav-link">Advisors</a>
+        <a href="mortgage-calculator.html" class="nav-link">Calculator</a>
+        <a href="sell-property.html" class="nav-link">List With Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="saved-properties.html" class="action-badge-btn" title="Saved Properties" aria-label="Saved properties">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="badge-count" id="header-fav-count" style="display: none;">0</span>
+        </a>
+
+        <a href="saved-properties.html#compare" class="action-badge-btn" title="Compare Properties" aria-label="Compare properties">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          <span class="badge-count" id="header-compare-count" style="display: none;">0</span>
+        </a>
+
+        <a href="properties.html" class="btn btn-secondary btn-sm">&larr; Back to Catalog</a>
+
+        <button class="hamburger-btn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation">
+    <div>
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="site-logo">
+          <span class="logo-main">HAVEN</span>
+          <span class="logo-sub">REALTY</span>
+        </a>
+        <button class="drawer-close-btn" aria-label="Close menu">&times;</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="properties.html" class="nav-link active">Properties</a>
+        <a href="agents.html" class="nav-link">Private Advisors</a>
+        <a href="mortgage-calculator.html" class="nav-link">Mortgage Calculator</a>
+        <a href="sell-property.html" class="nav-link">Sell &amp; Valuation</a>
+        <a href="saved-properties.html" class="nav-link">Saved Properties <span id="mobile-fav-count"></span></a>
+        <a href="saved-properties.html#compare" class="nav-link">Comparison Matrix <span id="mobile-compare-count"></span></a>
+        <a href="contact.html" class="nav-link">Contact &amp; Offices</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="section-padding" style="padding-top: 2.5rem;">
+    <div class="container">
+
+      <!-- Breadcrumbs -->
+      <nav class="breadcrumb-nav" aria-label="Breadcrumbs">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        <a href="properties.html">Properties</a>
+        <span>/</span>
+        <span id="detail-breadcrumb-active" style="color: var(--color-text-primary); font-weight: 600;">Residence Showcase</span>
+      </nav>
+
+      <!-- Detail Top Header & Actions -->
+      <div class="detail-top-header">
+        <div>
+          <h1 id="detail-title" style="margin-bottom: 0.35rem;">Grand Architectural Residence</h1>
+          <p id="detail-tagline" style="font-size: 1.2rem; color: var(--color-text-secondary); margin-bottom: 0.5rem; font-family: var(--font-serif); font-style: italic;">
+            Panoramic views and timeless modern craftsmanship.
+          </p>
+          <div id="detail-address" style="display: flex; align-items: center; gap: 0.4rem; color: var(--color-text-muted); font-size: 0.95rem;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+            <span>Prime Address</span>
+          </div>
+        </div>
+
+        <div style="text-align: right;">
+          <div id="detail-price" style="font-family: var(--font-serif); font-size: 2.75rem; font-weight: 600; color: var(--color-text-primary); line-height: 1; margin-bottom: 0.85rem;">
+            $0
+          </div>
+          <div class="detail-actions-bar">
+            <button type="button" class="btn btn-secondary btn-sm" id="detail-save-btn" title="Save to portfolio">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+              <span>Save</span>
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" id="detail-compare-btn" title="Add to comparison">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+              <span>Compare</span>
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" id="detail-share-btn" title="Copy share link">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="18" cy="5" r="3"></circle><circle cx="6" cy="12" r="3"></circle><circle cx="18" cy="19" r="3"></circle><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"></line><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"></line></svg>
+              <span>Share</span>
+            </button>
+            <button type="button" class="btn btn-secondary btn-sm" id="detail-print-btn" title="Print property sheet">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"></polyline><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"></path><rect x="6" y="14" width="12" height="8"></rect></svg>
+              <span>Print Dossier</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- 1. Large Gallery Section -->
+      <section class="detail-gallery-grid" id="detail-gallery-container" aria-label="Property Photography Gallery">
+        <!-- Injected by JavaScript -->
+      </section>
+
+      <!-- 2. Compact Key Specs Bar -->
+      <section class="detail-specs-bar" id="detail-specs-bar" aria-label="Key Property Metrics">
+        <!-- Injected by JavaScript -->
+      </section>
+
+      <!-- Two Column Layout: Main Content (Features, Plans, Desc, Location, Mortgage) & Sticky Agent Sidebar -->
+      <div style="display: grid; grid-template-columns: 1fr 380px; gap: 3.5rem; align-items: flex-start;">
+        
+        <div>
+          <!-- 3. Key Architectural Features Matrix -->
+          <section style="margin-bottom: 3.5rem;">
+            <span class="eyebrow">Distinguishing Elements</span>
+            <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.5rem;">Architectural Highlights</h3>
+            <ul id="detail-key-features-list" style="list-style: none;">
+              <!-- Injected by JS -->
+            </ul>
+          </section>
+
+          <!-- 4. Curated Amenities Grid -->
+          <section style="margin-bottom: 3.5rem;">
+            <span class="eyebrow">Curated Comforts</span>
+            <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.5rem;">Bespoke Amenities</h3>
+            <div id="detail-amenities-list" style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
+              <!-- Injected by JS -->
+            </div>
+          </section>
+
+          <!-- 5. Interactive Architectural Floor Plans -->
+          <section style="margin-bottom: 3.5rem;">
+            <span class="eyebrow">Spatial Engineering</span>
+            <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.25rem;">Interactive Floor Plans</h3>
+            <div id="floorplan-tabs" style="display: flex; gap: 0.75rem; margin-bottom: 1.25rem; flex-wrap: wrap;">
+              <!-- Dynamic Floor Plan Tabs -->
+            </div>
+            <div id="floorplan-viewer">
+              <!-- Dynamic Floor Plan Blueprint Viewer -->
+            </div>
+          </section>
+
+          <!-- 6. Architectural Narrative & Description -->
+          <section style="margin-bottom: 3.5rem;">
+            <span class="eyebrow">Architectural Narrative</span>
+            <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.25rem;">The Residence Experience</h3>
+            <div id="detail-description">
+              <!-- Injected by JS -->
+            </div>
+          </section>
+
+          <!-- 7. Enclave & Location Profile -->
+          <section style="margin-bottom: 3.5rem;">
+            <span class="eyebrow">The Neighborhood</span>
+            <h3 style="font-family: var(--font-serif); font-size: 2rem; margin-bottom: 1.25rem;">Location &amp; Surrounding Culture</h3>
+            <div id="detail-location-container">
+              <!-- Injected by JS -->
+            </div>
+          </section>
+
+          <!-- 8. Embedded Mortgage & Carrying Cost Calculator Widget -->
+          <section style="margin-bottom: 3.5rem;">
+            <div id="detail-mortgage-widget">
+              <!-- Injected by JS -->
+            </div>
+          </section>
+
+        </div>
+
+        <!-- Sticky Listing Agent Sidebar Card -->
+        <aside id="detail-agent-card-container" aria-label="Listing Broker & Appointments">
+          <!-- Injected by JavaScript -->
+        </aside>
+
+      </div>
+
+      <!-- Similar Residences Carousel / Grid -->
+      <section style="margin-top: 5rem; padding-top: 4rem; border-top: 1px solid var(--color-border);">
+        <div class="section-header">
+          <span class="eyebrow">Similar Curations</span>
+          <h2 class="section-title">Complementary Residences</h2>
+          <p class="section-subtitle">Other trophy properties matching this architectural pedigree and price threshold.</p>
+        </div>
+        <div class="grid-3" id="detail-similar-grid">
+          <!-- Injected by JS -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Fullscreen Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Fullscreen Gallery">
+    <div class="lightbox-header">
+      <div class="lightbox-counter" id="lightbox-counter">Photograph 1 of 6</div>
+      <div class="lightbox-actions">
+        <button type="button" class="lightbox-btn" id="lightbox-zoom-btn" title="Toggle Zoom (Z)">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line><line x1="11" y1="8" x2="11" y2="14"></line><line x1="8" y1="11" x2="14" y2="11"></line></svg>
+        </button>
+        <button type="button" class="lightbox-btn" id="lightbox-close-btn" title="Close Gallery (Esc)">&times;</button>
+      </div>
+    </div>
+
+    <div class="lightbox-stage">
+      <button type="button" class="lightbox-nav-arrow prev" id="lightbox-prev-btn" aria-label="Previous image">&larr;</button>
+      <img src="" alt="Property detail full photograph" id="lightbox-main-img" class="lightbox-main-img" />
+      <button type="button" class="lightbox-nav-arrow next" id="lightbox-next-btn" aria-label="Next image">&rarr;</button>
+    </div>
+
+    <div class="lightbox-thumbs-strip" id="lightbox-thumbs">
+      <!-- Thumbnail strip -->
+    </div>
+  </div>
+
+  <!-- Shared Modals (Appointment Scheduler & Property Inquiry) -->
+  <div class="modal-overlay" id="appointment-modal" role="dialog" aria-modal="true" aria-labelledby="appt-modal-title">
+    <div class="modal-box">
+      <button class="modal-close-btn modal-close-trigger" aria-label="Close modal">&times;</button>
+      <h3 class="modal-title" id="appt-modal-title">Schedule Private Showing</h3>
+      <p class="modal-subtitle" id="appt-modal-property-title">Select your preferred date and time for a confidential walkthrough.</p>
+      <form id="appointment-form">
+        <div class="form-group">
+          <label class="form-label" for="appt-name">Full Name</label>
+          <input type="text" id="appt-name" class="form-control" placeholder="e.g. Sterling Montgomery" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="appt-email">Confidential Email</label>
+          <input type="email" id="appt-email" class="form-control" placeholder="client@domain.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="appt-phone">Direct Phone</label>
+          <input type="tel" id="appt-phone" class="form-control" placeholder="+1 (555) 000-0000" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="appt-date">Preferred Date</label>
+          <input type="date" id="appt-date" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Available Showing Times</label>
+          <div class="time-slots-grid" id="appt-time-slots"></div>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 1rem;">Confirm Private Showing</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-overlay" id="inquiry-modal" role="dialog" aria-modal="true" aria-labelledby="inq-modal-title">
+    <div class="modal-box">
+      <button class="modal-close-btn modal-close-trigger" aria-label="Close modal">&times;</button>
+      <h3 class="modal-title" id="inq-modal-title">Request Property Dossier</h3>
+      <p class="modal-subtitle" id="inq-modal-property-title">Our managing advisor will deliver high-resolution floor plans and financial schedules.</p>
+      <form id="inquiry-form">
+        <div class="form-group">
+          <label class="form-label" for="inq-type">Inquiry Purpose</label>
+          <select id="inq-type" class="form-control">
+            <option value="Digital Dossier">Request Full Architectural Dossier</option>
+            <option value="Private Showing">Request Private Showing</option>
+            <option value="Make Offer">Submit Purchase Letter of Intent</option>
+            <option value="General Question">General Inquiry</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inq-name">Your Full Name</label>
+          <input type="text" id="inq-name" class="form-control" placeholder="e.g. Helena Vance" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inq-email">Email Address</label>
+          <input type="email" id="inq-email" class="form-control" placeholder="name@company.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inq-phone">Direct Phone</label>
+          <input type="tel" id="inq-phone" class="form-control" placeholder="+1 (555) 123-4567" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="inq-message">Confidential Notes / Requests</label>
+          <textarea id="inq-message" class="form-control" rows="3" placeholder="Please mention any specific timing, NDA requests, or questions..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width: 100%;">Submit Confidential Request</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">
+            <span class="logo-main" style="color: #FFFFFF;">HAVEN</span>
+            <span class="logo-sub">REALTY &bull; ESTATES</span>
+          </a>
+          <p>An independent luxury brokerage dedicated to architectural mastery, historic restorations, and prime international acquisitions.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Portfolio</h4>
+          <ul class="footer-links">
+            <li><a href="properties.html?type=villa">Modernist Villas</a></li>
+            <li><a href="properties.html?type=penthouse">Sky Penthouses</a></li>
+            <li><a href="properties.html?status=rent">Prime Leases</a></li>
+            <li><a href="properties.html?type=commercial">Trophy Commercial</a></li>
+            <li><a href="saved-properties.html">Saved Portfolio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Client Services</h4>
+          <ul class="footer-links">
+            <li><a href="agents.html">Private Advisory</a></li>
+            <li><a href="mortgage-calculator.html">Mortgage Modeler</a></li>
+            <li><a href="sell-property.html">List Your Residence</a></li>
+            <li><a href="contact.html#offices">Global Flagships</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-heading">Private Acquisition Brief</h4>
+          <p>Receive off-market listings and private market intelligence directly to your inbox.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter private email" required />
+            <button type="submit" class="btn btn-gold btn-sm">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Haven Realty Global LLC. All rights reserved. Equal Housing Opportunity.</div>
+        <div class="footer-bottom-links">
+          <a href="contact.html#privacy">Privacy Policy</a>
+          <a href="contact.html#terms">Terms of Representation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/properties-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/property-detail.js"></script>
+</body>
+</html>

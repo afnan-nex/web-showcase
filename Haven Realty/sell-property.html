@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>List Your Residence &amp; Private Valuation | Haven Realty</title>
+  <meta name="description" content="Request a confidential property valuation and explore bespoke global representation for exceptional estates and architectural compounds." />
+  
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    .wizard-steps-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 3.5rem;
+      position: relative;
+    }
+    .wizard-steps-header::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 10%;
+      right: 10%;
+      height: 2px;
+      background-color: var(--color-border);
+      z-index: 1;
+    }
+    .wizard-step-indicator {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--color-bg);
+      padding: 0 1rem;
+    }
+    .step-number {
+      width: 42px;
+      height: 42px;
+      border-radius: var(--radius-full);
+      background-color: var(--color-surface);
+      border: 2px solid var(--color-border);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--color-text-muted);
+      transition: var(--transition-smooth);
+    }
+    .wizard-step-indicator.active .step-number {
+      background-color: var(--color-surface-dark);
+      border-color: var(--color-surface-dark);
+      color: #FFFFFF;
+    }
+    .wizard-step-indicator.completed .step-number {
+      background-color: var(--color-gold);
+      border-color: var(--color-gold);
+      color: #FFFFFF;
+    }
+    .step-title {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--color-text-muted);
+    }
+    .wizard-step-indicator.active .step-title {
+      color: var(--color-text-primary);
+    }
+    .wizard-step-panel {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xs);
+      padding: 3rem;
+      box-shadow: var(--shadow-sm);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <span class="logo-main">HAVEN</span>
+        <span class="logo-sub">REALTY &bull; ESTATES</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="properties.html" class="nav-link">Properties</a>
+        <a href="agents.html" class="nav-link">Advisors</a>
+        <a href="mortgage-calculator.html" class="nav-link">Calculator</a>
+        <a href="sell-property.html" class="nav-link active">List With Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="saved-properties.html" class="action-badge-btn" title="Saved Properties" aria-label="Saved properties">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="badge-count" id="header-fav-count" style="display: none;">0</span>
+        </a>
+
+        <a href="saved-properties.html#compare" class="action-badge-btn" title="Compare Properties" aria-label="Compare properties">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          <span class="badge-count" id="header-compare-count" style="display: none;">0</span>
+        </a>
+
+        <a href="properties.html" class="btn btn-primary btn-sm">Explore Collection</a>
+
+        <button class="hamburger-btn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation">
+    <div>
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="site-logo">
+          <span class="logo-main">HAVEN</span>
+          <span class="logo-sub">REALTY</span>
+        </a>
+        <button class="drawer-close-btn" aria-label="Close menu">&times;</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="properties.html" class="nav-link">Properties</a>
+        <a href="agents.html" class="nav-link">Private Advisors</a>
+        <a href="mortgage-calculator.html" class="nav-link">Mortgage Calculator</a>
+        <a href="sell-property.html" class="nav-link active">Sell &amp; Valuation</a>
+        <a href="saved-properties.html" class="nav-link">Saved Properties <span id="mobile-fav-count"></span></a>
+        <a href="saved-properties.html#compare" class="nav-link">Comparison Matrix <span id="mobile-compare-count"></span></a>
+        <a href="contact.html" class="nav-link">Contact &amp; Offices</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="section-padding" style="padding-top: 3.5rem;">
+    <div class="container">
+
+      <!-- Header -->
+      <div style="text-align: center; max-width: 760px; margin: 0 auto 3rem;">
+        <span class="eyebrow">Confidential Brokerage Services</span>
+        <h1 style="margin-bottom: 0.5rem;">Sell Your Residence With Haven Realty</h1>
+        <p style="color: var(--color-text-secondary); font-size: 1.1rem;">
+          Estimate your residence's current market valuation and discover our tailored private marketing methodologies.
+        </p>
+      </div>
+
+      <!-- Step Navigation Indicators -->
+      <div class="wizard-steps-header" style="max-width: 750px; margin: 0 auto 3.5rem;">
+        <div class="wizard-step-indicator active">
+          <div class="step-number">1</div>
+          <span class="step-title">Location &amp; Style</span>
+        </div>
+        <div class="wizard-step-indicator">
+          <div class="step-number">2</div>
+          <span class="step-title">Specifications</span>
+        </div>
+        <div class="wizard-step-indicator">
+          <div class="step-number">3</div>
+          <span class="step-title">Valuation Estimate</span>
+        </div>
+        <div class="wizard-step-indicator">
+          <div class="step-number">4</div>
+          <span class="step-title">Representation</span>
+        </div>
+      </div>
+
+      <!-- Multi-step Form Wizard -->
+      <form id="sell-property-form">
+        
+        <!-- STEP 1: Location & Style -->
+        <div class="wizard-step-panel" id="step-1">
+          <span class="eyebrow" style="margin-bottom: 0.25rem;">Step 1 of 4</span>
+          <h3 style="font-family: var(--font-serif); font-size: 1.85rem; margin-bottom: 1.5rem;">Property Location &amp; Architecture</h3>
+          
+          <div class="form-group">
+            <label class="form-label" for="sell-address">Street Address / Landmark</label>
+            <input type="text" id="sell-address" class="form-control" placeholder="e.g. 1040 Ocean Boulevard" required />
+          </div>
+
+          <div class="grid-2" style="gap: 1rem; margin-bottom: 1.25rem;">
+            <div class="form-group">
+              <label class="form-label" for="sell-location">Market Enclave</label>
+              <select id="sell-location" class="form-control">
+                <option value="Beverly Hills">Beverly Hills &amp; Bel Air, CA</option>
+                <option value="Tribeca & SoHo">Tribeca &amp; SoHo, NYC</option>
+                <option value="Palm Beach & Miami">Palm Beach &amp; Miami Beach, FL</option>
+                <option value="Aspen">Aspen &amp; Vail, CO</option>
+                <option value="Mayfair London">Mayfair &amp; Belgravia, London</option>
+                <option value="Lake Como">Lake Como &amp; Italian Lakes</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="sell-type">Architectural Typology</label>
+              <select id="sell-type" class="form-control">
+                <option value="villa">Modernist Villa / Gated Estate</option>
+                <option value="penthouse">Sky Penthouse &amp; Duplex</option>
+                <option value="waterfront">Waterfront &amp; Barrier Island</option>
+                <option value="house">Historic Townhouse / Mews</option>
+                <option value="commercial">Commercial Trophy Asset</option>
+              </select>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end; margin-top: 2rem;">
+            <button type="button" class="btn btn-primary wizard-next-btn">Continue to Specifications &rarr;</button>
+          </div>
+        </div>
+
+        <!-- STEP 2: Specifications & Amenities -->
+        <div class="wizard-step-panel" id="step-2" style="display: none;">
+          <span class="eyebrow" style="margin-bottom: 0.25rem;">Step 2 of 4</span>
+          <h3 style="font-family: var(--font-serif); font-size: 1.85rem; margin-bottom: 1.5rem;">Interior Dimensions &amp; Amenities</h3>
+
+          <div class="grid-3" style="gap: 1rem; margin-bottom: 1.5rem;">
+            <div class="form-group">
+              <label class="form-label" for="sell-sqft">Interior Area (Sq Ft)</label>
+              <input type="number" id="sell-sqft" class="form-control" value="6500" min="500" step="100" />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="sell-beds">Bedrooms</label>
+              <select id="sell-beds" class="form-control">
+                <option value="3">3 Bedrooms</option>
+                <option value="4">4 Bedrooms</option>
+                <option value="5" selected>5 Bedrooms</option>
+                <option value="6">6+ Bedrooms</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="sell-baths">Bathrooms</label>
+              <select id="sell-baths" class="form-control">
+                <option value="3">3 Bathrooms</option>
+                <option value="4">4 Bathrooms</option>
+                <option value="6" selected>6+ Bathrooms</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 1.5rem;">
+            <label class="form-label" for="sell-condition">Architectural &amp; Material Condition</label>
+            <select id="sell-condition" class="form-control">
+              <option value="new">Brand New Construction / Turnkey Designer Spec</option>
+              <option value="mint" selected>Mint Architectural Condition (Restored)</option>
+              <option value="renovation">Well-Maintained / Opportunity for Renovation</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Trophy Amenities (Select all that apply)</label>
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.75rem;">
+              <label class="filter-checkbox-label">
+                <input type="checkbox" class="sell-amenity-checkbox" checked />
+                <span>Zero-edge Swimming Pool</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <input type="checkbox" class="sell-amenity-checkbox" checked />
+                <span>Panoramic Ocean / City Skyline Vistas</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <input type="checkbox" class="sell-amenity-checkbox" />
+                <span>Private Elevator / Direct Access</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <input type="checkbox" class="sell-amenity-checkbox" />
+                <span>Sommelier Wine Tasting Cellar</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <input type="checkbox" class="sell-amenity-checkbox" />
+                <span>Wellness Spa &amp; Cold Plunge</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <input type="checkbox" class="sell-amenity-checkbox" />
+                <span>Private Deep-Water Yacht Slip</span>
+              </label>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+            <button type="button" class="btn btn-secondary wizard-prev-btn">&larr; Back</button>
+            <button type="button" class="btn btn-primary wizard-next-btn">Calculate Instant Valuation &rarr;</button>
+          </div>
+        </div>
+
+        <!-- STEP 3: Instant Estimated Valuation Preview -->
+        <div class="wizard-step-panel" id="step-3" style="display: none;">
+          <span class="eyebrow" style="margin-bottom: 0.25rem;">Step 3 of 4</span>
+          <h3 style="font-family: var(--font-serif); font-size: 1.85rem; margin-bottom: 1rem;">Algorithmic Valuation Intelligence</h3>
+          <p style="color: var(--color-text-secondary); margin-bottom: 2rem;">
+            Based on recent comparable sales, micro-market velocity, and selected architectural amenities.
+          </p>
+
+          <div style="background: var(--color-surface-subtle); border: 1px solid var(--color-border); border-radius: var(--radius-xs); padding: 2.5rem; text-align: center; margin-bottom: 2rem;">
+            <span style="font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-gold-dark);">Estimated Target Valuation</span>
+            <div id="val-average" style="font-family: var(--font-serif); font-size: 3.5rem; font-weight: 600; color: var(--color-text-primary); margin: 0.5rem 0;">
+              $18,500,000
+            </div>
+            <div style="display: flex; justify-content: center; gap: 2rem; border-top: 1px solid var(--color-border); padding-top: 1.25rem; margin-top: 1.25rem; font-size: 0.95rem;">
+              <div>
+                <span style="color: var(--color-text-muted); display: block; font-size: 0.78rem;">Conservative Floor</span>
+                <strong id="val-range-min">$17,200,000</strong>
+              </div>
+              <div style="border-left: 1px solid var(--color-border); padding-left: 2rem;">
+                <span style="color: var(--color-text-muted); display: block; font-size: 0.78rem;">Aggressive Placement</span>
+                <strong id="val-range-max">$19,900,000</strong>
+              </div>
+              <div style="border-left: 1px solid var(--color-border); padding-left: 2rem;">
+                <span style="color: var(--color-text-muted); display: block; font-size: 0.78rem;">Estimated Metric</span>
+                <strong id="val-psqft">$2,846 / sq ft</strong>
+              </div>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+            <button type="button" class="btn btn-secondary wizard-prev-btn">&larr; Adjust Specs</button>
+            <button type="button" class="btn btn-gold wizard-next-btn">Proceed to Confidential Representation &rarr;</button>
+          </div>
+        </div>
+
+        <!-- STEP 4: Seller Representation Details -->
+        <div class="wizard-step-panel" id="step-4" style="display: none;">
+          <span class="eyebrow" style="margin-bottom: 0.25rem;">Step 4 of 4</span>
+          <h3 style="font-family: var(--font-serif); font-size: 1.85rem; margin-bottom: 1.5rem;">Confidential Seller Consultation</h3>
+
+          <div class="form-group">
+            <label class="form-label" for="sell-name">Owner / Representative Name</label>
+            <input type="text" id="sell-name" class="form-control" placeholder="e.g. Sir Harrison Vance" required />
+          </div>
+
+          <div class="grid-2" style="gap: 1rem; margin-bottom: 1.25rem;">
+            <div class="form-group">
+              <label class="form-label" for="sell-email">Confidential Email</label>
+              <input type="email" id="sell-email" class="form-control" placeholder="owner@domain.com" required />
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="sell-phone">Direct Phone</label>
+              <input type="tel" id="sell-phone" class="form-control" placeholder="+1 (555) 800-2910" required />
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 1.25rem;">
+            <label class="form-label" for="sell-timeline">Target Listing Strategy &amp; Timeline</label>
+            <select id="sell-timeline" class="form-control">
+              <option value="Immediate Global Launch">Immediate Public Global Campaign (30-60 Days)</option>
+              <option value="Discrete Off-Market Placement">Discrete Off-Market Placement (Private Buyer Network Only)</option>
+              <option value="Future Planning (3-6 Months)">Strategic Planning &amp; Advisory (3-6 Months)</option>
+              <option value="Informational Only">Informational Valuation Assessment Only</option>
+            </select>
+          </div>
+
+          <div class="form-group" style="margin-bottom: 2rem;">
+            <label class="form-label" for="sell-notes">Special Architecture Notes / NDA Requirements</label>
+            <textarea id="sell-notes" class="form-control" rows="3" placeholder="Architect names, historic designations, requested privacy measures..."></textarea>
+          </div>
+
+          <div style="display: flex; justify-content: space-between;">
+            <button type="button" class="btn btn-secondary wizard-prev-btn">&larr; Back</button>
+            <button type="submit" class="btn btn-gold">Submit Private Listing Request</button>
+          </div>
+        </div>
+
+      </form>
+
+      <!-- Why List With Haven Realty Section -->
+      <section style="margin-top: 6rem; padding-top: 4rem; border-top: 1px solid var(--color-border);">
+        <div class="section-header center">
+          <span class="eyebrow">The Haven Advantage</span>
+          <h2 class="section-title">Why Exceptional Sellers Partner With Us</h2>
+          <p class="section-subtitle">Our campaigns treat architecture as collectible art, engaging high-net-worth buyers across 40+ countries.</p>
+        </div>
+
+        <div class="grid-3">
+          <div style="background: var(--color-surface); padding: 2.5rem; border: 1px solid var(--color-border); border-radius: var(--radius-xs);">
+            <div style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--color-gold); margin-bottom: 0.5rem; line-height: 1;">01</div>
+            <h4 style="margin-bottom: 0.75rem; font-family: var(--font-serif); font-size: 1.3rem;">Cinematic Architectural Media</h4>
+            <p style="font-size: 0.92rem; color: var(--color-text-secondary); line-height: 1.6;">
+              We commission architectural photographers, drone cinematographers, and editorial copywriters to create museum-grade dossiers.
+            </p>
+          </div>
+
+          <div style="background: var(--color-surface); padding: 2.5rem; border: 1px solid var(--color-border); border-radius: var(--radius-xs);">
+            <div style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--color-gold); margin-bottom: 0.5rem; line-height: 1;">02</div>
+            <h4 style="margin-bottom: 0.75rem; font-family: var(--font-serif); font-size: 1.3rem;">Global Family Office Syndicate</h4>
+            <p style="font-size: 0.92rem; color: var(--color-text-secondary); line-height: 1.6;">
+              Direct access to our proprietary roster of verified sovereign wealth advisors, private equity founders, and global collectors.
+            </p>
+          </div>
+
+          <div style="background: var(--color-surface); padding: 2.5rem; border: 1px solid var(--color-border); border-radius: var(--radius-xs);">
+            <div style="font-family: var(--font-serif); font-size: 2.5rem; color: var(--color-gold); margin-bottom: 0.5rem; line-height: 1;">03</div>
+            <h4 style="margin-bottom: 0.75rem; font-family: var(--font-serif); font-size: 1.3rem;">Uncompromising Discretion</h4>
+            <p style="font-size: 0.92rem; color: var(--color-text-secondary); line-height: 1.6;">
+              Strict NDA protocols and buyer pre-qualification ensure only vetted principals ever receive property addresses and architectural blueprints.
+            </p>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Valuation Success Modal -->
+  <div class="modal-overlay" id="valuation-success-modal" role="dialog" aria-modal="true" aria-labelledby="val-modal-title">
+    <div class="modal-box" style="text-align: center;">
+      <button class="modal-close-btn modal-close-trigger" onclick="this.closest('.modal-overlay').classList.remove('open')">&times;</button>
+      <div style="width: 60px; height: 60px; border-radius: var(--radius-full); background: var(--color-success-bg); color: var(--color-success); display: flex; align-items: center; justify-content: center; margin: 0 auto 1.5rem;">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+      </div>
+      <h3 class="modal-title" id="val-modal-title">Valuation Request Confirmed</h3>
+      <p style="color: var(--color-text-secondary); margin: 0.75rem 0 1.5rem; font-size: 0.95rem;">
+        Your listing application and preliminary algorithmic valuation have been routed to our Managing Partner.
+      </p>
+      <div style="background: var(--color-surface-subtle); padding: 1.25rem; border-radius: var(--radius-xs); border: 1px solid var(--color-border); margin-bottom: 1.75rem; display: flex; justify-content: space-between; align-items: center;">
+        <span style="font-size: 0.85rem; color: var(--color-text-muted);">Confidential Reference</span>
+        <strong id="valuation-ref-id" style="font-size: 1.1rem; color: var(--color-gold-dark);">#HAV-VAL-000000</strong>
+      </div>
+      <button type="button" class="btn btn-primary" style="width: 100%;" onclick="location.href='properties.html'">
+        Explore Current Collection
+      </button>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">
+            <span class="logo-main" style="color: #FFFFFF;">HAVEN</span>
+            <span class="logo-sub">REALTY &bull; ESTATES</span>
+          </a>
+          <p>An independent luxury brokerage dedicated to architectural mastery, historic restorations, and prime international acquisitions.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Portfolio</h4>
+          <ul class="footer-links">
+            <li><a href="properties.html?type=villa">Modernist Villas</a></li>
+            <li><a href="properties.html?type=penthouse">Sky Penthouses</a></li>
+            <li><a href="properties.html?status=rent">Prime Leases</a></li>
+            <li><a href="properties.html?type=commercial">Trophy Commercial</a></li>
+            <li><a href="saved-properties.html">Saved Portfolio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Client Services</h4>
+          <ul class="footer-links">
+            <li><a href="agents.html">Private Advisory</a></li>
+            <li><a href="mortgage-calculator.html">Mortgage Modeler</a></li>
+            <li><a href="sell-property.html">List Your Residence</a></li>
+            <li><a href="contact.html#offices">Global Flagships</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-heading">Private Acquisition Brief</h4>
+          <p>Receive off-market listings and private market intelligence directly to your inbox.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter private email" required />
+            <button type="submit" class="btn btn-gold btn-sm">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Haven Realty Global LLC. All rights reserved. Equal Housing Opportunity.</div>
+        <div class="footer-bottom-links">
+          <a href="contact.html#privacy">Privacy Policy</a>
+          <a href="contact.html#terms">Terms of Representation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/properties-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/sell-property.js"></script>
+</body>
+</html>

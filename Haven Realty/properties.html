@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Curated Properties Portfolio | Haven Realty</title>
+  <meta name="description" content="Explore our global collection of trophy architectural residences, modernist pavilions, and luxury penthouses." />
+  
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    .active-chips-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      align-items: center;
+      margin-bottom: 1.5rem;
+    }
+    .active-chip {
+      background-color: var(--color-surface-subtle);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-full);
+      padding: 0.3rem 0.85rem;
+      font-size: 0.78rem;
+      font-weight: 600;
+      color: var(--color-text-primary);
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+    .chip-remove {
+      font-size: 1.1rem;
+      line-height: 1;
+      color: var(--color-text-muted);
+      cursor: pointer;
+    }
+    .chip-remove:hover {
+      color: var(--color-danger);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <span class="logo-main">HAVEN</span>
+        <span class="logo-sub">REALTY &bull; ESTATES</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="properties.html" class="nav-link active">Properties</a>
+        <a href="agents.html" class="nav-link">Advisors</a>
+        <a href="mortgage-calculator.html" class="nav-link">Calculator</a>
+        <a href="sell-property.html" class="nav-link">List With Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="saved-properties.html" class="action-badge-btn" title="Saved Properties" aria-label="Saved properties">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="badge-count" id="header-fav-count" style="display: none;">0</span>
+        </a>
+
+        <a href="saved-properties.html#compare" class="action-badge-btn" title="Compare Properties" aria-label="Compare properties">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          <span class="badge-count" id="header-compare-count" style="display: none;">0</span>
+        </a>
+
+        <a href="sell-property.html" class="btn btn-primary btn-sm">List Residence</a>
+
+        <button class="hamburger-btn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation">
+    <div>
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="site-logo">
+          <span class="logo-main">HAVEN</span>
+          <span class="logo-sub">REALTY</span>
+        </a>
+        <button class="drawer-close-btn" aria-label="Close menu">&times;</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="properties.html" class="nav-link active">Properties</a>
+        <a href="agents.html" class="nav-link">Private Advisors</a>
+        <a href="mortgage-calculator.html" class="nav-link">Mortgage Calculator</a>
+        <a href="sell-property.html" class="nav-link">Sell &amp; Valuation</a>
+        <a href="saved-properties.html" class="nav-link">Saved Properties <span id="mobile-fav-count"></span></a>
+        <a href="saved-properties.html#compare" class="nav-link">Comparison Matrix <span id="mobile-compare-count"></span></a>
+        <a href="contact.html" class="nav-link">Contact &amp; Offices</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Container -->
+  <main class="section-padding" style="padding-top: 3.5rem;">
+    <div class="container">
+
+      <!-- Breadcrumb & Editorial Page Header -->
+      <div style="margin-bottom: 2.5rem;">
+        <span class="eyebrow">Exclusive Portfolio</span>
+        <h1 style="margin-bottom: 0.5rem;">Curated Architectural Residences</h1>
+        <p style="color: var(--color-text-secondary); max-width: 720px;">
+          Filter by architecture, location, interior footprint, and luxury amenities. All search parameters sync seamlessly with your URL for direct sharing.
+        </p>
+      </div>
+
+      <!-- Active Filter Chips Container -->
+      <div class="active-chips-bar" id="active-filter-chips" style="display: none;"></div>
+
+      <!-- Catalog Main Layout: Sidebar + Grid -->
+      <div class="catalog-layout">
+        
+        <!-- Filter Sidebar -->
+        <aside class="filter-sidebar" aria-label="Property Search Filters">
+          <div class="filter-header">
+            <h3 class="filter-title">Refine Portfolio</h3>
+            <button type="button" class="filter-clear-btn" id="filter-clear-all-btn">Reset All</button>
+          </div>
+
+          <!-- Keyword Search -->
+          <div class="filter-group">
+            <label class="filter-group-title" for="filter-keyword">Search Keyword</label>
+            <input type="text" id="filter-keyword" class="form-control" placeholder="Address, architect, view..." />
+          </div>
+
+          <!-- Status: Sale / Lease / All -->
+          <div class="filter-group">
+            <span class="filter-group-title">Acquisition Type</span>
+            <div class="filter-chip-group">
+              <button type="button" class="filter-chip status-filter-chip active" data-status="all">All</button>
+              <button type="button" class="filter-chip status-filter-chip" data-status="sale">For Sale</button>
+              <button type="button" class="filter-chip status-filter-chip" data-status="rent">For Lease</button>
+            </div>
+          </div>
+
+          <!-- Property Type -->
+          <div class="filter-group">
+            <span class="filter-group-title">Architecture &amp; Type</span>
+            <div class="filter-chip-group">
+              <button type="button" class="filter-chip type-filter-chip" data-type="villa">Villa &amp; Estate</button>
+              <button type="button" class="filter-chip type-filter-chip" data-type="penthouse">Penthouse</button>
+              <button type="button" class="filter-chip type-filter-chip" data-type="house">Townhouse</button>
+              <button type="button" class="filter-chip type-filter-chip" data-type="apartment">Loft / Flat</button>
+              <button type="button" class="filter-chip type-filter-chip" data-type="commercial">Commercial</button>
+            </div>
+          </div>
+
+          <!-- Location Selector -->
+          <div class="filter-group">
+            <label class="filter-group-title" for="filter-location">Global Location</label>
+            <select id="filter-location" class="form-control">
+              <option value="">All Global Locations</option>
+              <option value="Beverly Hills">Beverly Hills, CA</option>
+              <option value="Tribeca">Tribeca &amp; SoHo, NYC</option>
+              <option value="Palm Beach">Palm Beach, FL</option>
+              <option value="Miami Beach">Miami Beach, FL</option>
+              <option value="Aspen">Aspen, CO</option>
+              <option value="Malibu">Malibu, CA</option>
+              <option value="Scottsdale">Scottsdale, AZ</option>
+              <option value="London">Mayfair &amp; Knightsbridge, London</option>
+              <option value="Lake Como">Lake Como, Italy</option>
+            </select>
+          </div>
+
+          <!-- Max Price Slider -->
+          <div class="filter-group">
+            <div class="filter-group-title">
+              <span>Maximum Price</span>
+              <span id="filter-max-price-val" style="color: var(--color-gold-dark);">Any ($50M+)</span>
+            </div>
+            <div class="range-slider-wrap">
+              <input type="range" id="filter-max-price-slider" min="5000000" max="50000000" step="1000000" value="50000000" />
+              <div class="range-values">
+                <span>$5M</span>
+                <span>$25M</span>
+                <span>$50M+</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Minimum Price Slider -->
+          <div class="filter-group">
+            <div class="filter-group-title">
+              <span>Minimum Price</span>
+              <span id="filter-min-price-val" style="color: var(--color-gold-dark);">$0</span>
+            </div>
+            <div class="range-slider-wrap">
+              <input type="range" id="filter-min-price-slider" min="0" max="30000000" step="1000000" value="0" />
+              <div class="range-values">
+                <span>$0</span>
+                <span>$15M</span>
+                <span>$30M</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bedrooms -->
+          <div class="filter-group">
+            <span class="filter-group-title">Bedrooms</span>
+            <div class="filter-chip-group">
+              <button type="button" class="filter-chip beds-filter-chip" data-beds="3">3+ Beds</button>
+              <button type="button" class="filter-chip beds-filter-chip" data-beds="4">4+ Beds</button>
+              <button type="button" class="filter-chip beds-filter-chip" data-beds="5">5+ Beds</button>
+              <button type="button" class="filter-chip beds-filter-chip" data-beds="6">6+ Beds</button>
+            </div>
+          </div>
+
+          <!-- Bathrooms -->
+          <div class="filter-group">
+            <span class="filter-group-title">Bathrooms</span>
+            <div class="filter-chip-group">
+              <button type="button" class="filter-chip baths-filter-chip" data-baths="3">3+ Baths</button>
+              <button type="button" class="filter-chip baths-filter-chip" data-baths="4">4+ Baths</button>
+              <button type="button" class="filter-chip baths-filter-chip" data-baths="6">6+ Baths</button>
+            </div>
+          </div>
+
+          <!-- Amenities -->
+          <div class="filter-group">
+            <span class="filter-group-title">Curated Amenities</span>
+            <div class="filter-checkbox-list">
+              <label class="filter-checkbox-label">
+                <input type="checkbox" class="amenity-checkbox" value="Swimming Pool" />
+                <span>Swimming Pool</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <input type="checkbox" class="amenity-checkbox" value="Ocean View" />
+                <span>Ocean / Water View</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <input type="checkbox" class="amenity-checkbox" value="Private Elevator" />
+                <span>Private Elevator</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <input type="checkbox" class="amenity-checkbox" value="Wine Cellar" />
+                <span>Wine Tasting Vault</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <input type="checkbox" class="amenity-checkbox" value="Wellness Spa" />
+                <span>Wellness Spa &amp; Sauna</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <input type="checkbox" class="amenity-checkbox" value="Tennis Court" />
+                <span>Tennis Pavilion</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <input type="checkbox" class="amenity-checkbox" value="Smart Home" />
+                <span>Smart Home Integration</span>
+              </label>
+              <label class="filter-checkbox-label">
+                <input type="checkbox" class="amenity-checkbox" value="Garage" />
+                <span>Motor Court / Garage</span>
+              </label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Catalog Results Column -->
+        <section aria-label="Properties Results">
+          
+          <!-- Toolbar (Count, Sort, View Toggles) -->
+          <div class="catalog-toolbar">
+            <div class="results-count" id="catalog-results-count">
+              Showing <strong>12</strong> of 12 residences
+            </div>
+
+            <div class="toolbar-controls">
+              <!-- Sort Dropdown -->
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <label for="catalog-sort-select" style="font-size: 0.8rem; font-weight: 600; text-transform: uppercase; color: var(--color-text-muted);">Sort:</label>
+                <select id="catalog-sort-select" class="form-control" style="padding: 0.5rem 0.85rem; width: auto; font-size: 0.85rem;">
+                  <option value="newest">Newest Additions</option>
+                  <option value="price-desc">Price: High to Low</option>
+                  <option value="price-asc">Price: Low to High</option>
+                  <option value="area-desc">Area: Largest First</option>
+                  <option value="views-desc">Most Viewed</option>
+                </select>
+              </div>
+
+              <!-- View Mode Toggles (Grid, List, Map) -->
+              <div class="view-toggles">
+                <button type="button" class="view-toggle-btn active" id="view-toggle-grid" title="Grid View" aria-label="Grid view">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="3" width="7" height="7"></rect>
+                    <rect x="14" y="14" width="7" height="7"></rect>
+                    <rect x="3" y="14" width="7" height="7"></rect>
+                  </svg>
+                </button>
+                <button type="button" class="view-toggle-btn" id="view-toggle-list" title="List View" aria-label="List view">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="8" y1="6" x2="21" y2="6"></line>
+                    <line x1="8" y1="12" x2="21" y2="12"></line>
+                    <line x1="8" y1="18" x2="21" y2="18"></line>
+                    <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                    <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                    <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                  </svg>
+                </button>
+                <button type="button" class="view-toggle-btn" id="view-toggle-map" title="Map View" aria-label="Map view">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"></polygon>
+                    <line x1="8" y1="2" x2="8" y2="18"></line>
+                    <line x1="16" y1="6" x2="16" y2="22"></line>
+                  </svg>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Simulated Map Container (Shown when Map View is selected) -->
+          <div id="catalog-map-container" style="display: none;"></div>
+
+          <!-- Dynamic Properties Grid -->
+          <div class="grid-3" id="properties-catalog-grid">
+            <!-- Populated dynamically by JS -->
+          </div>
+
+          <!-- Empty State (No Matches) -->
+          <div id="catalog-empty-state" style="display: none; text-align: center; padding: 5rem 2rem; background: var(--color-surface); border: 1px dashed var(--color-border); border-radius: var(--radius-xs); margin-top: 1rem;">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" style="margin: 0 auto 1.5rem;"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+            <h3 style="margin-bottom: 0.5rem;">No Matching Residences Found</h3>
+            <p style="color: var(--color-text-secondary); max-width: 480px; margin: 0 auto 1.5rem;">
+              We couldn't find properties matching your exact criteria. Try adjusting the price range, bedrooms, or removing selected amenities.
+            </p>
+            <button type="button" class="btn btn-primary" id="catalog-reset-filters-btn">Clear All Filters</button>
+          </div>
+
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">
+            <span class="logo-main" style="color: #FFFFFF;">HAVEN</span>
+            <span class="logo-sub">REALTY &bull; ESTATES</span>
+          </a>
+          <p>An independent luxury brokerage dedicated to architectural mastery, historic restorations, and prime international acquisitions.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Portfolio</h4>
+          <ul class="footer-links">
+            <li><a href="properties.html?type=villa">Modernist Villas</a></li>
+            <li><a href="properties.html?type=penthouse">Sky Penthouses</a></li>
+            <li><a href="properties.html?status=rent">Prime Leases</a></li>
+            <li><a href="properties.html?type=commercial">Trophy Commercial</a></li>
+            <li><a href="saved-properties.html">Saved Portfolio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Client Services</h4>
+          <ul class="footer-links">
+            <li><a href="agents.html">Private Advisory</a></li>
+            <li><a href="mortgage-calculator.html">Mortgage Modeler</a></li>
+            <li><a href="sell-property.html">List Your Residence</a></li>
+            <li><a href="contact.html#offices">Global Flagships</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-heading">Private Acquisition Brief</h4>
+          <p>Receive off-market listings and private market intelligence directly to your inbox.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter private email" required />
+            <button type="submit" class="btn btn-gold btn-sm">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Haven Realty Global LLC. All rights reserved. Equal Housing Opportunity.</div>
+        <div class="footer-bottom-links">
+          <a href="contact.html#privacy">Privacy Policy</a>
+          <a href="contact.html#terms">Terms of Representation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/properties-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/properties.js"></script>
+</body>
+</html>

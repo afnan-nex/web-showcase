@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saved Portfolio &amp; Comparison Matrix | Haven Realty</title>
+  <meta name="description" content="Review your saved luxury portfolio and evaluate up to four architectural residences in a side-by-side comparison matrix." />
+  
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    .hub-tabs-nav {
+      display: flex;
+      gap: 1rem;
+      border-bottom: 1px solid var(--color-border);
+      margin-bottom: 3rem;
+    }
+    .hub-tab-btn {
+      padding: 1rem 1.5rem;
+      font-size: 0.92rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      color: var(--color-text-secondary);
+      border-bottom: 2px solid transparent;
+      margin-bottom: -1px;
+      transition: var(--transition-fast);
+    }
+    .hub-tab-btn:hover {
+      color: var(--color-text-primary);
+    }
+    .hub-tab-btn.active {
+      color: var(--color-text-primary);
+      border-bottom-color: var(--color-gold);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <span class="logo-main">HAVEN</span>
+        <span class="logo-sub">REALTY &bull; ESTATES</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="properties.html" class="nav-link">Properties</a>
+        <a href="agents.html" class="nav-link">Advisors</a>
+        <a href="mortgage-calculator.html" class="nav-link">Calculator</a>
+        <a href="sell-property.html" class="nav-link">List With Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="saved-properties.html" class="action-badge-btn active" title="Saved Properties" aria-label="Saved properties" style="border-color: var(--color-gold); color: var(--color-gold);">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="badge-count" id="header-fav-count" style="display: none;">0</span>
+        </a>
+
+        <a href="saved-properties.html#compare" class="action-badge-btn" title="Compare Properties" aria-label="Compare properties">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          <span class="badge-count" id="header-compare-count" style="display: none;">0</span>
+        </a>
+
+        <a href="properties.html" class="btn btn-primary btn-sm">Explore Collection</a>
+
+        <button class="hamburger-btn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation">
+    <div>
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="site-logo">
+          <span class="logo-main">HAVEN</span>
+          <span class="logo-sub">REALTY</span>
+        </a>
+        <button class="drawer-close-btn" aria-label="Close menu">&times;</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="properties.html" class="nav-link">Properties</a>
+        <a href="agents.html" class="nav-link">Private Advisors</a>
+        <a href="mortgage-calculator.html" class="nav-link">Mortgage Calculator</a>
+        <a href="sell-property.html" class="nav-link">Sell &amp; Valuation</a>
+        <a href="saved-properties.html" class="nav-link active">Saved Properties <span id="mobile-fav-count"></span></a>
+        <a href="saved-properties.html#compare" class="nav-link">Comparison Matrix <span id="mobile-compare-count"></span></a>
+        <a href="contact.html" class="nav-link">Contact &amp; Offices</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="section-padding" style="padding-top: 3.5rem;">
+    <div class="container">
+
+      <!-- Header -->
+      <div style="margin-bottom: 2.5rem;">
+        <span class="eyebrow">Client Workspace</span>
+        <h1 style="margin-bottom: 0.5rem;">Your Curated Portfolio &amp; Comparison Hub</h1>
+        <p style="color: var(--color-text-secondary); max-width: 680px;">
+          Review bookmarked residences or perform structured side-by-side analyses of architectural metrics, pricing, and amenities.
+        </p>
+      </div>
+
+      <!-- Hub Tabs Navigation -->
+      <div class="hub-tabs-nav">
+        <button type="button" class="hub-tab-btn active" id="tab-btn-favorites">
+          Saved Residences <span id="saved-favorites-count-header" style="color: var(--color-gold-dark); font-size: 0.85rem;"></span>
+        </button>
+        <button type="button" class="hub-tab-btn" id="tab-btn-compare">
+          Side-by-Side Comparison <span id="comparison-count-header" style="color: var(--color-gold-dark); font-size: 0.85rem;"></span>
+        </button>
+      </div>
+
+      <!-- Section 1: Saved Favorites -->
+      <section id="section-favorites">
+        <div class="grid-3" id="saved-favorites-grid">
+          <!-- Populated by JS -->
+        </div>
+
+        <div id="saved-favorites-empty" style="display: none; text-align: center; padding: 5rem 2rem; background: var(--color-surface); border: 1px dashed var(--color-border); border-radius: var(--radius-xs);">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" style="margin: 0 auto 1.5rem;"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <h3 style="margin-bottom: 0.5rem;">Your Saved Portfolio is Empty</h3>
+          <p style="color: var(--color-text-secondary); max-width: 480px; margin: 0 auto 1.5rem;">
+            Click the heart icon on any property card or detail page to curate your private shortlist.
+          </p>
+          <a href="properties.html" class="btn btn-primary">Browse Curated Estates</a>
+        </div>
+      </section>
+
+      <!-- Section 2: Comparison Matrix -->
+      <section id="section-compare" style="display: none;">
+        
+        <!-- Compare Toolbar -->
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+          <div style="display: flex; gap: 1rem; align-items: center;">
+            <select id="compare-add-property-select" class="form-control" style="width: auto; min-width: 260px; font-size: 0.88rem;">
+              <option value="">+ Add Property to Compare</option>
+            </select>
+            <button type="button" class="btn btn-secondary btn-sm" id="toggle-highlight-diffs">Highlight Differences</button>
+          </div>
+          <div>
+            <button type="button" class="btn-link" id="clear-compare-btn" style="color: var(--color-danger); font-size: 0.8rem;">Clear All</button>
+          </div>
+        </div>
+
+        <div id="comparison-table-container">
+          <!-- Injected by JS -->
+        </div>
+
+        <div id="comparison-empty" style="display: none; text-align: center; padding: 5rem 2rem; background: var(--color-surface); border: 1px dashed var(--color-border); border-radius: var(--radius-xs);">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="var(--color-gold)" stroke-width="1.5" style="margin: 0 auto 1.5rem;"><line x1="18" y1="20" x2="18" y2="10"></line><line x1="12" y1="20" x2="12" y2="4"></line><line x1="6" y1="20" x2="6" y2="14"></line></svg>
+          <h3 style="margin-bottom: 0.5rem;">No Properties in Comparison Matrix</h3>
+          <p style="color: var(--color-text-secondary); max-width: 480px; margin: 0 auto 1.5rem;">
+            Select the comparison icon on up to four properties in our portfolio to evaluate their specifications side-by-side.
+          </p>
+          <a href="properties.html" class="btn btn-primary">Select Properties to Compare</a>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">
+            <span class="logo-main" style="color: #FFFFFF;">HAVEN</span>
+            <span class="logo-sub">REALTY &bull; ESTATES</span>
+          </a>
+          <p>An independent luxury brokerage dedicated to architectural mastery, historic restorations, and prime international acquisitions.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Portfolio</h4>
+          <ul class="footer-links">
+            <li><a href="properties.html?type=villa">Modernist Villas</a></li>
+            <li><a href="properties.html?type=penthouse">Sky Penthouses</a></li>
+            <li><a href="properties.html?status=rent">Prime Leases</a></li>
+            <li><a href="properties.html?type=commercial">Trophy Commercial</a></li>
+            <li><a href="saved-properties.html">Saved Portfolio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Client Services</h4>
+          <ul class="footer-links">
+            <li><a href="agents.html">Private Advisory</a></li>
+            <li><a href="mortgage-calculator.html">Mortgage Modeler</a></li>
+            <li><a href="sell-property.html">List Your Residence</a></li>
+            <li><a href="contact.html#offices">Global Flagships</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-heading">Private Acquisition Brief</h4>
+          <p>Receive off-market listings and private market intelligence directly to your inbox.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter private email" required />
+            <button type="submit" class="btn btn-gold btn-sm">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Haven Realty Global LLC. All rights reserved. Equal Housing Opportunity.</div>
+        <div class="footer-bottom-links">
+          <a href="contact.html#privacy">Privacy Policy</a>
+          <a href="contact.html#terms">Terms of Representation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Appointment Modal -->
+  <div class="modal-overlay" id="appointment-modal" role="dialog" aria-modal="true" aria-labelledby="appt-modal-title">
+    <div class="modal-box">
+      <button class="modal-close-btn modal-close-trigger" aria-label="Close modal">&times;</button>
+      <h3 class="modal-title" id="appt-modal-title">Schedule Private Showing</h3>
+      <p class="modal-subtitle" id="appt-modal-property-title">Select your preferred date and time for a confidential walkthrough.</p>
+      <form id="appointment-form">
+        <div class="form-group">
+          <label class="form-label" for="appt-name">Full Name</label>
+          <input type="text" id="appt-name" class="form-control" placeholder="e.g. Sterling Montgomery" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="appt-email">Confidential Email</label>
+          <input type="email" id="appt-email" class="form-control" placeholder="client@domain.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="appt-phone">Direct Phone</label>
+          <input type="tel" id="appt-phone" class="form-control" placeholder="+1 (555) 000-0000" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="appt-date">Preferred Date</label>
+          <input type="date" id="appt-date" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Available Showing Times</label>
+          <div class="time-slots-grid" id="appt-time-slots"></div>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 1rem;">Confirm Private Showing</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/properties-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/saved-properties.js"></script>
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private Advisors &amp; Partners | Haven Realty</title>
+  <meta name="description" content="Meet Haven Realty's managing partners, specializing in Beverly Hills, Manhattan penthouses, coastal barrier estates, and European prime residences." />
+  
+  <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <style>
+    .agent-filters-bar {
+      display: flex;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+      margin-bottom: 3rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo">
+        <span class="logo-main">HAVEN</span>
+        <span class="logo-sub">REALTY &bull; ESTATES</span>
+      </a>
+
+      <nav class="site-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="properties.html" class="nav-link">Properties</a>
+        <a href="agents.html" class="nav-link active">Advisors</a>
+        <a href="mortgage-calculator.html" class="nav-link">Calculator</a>
+        <a href="sell-property.html" class="nav-link">List With Us</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="saved-properties.html" class="action-badge-btn" title="Saved Properties" aria-label="Saved properties">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+          </svg>
+          <span class="badge-count" id="header-fav-count" style="display: none;">0</span>
+        </a>
+
+        <a href="saved-properties.html#compare" class="action-badge-btn" title="Compare Properties" aria-label="Compare properties">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          <span class="badge-count" id="header-compare-count" style="display: none;">0</span>
+        </a>
+
+        <a href="properties.html" class="btn btn-primary btn-sm">Explore Collection</a>
+
+        <button class="hamburger-btn" aria-label="Toggle navigation menu">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer Navigation -->
+  <div class="mobile-nav-overlay"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation">
+    <div>
+      <div class="mobile-drawer-header">
+        <a href="index.html" class="site-logo">
+          <span class="logo-main">HAVEN</span>
+          <span class="logo-sub">REALTY</span>
+        </a>
+        <button class="drawer-close-btn" aria-label="Close menu">&times;</button>
+      </div>
+      <div class="mobile-nav-links">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="properties.html" class="nav-link">Properties</a>
+        <a href="agents.html" class="nav-link active">Private Advisors</a>
+        <a href="mortgage-calculator.html" class="nav-link">Mortgage Calculator</a>
+        <a href="sell-property.html" class="nav-link">Sell &amp; Valuation</a>
+        <a href="saved-properties.html" class="nav-link">Saved Properties <span id="mobile-fav-count"></span></a>
+        <a href="saved-properties.html#compare" class="nav-link">Comparison Matrix <span id="mobile-compare-count"></span></a>
+        <a href="contact.html" class="nav-link">Contact &amp; Offices</a>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main class="section-padding" style="padding-top: 3.5rem;">
+    <div class="container">
+
+      <!-- Editorial Header -->
+      <div style="margin-bottom: 2.5rem;">
+        <span class="eyebrow">Private Client Services</span>
+        <h1 style="margin-bottom: 0.5rem;">Managing Advisors &amp; Partners</h1>
+        <p style="color: var(--color-text-secondary); max-width: 680px;">
+          Our leadership combines rigorous financial valuation with deep architectural appreciation, representing extraordinary individuals and estates across the globe.
+        </p>
+      </div>
+
+      <!-- Specialty Filters Bar -->
+      <div class="agent-filters-bar">
+        <button type="button" class="filter-chip agent-filter-chip active" data-specialty="all">All Specialties</button>
+        <button type="button" class="filter-chip agent-filter-chip" data-specialty="westcoast">Beverly Hills &amp; West Coast</button>
+        <button type="button" class="filter-chip agent-filter-chip" data-specialty="penthouse">Manhattan Penthouses</button>
+        <button type="button" class="filter-chip agent-filter-chip" data-specialty="waterfront">Waterfront &amp; Coastal</button>
+        <button type="button" class="filter-chip agent-filter-chip" data-specialty="europe">European Prime &amp; Heritage</button>
+        <button type="button" class="filter-chip agent-filter-chip" data-specialty="alpine">Alpine &amp; Mountain</button>
+        <button type="button" class="filter-chip agent-filter-chip" data-specialty="commercial">Trophy Commercial</button>
+      </div>
+
+      <!-- Agents Grid -->
+      <div class="grid-3" id="agents-directory-grid">
+        <!-- Injected by JavaScript -->
+      </div>
+
+      <!-- The Haven Representation Philosophy -->
+      <section style="margin-top: 6rem; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: var(--radius-xs); padding: 4rem 3rem;">
+        <div class="grid-2" style="align-items: center; gap: 3.5rem;">
+          <div>
+            <span class="eyebrow">The Haven Standard</span>
+            <h2 style="margin-bottom: 1.25rem;">Confidentiality, Pedigree, and Precision</h2>
+            <p style="color: var(--color-text-secondary); line-height: 1.8; margin-bottom: 1.5rem;">
+              Over 40% of Haven Realty’s residential transactions occur off-market through private acquisitions. Our advisors operate with the utmost confidentiality, shielding client identities while accessing non-public architectural inventory.
+            </p>
+            <div style="display: flex; gap: 1rem;">
+              <a href="sell-property.html" class="btn btn-primary">Represent Your Estate</a>
+              <a href="contact.html" class="btn btn-secondary">Private Flagship Directory</a>
+            </div>
+          </div>
+          <div style="background: var(--color-surface-subtle); padding: 2rem; border-radius: var(--radius-xs); border: 1px solid var(--color-border-subtle);">
+            <div style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem;">
+              <strong style="display: block; font-size: 1.05rem; margin-bottom: 0.25rem; font-family: var(--font-serif);">Bespoke Digital Dossiers</strong>
+              <span style="font-size: 0.88rem; color: var(--color-text-secondary);">Comprehensive 3D laser-measured floor plans, title histories, and architectural provenance books.</span>
+            </div>
+            <div style="margin-bottom: 1.5rem; border-bottom: 1px solid var(--color-border); padding-bottom: 1rem;">
+              <strong style="display: block; font-size: 1.05rem; margin-bottom: 0.25rem; font-family: var(--font-serif);">Private Aviation Concierge</strong>
+              <span style="font-size: 0.88rem; color: var(--color-text-secondary);">Seamless transit orchestration for prospective international purchasers and private family offices.</span>
+            </div>
+            <div>
+              <strong style="display: block; font-size: 1.05rem; margin-bottom: 0.25rem; font-family: var(--font-serif);">Institutional Financial Structuring</strong>
+              <span style="font-size: 0.88rem; color: var(--color-text-secondary);">Complex cross-border capital coordination, private banking introductions, and 1031 exchanges.</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="site-logo">
+            <span class="logo-main" style="color: #FFFFFF;">HAVEN</span>
+            <span class="logo-sub">REALTY &bull; ESTATES</span>
+          </a>
+          <p>An independent luxury brokerage dedicated to architectural mastery, historic restorations, and prime international acquisitions.</p>
+        </div>
+        <div>
+          <h4 class="footer-heading">Portfolio</h4>
+          <ul class="footer-links">
+            <li><a href="properties.html?type=villa">Modernist Villas</a></li>
+            <li><a href="properties.html?type=penthouse">Sky Penthouses</a></li>
+            <li><a href="properties.html?status=rent">Prime Leases</a></li>
+            <li><a href="properties.html?type=commercial">Trophy Commercial</a></li>
+            <li><a href="saved-properties.html">Saved Portfolio</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-heading">Client Services</h4>
+          <ul class="footer-links">
+            <li><a href="agents.html">Private Advisory</a></li>
+            <li><a href="mortgage-calculator.html">Mortgage Modeler</a></li>
+            <li><a href="sell-property.html">List Your Residence</a></li>
+            <li><a href="contact.html#offices">Global Flagships</a></li>
+          </ul>
+        </div>
+        <div class="footer-newsletter">
+          <h4 class="footer-heading">Private Acquisition Brief</h4>
+          <p>Receive off-market listings and private market intelligence directly to your inbox.</p>
+          <form class="newsletter-form">
+            <input type="email" placeholder="Enter private email" required />
+            <button type="submit" class="btn btn-gold btn-sm">Join</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <div>&copy; 2026 Haven Realty Global LLC. All rights reserved. Equal Housing Opportunity.</div>
+        <div class="footer-bottom-links">
+          <a href="contact.html#privacy">Privacy Policy</a>
+          <a href="contact.html#terms">Terms of Representation</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Appointment Modal -->
+  <div class="modal-overlay" id="appointment-modal" role="dialog" aria-modal="true" aria-labelledby="appt-modal-title">
+    <div class="modal-box">
+      <button class="modal-close-btn modal-close-trigger" aria-label="Close modal">&times;</button>
+      <h3 class="modal-title" id="appt-modal-title">Book Private Consultation</h3>
+      <p class="modal-subtitle" id="appt-modal-property-title">Schedule a confidential strategic advisory meeting.</p>
+      <form id="appointment-form">
+        <div class="form-group">
+          <label class="form-label" for="appt-name">Full Name</label>
+          <input type="text" id="appt-name" class="form-control" placeholder="e.g. Sterling Montgomery" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="appt-email">Confidential Email</label>
+          <input type="email" id="appt-email" class="form-control" placeholder="client@domain.com" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="appt-phone">Contact Number</label>
+          <input type="tel" id="appt-phone" class="form-control" placeholder="+1 (555) 000-0000" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="appt-date">Preferred Date</label>
+          <input type="date" id="appt-date" class="form-control" required />
+        </div>
+        <div class="form-group">
+          <label class="form-label">Available Time Slots</label>
+          <div class="time-slots-grid" id="appt-time-slots"></div>
+        </div>
+        <button type="submit" class="btn btn-gold" style="width: 100%; margin-top: 1rem;">Confirm Strategic Appointment</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/properties-data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/agents.js"></script>
+</body>
+</html>
