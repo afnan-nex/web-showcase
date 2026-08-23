@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FRAME &amp; FORM — Multidisciplinary Creative Direction &amp; Spatial Photography</title>
+  <meta name="description" content="Award-winning multidisciplinary portfolio of Kaelen Vane. Art direction, spatial photography, architectural monographs, brand systems, and cinema." />
+
+  <!-- Master Stylesheets -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/animations.css" />
+
+  <!-- Favicon glyph -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><rect width=%22100%22 height=%22100%22 fill=%22%23D4AF37%22/><text y=%22.9em%22 font-size=%2290%22 font-family=%22sans-serif%22 font-weight=%22bold%22 fill=%22%23000%22>F</text></svg>">
+</head>
+<body>
+
+  <!-- Film Grain Overlay -->
+  <div class="grain-overlay" aria-hidden="true"></div>
+
+  <!-- Page Wipe Transition Curtain -->
+  <div class="page-transition-curtain" aria-hidden="true"></div>
+
+  <!-- Custom Cursor Follower -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-follower" aria-hidden="true">
+    <span class="cursor-label"></span>
+  </div>
+
+  <!-- Floating Thumbnail Follower (List / Archive Views) -->
+  <div class="floating-preview" aria-hidden="true">
+    <img src="" alt="Preview" />
+  </div>
+
+  <!-- Architectural Header HUD -->
+  <header class="site-header">
+    <div class="brand-wrapper">
+      <a href="#home" class="brand-logo clickable" data-cursor="home">
+        <span class="logo-glyph"></span>
+        <span>FRAME &amp; FORM</span>
+      </a>
+      <div class="header-status-badge">
+        <span class="status-dot"></span>
+        <span>COMMISSIONS OPEN Q3/Q4</span>
+      </div>
+    </div>
+
+    <!-- Navigation Menu -->
+    <nav class="nav-menu" id="nav-menu" aria-label="Main Navigation">
+      <a href="#home" class="nav-link active clickable" aria-current="page"><span class="nav-num">01</span>Home</a>
+      <a href="#work" class="nav-link clickable"><span class="nav-num">02</span>Work</a>
+      <a href="#about" class="nav-link clickable"><span class="nav-num">03</span>About</a>
+      <a href="#archive" class="nav-link clickable"><span class="nav-num">04</span>Archive</a>
+      <a href="#contact" class="nav-link clickable"><span class="nav-num">05</span>Contact</a>
+    </nav>
+
+    <!-- Header Utilities & HUD Controls -->
+    <div class="header-actions">
+      <button class="hud-btn clickable" id="sound-toggle-btn" title="Toggle Procedural Web Audio (Shortcut: M)" aria-label="Toggle procedural sound effects">
+        <span id="sound-toggle-label">SOUND: OFF</span>
+      </button>
+
+      <button class="hud-btn clickable" id="saved-toggle-btn" title="Open Moodboard Drawer" aria-label="Open curated moodboard">
+        <span>MOODBOARD</span>
+        <span class="hud-badge" id="saved-badge-count">0</span>
+      </button>
+
+      <button class="hud-btn clickable" id="cmd-palette-btn" title="Quick Spotlight Command Palette (Shortcut: ⌘K / Ctrl+K)" aria-label="Open spotlight command palette">
+        <span class="hud-btn-text">SEARCH</span>
+        <span class="hud-badge">⌘K</span>
+      </button>
+
+      <button class="mobile-toggle clickable" id="mobile-toggle-btn" aria-label="Toggle Mobile Navigation" aria-expanded="false" aria-controls="nav-menu">
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Dynamic SPA View Container -->
+  <main id="view-container" class="view-container" role="main">
+    <div class="view-home">
+      <!-- Hero Editorial Section -->
+      <section class="site-container hero-editorial">
+        <div class="hero-meta-bar reveal-init">
+          <div>
+            <span>STUDIO FRAME &amp; FORM</span>
+            <span style="margin: 0 0.5rem; opacity: 0.3;">/</span>
+            <span>2026 ARCHIVE</span>
+          </div>
+          <div class="hero-clocks">
+            <div class="clock-item"><span class="clock-code">TYO</span> <span id="tyo-time">--:--:--</span></div>
+            <div class="clock-item"><span class="clock-code">ZRH</span> <span id="zrh-time">--:--:--</span></div>
+            <div class="clock-item"><span class="clock-code">CDG</span> <span id="cdg-time">--:--:--</span></div>
+            <div class="clock-item"><span class="clock-code">NYC</span> <span id="nyc-time">--:--:--</span></div>
+          </div>
+        </div>
+
+        <div class="hero-title-wrap">
+          <span class="hero-super-title reveal-init">Creative Direction · Spatial Photography · Brand Architecture</span>
+          <h1 class="hero-headline reveal-init">
+            FRAME <span class="italic-serif">&amp;</span> FORM
+          </h1>
+        </div>
+
+        <div class="hero-footer-bar reveal-init">
+          <p class="hero-statement">
+            An international design practice operating at the threshold between rigid structural containment and organic visual expression.
+          </p>
+          <div>
+            <span class="font-mono text-muted uppercase" style="font-size:0.7rem; display:block; margin-bottom:0.25rem;">AVAILABILITY STATUS</span>
+            <span style="color:var(--text-primary);">Accepting Select Commissions Q3/Q4 2026</span>
+          </div>
+          <div style="display:flex; justify-content:flex-end;">
+            <a href="#work" class="hud-btn clickable" data-cursor="explore">
+              <span>Explore Works (12)</span>
+              <span>→</span>
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Kinetic Marquee Ticker -->
+      <div class="marquee-wrapper">
+        <div class="marquee-track">
+          <div class="marquee-item"><span>ART DIRECTION</span><span class="marquee-bullet">◆</span></div>
+          <div class="marquee-item"><span>MEDIUM FORMAT PHOTOGRAPHY</span><span class="marquee-bullet">◆</span></div>
+          <div class="marquee-item"><span>SPATIAL BRANDING</span><span class="marquee-bullet">◆</span></div>
+          <div class="marquee-item"><span>EDITORIAL MONOGRAPHS</span><span class="marquee-bullet">◆</span></div>
+          <div class="marquee-item"><span>35MM CINEMATOGRAPHY</span><span class="marquee-bullet">◆</span></div>
+          <div class="marquee-item"><span>GENERATIVE DIGITAL SYSTEMS</span><span class="marquee-bullet">◆</span></div>
+          <div class="marquee-item"><span>TOKYO</span><span class="marquee-bullet">◆</span></div>
+          <div class="marquee-item"><span>ZURICH</span><span class="marquee-bullet">◆</span></div>
+          <div class="marquee-item"><span>PARIS</span><span class="marquee-bullet">◆</span></div>
+          <div class="marquee-item"><span>NEW YORK</span><span class="marquee-bullet">◆</span></div>
+        </div>
+      </div>
+
+      <!-- Featured Projects Horizontal Reel -->
+      <section class="reel-section">
+        <div class="reel-header">
+          <div>
+            <div class="section-label reveal-init">FLAGSHIP SELECTION</div>
+            <h2 class="section-heading reveal-init">Featured Curations</h2>
+          </div>
+          <div class="font-mono text-muted reveal-init" style="font-size:0.75rem;">
+            <span>← SCROLL OR DRAG →</span>
+          </div>
+        </div>
+
+        <div class="reel-container clickable" data-cursor="drag" data-cursor-label="DRAG">
+          <a href="#project?id=neo-monolith" class="reel-card clickable" data-cursor="view" data-cursor-label="VIEW">
+            <div class="reel-media-wrap">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop" alt="Neo-Monolith" loading="lazy" />
+              <div class="reel-meta-overlay">
+                <span class="meta-pill">Art Direction</span>
+                <span class="meta-pill">2026</span>
+              </div>
+            </div>
+            <div class="reel-info">
+              <div>
+                <h3 class="reel-title">Neo-Monolith</h3>
+                <p class="reel-client">Vitra Architecture Institute — Basel / Tokyo</p>
+              </div>
+              <span class="reel-year">01</span>
+            </div>
+          </a>
+
+          <a href="#project?id=chroma-vestige" class="reel-card clickable" data-cursor="view" data-cursor-label="VIEW">
+            <div class="reel-media-wrap">
+              <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1600&auto=format&fit=crop" alt="Chroma Vestige" loading="lazy" />
+              <div class="reel-meta-overlay">
+                <span class="meta-pill">Photography</span>
+                <span class="meta-pill">2025</span>
+              </div>
+            </div>
+            <div class="reel-info">
+              <div>
+                <h3 class="reel-title">Chroma Vestige</h3>
+                <p class="reel-client">Bottega Veneta — Milan / Paris</p>
+              </div>
+              <span class="reel-year">02</span>
+            </div>
+          </a>
+
+          <a href="#project?id=silent-frequencies" class="reel-card clickable" data-cursor="view" data-cursor-label="VIEW">
+            <div class="reel-media-wrap">
+              <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=1600&auto=format&fit=crop" alt="Silent Frequencies" loading="lazy" />
+              <div class="reel-meta-overlay">
+                <span class="meta-pill">Branding</span>
+                <span class="meta-pill">2025</span>
+              </div>
+            </div>
+            <div class="reel-info">
+              <div>
+                <h3 class="reel-title">Silent Frequencies</h3>
+                <p class="reel-client">Bang &amp; Olufsen — Copenhagen / Zurich</p>
+              </div>
+              <span class="reel-year">03</span>
+            </div>
+          </a>
+
+          <a href="#project?id=terra-incognita" class="reel-card clickable" data-cursor="view" data-cursor-label="VIEW">
+            <div class="reel-media-wrap">
+              <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?q=80&w=1600&auto=format&fit=crop" alt="Terra Incognita" loading="lazy" />
+              <div class="reel-meta-overlay">
+                <span class="meta-pill">Editorial</span>
+                <span class="meta-pill">2024</span>
+              </div>
+            </div>
+            <div class="reel-info">
+              <div>
+                <h3 class="reel-title">Terra Incognita</h3>
+                <p class="reel-client">Acne Paper / Rizzoli — Iceland / Atacama</p>
+              </div>
+              <span class="reel-year">04</span>
+            </div>
+          </a>
+        </div>
+      </section>
+
+      <!-- Asymmetric Core Practices Showcase -->
+      <section class="site-container section-padding" style="border-top: 1px solid var(--border-hairline);">
+        <div style="display:flex; justify-content:space-between; align-items:flex-end; margin-bottom: 3.5rem;">
+          <div>
+            <div class="section-label reveal-init">DISCIPLINE MATRIX</div>
+            <h2 class="section-heading reveal-init">Core Practices</h2>
+          </div>
+          <a href="#about" class="font-mono text-muted uppercase clickable hover-underline" style="font-size:0.75rem;">
+            Studio Philosophy →
+          </a>
+        </div>
+
+        <div class="editorial-grid" style="padding:0;">
+          <div class="project-card-asym col-span-7 reveal-init">
+            <a href="#project?id=neo-monolith" class="card-media-box aspect-landscape clickable" data-cursor="view">
+              <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=1600&auto=format&fit=crop" alt="Neo-Monolith" />
+            </a>
+            <div class="card-info-block">
+              <div class="card-meta-line">
+                <span>01 / ART DIRECTION</span>
+                <span>VITRA INSTITUTE</span>
+              </div>
+              <h3 class="card-project-title"><a href="#project?id=neo-monolith">NEO-MONOLITH</a></h3>
+              <p class="card-description-snippet">A spatial investigation into raw concrete forms, optical shadow planes, and monolithic scale in contemporary sacred structures.</p>
+            </div>
+          </div>
+
+          <div class="project-card-asym col-span-5 reveal-init" style="margin-top: clamp(0rem, 6vw, 5rem);">
+            <a href="#project?id=chroma-vestige" class="card-media-box aspect-portrait clickable" data-cursor="view">
+              <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?q=80&w=1600&auto=format&fit=crop" alt="Chroma Vestige" />
+            </a>
+            <div class="card-info-block">
+              <div class="card-meta-line">
+                <span>02 / PHOTOGRAPHY</span>
+                <span>BOTTEGA VENETA</span>
+              </div>
+              <h3 class="card-project-title"><a href="#project?id=chroma-vestige">CHROMA VESTIGE</a></h3>
+              <p class="card-description-snippet">Explorations in high-saturation chromatic drape, kinetic motion blur, and sculptural silhouetting for Autumn/Winter.</p>
+            </div>
+          </div>
+
+          <div class="project-card-asym col-span-5 offset-left-1 reveal-init">
+            <a href="#project?id=silent-frequencies" class="card-media-box aspect-square clickable" data-cursor="view">
+              <img src="https://images.unsplash.com/photo-1545454675-3531b543be5d?q=80&w=1600&auto=format&fit=crop" alt="Silent Frequencies" />
+            </a>
+            <div class="card-info-block">
+              <div class="card-meta-line">
+                <span>03 / BRANDING</span>
+                <span>BANG &amp; OLUFSEN</span>
+              </div>
+              <h3 class="card-project-title"><a href="#project?id=silent-frequencies">SILENT FREQUENCIES</a></h3>
+              <p class="card-description-snippet">Visualizing unperceivable acoustic resonance through machined anodized aluminum, generative waveforms, and bespoke typography.</p>
+            </div>
+          </div>
+
+          <div class="project-card-asym col-span-7 offset-right-1 reveal-init" style="margin-top: clamp(0rem, 4vw, 3rem);">
+            <a href="#project?id=metric-dissolve" class="card-media-box aspect-landscape clickable" data-cursor="view">
+              <img src="https://images.unsplash.com/photo-1550745165-9bc0b252726f?q=80&w=1600&auto=format&fit=crop" alt="Metric Dissolve" />
+            </a>
+            <div class="card-info-block">
+              <div class="card-meta-line">
+                <span>04 / DIGITAL</span>
+                <span>POLESTAR</span>
+              </div>
+              <h3 class="card-project-title"><a href="#project?id=metric-dissolve">METRIC DISSOLVE</a></h3>
+              <p class="card-description-snippet">A next-generation in-cockpit visual design language and real-time generative telemetry dashboard for luxury autonomous travel.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Manifesto Statement -->
+      <section class="site-container section-padding" style="border-top: 1px solid var(--border-hairline); background: var(--bg-secondary);">
+        <div style="max-width: 900px; margin: 0 auto; text-align: center;">
+          <span class="font-mono text-muted uppercase tracking-widest reveal-init" style="font-size:0.75rem; display:block; margin-bottom:1.5rem;">
+            MANIFESTO / STATEMENT 01
+          </span>
+          <blockquote class="font-serif italic reveal-init" style="font-size: clamp(1.8rem, 3.5vw, 3.2rem); line-height: 1.25; color: var(--text-primary); margin-bottom: 2.5rem;">
+            “A frame is not a decorative container; it is an architectural incision into chaotic space.”
+          </blockquote>
+          <div class="reveal-init" style="display:flex; justify-content:center; gap:1.5rem;">
+            <a href="#contact" class="submit-btn-cta clickable" style="padding: 1rem 2.5rem;" data-cursor="contact">
+              Initiate Project Commission →
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Saved Moodboard Drawer -->
+  <div class="drawer-backdrop" aria-hidden="true"></div>
+  <aside class="saved-drawer" aria-label="Saved Projects Moodboard" role="dialog" aria-modal="true">
+    <div class="drawer-header">
+      <div>
+        <span class="font-mono text-muted uppercase" style="font-size:0.7rem; display:block;">CURATED COLLECTION</span>
+        <h2 class="font-display" style="font-size:1.4rem; font-weight:700;">Your Moodboard</h2>
+      </div>
+      <button class="hud-btn clickable" id="saved-drawer-close" aria-label="Close Moodboard Drawer">✕ CLOSE</button>
+    </div>
+
+    <div class="drawer-body">
+      <!-- Dynamic list of bookmarked items -->
+    </div>
+
+    <div class="drawer-footer">
+      <button class="submit-btn-cta clickable" id="export-moodboard-btn" style="padding: 0.9rem 1.5rem; font-size:0.78rem;">
+        <span>Export Moodboard Dossier</span>
+        <span>📋</span>
+      </button>
+      <div style="display:flex; justify-content:space-between;">
+        <a href="#contact" class="font-mono text-muted uppercase clickable hover-underline" style="font-size:0.72rem;" onclick="document.querySelector('.drawer-backdrop').click();">
+          Inquire with Saved Selection →
+        </a>
+        <button class="font-mono text-muted uppercase clickable hover-underline" id="clear-moodboard-btn" style="font-size:0.72rem;">
+          Clear All
+        </button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Command Palette Overlay (Cmd+K) -->
+  <div class="command-palette-overlay" aria-label="Command Palette" role="dialog" aria-modal="true">
+    <div class="command-palette-box">
+      <div class="palette-input-wrap">
+        <span style="color:var(--text-muted); font-size:1.1rem;">⚲</span>
+        <input type="text" id="palette-input" class="palette-input" placeholder="Type a command, project name, or discipline..." autocomplete="off" aria-label="Search through projects and pages" />
+        <span class="hud-badge">ESC</span>
+      </div>
+      <div class="palette-results-list" id="palette-results-list" role="listbox">
+        <!-- Dynamic search results -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Fullscreen Lightbox Gallery -->
+  <div class="lightbox-overlay" aria-label="Gallery Lightbox Modal" role="dialog" aria-modal="true">
+    <div class="lightbox-topbar">
+      <div>
+        <span class="lightbox-counter" style="color:var(--accent-gold); font-weight:600;">01 / 05</span>
+        <span style="margin: 0 0.5rem; opacity:0.3;">|</span>
+        <span class="lightbox-caption" style="color:var(--text-primary);">Plate I — Concrete Cantilever</span>
+      </div>
+      <div style="display:flex; gap:0.75rem;">
+        <button class="hud-btn clickable lightbox-zoom-btn" title="Toggle Zoom (Z)">ZOOM</button>
+        <button class="hud-btn clickable lightbox-fullscreen-btn" title="Toggle Fullscreen (F)">FULLSCREEN</button>
+        <button class="hud-btn clickable lightbox-close-btn" title="Close Gallery (ESC)">✕ CLOSE</button>
+      </div>
+    </div>
+
+    <div class="lightbox-main-stage">
+      <button class="lightbox-nav-arrow prev clickable" data-cursor="prev" title="Previous Image (Left Arrow)">←</button>
+      <div class="lightbox-img-wrapper clickable" data-cursor="zoom">
+        <img class="lightbox-main-img" src="" alt="Gallery specimen" />
+      </div>
+      <button class="lightbox-nav-arrow next clickable" data-cursor="next" title="Next Image (Right Arrow)">→</button>
+    </div>
+
+    <div class="lightbox-bottom-strip">
+      <div class="lightbox-camera-meta">Medium Format · 80mm · ISO 64</div>
+      <div class="lightbox-thumbnails">
+        <!-- Filmstrip thumbnails -->
+      </div>
+      <div class="font-mono text-muted" style="font-size:0.68rem;">
+        SHORTCUTS: [←/→] NAV · [Z] ZOOM · [F] FULLSCREEN · [ESC] EXIT
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notifications Container -->
+  <div id="toast-container" class="toast-container" aria-live="polite"></div>
+
+  <!-- Unified JavaScript Bundle (Supports file://, localhost, and static hosting) -->
+  <script src="js/bundle.js"></script>
+</body>
+</html>

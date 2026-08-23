@@ -1,0 +1,128 @@
+/* ==========================================================================
+   FRAME & FORM — ANIMATIONS STYLESHEET (ANIMATIONS.CSS)
+   Kinetic Keyframes, Scroll-Driven Reveals, Fluid Transitions
+   ========================================================================== */
+
+/* --- Keyframe Definitions --- */
+@keyframes marqueeRoll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+@keyframes pulseGlyph {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.3);
+    opacity: 0.4;
+  }
+}
+
+@keyframes toastFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeInPage {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scanlineEffect {
+  0% { transform: translateY(-100%); }
+  100% { transform: translateY(1000%); }
+}
+
+/* --- Scroll Reveal Classes --- */
+.reveal-init {
+  opacity: 1;
+  transition: opacity 0.8s var(--ease-expo), transform 0.8s var(--ease-expo);
+  will-change: opacity, transform;
+}
+
+body.js-loaded .reveal-init:not(.reveal-in-view) {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+body.js-loaded .reveal-in-view {
+  opacity: 1 !important;
+  transform: translate(0, 0) scale(1) !important;
+}
+
+.reveal-up {
+  transform: translateY(30px);
+}
+
+.reveal-scale {
+  transform: scale(0.96);
+}
+
+.reveal-left {
+  transform: translateX(-20px);
+}
+
+.reveal-right {
+  transform: translateX(20px);
+}
+
+.reveal-in-view {
+  opacity: 1 !important;
+  transform: translate(0, 0) scale(1) !important;
+}
+
+/* Stagger Delays */
+.delay-100 { transition-delay: 100ms; }
+.delay-200 { transition-delay: 200ms; }
+.delay-300 { transition-delay: 300ms; }
+.delay-400 { transition-delay: 400ms; }
+.delay-500 { transition-delay: 500ms; }
+
+/* Image Parallax & Scale Transitions */
+.parallax-img {
+  will-change: transform;
+  transition: transform 0.1s linear;
+}
+
+/* Page Curtains / Transitions */
+.page-transition-curtain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: var(--bg-primary);
+  z-index: var(--z-transition);
+  transform: translateY(100%);
+  pointer-events: none;
+}
+
+.page-transition-curtain.animating-in {
+  transition: transform 0.45s cubic-bezier(0.77, 0, 0.175, 1);
+  transform: translateY(0%);
+}
+
+.page-transition-curtain.animating-out {
+  transition: transform 0.5s cubic-bezier(0.77, 0, 0.175, 1);
+  transform: translateY(-100%);
+}
+
+/* Magnetic Item Wrapper */
+.magnetic-wrap {
+  display: inline-flex;
+  transition: transform 0.25s var(--ease-fluid);
+}
