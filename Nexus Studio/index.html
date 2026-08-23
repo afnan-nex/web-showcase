@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Nexus Studio — Digital Architecture & Brand Transformation</title>
+  <meta name="description" content="Nexus Studio is an independent digital agency crafting precision web architecture, brand systems, and bespoke digital platforms for category-defining companies worldwide.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" aria-label="Nexus Studio Home">
+        <span class="logo-mark"></span>
+        Nexus Studio
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="work.html" class="nav-link">Work</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <!-- Header Actions & Theme Toggle -->
+      <div class="header-actions">
+        <div class="header-status-badge">
+          <span class="status-dot pulsing"></span>
+          <span>Studio Capacity: Q3 Open</span>
+        </div>
+
+        <div class="theme-switch-wrapper" role="group" aria-label="Theme Selection">
+          <button type="button" class="theme-btn active" data-theme-btn="dark" aria-label="Dark Mode" title="Dark Mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button type="button" class="theme-btn" data-theme-btn="light" aria-label="Light Mode" title="Light Mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </button>
+          <button type="button" class="theme-btn" data-theme-btn="system" aria-label="System Preference" title="System Preference">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </button>
+        </div>
+
+        <a href="contact.html" class="btn btn-sm btn-primary header-cta-btn">Start a Project</a>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button type="button" class="menu-toggle-btn" aria-label="Toggle Menu" aria-expanded="false">
+          <span class="menu-toggle-line"></span>
+          <span class="menu-toggle-line"></span>
+          <span class="menu-toggle-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fullscreen Mobile Navigation -->
+  <div class="mobile-menu-overlay" aria-hidden="true">
+    <nav class="mobile-nav-list">
+      <a href="index.html" class="mobile-nav-link"><span class="nav-num">01</span> Home</a>
+      <a href="about.html" class="mobile-nav-link"><span class="nav-num">02</span> About</a>
+      <a href="services.html" class="mobile-nav-link"><span class="nav-num">03</span> Services</a>
+      <a href="work.html" class="mobile-nav-link"><span class="nav-num">04</span> Selected Work</a>
+      <a href="contact.html" class="mobile-nav-link"><span class="nav-num">05</span> Project Inquiry</a>
+    </nav>
+    <div class="mobile-menu-footer">
+      <div class="mobile-menu-contact">
+        <div>DIRECT INQUIRY</div>
+        <a href="mailto:inquire@nexusstudio.io" style="color: var(--accent-primary); font-size: 1.1rem;">inquire@nexusstudio.io</a>
+      </div>
+      <div class="font-mono text-muted" style="font-size: 0.75rem;">
+        ZURICH &bull; NEW YORK &bull; TOKYO &bull; LONDON
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Hero Section -->
+    <section class="section section-hero">
+      <div class="container">
+        <div class="grid-asymmetric-hero">
+          <div class="reveal-on-scroll">
+            <div class="section-eyebrow">INDEPENDENT DIGITAL ATELIER &bull; EST. 2021</div>
+            <h1 class="display-title" style="margin-bottom: 1.75rem;">
+              Precision Digital Architecture <span class="display-title-serif">&amp; Brand Transformation.</span>
+            </h1>
+            <p class="lead" style="margin-bottom: 2.5rem; max-width: 580px;">
+              We partner with category-defining founders and institutional market leaders to engineer high-velocity digital flagships, bespoke software interfaces, and enduring brand identities.
+            </p>
+            <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+              <a href="contact.html" class="btn btn-lg btn-primary" data-cursor-hover>Start a Project &rarr;</a>
+              <a href="work.html" class="btn btn-lg btn-secondary" data-cursor-hover>View Our Work</a>
+            </div>
+          </div>
+
+          <!-- Hero Visual Composition -->
+          <div class="hero-composition reveal-on-scroll reveal-delay-2">
+            <div class="hero-visual-frame">
+              <img src="https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?auto=format&fit=crop&w=1400&q=85" alt="Nexus Studio Architectural Composition" loading="eager">
+            </div>
+            <div class="hero-floating-stat">
+              <div class="stat-number">100/100</div>
+              <div class="stat-label">Core Web Vitals Benchmark</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trusted Clients Ticker -->
+    <div class="marquee-container" aria-label="Trusted by industry leaders">
+      <div class="marquee-content">
+        <div class="client-logo-item">AURORA CAPITAL</div>
+        <div class="client-logo-item">LUMINA HEALTH AI</div>
+        <div class="client-logo-item">VORTEX DYNAMICS</div>
+        <div class="client-logo-item">SOLARIS LABS</div>
+        <div class="client-logo-item">KINETIX MOTORS</div>
+        <div class="client-logo-item">ARCHIPELAGO RESERVE</div>
+        <div class="client-logo-item">NOVUS CLEAN ENERGY</div>
+        <div class="client-logo-item">PRISM ACOUSTICS</div>
+        <!-- Duplicate for infinite seamless scroll -->
+        <div class="client-logo-item">AURORA CAPITAL</div>
+        <div class="client-logo-item">LUMINA HEALTH AI</div>
+        <div class="client-logo-item">VORTEX DYNAMICS</div>
+        <div class="client-logo-item">SOLARIS LABS</div>
+        <div class="client-logo-item">KINETIX MOTORS</div>
+        <div class="client-logo-item">ARCHIPELAGO RESERVE</div>
+        <div class="client-logo-item">NOVUS CLEAN ENERGY</div>
+        <div class="client-logo-item">PRISM ACOUSTICS</div>
+      </div>
+    </div>
+
+    <!-- Selected Work Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header" style="display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1.5rem;">
+          <div>
+            <div class="section-eyebrow">PORTFOLIO EXCELLENCE</div>
+            <h2 class="display-title" style="font-size: clamp(2rem, 4vw, 3.25rem);">Selected Work</h2>
+          </div>
+          <a href="work.html" class="editorial-link" data-cursor-hover>
+            Explore All 8 Case Studies <span class="arrow-icon">&rarr;</span>
+          </a>
+        </div>
+
+        <div class="portfolio-grid" id="home-featured-work">
+          <!-- Populated dynamically by main.js from PROJECTS_DATA -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Core Capabilities / Services Overview -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">WHAT WE DO</div>
+          <h2 class="display-title" style="font-size: clamp(2rem, 4vw, 3.25rem); margin-bottom: 1rem;">Core Capabilities</h2>
+          <p class="lead" style="max-width: 680px;">
+            An integrated multidisciplinary discipline merging brand strategy, ergonomic UI/UX systems, and zero-compromise static engineering.
+          </p>
+        </div>
+
+        <div class="accordion-list" id="home-services-accordion" data-single-open="true">
+          <!-- Populated dynamically by main.js from SERVICES_DATA -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Process Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">THE METHODOLOGY</div>
+          <h2 class="display-title" style="font-size: clamp(2rem, 4vw, 3.25rem); margin-bottom: 1rem;">How We Build</h2>
+          <p class="lead" style="max-width: 680px;">
+            A rigorous, battle-tested production framework designed for speed, clarity, and zero project drift.
+          </p>
+        </div>
+
+        <div class="process-grid">
+          <div class="process-card reveal-on-scroll">
+            <div>
+              <div class="process-step-num">01</div>
+              <h3 class="process-card-title">Discovery &amp; Positioning</h3>
+            </div>
+            <p class="process-card-desc">
+              We audit your market landscape, customer telemetry, competitive gaps, and executive objectives to construct an unassailable strategic foundation.
+            </p>
+          </div>
+
+          <div class="process-card reveal-on-scroll reveal-delay-1">
+            <div>
+              <div class="process-step-num">02</div>
+              <h3 class="process-card-title">System Architecture</h3>
+            </div>
+            <p class="process-card-desc">
+              We define typography tokens, interface hierarchies, mental models, state flows, and data diagrams before a single pixel is painted.
+            </p>
+          </div>
+
+          <div class="process-card reveal-on-scroll reveal-delay-2">
+            <div>
+              <div class="process-step-num">03</div>
+              <h3 class="process-card-title">Bespoke Craft &amp; Code</h3>
+            </div>
+            <p class="process-card-desc">
+              Handcrafted semantic markup, GPU-accelerated micro-interactions, 100/100 performance budgets, and rigorous accessibility testing.
+            </p>
+          </div>
+
+          <div class="process-card reveal-on-scroll reveal-delay-3">
+            <div>
+              <div class="process-step-num">04</div>
+              <h3 class="process-card-title">Evolution &amp; Scale</h3>
+            </div>
+            <p class="process-card-desc">
+              Zero-downtime global edge deployments, search indexation dominance, and long-term design system scaling frameworks.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Impact & Statistics -->
+    <section class="section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-item reveal-on-scroll">
+            <div class="stat-item-val">$1.8B+</div>
+            <div class="stat-item-desc">Client Valuation &amp; Capital Onboarded</div>
+          </div>
+          <div class="stat-item reveal-on-scroll reveal-delay-1">
+            <div class="stat-item-val">48</div>
+            <div class="stat-item-desc">Awwwards, FWA &amp; Red Dot Honors</div>
+          </div>
+          <div class="stat-item reveal-on-scroll reveal-delay-2">
+            <div class="stat-item-val">100%</div>
+            <div class="stat-item-desc">Lighthouse Performance &amp; Accessibility</div>
+          </div>
+          <div class="stat-item reveal-on-scroll reveal-delay-3">
+            <div class="stat-item-val">99.8%</div>
+            <div class="stat-item-desc">Client Retention &amp; Advisory Retainers</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client Testimonials Carousel -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">VERIFIED TESTIMONIALS</div>
+          <h2 class="display-title" style="font-size: clamp(2rem, 4vw, 3.25rem);">Executive Endorsements</h2>
+        </div>
+
+        <div class="testimonial-carousel reveal-on-scroll">
+          <div class="testimonial-track-container">
+            <!-- Populated by slider.js -->
+          </div>
+
+          <div class="testimonial-controls">
+            <div class="testimonial-dots"></div>
+            <div style="display: flex; gap: 0.5rem;">
+              <button class="btn-icon testimonial-prev" aria-label="Previous Testimonial">&larr;</button>
+              <button class="btn-icon testimonial-next" aria-label="Next Testimonial">&rarr;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Final High-Impact CTA Banner -->
+    <section class="section" style="background-color: var(--bg-secondary);">
+      <div class="container" style="text-align: center; padding: clamp(3rem, 6vw, 6rem) 0;">
+        <span class="badge" style="margin: 0 auto 1.5rem;">READY TO TRANSCEND?</span>
+        <h2 class="display-title" style="max-width: 900px; margin: 0 auto 2rem;">
+          Let’s Build Something That Commands Your Industry.
+        </h2>
+        <p class="lead" style="max-width: 600px; margin: 0 auto 2.5rem;">
+          We accept a strictly limited allocation of 4 institutional projects per quarter to guarantee uncompromised focus.
+        </p>
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+          <a href="contact.html" class="btn btn-lg btn-primary" data-cursor-hover>Initiate Project Brief &rarr;</a>
+          <a href="services.html" class="btn btn-lg btn-secondary" data-cursor-hover>Explore Capabilities</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Editorial Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <a href="index.html" class="site-logo">
+            <span class="logo-mark"></span>
+            Nexus Studio
+          </a>
+          <p>
+            An independent digital agency crafting precision web architecture, brand systems, and bespoke digital platforms for category-defining companies worldwide.
+          </p>
+          <div class="badge badge-outline">NO COOKIES &bull; ZERO TRACKERS &bull; 100% STATIC</div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Studio</a></li>
+            <li><a href="services.html" class="footer-link">Services &amp; Scope</a></li>
+            <li><a href="work.html" class="footer-link">Case Studies</a></li>
+            <li><a href="contact.html" class="footer-link">Project Inquiry</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Selected Work</div>
+          <ul class="footer-links-list">
+            <li><a href="case-study.html?project=aurora" class="footer-link">Aurora Financial</a></li>
+            <li><a href="case-study.html?project=lumina" class="footer-link">Lumina Health AI</a></li>
+            <li><a href="case-study.html?project=vortex" class="footer-link">Vortex Dynamics</a></li>
+            <li><a href="case-study.html?project=solaris" class="footer-link">Solaris Spatial</a></li>
+            <li><a href="case-study.html?project=kinetix" class="footer-link">Kinetix Mobility</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Studio Inquiries</div>
+          <p style="font-size: 0.9375rem; color: var(--text-secondary); margin-bottom: 1rem;">
+            For RFP submissions, partnership inquiries, or press:
+          </p>
+          <a href="mailto:inquire@nexusstudio.io" class="editorial-link" style="color: var(--accent-primary);">inquire@nexusstudio.io</a>
+        </div>
+      </div>
+
+      <!-- Studio Timezone Clocks Strip -->
+      <div class="footer-clocks-strip">
+        <div class="studio-clock-item">
+          <span class="clock-city">Zurich (HQ)</span>
+          <span class="clock-time" id="clock-zurich">--:--:--</span>
+          <span class="clock-status">&bull; Central European Time</span>
+        </div>
+        <div class="studio-clock-item">
+          <span class="clock-city">New York</span>
+          <span class="clock-time" id="clock-ny">--:--:--</span>
+          <span class="clock-status">&bull; Eastern Time</span>
+        </div>
+        <div class="studio-clock-item">
+          <span class="clock-city">Tokyo</span>
+          <span class="clock-time" id="clock-tokyo">--:--:--</span>
+          <span class="clock-status">&bull; Japan Standard Time</span>
+        </div>
+        <div class="studio-clock-item">
+          <span class="clock-city">London</span>
+          <span class="clock-time" id="clock-london">--:--:--</span>
+          <span class="clock-status">&bull; Greenwich Mean Time</span>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Nexus Studio AG. All rights reserved. Crafted with zero dependencies.
+        </div>
+        <div class="footer-meta-actions">
+          <button type="button" class="vault-trigger-btn" data-open-vault title="Open hidden client inquiry vault (or press Shift + H)">Client Vault [Shift + H]</button>
+          <span>&bull;</span>
+          <span>v2.4 Production Static</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data/projects.js"></script>
+  <script src="js/data/services.js"></script>
+  <script src="js/data/testimonials.js"></script>
+  <script src="js/modules/theme.js"></script>
+  <script src="js/modules/toast.js"></script>
+  <script src="js/modules/cursor.js"></script>
+  <script src="js/modules/navigation.js"></script>
+  <script src="js/modules/filter.js"></script>
+  <script src="js/modules/slider.js"></script>
+  <script src="js/modules/accordion.js"></script>
+  <script src="js/modules/caseStudy.js"></script>
+  <script src="js/modules/forms.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Studio — Nexus Studio</title>
+  <meta name="description" content="Learn about Nexus Studio, our design ethos, leadership team, studio principles, and global presence across Zurich, New York, Tokyo, and London.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" aria-label="Nexus Studio Home">
+        <span class="logo-mark"></span>
+        Nexus Studio
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="work.html" class="nav-link">Work</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="header-status-badge">
+          <span class="status-dot pulsing"></span>
+          <span>Studio Capacity: Q3 Open</span>
+        </div>
+
+        <div class="theme-switch-wrapper" role="group" aria-label="Theme Selection">
+          <button type="button" class="theme-btn active" data-theme-btn="dark" aria-label="Dark Mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button type="button" class="theme-btn" data-theme-btn="light" aria-label="Light Mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </button>
+          <button type="button" class="theme-btn" data-theme-btn="system" aria-label="System Preference">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </button>
+        </div>
+
+        <a href="contact.html" class="btn btn-sm btn-primary header-cta-btn">Start a Project</a>
+
+        <button type="button" class="menu-toggle-btn" aria-label="Toggle Menu" aria-expanded="false">
+          <span class="menu-toggle-line"></span>
+          <span class="menu-toggle-line"></span>
+          <span class="menu-toggle-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fullscreen Mobile Navigation -->
+  <div class="mobile-menu-overlay" aria-hidden="true">
+    <nav class="mobile-nav-list">
+      <a href="index.html" class="mobile-nav-link"><span class="nav-num">01</span> Home</a>
+      <a href="about.html" class="mobile-nav-link"><span class="nav-num">02</span> About</a>
+      <a href="services.html" class="mobile-nav-link"><span class="nav-num">03</span> Services</a>
+      <a href="work.html" class="mobile-nav-link"><span class="nav-num">04</span> Selected Work</a>
+      <a href="contact.html" class="mobile-nav-link"><span class="nav-num">05</span> Project Inquiry</a>
+    </nav>
+    <div class="mobile-menu-footer">
+      <div class="mobile-menu-contact">
+        <div>DIRECT INQUIRY</div>
+        <a href="mailto:inquire@nexusstudio.io" style="color: var(--accent-primary); font-size: 1.1rem;">inquire@nexusstudio.io</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- About Hero Section -->
+    <section class="section section-hero">
+      <div class="container">
+        <div class="section-eyebrow">ABOUT NEXUS STUDIO</div>
+        <h1 class="display-title" style="max-width: 1050px; margin-bottom: 2rem;">
+          We reject automated mediocrity in pursuit of <span class="display-title-serif">uncompromising digital craft.</span>
+        </h1>
+        <p class="lead" style="max-width: 720px;">
+          Nexus Studio was founded on a singular conviction: the world’s most consequential brands deserve bespoke digital experiences that feel human, art-directed, and technologically immaculate.
+        </p>
+      </div>
+    </section>
+
+    <!-- Studio Manifesto Callout -->
+    <section class="section section-flush-top">
+      <div class="container container-narrow">
+        <blockquote class="manifesto-callout reveal-on-scroll">
+          “In an era flooded with generic templates and disposable code, true distinction is the only defensible competitive advantage.”
+        </blockquote>
+
+        <div class="grid-2" style="margin-top: 3.5rem;">
+          <div>
+            <h3 class="h3" style="margin-bottom: 1rem;">The Anti-Framework Discipline</h3>
+            <p class="text-secondary" style="line-height: 1.7;">
+              Modern web development has become weighed down with gigabytes of redundant node dependencies, fragile runtime frameworks, and homogenizing AI boilerplates. At Nexus Studio, we believe in radical engineering discipline.
+            </p>
+          </div>
+          <div>
+            <h3 class="h3" style="margin-bottom: 1rem;">Tactile Swiss Precision</h3>
+            <p class="text-secondary" style="line-height: 1.7;">
+              We treat digital products like precision mechanical watches. Every typographic hierarchy, spacing increment, and micro-interaction is calculated with mathematical intent to evoke trust, authority, and emotional resonance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Principles Section -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">OUR CODE OF CRAFT</div>
+          <h2 class="display-title" style="font-size: clamp(2rem, 4vw, 3.25rem);">Foundational Principles</h2>
+        </div>
+
+        <div class="grid-4">
+          <div class="process-card reveal-on-scroll">
+            <div>
+              <div class="font-mono text-accent" style="font-size: 1.25rem; margin-bottom: 1rem;">01 / INTEGRITY</div>
+              <h3 class="h4" style="margin-bottom: 0.5rem;">Zero Bloatware</h3>
+            </div>
+            <p class="text-secondary" style="font-size: 0.9rem;">
+              We write clean, semantic HTML5, modern CSS, and vanilla JavaScript that loads instantaneously without relying on bloated dependencies.
+            </p>
+          </div>
+
+          <div class="process-card reveal-on-scroll reveal-delay-1">
+            <div>
+              <div class="font-mono text-accent" style="font-size: 1.25rem; margin-bottom: 1rem;">02 / ERGONOMICS</div>
+              <h3 class="h4" style="margin-bottom: 0.5rem;">Cognitive Ergonomics</h3>
+            </div>
+            <p class="text-secondary" style="font-size: 0.9rem;">
+              Interfaces designed for high-density comprehension, keyboard hotkey flows, and zero visual clutter for serious operators.
+            </p>
+          </div>
+
+          <div class="process-card reveal-on-scroll reveal-delay-2">
+            <div>
+              <div class="font-mono text-accent" style="font-size: 1.25rem; margin-bottom: 1rem;">03 / TYPOGRAPHY</div>
+              <h3 class="h4" style="margin-bottom: 0.5rem;">Editorial Typographic Art</h3>
+            </div>
+            <p class="text-secondary" style="font-size: 0.9rem;">
+              Carefully calibrated typographic pairings combining modern grotesque geometry, editorial serifs, and high-precision monospaced telemetry.
+            </p>
+          </div>
+
+          <div class="process-card reveal-on-scroll reveal-delay-3">
+            <div>
+              <div class="font-mono text-accent" style="font-size: 1.25rem; margin-bottom: 1rem;">04 / DURABILITY</div>
+              <h3 class="h4" style="margin-bottom: 0.5rem;">Permanent Durability</h3>
+            </div>
+            <p class="text-secondary" style="font-size: 0.9rem;">
+              We engineer digital platforms that remain fast, secure, and visually commanding for years without breaking or requiring endless maintenance.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Leadership & Core Team -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">THE ATELIER</div>
+          <h2 class="display-title" style="font-size: clamp(2rem, 4vw, 3.25rem); margin-bottom: 1rem;">Studio Leadership</h2>
+          <p class="lead" style="max-width: 620px;">
+            A senior team of specialists with roots in Swiss typography, quantitative systems architecture, and luxury creative direction.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <!-- Member 1 -->
+          <div class="team-card reveal-on-scroll">
+            <div class="team-photo-wrap">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80" alt="Soraya Al-Mansoor" class="team-photo" loading="lazy">
+            </div>
+            <div class="team-name">Soraya Al-Mansoor</div>
+            <div class="team-role">VP of Design &amp; Systems</div>
+            <p class="team-bio">Former Design Director at Pentagram &amp; Basel Design School alumni. Specialist in design tokens and high-stakes UI ergonomics.</p>
+          </div>
+
+          <!-- Member 2 -->
+          <div class="team-card reveal-on-scroll reveal-delay-1">
+            <div class="team-photo-wrap">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80" alt="Henrik Lindqvist" class="team-photo" loading="lazy">
+            </div>
+            <div class="team-name">Henrik Lindqvist</div>
+            <div class="team-role">Managing Director &amp; Strategy</div>
+            <p class="team-bio">15+ years advising institutional leadership and high-growth technology founders on digital positioning and enterprise valuation.</p>
+          </div>
+
+          <!-- Member 3 -->
+          <div class="team-card reveal-on-scroll reveal-delay-2">
+            <div class="team-photo-wrap">
+              <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80" alt="Dr. Christian Vane" class="team-photo" loading="lazy">
+            </div>
+            <div class="team-name">Dr. Christian Vane</div>
+            <div class="team-role">Principal Web Architect</div>
+            <p class="team-bio">PhD in Computer Graphics from ETH Zurich. Pioneer in zero-dependency WebGL shaders and sub-50ms static hydration.</p>
+          </div>
+
+          <!-- Member 4 -->
+          <div class="team-card reveal-on-scroll reveal-delay-3">
+            <div class="team-photo-wrap">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80" alt="Maya Chen" class="team-photo" loading="lazy">
+            </div>
+            <div class="team-name">Maya Chen</div>
+            <div class="team-role">Creative Director &amp; Motion</div>
+            <p class="team-bio">Awwwards Judge &amp; multidisciplinary creative director blending cinematic visual choreography with physical sound design.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Awards & Recognition Ledger -->
+    <section class="section">
+      <div class="container container-narrow">
+        <div class="section-header">
+          <div class="section-eyebrow">ACCOLADES &amp; RECOGNITION</div>
+          <h2 class="display-title" style="font-size: clamp(2rem, 4vw, 3.25rem);">Industry Honors</h2>
+        </div>
+
+        <div class="awards-list">
+          <div class="award-row reveal-on-scroll">
+            <span class="award-year">2026</span>
+            <span class="award-title">FWA of the Day &bull; Aurora Financial Platform</span>
+            <span class="award-org">Favorite Website Awards</span>
+          </div>
+          <div class="award-row reveal-on-scroll">
+            <span class="award-year">2026</span>
+            <span class="award-title">Awwwards Site of the Month &bull; Vortex Dynamics 3D</span>
+            <span class="award-org">Awwwards International</span>
+          </div>
+          <div class="award-row reveal-on-scroll">
+            <span class="award-year">2025</span>
+            <span class="award-title">Red Dot: Best of the Best &bull; Solaris Spatial Identity</span>
+            <span class="award-org">Red Dot Design Awards</span>
+          </div>
+          <div class="award-row reveal-on-scroll">
+            <span class="award-year">2025</span>
+            <span class="award-title">D&amp;AD Yellow Pencil &bull; Lumina Clinical Intelligence</span>
+            <span class="award-org">D&amp;AD London</span>
+          </div>
+          <div class="award-row reveal-on-scroll">
+            <span class="award-year">2024</span>
+            <span class="award-title">European Design Gold Award &bull; Archipelago Reserve</span>
+            <span class="award-org">EDAwards</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Studio Presence Locations -->
+    <section class="section">
+      <div class="container">
+        <div class="section-header">
+          <div class="section-eyebrow">GLOBAL FOOTPRINT</div>
+          <h2 class="display-title" style="font-size: clamp(2rem, 4vw, 3.25rem);">Studio Locations</h2>
+        </div>
+
+        <div class="grid-4">
+          <div class="direct-channel-card reveal-on-scroll">
+            <div class="direct-channel-title">Zurich (HQ)</div>
+            <div class="direct-channel-val" style="margin-bottom: 0.5rem;">Limmatquai 48</div>
+            <p class="text-secondary" style="font-size: 0.875rem;">8001 Zürich, Switzerland</p>
+          </div>
+          <div class="direct-channel-card reveal-on-scroll reveal-delay-1">
+            <div class="direct-channel-title">New York</div>
+            <div class="direct-channel-val" style="margin-bottom: 0.5rem;">530 Broadway, Fl 8</div>
+            <p class="text-secondary" style="font-size: 0.875rem;">SoHo, NY 10012, USA</p>
+          </div>
+          <div class="direct-channel-card reveal-on-scroll reveal-delay-2">
+            <div class="direct-channel-title">London</div>
+            <div class="direct-channel-val" style="margin-bottom: 0.5rem;">25 Clerkenwell Green</div>
+            <p class="text-secondary" style="font-size: 0.875rem;">London EC1R 0DU, UK</p>
+          </div>
+          <div class="direct-channel-card reveal-on-scroll reveal-delay-3">
+            <div class="direct-channel-title">Tokyo</div>
+            <div class="direct-channel-val" style="margin-bottom: 0.5rem;">5-7-2 Minami-Aoyama</div>
+            <p class="text-secondary" style="font-size: 0.875rem;">Minato-ku, Tokyo 107-0062</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="section" style="background-color: var(--bg-secondary);">
+      <div class="container" style="text-align: center; padding: clamp(3rem, 6vw, 6rem) 0;">
+        <span class="badge" style="margin: 0 auto 1.5rem;">COLLABORATE WITH US</span>
+        <h2 class="display-title" style="max-width: 800px; margin: 0 auto 2rem;">
+          Have a Vision That Demands True Craft?
+        </h2>
+        <a href="contact.html" class="btn btn-lg btn-primary" data-cursor-hover>Initiate Project Brief &rarr;</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Editorial Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <a href="index.html" class="site-logo">
+            <span class="logo-mark"></span>
+            Nexus Studio
+          </a>
+          <p>
+            An independent digital agency crafting precision web architecture, brand systems, and bespoke digital platforms for category-defining companies worldwide.
+          </p>
+          <div class="badge badge-outline">NO COOKIES &bull; ZERO TRACKERS &bull; 100% STATIC</div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Studio</a></li>
+            <li><a href="services.html" class="footer-link">Services &amp; Scope</a></li>
+            <li><a href="work.html" class="footer-link">Case Studies</a></li>
+            <li><a href="contact.html" class="footer-link">Project Inquiry</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Selected Work</div>
+          <ul class="footer-links-list">
+            <li><a href="case-study.html?project=aurora" class="footer-link">Aurora Financial</a></li>
+            <li><a href="case-study.html?project=lumina" class="footer-link">Lumina Health AI</a></li>
+            <li><a href="case-study.html?project=vortex" class="footer-link">Vortex Dynamics</a></li>
+            <li><a href="case-study.html?project=solaris" class="footer-link">Solaris Spatial</a></li>
+            <li><a href="case-study.html?project=kinetix" class="footer-link">Kinetix Mobility</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Studio Inquiries</div>
+          <p style="font-size: 0.9375rem; color: var(--text-secondary); margin-bottom: 1rem;">
+            For RFP submissions, partnership inquiries, or press:
+          </p>
+          <a href="mailto:inquire@nexusstudio.io" class="editorial-link" style="color: var(--accent-primary);">inquire@nexusstudio.io</a>
+        </div>
+      </div>
+
+      <!-- Studio Timezone Clocks Strip -->
+      <div class="footer-clocks-strip">
+        <div class="studio-clock-item">
+          <span class="clock-city">Zurich (HQ)</span>
+          <span class="clock-time" id="clock-zurich">--:--:--</span>
+          <span class="clock-status">&bull; Central European Time</span>
+        </div>
+        <div class="studio-clock-item">
+          <span class="clock-city">New York</span>
+          <span class="clock-time" id="clock-ny">--:--:--</span>
+          <span class="clock-status">&bull; Eastern Time</span>
+        </div>
+        <div class="studio-clock-item">
+          <span class="clock-city">Tokyo</span>
+          <span class="clock-time" id="clock-tokyo">--:--:--</span>
+          <span class="clock-status">&bull; Japan Standard Time</span>
+        </div>
+        <div class="studio-clock-item">
+          <span class="clock-city">London</span>
+          <span class="clock-time" id="clock-london">--:--:--</span>
+          <span class="clock-status">&bull; Greenwich Mean Time</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Nexus Studio AG. All rights reserved. Crafted with zero dependencies.
+        </div>
+        <div class="footer-meta-actions">
+          <button type="button" class="vault-trigger-btn" data-open-vault>Client Vault [Shift + H]</button>
+          <span>&bull;</span>
+          <span>v2.4 Production Static</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data/projects.js"></script>
+  <script src="js/data/services.js"></script>
+  <script src="js/data/testimonials.js"></script>
+  <script src="js/modules/theme.js"></script>
+  <script src="js/modules/toast.js"></script>
+  <script src="js/modules/cursor.js"></script>
+  <script src="js/modules/navigation.js"></script>
+  <script src="js/modules/filter.js"></script>
+  <script src="js/modules/slider.js"></script>
+  <script src="js/modules/accordion.js"></script>
+  <script src="js/modules/caseStudy.js"></script>
+  <script src="js/modules/forms.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

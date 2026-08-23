@@ -1,0 +1,188 @@
+/* ==========================================================================
+   MediCare Plus - About Us & Contact Page Styles
+   ========================================================================== */
+
+/* About Highlights Grid */
+.about-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-12);
+}
+
+.about-stat-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  text-align: center;
+}
+
+.about-stat-number {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-primary-950);
+  line-height: 1;
+  margin-bottom: 0.35rem;
+}
+
+.about-stat-label {
+  font-size: 0.8125rem;
+  color: var(--color-neutral-600);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* Clinical Governance Board */
+.governance-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+}
+
+.governance-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.governance-img-wrap {
+  height: 200px;
+  overflow: hidden;
+  background: var(--color-neutral-200);
+}
+
+.governance-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: top;
+}
+
+.governance-body {
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.governance-name {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-neutral-900);
+  margin-bottom: 0.2rem;
+}
+
+.governance-title {
+  font-size: 0.8125rem;
+  color: var(--color-accent-700);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.governance-bio {
+  font-size: 0.8125rem;
+  color: var(--color-neutral-600);
+  line-height: 1.5;
+}
+
+/* Contact Campus Cards */
+.campuses-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-12);
+}
+
+.campus-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-xs);
+}
+
+.campus-type {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.35rem;
+}
+
+.campus-name {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: var(--color-primary-950);
+  margin-bottom: 0.75rem;
+}
+
+.campus-detail-line {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--color-neutral-700);
+  margin-bottom: 0.5rem;
+}
+
+.campus-detail-line svg {
+  width: 16px;
+  height: 16px;
+  color: var(--color-neutral-500);
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+
+/* Contact Form Layout */
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: var(--space-10);
+  align-items: flex-start;
+}
+
+.directory-phone-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-3);
+  font-size: 0.875rem;
+}
+
+.directory-phone-table td {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.directory-phone-table td:first-child {
+  font-weight: 600;
+  color: var(--color-neutral-900);
+}
+
+.directory-phone-table td:last-child {
+  text-align: right;
+  font-family: var(--font-mono);
+  color: var(--color-primary-800);
+}
+
+@media (max-width: 992px) {
+  .about-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .governance-grid {
+    grid-template-columns: 1fr;
+  }
+  .campuses-grid {
+    grid-template-columns: 1fr;
+  }
+  .contact-layout {
+    grid-template-columns: 1fr;
+  }
+}

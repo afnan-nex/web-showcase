@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Find Doctors & Specialists — MediCare Plus</title>
+  <meta name="description" content="Search our directory of board-certified physicians, surgeons, and medical specialists across all clinical departments at MediCare Plus.">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/doctors.css">
+</head>
+<body>
+  <!-- Accessibility Skip Link -->
+  <a href="#mainContent" class="skip-link">Skip to main content</a>
+
+  <!-- Emergency Top Bar -->
+  <header class="emergency-topbar">
+    <div class="container emergency-topbar-inner">
+      <div style="display:flex; align-items:center; gap:0.75rem; flex-wrap:wrap;">
+        <span class="emergency-tag">
+          <svg viewBox="0 0 24 24"><path d="M12 2L2 22h20L12 2zm1 15h-2v-2h2v2zm0-4h-2V8h2v5z"/></svg>
+          24/7 EMERGENCY
+        </span>
+        <span class="topbar-info-item">Trauma Hotline: <a href="tel:8005550911"><strong>+1 (800) 555-0911</strong></a></span>
+        <span class="topbar-info-item" style="color:var(--color-neutral-400);">|</span>
+        <span class="topbar-info-item">Appointment Desk: <a href="tel:8005550144">+1 (800) 555-0144</a></span>
+      </div>
+      <div class="topbar-links">
+        <a href="patient-portal.html">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          Patient Portal Login
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Navigation -->
+  <nav class="site-header" aria-label="Main Navigation">
+    <div class="container header-inner">
+      <a href="index.html" class="brand">
+        <div class="brand-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none">
+            <path d="M12 5v14M5 12h14" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <div class="brand-title">MediCare <span>Plus</span></div>
+          <div class="brand-subtitle">Hospital & Medical Clinics</div>
+        </div>
+      </a>
+
+      <div class="main-nav">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="doctors.html" class="nav-link">Find Doctors</a>
+        <a href="services.html" class="nav-link">Services & Clinics</a>
+        <a href="appointment.html" class="nav-link">Book Appointment</a>
+        <a href="patient-portal.html" class="nav-link">Patient Portal</a>
+        <a href="about.html" class="nav-link">About Us</a>
+        <a href="contact.html" class="nav-link">Locations & Contact</a>
+      </div>
+
+      <div class="header-actions">
+        <button class="search-trigger-btn" aria-label="Open search">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <span>Search</span>
+          <kbd class="search-kbd">Ctrl K</kbd>
+        </button>
+
+        <button class="notif-bell-btn" id="notifBellBtn" aria-label="View notifications">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+          <span class="notif-badge" id="notifBadge" style="display:none;">0</span>
+        </button>
+
+        <a href="appointment.html" class="btn btn-primary btn-sm">Schedule Visit</a>
+
+        <button class="nav-toggle-btn" id="mobileNavToggle" aria-label="Toggle navigation menu">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Banner -->
+  <header class="page-banner">
+    <div class="container">
+      <span class="badge badge-primary" style="background:rgba(255,255,255,0.1); color:#FFF; border-color:rgba(255,255,255,0.2); margin-bottom:0.75rem;">Physician Directory</span>
+      <h1>Find Board-Certified Specialists</h1>
+      <p>Search our multi-disciplinary medical faculty by specialty, location, accepted insurance, language, and real-time appointment availability.</p>
+    </div>
+  </header>
+
+  <!-- Main Directory Section -->
+  <main id="mainContent">
+    <div class="container">
+      <div class="doctors-layout">
+        
+        <!-- Filter Sidebar -->
+        <aside class="filter-sidebar" id="filterSidebar" aria-label="Physician Filters">
+          <div class="filter-sidebar-header">
+            <span class="filter-sidebar-title">Filter Directory</span>
+            <button id="resetFiltersBtn" class="filter-reset-btn">Reset All</button>
+          </div>
+
+          <!-- Specialty Filter -->
+          <div class="filter-group">
+            <div class="filter-group-title">Medical Specialty</div>
+            <div class="filter-options">
+              <label class="form-check">
+                <input type="checkbox" name="specialty" value="cardiology" class="form-check-input">
+                <span class="form-check-label">Cardiovascular</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="specialty" value="neurology" class="form-check-input">
+                <span class="form-check-label">Neurology & Stroke</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="specialty" value="orthopedics" class="form-check-input">
+                <span class="form-check-label">Orthopedic Surgery</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="specialty" value="oncology" class="form-check-input">
+                <span class="form-check-label">Medical Oncology</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="specialty" value="pediatrics" class="form-check-input">
+                <span class="form-check-label">Pediatrics</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="specialty" value="internal-medicine" class="form-check-input">
+                <span class="form-check-label">Internal Medicine</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="specialty" value="dermatology" class="form-check-input">
+                <span class="form-check-label">Dermatology</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="specialty" value="radiology" class="form-check-input">
+                <span class="form-check-label">Diagnostic Radiology</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Availability Filter -->
+          <div class="filter-group">
+            <div class="filter-group-title">Availability</div>
+            <div class="filter-options">
+              <label class="form-check">
+                <input type="checkbox" name="availability" value="Today" class="form-check-input">
+                <span class="form-check-label">Available Today</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="availability" value="Tomorrow" class="form-check-input">
+                <span class="form-check-label">Available Tomorrow</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="availability" value="This Week" class="form-check-input">
+                <span class="form-check-label">This Week</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Consultation Type -->
+          <div class="filter-group">
+            <div class="filter-group-title">Consultation Type</div>
+            <div class="filter-options">
+              <label class="form-check">
+                <input type="checkbox" name="consultType" value="In-Person" class="form-check-input">
+                <span class="form-check-label">In-Person Consultation</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="consultType" value="Video Consultation" class="form-check-input">
+                <span class="form-check-label">Telehealth Video Call</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Location -->
+          <div class="filter-group">
+            <div class="filter-group-title">Campus & Clinic</div>
+            <div class="filter-options">
+              <label class="form-check">
+                <input type="checkbox" name="location" value="MediCare Plus Main Medical Center" class="form-check-input">
+                <span class="form-check-label">Main Medical Center</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="location" value="MediCare Plus Westside Specialty Pavilion" class="form-check-input">
+                <span class="form-check-label">Westside Pavilion</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="location" value="MediCare Plus North Suburban Diagnostic & Wellness" class="form-check-input">
+                <span class="form-check-label">North Suburban Clinic</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Language -->
+          <div class="filter-group">
+            <div class="filter-group-title">Spoken Language</div>
+            <div class="filter-options">
+              <label class="form-check">
+                <input type="checkbox" name="language" value="English" class="form-check-input">
+                <span class="form-check-label">English</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="language" value="Spanish" class="form-check-input">
+                <span class="form-check-label">Spanish</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="language" value="French" class="form-check-input">
+                <span class="form-check-label">French</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="language" value="German" class="form-check-input">
+                <span class="form-check-label">German</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="language" value="Mandarin" class="form-check-input">
+                <span class="form-check-label">Mandarin</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="language" value="Russian" class="form-check-input">
+                <span class="form-check-label">Russian</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="language" value="Igbo" class="form-check-input">
+                <span class="form-check-label">Igbo</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Gender -->
+          <div class="filter-group" style="margin-bottom:0;">
+            <div class="filter-group-title">Physician Gender</div>
+            <div class="filter-options">
+              <label class="form-check">
+                <input type="checkbox" name="gender" value="Female" class="form-check-input">
+                <span class="form-check-label">Female</span>
+              </label>
+              <label class="form-check">
+                <input type="checkbox" name="gender" value="Male" class="form-check-input">
+                <span class="form-check-label">Male</span>
+              </label>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Right Content Area -->
+        <section aria-label="Doctors Directory Listing">
+          <div class="directory-controls">
+            <div class="directory-search-input">
+              <input type="text" id="doctorSearchInput" class="form-control" placeholder="Search by name, sub-specialty, condition, or keyword...">
+            </div>
+            <div class="directory-sort-select">
+              <select id="doctorSortSelect" class="form-control form-select">
+                <option value="rating">Sort: Highest Rated</option>
+                <option value="experience">Sort: Most Experienced</option>
+                <option value="fee-asc">Sort: Fee (Lowest First)</option>
+                <option value="fee-desc">Sort: Fee (Highest First)</option>
+                <option value="name">Sort: Name (A to Z)</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Active filters strip & count -->
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:0.5rem; margin-bottom:1rem;">
+            <div id="activeFiltersStrip" class="active-filters-strip" style="margin-bottom:0;"></div>
+            <span id="doctorResultCount" class="badge badge-neutral" style="font-size:0.8125rem; padding:0.35rem 0.6rem;">Loading physicians...</span>
+          </div>
+
+          <!-- Grid Container -->
+          <div id="doctorsGrid" class="doctors-grid">
+            <!-- Rendered by doctors.js -->
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Hospital Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-main-grid">
+        <div>
+          <div class="brand" style="margin-bottom:1rem;">
+            <div class="brand-icon" style="background:var(--color-primary-800);">
+              <svg viewBox="0 0 24 24" fill="none" stroke="#FFF" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg>
+            </div>
+            <div class="brand-text">
+              <div class="brand-title" style="color:var(--color-white);">MediCare <span style="color:var(--color-accent-500);">Plus</span></div>
+              <div class="brand-subtitle" style="color:var(--color-neutral-400);">Academic Medical Center</div>
+            </div>
+          </div>
+          <p class="text-sm text-muted" style="line-height:1.6; max-width:340px;">
+            A premier academic healthcare facility dedicated to delivering sub-specialized clinical medicine, innovative surgical procedures, and patient-first care.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Departments</h4>
+          <ul class="footer-links-list">
+            <li><a href="services.html?dept=cardiology">Cardiovascular Medicine</a></li>
+            <li><a href="services.html?dept=neurology">Neurology & Stroke</a></li>
+            <li><a href="services.html?dept=orthopedics">Orthopedic Surgery</a></li>
+            <li><a href="services.html?dept=oncology">Medical Oncology</a></li>
+            <li><a href="services.html?dept=pediatrics">Pediatric Medicine</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="appointment.html">Schedule an Appointment</a></li>
+            <li><a href="doctors.html">Physician Directory</a></li>
+            <li><a href="patient-portal.html">Patient Portal Login</a></li>
+            <li><a href="contact.html">Hospital Locations & Maps</a></li>
+            <li><a href="about.html">Accreditations & Board</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Appointment Desk</h4>
+          <p class="text-sm text-muted">Direct Scheduling: <strong>+1 (800) 555-0144</strong></p>
+          <p class="text-sm text-muted">Emergency Dispatch: <strong>+1 (800) 555-0911</strong></p>
+          <div style="margin-top:1rem;">
+            <a href="appointment.html" class="btn btn-primary btn-sm btn-block" style="background:var(--color-accent-600); border-color:var(--color-accent-700);">Online Booking Wizard</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom-strip">
+        <div class="footer-bottom-inner">
+          <div>&copy; 2026 MediCare Plus Hospital & Specialty Clinics. All rights reserved.</div>
+          <div style="display:flex; gap:1rem;">
+            <a href="about.html" style="color:var(--color-neutral-400);">Privacy Practices (HIPAA)</a>
+            <a href="about.html" style="color:var(--color-neutral-400);">Patient Rights</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search Modal -->
+  <div id="searchModal" class="search-modal-backdrop" aria-hidden="true" role="dialog">
+    <div class="search-modal-window">
+      <div class="search-modal-header">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="globalSearchInput" class="search-modal-input" placeholder="Search doctors, medical specialties, clinical services...">
+        <button class="search-modal-close-btn" data-action="close-search">ESC</button>
+      </div>
+      <div id="globalSearchResults" class="search-results-area"></div>
+    </div>
+  </div>
+
+  <!-- Notification Center Drawer -->
+  <div id="notifDrawerBackdrop" class="notif-drawer-backdrop" aria-hidden="true"></div>
+  <aside id="notifDrawer" class="notif-drawer" aria-hidden="true">
+    <div class="notif-drawer-header">
+      <h3 class="notif-drawer-title">Notifications</h3>
+      <div class="notif-drawer-actions">
+        <button id="markAllReadBtn" class="btn btn-sm text-sm" style="color:var(--color-primary-700); padding:0.2rem 0.4rem;">Mark all read</button>
+        <button id="closeNotifDrawerBtn" class="btn btn-sm">&times;</button>
+      </div>
+    </div>
+    <div id="notifDrawerList" class="notif-drawer-content"></div>
+  </aside>
+
+  <!-- Mobile Nav Drawer -->
+  <div id="mobileNavDrawer" class="mobile-nav-drawer" aria-hidden="true">
+    <div class="mobile-nav-panel">
+      <div style="display:flex; justify-content:space-between; align-items:center; border-bottom:1px solid var(--color-neutral-200); padding-bottom:1rem;">
+        <div class="brand-title">MediCare <span>Plus</span></div>
+        <button id="closeMobileNavBtn" class="btn btn-sm" style="font-size:1.25rem;">&times;</button>
+      </div>
+      <nav style="display:flex; flex-direction:column;">
+        <a href="index.html" class="mobile-nav-link">Home</a>
+        <a href="doctors.html" class="mobile-nav-link">Find Doctors</a>
+        <a href="services.html" class="mobile-nav-link">Services & Clinics</a>
+        <a href="appointment.html" class="mobile-nav-link">Book Appointment</a>
+        <a href="patient-portal.html" class="mobile-nav-link">Patient Portal</a>
+        <a href="about.html" class="mobile-nav-link">About Us</a>
+        <a href="contact.html" class="mobile-nav-link">Locations & Contact</a>
+      </nav>
+      <div style="margin-top:auto; padding-top:1rem; border-top:1px solid var(--color-neutral-200);">
+        <a href="appointment.html" class="btn btn-primary btn-block">Schedule Appointment</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+  <script src="js/doctors.js"></script>
+</body>
+</html>

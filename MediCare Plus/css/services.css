@@ -1,0 +1,234 @@
+/* ==========================================================================
+   MediCare Plus - Medical Services & Departments Styles
+   ========================================================================== */
+
+.services-filter-bar {
+  background: var(--color-white);
+  border-bottom: 1px solid var(--color-neutral-200);
+  padding: var(--space-4) 0;
+  position: sticky;
+  top: 72px;
+  z-index: 90;
+}
+
+.services-filter-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.dept-pill-tabs {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  overflow-x: auto;
+  padding-bottom: 2px;
+  max-width: 100%;
+}
+
+.dept-tab-btn {
+  font-size: 0.8125rem;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-neutral-100);
+  color: var(--color-neutral-700);
+  border: 1px solid var(--color-neutral-200);
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+
+.dept-tab-btn:hover {
+  background-color: var(--color-neutral-200);
+  color: var(--color-neutral-900);
+}
+
+.dept-tab-btn.active {
+  background-color: var(--color-primary-900);
+  color: var(--color-white);
+  border-color: var(--color-primary-950);
+}
+
+/* Department Showcase Card */
+.dept-showcase {
+  background: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-8);
+  margin-bottom: var(--space-10);
+  box-shadow: var(--shadow-sm);
+}
+
+.dept-showcase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.dept-showcase-title {
+  font-size: 1.75rem;
+  color: var(--color-primary-950);
+  margin-bottom: 0.25rem;
+}
+
+.dept-showcase-chair {
+  font-size: 0.9375rem;
+  color: var(--color-neutral-600);
+}
+
+.dept-lead-time-box {
+  background-color: var(--color-primary-50);
+  border: 1px solid var(--color-primary-100);
+  padding: 0.5rem 0.85rem;
+  border-radius: var(--radius-md);
+  font-size: 0.8125rem;
+  color: var(--color-primary-900);
+  font-weight: 600;
+}
+
+/* Services Grid */
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+.service-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-xs);
+  transition: all 0.15s ease;
+}
+
+.service-card:hover {
+  border-color: var(--color-neutral-300);
+  box-shadow: var(--shadow-md);
+}
+
+.service-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-3);
+  gap: var(--space-2);
+}
+
+.service-name {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: var(--color-neutral-900);
+  margin-bottom: 0.25rem;
+}
+
+.service-dept-name {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-accent-700);
+  font-weight: 700;
+  display: block;
+}
+
+.service-desc {
+  font-size: 0.875rem;
+  color: var(--color-neutral-600);
+  line-height: 1.55;
+  margin-bottom: var(--space-4);
+  flex-grow: 1;
+}
+
+.service-included-box {
+  background-color: var(--color-neutral-50);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  margin-bottom: var(--space-4);
+}
+
+.service-included-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-neutral-700);
+  margin-bottom: 0.5rem;
+}
+
+.service-included-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.service-included-item {
+  font-size: 0.8125rem;
+  color: var(--color-neutral-700);
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.service-included-item svg {
+  width: 14px;
+  height: 14px;
+  color: var(--color-success-700);
+  flex-shrink: 0;
+}
+
+.service-card-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8125rem;
+  padding-top: var(--space-3);
+  border-top: 1px solid var(--color-neutral-100);
+  margin-bottom: var(--space-4);
+}
+
+.service-card-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* Service Detail Modal */
+.service-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.6);
+  z-index: 1000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-4);
+}
+
+.service-modal-backdrop.open {
+  display: flex;
+}
+
+.service-modal-window {
+  background: var(--color-white);
+  border-radius: var(--radius-lg);
+  max-width: 620px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: var(--shadow-xl);
+  border: 1px solid var(--color-neutral-300);
+  display: flex;
+  flex-direction: column;
+}
+
+@media (max-width: 768px) {
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}

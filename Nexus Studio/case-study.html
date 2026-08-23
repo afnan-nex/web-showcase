@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Case Study — Nexus Studio</title>
+  <meta name="description" content="Explore in-depth architectural and design case studies from Nexus Studio.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/layout.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="site-logo" aria-label="Nexus Studio Home">
+        <span class="logo-mark"></span>
+        Nexus Studio
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="about.html" class="nav-link">About</a>
+        <a href="services.html" class="nav-link">Services</a>
+        <a href="work.html" class="nav-link">Work</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="header-status-badge">
+          <span class="status-dot pulsing"></span>
+          <span>Studio Capacity: Q3 Open</span>
+        </div>
+
+        <div class="theme-switch-wrapper" role="group" aria-label="Theme Selection">
+          <button type="button" class="theme-btn active" data-theme-btn="dark" aria-label="Dark Mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+          </button>
+          <button type="button" class="theme-btn" data-theme-btn="light" aria-label="Light Mode">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+          </button>
+          <button type="button" class="theme-btn" data-theme-btn="system" aria-label="System Preference">
+            <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+          </button>
+        </div>
+
+        <a href="contact.html" class="btn btn-sm btn-primary header-cta-btn">Start a Project</a>
+
+        <button type="button" class="menu-toggle-btn" aria-label="Toggle Menu" aria-expanded="false">
+          <span class="menu-toggle-line"></span>
+          <span class="menu-toggle-line"></span>
+          <span class="menu-toggle-line"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fullscreen Mobile Navigation -->
+  <div class="mobile-menu-overlay" aria-hidden="true">
+    <nav class="mobile-nav-list">
+      <a href="index.html" class="mobile-nav-link"><span class="nav-num">01</span> Home</a>
+      <a href="about.html" class="mobile-nav-link"><span class="nav-num">02</span> About</a>
+      <a href="services.html" class="mobile-nav-link"><span class="nav-num">03</span> Services</a>
+      <a href="work.html" class="mobile-nav-link"><span class="nav-num">04</span> Selected Work</a>
+      <a href="contact.html" class="mobile-nav-link"><span class="nav-num">05</span> Project Inquiry</a>
+    </nav>
+    <div class="mobile-menu-footer">
+      <div class="mobile-menu-contact">
+        <div>DIRECT INQUIRY</div>
+        <a href="mailto:inquire@nexusstudio.io" style="color: var(--accent-primary); font-size: 1.1rem;">inquire@nexusstudio.io</a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <!-- Dynamic Case Study Mount (Populated by js/modules/caseStudy.js) -->
+    <div id="case-study-content">
+      <!-- Loading Skeleton Placeholder -->
+      <div class="container section" style="text-align: center; padding: 10rem 0;">
+        <div class="section-eyebrow" style="justify-content: center;">HYDRATING CASE STUDY</div>
+        <h1 class="h2">Loading Architectural Dossier...</h1>
+      </div>
+    </div>
+  </main>
+
+  <!-- Editorial Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand-col">
+          <a href="index.html" class="site-logo">
+            <span class="logo-mark"></span>
+            Nexus Studio
+          </a>
+          <p>
+            An independent digital agency crafting precision web architecture, brand systems, and bespoke digital platforms for category-defining companies worldwide.
+          </p>
+          <div class="badge badge-outline">NO COOKIES &bull; ZERO TRACKERS &bull; 100% STATIC</div>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Navigation</div>
+          <ul class="footer-links-list">
+            <li><a href="index.html" class="footer-link">Home</a></li>
+            <li><a href="about.html" class="footer-link">About Studio</a></li>
+            <li><a href="services.html" class="footer-link">Services &amp; Scope</a></li>
+            <li><a href="work.html" class="footer-link">Case Studies</a></li>
+            <li><a href="contact.html" class="footer-link">Project Inquiry</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Selected Work</div>
+          <ul class="footer-links-list">
+            <li><a href="case-study.html?project=aurora" class="footer-link">Aurora Financial</a></li>
+            <li><a href="case-study.html?project=lumina" class="footer-link">Lumina Health AI</a></li>
+            <li><a href="case-study.html?project=vortex" class="footer-link">Vortex Dynamics</a></li>
+            <li><a href="case-study.html?project=solaris" class="footer-link">Solaris Spatial</a></li>
+            <li><a href="case-study.html?project=kinetix" class="footer-link">Kinetix Mobility</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="footer-col-title">Studio Inquiries</div>
+          <p style="font-size: 0.9375rem; color: var(--text-secondary); margin-bottom: 1rem;">
+            For RFP submissions, partnership inquiries, or press:
+          </p>
+          <a href="mailto:inquire@nexusstudio.io" class="editorial-link" style="color: var(--accent-primary);">inquire@nexusstudio.io</a>
+        </div>
+      </div>
+
+      <!-- Studio Timezone Clocks Strip -->
+      <div class="footer-clocks-strip">
+        <div class="studio-clock-item">
+          <span class="clock-city">Zurich (HQ)</span>
+          <span class="clock-time" id="clock-zurich">--:--:--</span>
+          <span class="clock-status">&bull; Central European Time</span>
+        </div>
+        <div class="studio-clock-item">
+          <span class="clock-city">New York</span>
+          <span class="clock-time" id="clock-ny">--:--:--</span>
+          <span class="clock-status">&bull; Eastern Time</span>
+        </div>
+        <div class="studio-clock-item">
+          <span class="clock-city">Tokyo</span>
+          <span class="clock-time" id="clock-tokyo">--:--:--</span>
+          <span class="clock-status">&bull; Japan Standard Time</span>
+        </div>
+        <div class="studio-clock-item">
+          <span class="clock-city">London</span>
+          <span class="clock-time" id="clock-london">--:--:--</span>
+          <span class="clock-status">&bull; Greenwich Mean Time</span>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Nexus Studio AG. All rights reserved. Crafted with zero dependencies.
+        </div>
+        <div class="footer-meta-actions">
+          <button type="button" class="vault-trigger-btn" data-open-vault>Client Vault [Shift + H]</button>
+          <span>&bull;</span>
+          <span>v2.4 Production Static</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data/projects.js"></script>
+  <script src="js/data/services.js"></script>
+  <script src="js/data/testimonials.js"></script>
+  <script src="js/modules/theme.js"></script>
+  <script src="js/modules/toast.js"></script>
+  <script src="js/modules/cursor.js"></script>
+  <script src="js/modules/navigation.js"></script>
+  <script src="js/modules/filter.js"></script>
+  <script src="js/modules/slider.js"></script>
+  <script src="js/modules/accordion.js"></script>
+  <script src="js/modules/caseStudy.js"></script>
+  <script src="js/modules/forms.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

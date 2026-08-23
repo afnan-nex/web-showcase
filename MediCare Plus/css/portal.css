@@ -1,0 +1,287 @@
+/* ==========================================================================
+   MediCare Plus - Patient Portal Simulation Styles
+   ========================================================================== */
+
+/* Demo Banner */
+.demo-portal-banner {
+  background-color: var(--color-warning-50);
+  border-bottom: 1px solid var(--color-warning-100);
+  color: var(--color-warning-800);
+  padding: 0.5rem 0;
+  font-size: 0.8125rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.demo-portal-banner strong {
+  color: var(--color-warning-800);
+}
+
+/* Portal Layout */
+.portal-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: var(--space-8);
+  padding: var(--space-8) 0 var(--space-16);
+}
+
+/* Portal Sidebar Navigation */
+.portal-sidebar {
+  background: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  height: fit-content;
+}
+
+.patient-mini-card {
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.patient-mini-name {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-neutral-900);
+  margin-bottom: 0.15rem;
+}
+
+.patient-mini-id {
+  font-size: 0.75rem;
+  color: var(--color-neutral-500);
+  font-family: var(--font-mono);
+}
+
+.portal-nav-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.portal-nav-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--color-neutral-700);
+  transition: all 0.15s ease;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+
+.portal-nav-item svg {
+  width: 18px;
+  height: 18px;
+  color: var(--color-neutral-500);
+  stroke-width: 2;
+}
+
+.portal-nav-item:hover {
+  background-color: var(--color-neutral-100);
+  color: var(--color-primary-900);
+}
+
+.portal-nav-item.active {
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-900);
+  border-color: var(--color-primary-100);
+}
+
+.portal-nav-item.active svg {
+  color: var(--color-primary-900);
+}
+
+/* Tab Content Areas */
+.portal-tab-pane {
+  display: none;
+}
+
+.portal-tab-pane.active {
+  display: block;
+}
+
+/* Patient Vitals Quick Cards */
+.vitals-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+}
+
+.vital-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+}
+
+.vital-label {
+  font-size: 0.75rem;
+  color: var(--color-neutral-500);
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  margin-bottom: 0.25rem;
+}
+
+.vital-value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-primary-950);
+}
+
+/* Appointment List in Portal */
+.portal-appointments-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.portal-appt-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  box-shadow: var(--shadow-xs);
+}
+
+.portal-appt-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: var(--space-3);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-neutral-100);
+}
+
+.portal-appt-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  font-size: 0.8125rem;
+  margin-bottom: var(--space-4);
+}
+
+.portal-appt-grid strong {
+  display: block;
+  font-size: 0.875rem;
+  color: var(--color-neutral-900);
+}
+
+.portal-appt-grid span {
+  color: var(--color-neutral-500);
+  text-transform: uppercase;
+  font-size: 0.7rem;
+}
+
+.portal-appt-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+}
+
+/* Prescriptions Grid */
+.prescriptions-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+}
+
+.prescription-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+}
+
+.rx-badge {
+  background: var(--color-primary-900);
+  color: var(--color-white);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-xs);
+  align-self: flex-start;
+  margin-bottom: 0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.rx-name {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-neutral-900);
+  margin-bottom: 0.25rem;
+}
+
+.rx-instructions {
+  font-size: 0.8125rem;
+  color: var(--color-neutral-700);
+  background: var(--color-neutral-50);
+  padding: 0.5rem 0.75rem;
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-3);
+}
+
+/* Lab Results Table */
+.lab-results-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.lab-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+}
+
+.lab-metrics-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--space-3);
+  font-size: 0.8125rem;
+}
+
+.lab-metrics-table th, .lab-metrics-table td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--color-neutral-200);
+  text-align: left;
+}
+
+.lab-metrics-table th {
+  background: var(--color-neutral-50);
+  font-weight: 600;
+  color: var(--color-neutral-700);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .portal-layout {
+    grid-template-columns: 1fr;
+  }
+  .vitals-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .prescriptions-grid {
+    grid-template-columns: 1fr;
+  }
+  .portal-appt-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .vitals-grid {
+    grid-template-columns: 1fr;
+  }
+  .portal-appt-header {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+}

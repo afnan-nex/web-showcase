@@ -1,0 +1,535 @@
+/* ==========================================================================
+   MediCare Plus - Doctors Directory & Doctor Profile Styles
+   ========================================================================== */
+
+/* Page Banner */
+.page-banner {
+  background-color: var(--color-primary-950);
+  color: var(--color-white);
+  padding: var(--space-10) 0;
+  border-bottom: 1px solid var(--color-primary-800);
+}
+
+.page-banner h1 {
+  color: var(--color-white);
+  font-size: 2.25rem;
+  margin-bottom: 0.5rem;
+}
+
+.page-banner p {
+  color: var(--color-neutral-300);
+  font-size: 1.0625rem;
+  margin-bottom: 0;
+  max-width: 650px;
+}
+
+/* Directory Layout */
+.doctors-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: var(--space-8);
+  padding: var(--space-10) 0 var(--space-16);
+}
+
+/* Filter Sidebar */
+.filter-sidebar {
+  background: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  height: fit-content;
+  position: sticky;
+  top: 90px;
+}
+
+.filter-sidebar-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-3);
+  border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.filter-sidebar-title {
+  font-size: 1.0625rem;
+  font-weight: 700;
+  color: var(--color-neutral-900);
+}
+
+.filter-reset-btn {
+  font-size: 0.8125rem;
+  color: var(--color-accent-700);
+  font-weight: 600;
+  text-decoration: underline;
+  padding: 0;
+}
+.filter-reset-btn:hover {
+  color: var(--color-primary-900);
+}
+
+.filter-group {
+  margin-bottom: var(--space-5);
+}
+
+.filter-group-title {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--color-neutral-800);
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.filter-options {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* Directory Content Area */
+.directory-controls {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-4);
+  margin-bottom: var(--space-4);
+  flex-wrap: wrap;
+}
+
+.directory-search-input {
+  flex: 1;
+  min-width: 240px;
+}
+
+.directory-sort-select {
+  width: auto;
+  min-width: 200px;
+}
+
+.active-filters-strip {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: var(--space-5);
+  font-size: 0.8125rem;
+}
+
+.active-filter-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  background-color: var(--color-primary-50);
+  color: var(--color-primary-900);
+  border: 1px solid var(--color-primary-100);
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-sm);
+  font-weight: 500;
+}
+
+.active-filter-remove {
+  color: var(--color-neutral-500);
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+.active-filter-remove:hover {
+  color: var(--color-danger-700);
+}
+
+/* Doctor Cards Grid */
+.doctors-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+}
+
+.doc-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+  transition: all 0.15s ease;
+}
+
+.doc-card:hover {
+  border-color: var(--color-neutral-300);
+  box-shadow: var(--shadow-md);
+}
+
+.doc-card-header {
+  padding: var(--space-5);
+  display: flex;
+  gap: var(--space-4);
+  border-bottom: 1px solid var(--color-neutral-100);
+}
+
+.doc-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: var(--radius-md);
+  object-fit: cover;
+  object-position: center 20%;
+  border: 1px solid var(--color-neutral-200);
+  flex-shrink: 0;
+  background-color: var(--color-neutral-100);
+}
+
+.doc-header-info {
+  flex: 1;
+}
+
+.doc-dept-badge {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--color-accent-700);
+  letter-spacing: 0.04em;
+  margin-bottom: 0.2rem;
+  display: block;
+}
+
+.doc-name {
+  font-size: 1.1875rem;
+  font-weight: 700;
+  color: var(--color-neutral-900);
+  margin-bottom: 0.2rem;
+}
+
+.doc-specialty {
+  font-size: 0.875rem;
+  color: var(--color-neutral-600);
+  margin-bottom: 0.4rem;
+  line-height: 1.35;
+}
+
+.doc-rating-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+}
+
+.doc-rating-line .star {
+  color: var(--color-warning-700);
+  font-weight: 700;
+}
+
+.doc-card-body {
+  padding: var(--space-4) var(--space-5);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.8125rem;
+}
+
+.doc-detail-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  color: var(--color-neutral-700);
+}
+
+.doc-detail-row svg {
+  width: 15px;
+  height: 15px;
+  color: var(--color-neutral-500);
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.doc-tags-list {
+  display: flex;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+  margin-top: 0.25rem;
+}
+
+.doc-card-footer {
+  padding: var(--space-4) var(--space-5);
+  background-color: var(--color-neutral-50);
+  border-top: 1px solid var(--color-neutral-200);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+}
+
+.doc-fee-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.doc-fee-box .fee-label {
+  font-size: 0.7rem;
+  color: var(--color-neutral-500);
+  text-transform: uppercase;
+}
+
+.doc-fee-box .fee-amount {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--color-neutral-900);
+}
+
+.doc-card-actions {
+  display: flex;
+  gap: var(--space-2);
+}
+
+/* Empty State */
+.empty-doctors-state {
+  grid-column: 1 / -1;
+  background: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-12);
+  text-align: center;
+}
+
+/* ==========================================================================
+   Doctor Profile Page Specific Styles
+   ========================================================================== */
+.profile-layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: var(--space-8);
+  padding: var(--space-10) 0 var(--space-16);
+}
+
+/* Profile Hero Card */
+.profile-header-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  display: flex;
+  gap: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.profile-avatar-lg {
+  width: 140px;
+  height: 140px;
+  border-radius: var(--radius-lg);
+  object-fit: cover;
+  object-position: center 20%;
+  border: 1px solid var(--color-neutral-200);
+  flex-shrink: 0;
+}
+
+.profile-title-area {
+  flex: 1;
+}
+
+.profile-title-area h1 {
+  font-size: 1.75rem;
+  margin-bottom: 0.25rem;
+}
+
+.profile-role-line {
+  font-size: 1rem;
+  color: var(--color-accent-700);
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.profile-highlights-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  padding-top: var(--space-4);
+  margin-top: var(--space-4);
+  border-top: 1px solid var(--color-neutral-200);
+}
+
+.profile-highlight-item strong {
+  display: block;
+  font-size: 1rem;
+  color: var(--color-neutral-900);
+}
+
+.profile-highlight-item span {
+  font-size: 0.75rem;
+  color: var(--color-neutral-500);
+  text-transform: uppercase;
+}
+
+/* Profile Section Blocks */
+.profile-section-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  margin-bottom: var(--space-6);
+}
+
+.profile-section-card h2 {
+  font-size: 1.25rem;
+  margin-bottom: var(--space-4);
+  padding-bottom: var(--space-2);
+  border-bottom: 1px solid var(--color-neutral-100);
+}
+
+/* Timetable Grid */
+.schedule-table-wrap {
+  overflow-x: auto;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.schedule-table th, .schedule-table td {
+  padding: 0.6rem 0.75rem;
+  font-size: 0.875rem;
+  border-bottom: 1px solid var(--color-neutral-200);
+  text-align: left;
+}
+
+.schedule-table th {
+  background-color: var(--color-neutral-50);
+  font-weight: 600;
+  color: var(--color-neutral-700);
+}
+
+/* Education / Cert Timeline */
+.timeline-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.timeline-item {
+  position: relative;
+  padding-left: 1.25rem;
+  border-left: 2px solid var(--color-primary-100);
+}
+
+.timeline-item::before {
+  content: "";
+  position: absolute;
+  left: -5px;
+  top: 5px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--color-primary-700);
+}
+
+.timeline-item strong {
+  font-size: 0.9375rem;
+  color: var(--color-neutral-900);
+  display: block;
+}
+
+.timeline-item span {
+  font-size: 0.8125rem;
+  color: var(--color-neutral-600);
+}
+
+/* Patient Reviews */
+.reviews-summary-box {
+  background-color: var(--color-neutral-50);
+  border-radius: var(--radius-md);
+  padding: var(--space-4);
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  margin-bottom: var(--space-5);
+}
+
+.reviews-score {
+  font-size: 2.25rem;
+  font-weight: 800;
+  color: var(--color-neutral-900);
+  line-height: 1;
+}
+
+.review-item-card {
+  padding: var(--space-4) 0;
+  border-bottom: 1px solid var(--color-neutral-100);
+}
+.review-item-card:last-child {
+  border-bottom: none;
+}
+
+.review-meta {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8125rem;
+  margin-bottom: 0.25rem;
+}
+
+.review-meta strong {
+  color: var(--color-neutral-900);
+}
+
+/* Booking Widget Sticky Card */
+.profile-booking-sticky {
+  position: sticky;
+  top: 90px;
+}
+
+.booking-widget-card {
+  background: var(--color-white);
+  border: 1px solid var(--color-neutral-200);
+  border-radius: var(--radius-lg);
+  padding: var(--space-6);
+  box-shadow: var(--shadow-md);
+}
+
+.booking-widget-header {
+  padding-bottom: var(--space-4);
+  border-bottom: 1px solid var(--color-neutral-200);
+  margin-bottom: var(--space-4);
+}
+
+.booking-widget-fee {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--color-primary-900);
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .doctors-layout {
+    grid-template-columns: 1fr;
+  }
+  .doctors-grid {
+    grid-template-columns: 1fr;
+  }
+  .profile-layout {
+    grid-template-columns: 1fr;
+  }
+  .profile-booking-sticky {
+    position: static;
+  }
+}
+
+@media (max-width: 640px) {
+  .profile-header-card {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  .profile-highlights-grid {
+    grid-template-columns: 1fr;
+  }
+  .doc-card-footer {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .doc-card-actions {
+    width: 100%;
+  }
+  .doc-card-actions .btn {
+    flex: 1;
+  }
+}
