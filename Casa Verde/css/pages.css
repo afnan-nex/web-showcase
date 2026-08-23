@@ -1,0 +1,820 @@
+/* ==========================================================================
+   Casa Verde — Page Specific Stylesheet
+   Cinematic hero, room detail, dining, spa, experiences, booking stepper,
+   hotel confirmation voucher & print styles.
+   ========================================================================== */
+
+/* --- Cinematic Heroes --- */
+.hero-cinematic {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  padding: 120px var(--container-gutter) 80px;
+  background-color: var(--color-primary-dark);
+  overflow: hidden;
+}
+
+.hero-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.hero-bg-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  transform: scale(1.02);
+  animation: heroKenBurns 24s infinite alternate ease-in-out;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(14, 26, 22, 0.4) 0%, rgba(14, 26, 22, 0.55) 60%, rgba(14, 26, 22, 0.92) 100%);
+  z-index: 2;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  font-size: var(--text-6xl);
+  font-family: var(--font-serif);
+  font-weight: 400;
+  line-height: 1.1;
+  color: #FFFFFF;
+  margin-bottom: 1.25rem;
+  letter-spacing: -0.02em;
+}
+
+.hero-title span.italic-word {
+  font-family: var(--font-display-italic);
+  font-style: italic;
+  font-weight: 300;
+  color: var(--color-accent-light);
+}
+
+.hero-subtitle {
+  font-size: var(--text-lg);
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 620px;
+  margin: 0 auto 2.5rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+.hero-booking-bar-container {
+  margin-top: 3rem;
+  width: 100%;
+}
+
+@keyframes heroKenBurns {
+  0% { transform: scale(1); }
+  100% { transform: scale(1.06); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-bg-img {
+    animation: none;
+  }
+}
+
+/* Page Banner Heroes for Subpages */
+.page-hero {
+  position: relative;
+  padding: 150px var(--container-gutter) 80px;
+  background-color: var(--color-primary-dark);
+  color: #FFFFFF;
+  text-align: center;
+  overflow: hidden;
+}
+
+.page-hero .hero-bg-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.38;
+}
+
+.page-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 780px;
+}
+
+.page-hero h1 {
+  color: #FFFFFF;
+  font-size: var(--text-4xl);
+  margin-bottom: 0.85rem;
+}
+
+.page-hero p {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: var(--text-md);
+  margin: 0 auto;
+}
+
+/* --- Room Detail Page --- */
+.room-gallery-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-template-rows: 240px 240px;
+  gap: 0.75rem;
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  margin-bottom: 2.5rem;
+}
+
+.gallery-main {
+  grid-row: span 2;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.gallery-main img,
+.gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-editorial);
+}
+
+.gallery-main:hover img,
+.gallery-thumb:hover img {
+  transform: scale(1.03);
+}
+
+.gallery-thumb {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.gallery-more-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(14, 26, 22, 0.65);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  font-size: var(--text-sm);
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 768px) {
+  .room-gallery-grid {
+    grid-template-columns: 1fr;
+    grid-template-rows: 280px repeat(2, 140px);
+  }
+  .gallery-main {
+    grid-row: auto;
+  }
+}
+
+.room-detail-layout {
+  display: grid;
+  grid-template-columns: 1.65fr 1fr;
+  gap: 3.5rem;
+  align-items: start;
+}
+
+@media (max-width: 1024px) {
+  .room-detail-layout {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
+
+.room-quick-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  background: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  padding: 1.25rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.stat-item {
+  border-right: 1px solid var(--color-border-light);
+  padding: 0.5rem;
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+.stat-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: var(--text-muted);
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.stat-value {
+  font-family: var(--font-serif);
+  font-size: 1.2rem;
+  color: var(--color-primary);
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .room-quick-stats {
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+  }
+  .stat-item {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border-light);
+  }
+  .stat-item:nth-child(3),
+  .stat-item:nth-child(4) {
+    border-bottom: none;
+  }
+}
+
+/* --- Dining Page --- */
+.restaurant-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  margin-bottom: 3.5rem;
+}
+
+.restaurant-layout {
+  display: grid;
+  grid-template-columns: 1.1fr 1.3fr;
+}
+
+.restaurant-image-col {
+  position: relative;
+  min-height: 400px;
+}
+
+.restaurant-image-col img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.restaurant-content-col {
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+@media (max-width: 992px) {
+  .restaurant-layout {
+    grid-template-columns: 1fr;
+  }
+  .restaurant-image-col {
+    min-height: 280px;
+  }
+  .restaurant-content-col {
+    padding: 1.75rem;
+  }
+}
+
+.menu-tabs-nav {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  border-bottom: 1px solid var(--color-border);
+  margin-bottom: 2.5rem;
+  overflow-x: auto;
+  padding-bottom: 1px;
+}
+
+.menu-tab-btn {
+  background: transparent;
+  border: none;
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 600;
+  color: var(--text-secondary);
+  padding: 0.85rem 1.25rem;
+  cursor: pointer;
+  position: relative;
+  transition: color var(--transition-fast);
+  white-space: nowrap;
+}
+
+.menu-tab-btn.active {
+  color: var(--color-primary);
+}
+
+.menu-tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--color-accent);
+}
+
+.menu-category-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .menu-category-grid {
+    grid-template-columns: 1fr;
+    gap: 1.75rem;
+  }
+}
+
+.menu-item {
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed var(--color-border);
+}
+
+.menu-item-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.25rem;
+  gap: 1rem;
+}
+
+.menu-item-name {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-primary-dark);
+}
+
+.menu-item-price {
+  font-family: var(--font-serif);
+  font-size: 1.15rem;
+  color: var(--color-accent-hover);
+  font-weight: 600;
+}
+
+.menu-item-desc {
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  margin: 0;
+  line-height: 1.5;
+}
+
+/* --- Spa & Experiences Cards --- */
+.experience-card,
+.spa-ritual-card {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border-light);
+  border-radius: var(--radius-xs);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+}
+
+.experience-card:hover,
+.spa-ritual-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.card-media {
+  position: relative;
+  aspect-ratio: 16 / 11;
+  overflow: hidden;
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-editorial);
+}
+
+.experience-card:hover .card-media img,
+.spa-ritual-card:hover .card-media img {
+  transform: scale(1.04);
+}
+
+.card-body {
+  padding: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: var(--text-xs);
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.card-title {
+  font-size: 1.3rem;
+  margin-bottom: 0.65rem;
+}
+
+.card-text {
+  font-size: var(--text-sm);
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+}
+
+.card-footer {
+  margin-top: auto;
+  padding-top: 0.85rem;
+  border-top: 1px solid var(--color-border-light);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* --- Booking Flow Multi-Step Stepper --- */
+.booking-stepper-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 860px;
+  margin: 0 auto 2.5rem;
+  position: relative;
+}
+
+.booking-stepper-nav::before {
+  content: '';
+  position: absolute;
+  top: 18px;
+  left: 28px;
+  right: 28px;
+  height: 2px;
+  background-color: var(--color-border);
+  z-index: 1;
+}
+
+.step-indicator {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.4rem;
+  background: transparent;
+  cursor: pointer;
+}
+
+.step-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #FFFFFF;
+  border: 2px solid var(--color-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--text-muted);
+  transition: all var(--transition-fast);
+}
+
+.step-indicator.active .step-number {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #FFFFFF;
+  box-shadow: 0 0 0 4px rgba(24, 43, 36, 0.15);
+}
+
+.step-indicator.completed .step-number {
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: var(--color-primary-dark);
+}
+
+.step-label {
+  font-size: 0.68rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 600;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.step-indicator.active .step-label {
+  color: var(--color-primary);
+}
+
+@media (max-width: 680px) {
+  .step-label { display: none; }
+  .booking-stepper-nav { margin-bottom: 1.75rem; }
+}
+
+.step-pane {
+  display: none;
+  animation: fadeIn 0.35s ease-in-out;
+}
+
+.step-pane.is-active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Room Selection Radio Card in Wizard */
+.room-select-card {
+  border: 2px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  background: #FFFFFF;
+  padding: 1.25rem;
+  margin-bottom: 1.25rem;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  display: grid;
+  grid-template-columns: 160px 1fr auto;
+  gap: 1.25rem;
+  align-items: center;
+}
+
+.room-select-card:hover {
+  border-color: var(--color-accent);
+}
+
+.room-select-card.is-selected {
+  border-color: var(--color-primary);
+  background-color: var(--color-primary-subtle);
+}
+
+.room-select-card.is-unavailable {
+  opacity: 0.55;
+  filter: grayscale(0.5);
+  cursor: not-allowed;
+  border-color: #E2DBD0;
+}
+
+.room-select-img {
+  width: 100%;
+  height: 110px;
+  object-fit: cover;
+  border-radius: var(--radius-xs);
+}
+
+@media (max-width: 768px) {
+  .room-select-card {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+  .room-select-img {
+    height: 160px;
+  }
+}
+
+/* --- Official Hotel Confirmation Voucher --- */
+.voucher-container {
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-xs);
+  padding: 3rem;
+  max-width: 820px;
+  margin: 0 auto;
+  box-shadow: var(--shadow-lg);
+  position: relative;
+}
+
+.voucher-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: 1.75rem;
+  border-bottom: 2px solid var(--color-primary);
+  margin-bottom: 2rem;
+  gap: 1rem;
+}
+
+.voucher-brand h2 {
+  font-size: 1.85rem;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.2rem;
+}
+
+.voucher-brand p {
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--color-accent);
+}
+
+.voucher-ref-badge {
+  text-align: right;
+}
+
+.voucher-ref-badge .ref-label {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: var(--text-muted);
+  display: block;
+}
+
+.voucher-ref-badge .ref-number {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.voucher-status-tag {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  background: var(--color-success-bg);
+  color: var(--color-success);
+  font-size: 0.68rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-radius: var(--radius-pill);
+  margin-top: 0.35rem;
+}
+
+.voucher-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+@media (max-width: 600px) {
+  .voucher-container {
+    padding: 1.75rem;
+  }
+  .voucher-grid {
+    grid-template-columns: 1fr;
+    gap: 1.25rem;
+  }
+}
+
+.voucher-section-title {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: var(--color-accent);
+  font-weight: 600;
+  margin-bottom: 0.65rem;
+  border-bottom: 1px solid var(--color-border-light);
+  padding-bottom: 0.35rem;
+}
+
+.voucher-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 2rem;
+}
+
+.voucher-data-table th,
+.voucher-data-table td {
+  padding: 0.7rem 0;
+  font-size: var(--text-sm);
+  text-align: left;
+}
+
+.voucher-data-table th {
+  font-weight: 600;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.voucher-data-table td.text-right,
+.voucher-data-table th.text-right {
+  text-align: right;
+}
+
+.voucher-data-table tfoot td {
+  border-top: 1px solid var(--color-border);
+  font-weight: 600;
+}
+
+.voucher-data-table tfoot tr.grand-total td {
+  border-top: 2px solid var(--color-primary-dark);
+  font-size: var(--text-lg);
+  color: var(--color-primary);
+}
+
+.voucher-footer-policies {
+  background: var(--color-sand-light);
+  border-radius: var(--radius-xs);
+  padding: 1.25rem;
+  font-size: var(--text-xs);
+  color: var(--text-secondary);
+  line-height: 1.65;
+  margin-bottom: 1.75rem;
+}
+
+.voucher-qr-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 1.25rem;
+  border-top: 1px dashed var(--color-border);
+  gap: 1rem;
+}
+
+.qr-code-box {
+  width: 80px;
+  height: 80px;
+  background: #FFFFFF;
+  border: 1px solid var(--color-border);
+  padding: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.qr-code-box svg {
+  width: 100%;
+  height: 100%;
+}
+
+.voucher-action-bar {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+/* --- Print Stylesheet --- */
+@media print {
+  @page {
+    margin: 1.5cm;
+    size: letter portrait;
+  }
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+  }
+  body * {
+    visibility: hidden;
+  }
+  .voucher-container, .voucher-container * {
+    visibility: visible;
+  }
+  .voucher-container {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+  .voucher-action-bar,
+  .site-header,
+  .site-footer,
+  .booking-stepper-nav,
+  .toast-container {
+    display: none !important;
+  }
+}

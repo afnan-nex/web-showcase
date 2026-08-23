@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Sanctuary Spa & Hydrothermal Wellness — Casa Verde</title>
+  <meta name="description" content="Reclaim balance in our open-air rainforest sanctuary. Ancient botanical rituals, Tibetan sound healing, volcanic mud therapies, and ocean hydrotherapy.">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="Casa Verde Homepage">
+        <div class="brand-title">
+          <span>CASA VERDE</span>
+          <span class="leaf-icon"><i class="fa-solid fa-leaf"></i></span>
+        </div>
+        <span class="brand-tagline">Eco-Sanctuary &bull; Costa Verde</span>
+      </a>
+
+      <nav class="nav-desktop" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="rooms.html" class="nav-link">Suites & Villas</a>
+        <a href="dining.html" class="nav-link">Dining</a>
+        <a href="spa.html" class="nav-link active">Spa & Wellness</a>
+        <a href="experiences.html" class="nav-link">Experiences</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="booking.html" class="btn header-booking-btn">Reserve Stay</a>
+        <button class="hamburger-btn" aria-label="Open mobile navigation menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="brand-title">CASA VERDE</div>
+        <span class="brand-tagline">Eco-Sanctuary</span>
+      </div>
+      <button class="drawer-close-btn" aria-label="Close navigation menu">&times;</button>
+    </div>
+
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="rooms.html" class="mobile-nav-link">Suites & Villas <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="dining.html" class="mobile-nav-link">Gastronomy & Bars <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="spa.html" class="mobile-nav-link active">Sanctuary Spa <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="experiences.html" class="mobile-nav-link">Bespoke Adventures <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="booking.html" class="mobile-nav-link">Book / Manage Stay <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="mobile-nav-link">Concierge & Contact <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <div class="drawer-contact-info">
+        <p><i class="fa-solid fa-location-dot" style="color: var(--color-accent);"></i> Península de la Selva, Costa Verde</p>
+        <p><i class="fa-solid fa-phone" style="color: var(--color-accent);"></i> +1 (800) 555-VERDE</p>
+        <p><i class="fa-solid fa-envelope" style="color: var(--color-accent);"></i> concierge@casaverde-resort.com</p>
+      </div>
+      <a href="booking.html" class="btn btn-accent btn-block">Check Availability</a>
+    </div>
+  </div>
+
+  <main role="main">
+    <!-- Page Hero Banner -->
+    <section class="page-hero" aria-label="Spa Introduction">
+      <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1920&q=85" alt="Sanctuary Spa" class="hero-bg-img">
+      <div class="container hero-content">
+        <span class="eyebrow" style="color: var(--color-accent-light);">Holistic Awakening</span>
+        <h1>The Sanctuary Spa & Hydrothermal Circuit</h1>
+        <p>A sacred retreat nestled in the rainforest canopy. Unwind to the sound of ocean waves, waterfall hydrotherapy, and restorative botanical alchemy.</p>
+      </div>
+    </section>
+
+    <!-- Spa Philosophy Section -->
+    <section class="section section-sand" aria-label="Healing Philosophy">
+      <div class="container">
+        <div class="grid-2" style="align-items: center;">
+          <div>
+            <span class="eyebrow eyebrow-dark">Our Healing Philosophy</span>
+            <h2 class="section-title">Rooted in Indigenous <span class="font-italic-accent">Botanical Alchemy</span></h2>
+            <p class="lead">We believe that true healing begins when the nervous system reconnects with the circadian rhythms of the living earth.</p>
+            <p>Our therapies harness locally wildcrafted ingredients: pure volcanic sulfur muds from the nearby Arenal caldera, cold-pressed copal and ylang-ylang resins, and single-origin raw cacao. Every treatment is preceded by a personalized botanical herbal infusion ceremony.</p>
+            <div style="margin-top: 2rem;">
+              <button class="btn btn-primary" onclick="openSpaModal()">Schedule a Wellness Ritual</button>
+            </div>
+          </div>
+          <div>
+            <div style="aspect-ratio: 4/3; border-radius: var(--radius-xs); overflow: hidden; box-shadow: var(--shadow-xl);">
+              <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=1200&q=80" alt="Spa Treatment" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Hydrothermal Circuit & Facilities -->
+    <section class="section section-white" aria-label="Hydrothermal Circuit">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="eyebrow">Water Rituals</span>
+          <h2 class="section-title">The Hydrothermal Journey</h2>
+          <p class="section-description">Complimentary for all resort guests. Move between thermal mineral springs, herbal steam grottos, and cold ocean plunges.</p>
+        </div>
+
+        <div class="grid-4">
+          <div style="background: var(--color-sand-light); padding: 1.75rem 1.25rem; border-radius: var(--radius-xs); border: 1px solid var(--color-border); text-align: center;">
+            <i class="fa-solid fa-water-ladder" style="font-size: 2rem; color: var(--color-accent); margin-bottom: 0.85rem; display: block;"></i>
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Thermal Hot Spring</h4>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0;">102°F natural volcanic mineral water rich in magnesium and silica.</p>
+          </div>
+          <div style="background: var(--color-sand-light); padding: 1.75rem 1.25rem; border-radius: var(--radius-xs); border: 1px solid var(--color-border); text-align: center;">
+            <i class="fa-solid fa-snowflake" style="font-size: 2rem; color: var(--color-accent); margin-bottom: 0.85rem; display: block;"></i>
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Cold Cascade Plunge</h4>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0;">52°F pure mountain runoff plunge to invigorate circulation and alertness.</p>
+          </div>
+          <div style="background: var(--color-sand-light); padding: 1.75rem 1.25rem; border-radius: var(--radius-xs); border: 1px solid var(--color-border); text-align: center;">
+            <i class="fa-solid fa-cloud" style="font-size: 2rem; color: var(--color-accent); margin-bottom: 0.85rem; display: block;"></i>
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Herbal Steam Grotto</h4>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0;">Infused with freshly crushed eucalyptus, lemon verbena, and native mint.</p>
+          </div>
+          <div style="background: var(--color-sand-light); padding: 1.75rem 1.25rem; border-radius: var(--radius-xs); border: 1px solid var(--color-border); text-align: center;">
+            <i class="fa-solid fa-fire" style="font-size: 2rem; color: var(--color-accent); margin-bottom: 0.85rem; display: block;"></i>
+            <h4 style="font-size: 1.15rem; margin-bottom: 0.4rem;">Cedarwood Dry Sauna</h4>
+            <p style="font-size: 0.8rem; color: var(--text-secondary); margin: 0;">Panoramic glass wall overlooking the crashing ocean surf below.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Complete Treatment Menu -->
+    <section class="section section-sand" aria-label="Rituals Menu">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="eyebrow eyebrow-dark">Curated Treatments</span>
+          <h2 class="section-title">The Ritual Collection</h2>
+          <p class="section-description">Administered by master somatic therapists in private open-air oceanview pavilions.</p>
+        </div>
+
+        <div class="grid-2">
+          <!-- Treatment 1 -->
+          <div class="spa-ritual-card">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" alt="Forest Flora Massage" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span>Signature Ritual</span>
+                <span>90 Minutes &bull; $280</span>
+              </div>
+              <h3 class="card-title">Forest Flora Aromatherapy Massage</h3>
+              <p class="card-text">A sensory immersion using warm essential oils distilled from native ylang-ylang, cedarwood, and wild lemongrass to melt tension and re-align deep muscular rhythms.</p>
+              <div class="card-footer">
+                <button class="btn btn-primary btn-sm" onclick="openSpaModal('Forest Flora Aromatherapy Massage')">Reserve Ritual</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Treatment 2 -->
+          <div class="spa-ritual-card">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80" alt="Volcanic Mud Glow" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span>Body Therapy</span>
+                <span>120 Minutes &bull; $360</span>
+              </div>
+              <h3 class="card-title">Volcanic Clay & Cacao Body Polish</h3>
+              <p class="card-text">Rich antioxidant ritual utilizing mineralized Costa Verde volcanic mud, raw organic cacao scrub, followed by a warm botanical milk bath overlooking the ocean.</p>
+              <div class="card-footer">
+                <button class="btn btn-primary btn-sm" onclick="openSpaModal('Volcanic Clay & Cacao Body Polish')">Reserve Ritual</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Treatment 3 -->
+          <div class="spa-ritual-card">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Sound Bath Healing" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span>Mind & Energy</span>
+                <span>60 Minutes &bull; $190</span>
+              </div>
+              <h3 class="card-title">Private Tibetan Sound Bath & Reiki</h3>
+              <p class="card-text">Resonant acoustic therapy in our open-air bamboo pavilion utilizing ancient Tibetan singing bowls, gongs, and vibrational frequency attunement.</p>
+              <div class="card-footer">
+                <button class="btn btn-primary btn-sm" onclick="openSpaModal('Private Tibetan Sound Bath & Reiki')">Reserve Ritual</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Treatment 4 -->
+          <div class="spa-ritual-card">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=800&q=80" alt="Couples Sunset Ritual" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span>Couples Sanctuary</span>
+                <span>150 Minutes &bull; $650</span>
+              </div>
+              <h3 class="card-title">Couples Sunset Hydrothermal Journey</h3>
+              <p class="card-text">Private oceanview spa suite experience featuring side-by-side synchronized massages, private herbal sauna, hot hydrotherapy plunge, and chilled Laurent-Perrier champagne.</p>
+              <div class="card-footer">
+                <button class="btn btn-primary btn-sm" onclick="openSpaModal('Couples Sunset Hydrothermal Journey')">Reserve Ritual</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Multi-Day Wellness Retreat Packages -->
+    <section class="section section-dark" aria-label="Retreat Programs">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="eyebrow" style="color: var(--color-accent-light);">Immersive Transformation</span>
+          <h2 class="section-title" style="color: #FFFFFF;">Multi-Day Wellness Immersions</h2>
+          <p class="section-description" style="color: var(--text-inverse-muted);">Combine customized daily treatments, private sunrise yoga, and personalized nutrition consultations.</p>
+        </div>
+
+        <div class="grid-3">
+          <div style="background: var(--color-dark-surface-card); border: 1px solid rgba(197, 160, 89, 0.2); padding: 2.25rem 1.75rem; border-radius: var(--radius-xs); display: flex; flex-direction: column;">
+            <span class="eyebrow" style="color: var(--color-accent);">3-Day Program</span>
+            <h3 style="color: #FFFFFF; font-size: 1.45rem; margin-bottom: 0.85rem;">Cellular Renewal & Detox</h3>
+            <p style="font-size: 0.85rem; color: var(--text-inverse-muted); line-height: 1.6; margin-bottom: 1.5rem;">
+              Daily lymphatic drainage, volcanic clay wraps, cold-pressed juice cleanses, and daily private infrared sauna sessions.
+            </p>
+            <div style="margin-top: auto;">
+              <div style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-accent); font-weight: 600; margin-bottom: 1rem;">$890 / guest</div>
+              <button class="btn btn-accent btn-sm btn-block" onclick="openSpaModal('Cellular Renewal & Detox 3-Day Program')">Inquire Package</button>
+            </div>
+          </div>
+
+          <div style="background: var(--color-dark-surface-card); border: 1px solid rgba(197, 160, 89, 0.4); padding: 2.25rem 1.75rem; border-radius: var(--radius-xs); display: flex; flex-direction: column; position: relative;">
+            <span class="room-badge room-badge-accent" style="top: -12px; left: 1.5rem;">Most Popular</span>
+            <span class="eyebrow" style="color: var(--color-accent);">5-Day Program</span>
+            <h3 style="color: #FFFFFF; font-size: 1.45rem; margin-bottom: 0.85rem;">Deep Nervous System Reset</h3>
+            <p style="font-size: 0.85rem; color: var(--text-inverse-muted); line-height: 1.6; margin-bottom: 1.5rem;">
+              Sound healing journeys, full somatic massages, private sunset breathwork, and custom organic botanical elixir regimen.
+            </p>
+            <div style="margin-top: auto;">
+              <div style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-accent); font-weight: 600; margin-bottom: 1rem;">$1,450 / guest</div>
+              <button class="btn btn-accent btn-sm btn-block" onclick="openSpaModal('Deep Nervous System Reset 5-Day Program')">Inquire Package</button>
+            </div>
+          </div>
+
+          <div style="background: var(--color-dark-surface-card); border: 1px solid rgba(197, 160, 89, 0.2); padding: 2.25rem 1.75rem; border-radius: var(--radius-xs); display: flex; flex-direction: column;">
+            <span class="eyebrow" style="color: var(--color-accent);">7-Day Program</span>
+            <h3 style="color: #FFFFFF; font-size: 1.45rem; margin-bottom: 0.85rem;">The Total Sanctuary Journey</h3>
+            <p style="font-size: 0.85rem; color: var(--text-inverse-muted); line-height: 1.6; margin-bottom: 1.5rem;">
+              Unlimited spa treatments, private master yoga sessions, guided forest bathing excursions, and complete chef nutrition pairings.
+            </p>
+            <div style="margin-top: auto;">
+              <div style="font-family: var(--font-serif); font-size: 1.35rem; color: var(--color-accent); font-weight: 600; margin-bottom: 1rem;">$2,200 / guest</div>
+              <button class="btn btn-accent btn-sm btn-block" onclick="openSpaModal('The Total Sanctuary 7-Day Journey')">Inquire Package</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Spa Treatment Booking Modal -->
+  <div class="modal-overlay" id="spaBookingModal" role="dialog" aria-modal="true" aria-labelledby="spaModalTitle">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title" id="spaModalTitle">Reserve Spa & Wellness Ritual</h3>
+        <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
+      </div>
+      <form id="spaBookingModalForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Selected Ritual or Package</label>
+            <select name="ritual" class="form-control" required>
+              <option value="Forest Flora Aromatherapy Massage">Forest Flora Aromatherapy Massage (90 Min - $280)</option>
+              <option value="Volcanic Clay & Cacao Body Polish">Volcanic Clay & Cacao Body Polish (120 Min - $360)</option>
+              <option value="Private Tibetan Sound Bath & Reiki">Private Tibetan Sound Bath & Reiki (60 Min - $190)</option>
+              <option value="Couples Sunset Hydrothermal Journey">Couples Sunset Hydrothermal Journey (150 Min - $650)</option>
+              <option value="Cellular Renewal & Detox 3-Day Program">Cellular Renewal & Detox 3-Day Program ($890)</option>
+              <option value="Deep Nervous System Reset 5-Day Program">Deep Nervous System Reset 5-Day Program ($1,450)</option>
+              <option value="The Total Sanctuary 7-Day Journey">The Total Sanctuary 7-Day Journey ($2,200)</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Preferred Date</label>
+              <input type="date" name="date" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Time of Day</label>
+              <select name="time" class="form-control" required>
+                <option value="10:00">10:00 AM (Morning Stillness)</option>
+                <option value="12:30">12:30 PM (Midday Rejuvenation)</option>
+                <option value="15:00">3:00 PM (Afternoon Balance)</option>
+                <option value="17:30">5:30 PM (Golden Hour Sunset)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Guests</label>
+              <select name="guests" class="form-control" required>
+                <option value="1">1 Person</option>
+                <option value="2">2 Persons (Couple)</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" name="name" class="form-control" placeholder="e.g. Elena Vance" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Contact Email</label>
+              <input type="email" name="email" class="form-control" placeholder="e.g. elena@example.com" required>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline btn-sm modal-close-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm">Confirm Appointment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-title">CASA VERDE</div>
+            <span class="brand-tagline">Eco-Sanctuary &bull; Ocean Villas</span>
+          </a>
+          <p class="footer-desc">A transcendent boutique sanctuary where untamed rainforest meets azure Pacific horizons. Sustainable luxury, Michelin gastronomy, and profound peace.</p>
+          <div class="footer-accolades">
+            <span><i class="fa-solid fa-award"></i> Condé Nast Gold List</span>
+            <span><i class="fa-solid fa-leaf"></i> 100% Eco Certified</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="rooms.html">Suites & Villas</a></li>
+            <li><a href="dining.html">Dining & Bars</a></li>
+            <li><a href="spa.html">Sanctuary Spa</a></li>
+            <li><a href="experiences.html">Curated Experiences</a></li>
+            <li><a href="booking.html">Check Availability</a></li>
+            <li><a href="contact.html">Concierge & Access</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Reservation Care</h4>
+          <ul class="footer-links">
+            <li><a href="booking.html">Manage Existing Booking</a></li>
+            <li><a href="contact.html">Private Chauffeur Transfers</a></li>
+            <li><a href="contact.html">Helicopter Charters</a></li>
+            <li><a href="contact.html">VIP Events & Weddings</a></li>
+            <li><a href="contact.html">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">The Private Circle</h4>
+          <p style="font-size: var(--text-xs); color: var(--text-inverse-muted); margin-bottom: 1rem;">
+            Subscribe to receive private seasonal invitations, chef tasting releases, and secluded retreat openings.
+          </p>
+          <form class="newsletter-form" aria-label="Newsletter subscription">
+            <div class="newsletter-input-group">
+              <input type="email" class="newsletter-input" placeholder="Your email address..." required aria-label="Email address">
+              <button type="submit" class="newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Casa Verde Eco-Sanctuary & Ocean Villas. All rights reserved.
+        </div>
+        <div class="footer-socials">
+          <a href="#" class="social-icon-btn" aria-label="Casa Verde Instagram" onclick="event.preventDefault(); window.showToast('Follow @CasaVerdeResort on Instagram for daily sanctuary moments.', 'info');"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-icon-btn" aria-label="Casa Verde Facebook" onclick="event.preventDefault(); window.showToast('Visit facebook.com/CasaVerdeResort for editorial features.', 'info');"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-icon-btn" aria-label="Casa Verde Pinterest" onclick="event.preventDefault(); window.showToast('Explore our architectural moodboards on Pinterest.', 'info');"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+        <div class="footer-bottom-links">
+          <button type="button" onclick="openPolicyModal('privacy')">Privacy Policy</button>
+          <button type="button" onclick="openPolicyModal('terms')">Terms of Folio</button>
+          <button type="button" onclick="openPolicyModal('sustainability')">Sustainability Report</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/booking-engine.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

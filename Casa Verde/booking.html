@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reserve Your Sanctuary & Manage Bookings — Casa Verde</title>
+  <meta name="description" content="Official luxury booking engine for Casa Verde. Check real-time suite availability, customize add-on experiences, and manage reservations.">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- Site Header (Solid on booking page) -->
+  <header class="site-header header-solid" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="Casa Verde Homepage">
+        <div class="brand-title">
+          <span>CASA VERDE</span>
+          <span class="leaf-icon"><i class="fa-solid fa-leaf"></i></span>
+        </div>
+        <span class="brand-tagline">Eco-Sanctuary &bull; Costa Verde</span>
+      </a>
+
+      <nav class="nav-desktop" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="rooms.html" class="nav-link">Suites & Villas</a>
+        <a href="dining.html" class="nav-link">Dining</a>
+        <a href="spa.html" class="nav-link">Spa & Wellness</a>
+        <a href="experiences.html" class="nav-link">Experiences</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <button type="button" class="btn btn-outline-white btn-sm" onclick="document.getElementById('manageSection').scrollIntoView({behavior:'smooth'})">
+          <i class="fa-solid fa-magnifying-glass"></i> Manage Booking
+        </button>
+        <button class="hamburger-btn" aria-label="Open mobile navigation menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="brand-title">CASA VERDE</div>
+        <span class="brand-tagline">Eco-Sanctuary</span>
+      </div>
+      <button class="drawer-close-btn" aria-label="Close navigation menu">&times;</button>
+    </div>
+
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="rooms.html" class="mobile-nav-link">Suites & Villas <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="dining.html" class="mobile-nav-link">Gastronomy & Bars <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="spa.html" class="mobile-nav-link">Sanctuary Spa <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="experiences.html" class="mobile-nav-link">Bespoke Adventures <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="booking.html" class="mobile-nav-link active">Book / Manage Stay <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="mobile-nav-link">Concierge & Contact <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <div class="drawer-contact-info">
+        <p><i class="fa-solid fa-location-dot" style="color: var(--color-accent);"></i> Península de la Selva, Costa Verde</p>
+        <p><i class="fa-solid fa-phone" style="color: var(--color-accent);"></i> +1 (800) 555-VERDE</p>
+      </div>
+    </div>
+  </div>
+
+  <main role="main" style="padding-top: var(--header-height);">
+    <!-- Booking Engine Hero Header -->
+    <section class="section-sm section-sand" style="border-bottom: 1px solid var(--color-border);" aria-label="Booking Engine Title">
+      <div class="container text-center">
+        <span class="eyebrow eyebrow-dark">Direct Sanctuary Reservations</span>
+        <h1 style="font-size: 2.5rem; margin-bottom: 0.4rem;">Begin Your Journey to Peace</h1>
+        <p style="color: var(--text-secondary); max-width: 600px; margin: 0 auto; font-size: var(--text-sm);">
+          Best Rate Guarantee &bull; Dedicated Butler Included &bull; Flexible 72-Hour Cancellation
+        </p>
+      </div>
+    </section>
+
+    <!-- Multi-Step Booking Wizard Section -->
+    <section class="section section-white" id="bookingWizardContainer" aria-label="Booking Wizard">
+      <div class="container">
+        
+        <!-- Multi-Step Navigation Indicator -->
+        <div class="booking-stepper-nav" role="tablist" aria-label="Booking steps">
+          <div class="step-indicator active" data-step="1" onclick="bookingEngine.goToStep(1)" role="tab" aria-selected="true" aria-label="Step 1: Stay Dates">
+            <div class="step-number">1</div>
+            <span class="step-label">Stay Dates</span>
+          </div>
+          <div class="step-indicator" data-step="2" onclick="bookingEngine.goToStep(2)" role="tab" aria-selected="false" aria-label="Step 2: Choose Suite">
+            <div class="step-number">2</div>
+            <span class="step-label">Choose Suite</span>
+          </div>
+          <div class="step-indicator" data-step="3" onclick="bookingEngine.goToStep(3)" role="tab" aria-selected="false" aria-label="Step 3: Guest Details">
+            <div class="step-number">3</div>
+            <span class="step-label">Guest Details</span>
+          </div>
+          <div class="step-indicator" data-step="4" onclick="bookingEngine.goToStep(4)" role="tab" aria-selected="false" aria-label="Step 4: Curated Add-ons">
+            <div class="step-number">4</div>
+            <span class="step-label">Curated Add-ons</span>
+          </div>
+          <div class="step-indicator" data-step="5" onclick="bookingEngine.goToStep(5)" role="tab" aria-selected="false" aria-label="Step 5: Payment">
+            <div class="step-number">5</div>
+            <span class="step-label">Payment</span>
+          </div>
+          <div class="step-indicator" data-step="6" role="tab" aria-selected="false" aria-label="Step 6: Confirmation">
+            <div class="step-number"><i class="fa-solid fa-check"></i></div>
+            <span class="step-label">Confirmation</span>
+          </div>
+        </div>
+
+        <!-- Wizard Step Panes -->
+        
+        <!-- STEP 1: Search & Dates -->
+        <div class="step-pane is-active" id="stepPane1">
+          <div style="max-width: 800px; margin: 0 auto;">
+            <div style="background: var(--color-sand); border: 1px solid var(--color-border); border-radius: var(--radius-xs); padding: 2.5rem; box-shadow: var(--shadow-sm);">
+              <h3 style="font-size: 1.5rem; margin-bottom: 1.5rem; text-align: center;">Select Your Stay Dates & Party Size</h3>
+              
+              <div class="form-row" style="margin-bottom: 1.25rem;">
+                <div class="form-group">
+                  <label class="form-label"><i class="fa-regular fa-calendar" style="color: var(--color-accent);"></i> Check-in Date</label>
+                  <input type="date" id="wizardCheckIn" class="form-control" required aria-label="Check-in date">
+                </div>
+                <div class="form-group">
+                  <label class="form-label"><i class="fa-regular fa-calendar-check" style="color: var(--color-accent);"></i> Check-out Date</label>
+                  <input type="date" id="wizardCheckOut" class="form-control" required aria-label="Check-out date">
+                </div>
+                <div class="form-group">
+                  <label class="form-label"><i class="fa-solid fa-user-group" style="color: var(--color-accent);"></i> Number of Guests</label>
+                  <select id="wizardGuests" class="form-control" aria-label="Select guest count">
+                    <option value="1">1 Adult</option>
+                    <option value="2" selected>2 Adults</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="6">6 Guests</option>
+                    <option value="8">8 Guests (Estate)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; background: #FFFFFF; padding: 1.15rem; border-radius: var(--radius-xs); border: 1px solid var(--color-border-light); margin-bottom: 2rem;">
+                <div>
+                  <span style="font-size: 0.85rem; font-weight: 600; color: var(--color-primary);">Calculated Duration:</span>
+                  <span class="js-nights-count" style="margin-left: 0.5rem; font-size: 0.85rem; color: var(--color-accent); font-weight: bold;">3 Nights</span>
+                </div>
+                <span style="font-size: 0.75rem; color: var(--text-muted);"><i class="fa-solid fa-circle-info"></i> Minimum stay 1 night</span>
+              </div>
+
+              <div style="text-align: center;">
+                <button type="button" class="btn btn-primary btn-lg" data-wizard-goto="2">
+                  View Available Suites <i class="fa-solid fa-arrow-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 2: Room Selection (with Live Collision Checking) -->
+        <div class="step-pane" id="stepPane2">
+          <div class="grid-2" style="grid-template-columns: 1.8fr 1fr; align-items: start;">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.5rem;">
+                <div>
+                  <h3 style="font-size: 1.4rem;">Select Your Suite or Villa</h3>
+                  <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0;">Live availability for <span class="js-nights-count">3 Nights</span></p>
+                </div>
+                <button type="button" class="btn btn-outline btn-sm" data-wizard-goto="1">
+                  <i class="fa-solid fa-calendar"></i> Change Dates
+                </button>
+              </div>
+
+              <div id="wizardRoomList">
+                <!-- Rendered dynamically by booking-engine.js -->
+              </div>
+
+              <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+                <button type="button" class="btn btn-outline" data-wizard-goto="1"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                <button type="button" class="btn btn-primary" data-wizard-goto="3">Continue to Guest Details <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+
+            <!-- Sticky Live Dynamic Pricing Breakdown -->
+            <div class="js-pricing-summary-container">
+              <!-- Rendered by booking-engine.js -->
+            </div>
+          </div>
+        </div>
+
+        <!-- STEP 3: Guest Details Form -->
+        <div class="step-pane" id="stepPane3">
+          <div class="grid-2" style="grid-template-columns: 1.8fr 1fr; align-items: start;">
+            <div>
+              <div style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-xs); padding: 2.25rem; box-shadow: var(--shadow-sm);">
+                <h3 style="font-size: 1.4rem; margin-bottom: 1.5rem;">Primary Guest Information</h3>
+                
+                <form id="wizardGuestForm">
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">First Name *</label>
+                      <input type="text" name="firstName" class="form-control" placeholder="e.g. Julian" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Last Name *</label>
+                      <input type="text" name="lastName" class="form-control" placeholder="e.g. Sterling" required>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Email Address *</label>
+                      <input type="email" name="email" class="form-control" placeholder="e.g. julian@sterlingcapital.com" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Phone Number *</label>
+                      <input type="tel" name="phone" class="form-control" placeholder="e.g. +1 (212) 555-0199" required>
+                    </div>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Country / Region of Residence *</label>
+                      <input type="text" name="country" class="form-control" placeholder="e.g. United States" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Estimated Arrival Time</label>
+                      <select name="arrivalTime" class="form-control">
+                        <option value="14:00">2:00 PM (Early Check-in Request)</option>
+                        <option value="15:00" selected>3:00 PM (Standard Check-in)</option>
+                        <option value="17:00">5:00 PM</option>
+                        <option value="19:00">7:00 PM (Evening Arrival)</option>
+                        <option value="21:00">9:00 PM+ (Late Flight)</option>
+                      </select>
+                    </div>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Special Requests, Dietary Preferences, or Celebrations</label>
+                    <textarea name="specialRequests" class="form-control" placeholder="Please inform us of anniversaries, dietary needs, preferred pillows, or specific room arrangements..."></textarea>
+                  </div>
+                </form>
+
+                <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+                  <button type="button" class="btn btn-outline" data-wizard-goto="2"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                  <button type="button" class="btn btn-primary" data-wizard-goto="4">Proceed to Curated Add-ons <i class="fa-solid fa-arrow-right"></i></button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Sticky Pricing Summary -->
+            <div class="js-pricing-summary-container"></div>
+          </div>
+        </div>
+
+        <!-- STEP 4: Curated Add-Ons -->
+        <div class="step-pane" id="stepPane4">
+          <div class="grid-2" style="grid-template-columns: 1.8fr 1fr; align-items: start;">
+            <div>
+              <div style="margin-bottom: 1.25rem;">
+                <h3 style="font-size: 1.4rem;">Enhance Your Sanctuary Experience</h3>
+                <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0;">Select optional private amenities to tailor your escape prior to arrival.</p>
+              </div>
+
+              <!-- Add-ons selection cards -->
+              <div id="wizardAddOnsList">
+                <!-- Rendered dynamically by booking-engine.js -->
+              </div>
+
+              <div style="display: flex; justify-content: space-between; margin-top: 2rem;">
+                <button type="button" class="btn btn-outline" data-wizard-goto="3"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                <button type="button" class="btn btn-primary" data-wizard-goto="5">Continue to Payment <i class="fa-solid fa-arrow-right"></i></button>
+              </div>
+            </div>
+
+            <!-- Sticky Pricing Summary -->
+            <div class="js-pricing-summary-container"></div>
+          </div>
+        </div>
+
+        <!-- STEP 5: Payment Simulation -->
+        <div class="step-pane" id="stepPane5">
+          <div class="grid-2" style="grid-template-columns: 1.8fr 1fr; align-items: start;">
+            <div>
+              <div style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-xs); padding: 2.25rem; box-shadow: var(--shadow-sm);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.25rem; flex-wrap: wrap; gap: 0.5rem;">
+                  <h3 style="font-size: 1.4rem; margin: 0;">Payment Authorization</h3>
+                  <div style="display: flex; gap: 0.5rem; font-size: 1.4rem; color: var(--text-muted);">
+                    <i class="fa-brands fa-cc-visa" aria-label="Visa"></i>
+                    <i class="fa-brands fa-cc-mastercard" aria-label="Mastercard"></i>
+                    <i class="fa-brands fa-cc-amex" aria-label="American Express"></i>
+                  </div>
+                </div>
+
+                <div id="paymentReviewBox">
+                  <!-- Rendered dynamically -->
+                </div>
+
+                <form id="wizardPaymentForm">
+                  <div class="form-group">
+                    <label class="form-label">Name on Card *</label>
+                    <input type="text" class="form-control" placeholder="e.g. Julian Sterling" required>
+                  </div>
+
+                  <div class="form-group">
+                    <label class="form-label">Card Number (Simulation) *</label>
+                    <input type="text" id="simCardNumber" class="form-control" placeholder="4000 1234 5678 9010" maxlength="19" required>
+                  </div>
+
+                  <div class="form-row">
+                    <div class="form-group">
+                      <label class="form-label">Expiry (MM/YY) *</label>
+                      <input type="text" id="simExpiry" class="form-control" placeholder="12/28" maxlength="5" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">CVV *</label>
+                      <input type="text" class="form-control" placeholder="888" maxlength="4" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label">Billing Zip Code</label>
+                      <input type="text" class="form-control" placeholder="10021" required>
+                    </div>
+                  </div>
+
+                  <div style="margin: 1.25rem 0;">
+                    <label class="custom-checkbox">
+                      <input type="checkbox" required checked>
+                      <span class="checkmark"></span>
+                      <span>I agree to the Casa Verde 72-hour cancellation policy and luxury stay terms.</span>
+                    </label>
+                  </div>
+
+                  <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--color-border-light); padding-top: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+                    <button type="button" class="btn btn-outline" data-wizard-goto="4"><i class="fa-solid fa-arrow-left"></i> Back</button>
+                    <button type="submit" class="btn btn-accent btn-lg" id="paySubmitBtn">
+                      <i class="fa-solid fa-lock"></i> Authorize & Confirm Reservation
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+
+            <!-- Sticky Pricing Summary -->
+            <div class="js-pricing-summary-container"></div>
+          </div>
+        </div>
+
+        <!-- STEP 6: Hotel-Style Official Confirmation Voucher Screen -->
+        <div class="step-pane" id="stepPane6">
+          <div id="confirmationVoucherContainer">
+            <!-- Rendered by booking-engine.js -->
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Manage Existing Reservations Section -->
+    <section class="section section-sand" id="manageSection" style="border-top: 1px solid var(--color-border);" aria-label="Manage Reservation Portal">
+      <div class="container container-narrow">
+        <div class="section-header text-center">
+          <span class="eyebrow eyebrow-dark">Reservation Portal</span>
+          <h2 class="section-title">Manage Your Existing Booking</h2>
+          <p class="section-description">Retrieve your folio to view itinerary details, modify dates, adjust guests, or cancel reservations.</p>
+        </div>
+
+        <div style="background: #FFFFFF; border: 1px solid var(--color-border); border-radius: var(--radius-xs); padding: 2.25rem; box-shadow: var(--shadow-sm); margin-bottom: 2rem;">
+          <form id="manageLookupForm" class="form-row" style="align-items: flex-end;">
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">Reservation Reference ID *</label>
+              <input type="text" id="lookupReservationId" class="form-control" placeholder="e.g. CV-84920" required aria-label="Reservation Reference Number">
+            </div>
+            <div class="form-group" style="margin-bottom: 0;">
+              <label class="form-label">Guest Email Address *</label>
+              <input type="email" id="lookupGuestEmail" class="form-control" placeholder="e.g. s.montgomery@mayfair-advisors.co.uk" required aria-label="Guest email">
+            </div>
+            <div>
+              <button type="submit" class="btn btn-primary btn-block" style="padding: 0.85rem 1.5rem;">
+                <i class="fa-solid fa-magnifying-glass"></i> Find Folio
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <!-- Lookup Result Container -->
+        <div id="manageResultArea">
+          <div style="text-align: center; color: var(--text-muted); font-size: 0.82rem;">
+            Tip: Try seeded booking <strong>CV-84920</strong> with email <strong>s.montgomery@mayfair-advisors.co.uk</strong>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Modify Booking Modal -->
+  <div class="modal-overlay" id="modifyModalOverlay" role="dialog" aria-modal="true" aria-labelledby="modifyModalTitle">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title" id="modifyModalTitle">Modify Reservation <span id="modifyResIdDisplay"></span></h3>
+        <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
+      </div>
+      <form id="modifyBookingForm">
+        <input type="hidden" id="modifyHiddenResId">
+        <div class="modal-body">
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">New Check-In Date</label>
+              <input type="date" id="modifyCheckIn" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">New Check-Out Date</label>
+              <input type="date" id="modifyCheckOut" class="form-control" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Guests</label>
+            <select id="modifyGuests" class="form-control">
+              <option value="1">1 Guest</option>
+              <option value="2">2 Guests</option>
+              <option value="3">3 Guests</option>
+              <option value="4">4 Guests</option>
+            </select>
+          </div>
+          <p style="font-size: 0.75rem; color: var(--text-muted);">
+            Note: Date changes are subject to real-time suite availability. Dynamic rates will be recalculated based on new dates.
+          </p>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline btn-sm modal-close-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm">Save Modifications</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-title">CASA VERDE</div>
+            <span class="brand-tagline">Eco-Sanctuary &bull; Ocean Villas</span>
+          </a>
+          <p class="footer-desc">A transcendent boutique sanctuary where untamed rainforest meets azure Pacific horizons. Sustainable luxury, Michelin gastronomy, and profound peace.</p>
+          <div class="footer-accolades">
+            <span><i class="fa-solid fa-award"></i> Condé Nast Gold List</span>
+            <span><i class="fa-solid fa-leaf"></i> 100% Eco Certified</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="rooms.html">Suites & Villas</a></li>
+            <li><a href="dining.html">Dining & Bars</a></li>
+            <li><a href="spa.html">Sanctuary Spa</a></li>
+            <li><a href="experiences.html">Curated Experiences</a></li>
+            <li><a href="booking.html">Check Availability</a></li>
+            <li><a href="contact.html">Concierge & Access</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Reservation Care</h4>
+          <ul class="footer-links">
+            <li><a href="booking.html">Manage Existing Booking</a></li>
+            <li><a href="contact.html">Private Chauffeur Transfers</a></li>
+            <li><a href="contact.html">Helicopter Charters</a></li>
+            <li><a href="contact.html">VIP Events & Weddings</a></li>
+            <li><a href="contact.html">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">The Private Circle</h4>
+          <p style="font-size: var(--text-xs); color: var(--text-inverse-muted); margin-bottom: 1rem;">
+            Subscribe to receive private seasonal invitations, chef tasting releases, and secluded retreat openings.
+          </p>
+          <form class="newsletter-form" aria-label="Newsletter subscription">
+            <div class="newsletter-input-group">
+              <input type="email" class="newsletter-input" placeholder="Your email address..." required aria-label="Email address">
+              <button type="submit" class="newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Casa Verde Eco-Sanctuary & Ocean Villas. All rights reserved.
+        </div>
+        <div class="footer-socials">
+          <a href="#" class="social-icon-btn" aria-label="Casa Verde Instagram" onclick="event.preventDefault(); window.showToast('Follow @CasaVerdeResort on Instagram for daily sanctuary moments.', 'info');"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-icon-btn" aria-label="Casa Verde Facebook" onclick="event.preventDefault(); window.showToast('Visit facebook.com/CasaVerdeResort for editorial features.', 'info');"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-icon-btn" aria-label="Casa Verde Pinterest" onclick="event.preventDefault(); window.showToast('Explore our architectural moodboards on Pinterest.', 'info');"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+        <div class="footer-bottom-links">
+          <button type="button" onclick="openPolicyModal('privacy')">Privacy Policy</button>
+          <button type="button" onclick="openPolicyModal('terms')">Terms of Folio</button>
+          <button type="button" onclick="openPolicyModal('sustainability')">Sustainability Report</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/booking-engine.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

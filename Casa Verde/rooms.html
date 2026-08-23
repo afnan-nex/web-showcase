@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suites & Private Villas — Casa Verde Eco-Sanctuary</title>
+  <meta name="description" content="Explore our collection of private suites, rainforest casitas, and cliffside ocean villas. Every sanctuary features private plunge pools and dedicated butler care.">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="Casa Verde Homepage">
+        <div class="brand-title">
+          <span>CASA VERDE</span>
+          <span class="leaf-icon"><i class="fa-solid fa-leaf"></i></span>
+        </div>
+        <span class="brand-tagline">Eco-Sanctuary &bull; Costa Verde</span>
+      </a>
+
+      <nav class="nav-desktop" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="rooms.html" class="nav-link active">Suites & Villas</a>
+        <a href="dining.html" class="nav-link">Dining</a>
+        <a href="spa.html" class="nav-link">Spa & Wellness</a>
+        <a href="experiences.html" class="nav-link">Experiences</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="booking.html" class="btn header-booking-btn">Reserve Stay</a>
+        <button class="hamburger-btn" aria-label="Open mobile navigation menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="brand-title">CASA VERDE</div>
+        <span class="brand-tagline">Eco-Sanctuary</span>
+      </div>
+      <button class="drawer-close-btn" aria-label="Close navigation menu">&times;</button>
+    </div>
+
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="rooms.html" class="mobile-nav-link active">Suites & Villas <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="dining.html" class="mobile-nav-link">Gastronomy & Bars <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="spa.html" class="mobile-nav-link">Sanctuary Spa <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="experiences.html" class="mobile-nav-link">Bespoke Adventures <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="booking.html" class="mobile-nav-link">Book / Manage Stay <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="mobile-nav-link">Concierge & Contact <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <div class="drawer-contact-info">
+        <p><i class="fa-solid fa-location-dot" style="color: var(--color-accent);"></i> Península de la Selva, Costa Verde</p>
+        <p><i class="fa-solid fa-phone" style="color: var(--color-accent);"></i> +1 (800) 555-VERDE</p>
+        <p><i class="fa-solid fa-envelope" style="color: var(--color-accent);"></i> concierge@casaverde-resort.com</p>
+      </div>
+      <a href="booking.html" class="btn btn-accent btn-block">Check Availability</a>
+    </div>
+  </div>
+
+  <main role="main">
+    <!-- Page Hero Banner -->
+    <section class="page-hero" aria-label="Suites Collection Introduction">
+      <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=1920&q=85" alt="Casa Verde Suites" class="hero-bg-img">
+      <div class="container hero-content">
+        <span class="eyebrow" style="color: var(--color-accent-light);">Architectural Sanctuaries</span>
+        <h1>Suites, Casitas & Cliffside Villas</h1>
+        <p>Suspended over dramatic ocean waves or tucked into ancient botanical canopies. Each bespoke residence offers generous private pools, seamless indoor-outdoor living, and dedicated butler care.</p>
+      </div>
+    </section>
+
+    <!-- Filter & Selection Bar -->
+    <section style="background: #FFFFFF; border-bottom: 1px solid var(--color-border); padding: 1.15rem 0; position: sticky; top: var(--header-height-scrolled); z-index: 90; box-shadow: var(--shadow-subtle);" aria-label="Suite Filters">
+      <div class="container" style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+        <div style="font-size: var(--text-sm); font-weight: 600; color: var(--color-primary);" id="roomsCountDisplay">
+          Showing 6 Suites & Villas
+        </div>
+
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; align-items: center;">
+          <div style="display: flex; align-items: center; gap: 0.4rem;">
+            <label for="filterView" style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); font-weight: 600;">View:</label>
+            <select id="filterView" class="booking-select" style="padding: 0.45rem 0.75rem; font-size: 0.8rem; width: auto;" aria-label="Filter by vista">
+              <option value="all">All Vistas</option>
+              <option value="ocean">Ocean & Coastline</option>
+              <option value="rainforest">Rainforest & Canopy</option>
+              <option value="courtyard">Water Courtyard</option>
+            </select>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 0.4rem;">
+            <label for="filterGuests" style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); font-weight: 600;">Guests:</label>
+            <select id="filterGuests" class="booking-select" style="padding: 0.45rem 0.75rem; font-size: 0.8rem; width: auto;" aria-label="Filter by guest capacity">
+              <option value="all">Any Capacity</option>
+              <option value="2">2+ Guests</option>
+              <option value="3">3+ Guests</option>
+              <option value="4">4+ Guests</option>
+              <option value="8">8 Guests (Estate)</option>
+            </select>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 0.4rem;">
+            <label for="filterSort" style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--text-muted); font-weight: 600;">Sort By:</label>
+            <select id="filterSort" class="booking-select" style="padding: 0.45rem 0.75rem; font-size: 0.8rem; width: auto;" aria-label="Sort suites">
+              <option value="default">Curated Order</option>
+              <option value="price-asc">Price (Low to High)</option>
+              <option value="price-desc">Price (High to Low)</option>
+              <option value="size">Suite Size (Sq Ft)</option>
+            </select>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Rooms Catalog List -->
+    <section class="section section-sand" aria-label="Suites Catalog">
+      <div class="container">
+        <div style="display: flex; flex-direction: column; gap: 2rem;" id="roomsListContainer">
+          <!-- Populated dynamically by main.js -->
+        </div>
+      </div>
+    </section>
+
+    <!-- Included Amenities Banner -->
+    <section class="section section-white" aria-label="Resort Inclusions">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="eyebrow">The Casa Verde Standard</span>
+          <h2 class="section-title">Every Stay Includes</h2>
+          <p class="section-description">Unmatched hospitality details that transform your escape into an effortless luxury journey.</p>
+        </div>
+
+        <div class="amenity-grid">
+          <div class="amenity-pill">
+            <i class="fa-solid fa-bell-concierge"></i>
+            <div>
+              <strong>24/7 Dedicated Butler</strong>
+              <p style="font-size: 0.75rem; color: var(--text-muted); margin: 0;">Unpacking, daily pressing, and tailored itineraries.</p>
+            </div>
+          </div>
+          <div class="amenity-pill">
+            <i class="fa-solid fa-utensils"></i>
+            <div>
+              <strong>Artisanal Daily Breakfast</strong>
+              <p style="font-size: 0.75rem; color: var(--text-muted); margin: 0;">Organic pastries, farm eggs, and fresh juices.</p>
+            </div>
+          </div>
+          <div class="amenity-pill">
+            <i class="fa-solid fa-wine-glass"></i>
+            <div>
+              <strong>Sommelier Welcome Bar</strong>
+              <p style="font-size: 0.75rem; color: var(--text-muted); margin: 0;">Curated organic wines and local artisanal roasts.</p>
+            </div>
+          </div>
+          <div class="amenity-pill">
+            <i class="fa-solid fa-wifi"></i>
+            <div>
+              <strong>High-Speed Fiber Wi-Fi</strong>
+              <p style="font-size: 0.75rem; color: var(--text-muted); margin: 0;">Gigabit connectivity throughout all villas.</p>
+            </div>
+          </div>
+          <div class="amenity-pill">
+            <i class="fa-solid fa-car"></i>
+            <div>
+              <strong>Resort Golf Cart</strong>
+              <p style="font-size: 0.75rem; color: var(--text-muted); margin: 0;">Personal electric cart for seamless estate transit.</p>
+            </div>
+          </div>
+          <div class="amenity-pill">
+            <i class="fa-solid fa-person-swimming"></i>
+            <div>
+              <strong>Hydrothermal Pass</strong>
+              <p style="font-size: 0.75rem; color: var(--text-muted); margin: 0;">Unlimited access to thermal springs and ocean pools.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Global Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-title">CASA VERDE</div>
+            <span class="brand-tagline">Eco-Sanctuary &bull; Ocean Villas</span>
+          </a>
+          <p class="footer-desc">A transcendent boutique sanctuary where untamed rainforest meets azure Pacific horizons. Sustainable luxury, Michelin gastronomy, and profound peace.</p>
+          <div class="footer-accolades">
+            <span><i class="fa-solid fa-award"></i> Condé Nast Gold List</span>
+            <span><i class="fa-solid fa-leaf"></i> 100% Eco Certified</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="rooms.html">Suites & Villas</a></li>
+            <li><a href="dining.html">Dining & Bars</a></li>
+            <li><a href="spa.html">Sanctuary Spa</a></li>
+            <li><a href="experiences.html">Curated Experiences</a></li>
+            <li><a href="booking.html">Check Availability</a></li>
+            <li><a href="contact.html">Concierge & Access</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Reservation Care</h4>
+          <ul class="footer-links">
+            <li><a href="booking.html">Manage Existing Booking</a></li>
+            <li><a href="contact.html">Private Chauffeur Transfers</a></li>
+            <li><a href="contact.html">Helicopter Charters</a></li>
+            <li><a href="contact.html">VIP Events & Weddings</a></li>
+            <li><a href="contact.html">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">The Private Circle</h4>
+          <p style="font-size: var(--text-xs); color: var(--text-inverse-muted); margin-bottom: 1rem;">
+            Subscribe to receive private seasonal invitations, chef tasting releases, and secluded retreat openings.
+          </p>
+          <form class="newsletter-form" aria-label="Newsletter subscription">
+            <div class="newsletter-input-group">
+              <input type="email" class="newsletter-input" placeholder="Your email address..." required aria-label="Email address">
+              <button type="submit" class="newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Casa Verde Eco-Sanctuary & Ocean Villas. All rights reserved.
+        </div>
+        <div class="footer-socials">
+          <a href="#" class="social-icon-btn" aria-label="Casa Verde Instagram" onclick="event.preventDefault(); window.showToast('Follow @CasaVerdeResort on Instagram for daily sanctuary moments.', 'info');"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-icon-btn" aria-label="Casa Verde Facebook" onclick="event.preventDefault(); window.showToast('Visit facebook.com/CasaVerdeResort for editorial features.', 'info');"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-icon-btn" aria-label="Casa Verde Pinterest" onclick="event.preventDefault(); window.showToast('Explore our architectural moodboards on Pinterest.', 'info');"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+        <div class="footer-bottom-links">
+          <button type="button" onclick="openPolicyModal('privacy')">Privacy Policy</button>
+          <button type="button" onclick="openPolicyModal('terms')">Terms of Folio</button>
+          <button type="button" onclick="openPolicyModal('sustainability')">Sustainability Report</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/booking-engine.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

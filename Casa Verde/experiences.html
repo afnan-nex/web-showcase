@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bespoke Curated Experiences & Expeditions — Casa Verde</title>
+  <meta name="description" content="Immerse in private yacht charters, helicopter volcano expeditions, guided rainforest foraging, and starlight astronomy dinners.">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="Casa Verde Homepage">
+        <div class="brand-title">
+          <span>CASA VERDE</span>
+          <span class="leaf-icon"><i class="fa-solid fa-leaf"></i></span>
+        </div>
+        <span class="brand-tagline">Eco-Sanctuary &bull; Costa Verde</span>
+      </a>
+
+      <nav class="nav-desktop" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="rooms.html" class="nav-link">Suites & Villas</a>
+        <a href="dining.html" class="nav-link">Dining</a>
+        <a href="spa.html" class="nav-link">Spa & Wellness</a>
+        <a href="experiences.html" class="nav-link active">Experiences</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="booking.html" class="btn header-booking-btn">Reserve Stay</a>
+        <button class="hamburger-btn" aria-label="Open mobile navigation menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="brand-title">CASA VERDE</div>
+        <span class="brand-tagline">Eco-Sanctuary</span>
+      </div>
+      <button class="drawer-close-btn" aria-label="Close navigation menu">&times;</button>
+    </div>
+
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="rooms.html" class="mobile-nav-link">Suites & Villas <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="dining.html" class="mobile-nav-link">Gastronomy & Bars <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="spa.html" class="mobile-nav-link">Sanctuary Spa <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="experiences.html" class="mobile-nav-link active">Bespoke Adventures <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="booking.html" class="mobile-nav-link">Book / Manage Stay <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="mobile-nav-link">Concierge & Contact <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <div class="drawer-contact-info">
+        <p><i class="fa-solid fa-location-dot" style="color: var(--color-accent);"></i> Península de la Selva, Costa Verde</p>
+        <p><i class="fa-solid fa-phone" style="color: var(--color-accent);"></i> +1 (800) 555-VERDE</p>
+        <p><i class="fa-solid fa-envelope" style="color: var(--color-accent);"></i> concierge@casaverde-resort.com</p>
+      </div>
+      <a href="booking.html" class="btn btn-accent btn-block">Check Availability</a>
+    </div>
+  </div>
+
+  <main role="main">
+    <!-- Page Hero Banner -->
+    <section class="page-hero" aria-label="Experiences Introduction">
+      <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?auto=format&fit=crop&w=1920&q=85" alt="Experiences at Casa Verde" class="hero-bg-img">
+      <div class="container hero-content">
+        <span class="eyebrow" style="color: var(--color-accent-light);">Wild Wonder & Solitude</span>
+        <h1>Curated Bespoke Adventures</h1>
+        <p>Beyond our private villas lies one of the most biodiverse enclaves on Earth. Let our resident naturalists, captains, and master sommeliers design your private itinerary.</p>
+      </div>
+    </section>
+
+    <!-- Experiences Catalog Grid -->
+    <section class="section section-sand" aria-label="Adventures Catalog">
+      <div class="container">
+        <div class="grid-2">
+          
+          <!-- Experience 1 -->
+          <div class="experience-card">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?auto=format&fit=crop&w=1200&q=80" alt="Private Catamaran Charter" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span>Private Marine Charter</span>
+                <span>5 Hours &bull; $1,400</span>
+              </div>
+              <h3 class="card-title">Private 54ft Catamaran & Secluded Cove Charter</h3>
+              <p class="card-text">Glide across pristine Pacific waters to uninhabited coral reef coves. Includes private on-board chef, Laurent-Perrier champagne bar, motorized sea-bobs, stand-up paddleboards, and private guided snorkeling with sea turtles.</p>
+              <div class="card-footer">
+                <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-users"></i> Up to 8 Guests</span>
+                <button class="btn btn-primary btn-sm" onclick="openExperienceInquiry('Private 54ft Catamaran Charter')">Reserve Charter</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience 2 -->
+          <div class="experience-card">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1508672019048-805b876b67e2?auto=format&fit=crop&w=1200&q=80" alt="Helicopter Volcano Expedition" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span>Aerial Expedition</span>
+                <span>90 Minutes &bull; $1,850</span>
+              </div>
+              <h3 class="card-title">Helicopter Rainforest & Volcano Aerial Expedition</h3>
+              <p class="card-text">Lift off directly from the Casa Verde private helipad. Soar above virgin canopy ridges, hidden mountain waterfalls, and the smoking caldera of Arenal Volcano, concluding with a champagne summit touchdown.</p>
+              <div class="card-footer">
+                <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-users"></i> Up to 4 Guests</span>
+                <button class="btn btn-primary btn-sm" onclick="openExperienceInquiry('Helicopter Volcano Expedition')">Reserve Flight</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience 3 -->
+          <div class="experience-card">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=1200&q=80" alt="Botanical Foraging" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span>Gastronomy Masterclass</span>
+                <span>3.5 Hours &bull; $240 / guest</span>
+              </div>
+              <h3 class="card-title">Wild Foraging & Masterclass with Executive Chef</h3>
+              <p class="card-text">Explore our 8-acre organic gardens and private forest trails with Chef Mateo Varela, harvesting heirloom herbs and wild mushrooms before preparing a 4-course interactive lunch paired with biodynamic wines.</p>
+              <div class="card-footer">
+                <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-users"></i> Max 6 Guests</span>
+                <button class="btn btn-primary btn-sm" onclick="openExperienceInquiry('Wild Foraging Masterclass')">Reserve Masterclass</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Experience 4 -->
+          <div class="experience-card">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=80" alt="Starlight Dining" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span>Private Romantic Dining</span>
+                <span>3 Hours &bull; $680 / couple</span>
+              </div>
+              <h3 class="card-title">Private Beach Starlight Dining & Astronomy</h3>
+              <p class="card-text">A candlelit 5-course barefoot dinner set on our private crescent beach beneath the equatorial night sky, accompanied by a resident astronomer and high-powered Celestron telescope observations.</p>
+              <div class="card-footer">
+                <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-heart"></i> Exclusive to Couples</span>
+                <button class="btn btn-primary btn-sm" onclick="openExperienceInquiry('Private Starlight Dining & Astronomy')">Reserve Evening</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Custom Private Concierge Planning Banner -->
+    <section class="section section-dark" aria-label="Tailored Concierge">
+      <div class="container container-narrow text-center">
+        <span class="eyebrow" style="color: var(--color-accent);">Tailored Itineraries</span>
+        <h2 style="color: #FFFFFF; font-size: 2.5rem; margin-bottom: 1.25rem;">Have a Bespoke Vision in Mind?</h2>
+        <p style="color: var(--text-inverse-muted); font-size: var(--text-md); margin-bottom: 2.25rem;">
+          From private island helicopter picnics to secluded waterfall marriage proposals and VIP yacht transfers, our Head Concierge crafts once-in-a-lifetime memories.
+        </p>
+        <a href="contact.html" class="btn btn-accent btn-lg">Speak with Our Head Concierge</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Experience Inquiry Modal -->
+  <div class="modal-overlay" id="experienceModal" role="dialog" aria-modal="true" aria-labelledby="expModalTitle">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title" id="expModalTitle">Inquire Experience</h3>
+        <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
+      </div>
+      <form id="experienceInquiryForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Selected Experience</label>
+            <input type="text" id="expModalNameInput" class="form-control" readonly>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Preferred Date</label>
+              <input type="date" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Number of Guests</label>
+              <input type="number" class="form-control" min="1" max="10" value="2" required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Your Name</label>
+              <input type="text" class="form-control" placeholder="e.g. Julian Sterling" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" class="form-control" placeholder="e.g. julian@example.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Bespoke Requests or Timing Notes</label>
+            <textarea class="form-control" placeholder="Let us know if you have specific timing or celebratory requirements..."></textarea>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline btn-sm modal-close-btn">Cancel</button>
+          <button type="submit" class="btn btn-accent btn-sm">Submit Concierge Inquiry</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-title">CASA VERDE</div>
+            <span class="brand-tagline">Eco-Sanctuary &bull; Ocean Villas</span>
+          </a>
+          <p class="footer-desc">A transcendent boutique sanctuary where untamed rainforest meets azure Pacific horizons. Sustainable luxury, Michelin gastronomy, and profound peace.</p>
+          <div class="footer-accolades">
+            <span><i class="fa-solid fa-award"></i> Condé Nast Gold List</span>
+            <span><i class="fa-solid fa-leaf"></i> 100% Eco Certified</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="rooms.html">Suites & Villas</a></li>
+            <li><a href="dining.html">Dining & Bars</a></li>
+            <li><a href="spa.html">Sanctuary Spa</a></li>
+            <li><a href="experiences.html">Curated Experiences</a></li>
+            <li><a href="booking.html">Check Availability</a></li>
+            <li><a href="contact.html">Concierge & Access</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Reservation Care</h4>
+          <ul class="footer-links">
+            <li><a href="booking.html">Manage Existing Booking</a></li>
+            <li><a href="contact.html">Private Chauffeur Transfers</a></li>
+            <li><a href="contact.html">Helicopter Charters</a></li>
+            <li><a href="contact.html">VIP Events & Weddings</a></li>
+            <li><a href="contact.html">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">The Private Circle</h4>
+          <p style="font-size: var(--text-xs); color: var(--text-inverse-muted); margin-bottom: 1rem;">
+            Subscribe to receive private seasonal invitations, chef tasting releases, and secluded retreat openings.
+          </p>
+          <form class="newsletter-form" aria-label="Newsletter subscription">
+            <div class="newsletter-input-group">
+              <input type="email" class="newsletter-input" placeholder="Your email address..." required aria-label="Email address">
+              <button type="submit" class="newsletter-btn" aria-label="Subscribe"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Casa Verde Eco-Sanctuary & Ocean Villas. All rights reserved.
+        </div>
+        <div class="footer-socials">
+          <a href="#" class="social-icon-btn" aria-label="Casa Verde Instagram" onclick="event.preventDefault(); window.showToast('Follow @CasaVerdeResort on Instagram for daily sanctuary moments.', 'info');"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-icon-btn" aria-label="Casa Verde Facebook" onclick="event.preventDefault(); window.showToast('Visit facebook.com/CasaVerdeResort for editorial features.', 'info');"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-icon-btn" aria-label="Casa Verde Pinterest" onclick="event.preventDefault(); window.showToast('Explore our architectural moodboards on Pinterest.', 'info');"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+        <div class="footer-bottom-links">
+          <button type="button" onclick="openPolicyModal('privacy')">Privacy Policy</button>
+          <button type="button" onclick="openPolicyModal('terms')">Terms of Folio</button>
+          <button type="button" onclick="openPolicyModal('sustainability')">Sustainability Report</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/booking-engine.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    window.openExperienceInquiry = function(name) {
+      const modal = document.getElementById('experienceModal');
+      const input = document.getElementById('expModalNameInput');
+      if (modal && input) {
+        input.value = name;
+        modal.classList.add('is-active');
+      }
+    };
+
+    document.getElementById('experienceInquiryForm')?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      document.getElementById('experienceModal').classList.remove('is-active');
+      window.showToast('Experience inquiry received! Our Head Concierge will confirm your itinerary.', 'success');
+    });
+  </script>
+</body>
+</html>

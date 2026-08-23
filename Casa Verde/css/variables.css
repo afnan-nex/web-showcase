@@ -1,0 +1,157 @@
+/* ==========================================================================
+   Casa Verde — Design System & Custom CSS Properties
+   Refined Luxury Hospitality Design System
+   Inspiration: Editorial Travel, Biophilic Architecture, Aman & Belmond Aesthetics
+   ========================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,400;1,500&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@200;300;400;500;600;700&display=swap');
+
+:root {
+  /* --- Brand Color Palette (Warm Organic Luxury) --- */
+  --color-primary: #182B24;        /* Deep Rainforest Evergreen */
+  --color-primary-dark: #0E1A16;   /* Night Canopy Charcoal */
+  --color-primary-light: #2D483D;  /* Muted Sage Pine */
+  --color-primary-subtle: #EDF3EF; /* Soft botanical wash */
+
+  --color-accent: #C5A059;         /* Burnished Champagne Gold */
+  --color-accent-hover: #AF8B45;   /* Warm Antique Ochre */
+  --color-accent-light: #F6EFE1;   /* Soft Linen Gold Tint */
+  --color-accent-subtle: rgba(197, 160, 89, 0.12);
+
+  --color-terracotta: #A65B40;     /* Mediterranean Terracotta */
+  --color-terracotta-soft: #FBF0EB;
+
+  --color-sand: #F7F4EE;           /* Warm Sand / Natural Linen */
+  --color-sand-dark: #EBE5D8;      /* Neutral Warm Alabaster */
+  --color-sand-light: #FAF8F4;     /* Crisp Warm White */
+
+  --color-surface: #FFFFFF;
+  --color-surface-translucent: rgba(255, 255, 255, 0.95);
+  --color-dark-surface: #121815;
+  --color-dark-surface-card: #1B231F;
+
+  /* --- Text & Typographic Colors --- */
+  --text-primary: #1A221F;         /* Charcoal Forest */
+  --text-secondary: #53605B;       /* Warm Slate Muted */
+  --text-muted: #8C9993;           /* Delicate Stone */
+  --text-inverse: #FAF8F4;         /* Linen Alabaster */
+  --text-inverse-muted: #B4C2BC;   /* Soft Sage Light */
+
+  /* --- UI Functional Colors --- */
+  --color-border: #E2DBD0;
+  --color-border-light: #EEE9DF;
+  --color-border-dark: #2A3630;
+  --color-success: #2A794F;
+  --color-success-bg: #EAF5EE;
+  --color-error: #B33838;
+  --color-error-bg: #FDF1F1;
+  --color-warning: #C57400;
+  --color-focus: #C5A059;
+
+  /* --- Typography Families --- */
+  --font-serif: 'Playfair Display', Georgia, 'Times New Roman', serif;
+  --font-display-italic: 'Cormorant Garamond', Garamond, Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* --- Typographic Scale & Weights --- */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.875rem;    /* 14px */
+  --text-base: 1rem;      /* 16px */
+  --text-md: 1.125rem;    /* 18px */
+  --text-lg: 1.25rem;     /* 20px */
+  --text-xl: 1.5rem;      /* 24px */
+  --text-2xl: 1.875rem;   /* 30px */
+  --text-3xl: 2.375rem;   /* 38px */
+  --text-4xl: 3rem;       /* 48px */
+  --text-5xl: 3.75rem;    /* 60px */
+  --text-6xl: 4.75rem;    /* 76px */
+
+  /* --- Spacing --- */
+  --space-3xs: 0.125rem;  /* 2px */
+  --space-2xs: 0.25rem;   /* 4px */
+  --space-xs: 0.5rem;     /* 8px */
+  --space-sm: 0.75rem;    /* 12px */
+  --space-md: 1rem;       /* 16px */
+  --space-lg: 1.5rem;     /* 24px */
+  --space-xl: 2rem;       /* 32px */
+  --space-2xl: 3rem;      /* 48px */
+  --space-3xl: 4.5rem;    /* 72px */
+  --space-4xl: 6rem;      /* 96px */
+  --space-5xl: 7.5rem;    /* 120px */
+
+  /* --- Layout & Grids --- */
+  --container-max: 1360px;
+  --container-narrow: 1040px;
+  --container-compact: 780px;
+  --container-gutter: 2rem;
+  --header-height: 88px;
+  --header-height-scrolled: 70px;
+
+  /* --- Shadows (Subtle, Natural & Architectural) --- */
+  --shadow-sm: 0 2px 6px rgba(18, 30, 24, 0.04);
+  --shadow-md: 0 6px 20px rgba(18, 30, 24, 0.06);
+  --shadow-lg: 0 14px 36px rgba(18, 30, 24, 0.09);
+  --shadow-xl: 0 20px 50px rgba(18, 30, 24, 0.13);
+  --shadow-subtle: 0 1px 2px rgba(0, 0, 0, 0.04);
+
+  /* --- Border Radii (Minimalist, Tailored Edge) --- */
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-pill: 9999px;
+
+  /* --- Transitions & Timing --- */
+  --transition-fast: 0.2s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-normal: 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-slow: 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-editorial: 0.8s cubic-bezier(0.25, 1, 0.5, 1);
+
+  /* --- Z-Indices --- */
+  --z-base: 1;
+  --z-sticky: 90;
+  --z-header: 1000;
+  --z-drawer: 1100;
+  --z-modal: 1200;
+  --z-toast: 1300;
+}
+
+@media (max-width: 992px) {
+  :root {
+    --container-gutter: 1.5rem;
+    --header-height: 76px;
+    --header-height-scrolled: 64px;
+    --text-4xl: 2.35rem;
+    --text-5xl: 2.85rem;
+    --text-6xl: 3.35rem;
+    --space-3xl: 3.5rem;
+    --space-4xl: 4.5rem;
+    --space-5xl: 5.5rem;
+  }
+}
+
+@media (max-width: 576px) {
+  :root {
+    --container-gutter: 1.15rem;
+    --header-height: 68px;
+    --header-height-scrolled: 60px;
+    --text-3xl: 1.85rem;
+    --text-4xl: 2.1rem;
+    --text-5xl: 2.45rem;
+    --text-6xl: 2.85rem;
+    --space-2xl: 2rem;
+    --space-3xl: 2.75rem;
+    --space-4xl: 3.5rem;
+    --space-5xl: 4.25rem;
+  }
+}
+
+/* Reduced Motion Preference for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

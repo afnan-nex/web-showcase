@@ -1,0 +1,591 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casa Verde — Luxury Eco-Sanctuary & Ocean Villas</title>
+  <meta name="description" content="An ultra-luxury boutique resort immersed in the lush coastal rainforest of Costa Verde. Private ocean villas, Michelin-caliber gastronomy, and holistic wellness.">
+  
+  <!-- Font Awesome 6 -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Custom Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header" role="banner">
+    <div class="container header-container">
+      <a href="index.html" class="brand-logo" aria-label="Casa Verde Homepage">
+        <div class="brand-title">
+          <span>CASA VERDE</span>
+          <span class="leaf-icon"><i class="fa-solid fa-leaf"></i></span>
+        </div>
+        <span class="brand-tagline">Eco-Sanctuary &bull; Costa Verde</span>
+      </a>
+
+      <nav class="nav-desktop" role="navigation" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="rooms.html" class="nav-link">Suites & Villas</a>
+        <a href="dining.html" class="nav-link">Dining</a>
+        <a href="spa.html" class="nav-link">Spa & Wellness</a>
+        <a href="experiences.html" class="nav-link">Experiences</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="booking.html" class="btn header-booking-btn">Reserve Stay</a>
+        <button class="hamburger-btn" aria-label="Open mobile navigation menu" aria-expanded="false">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-drawer" id="mobileDrawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+    <div class="mobile-drawer-header">
+      <div class="brand-logo">
+        <div class="brand-title">CASA VERDE</div>
+        <span class="brand-tagline">Eco-Sanctuary</span>
+      </div>
+      <button class="drawer-close-btn" aria-label="Close navigation menu">&times;</button>
+    </div>
+
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link active">Home <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="rooms.html" class="mobile-nav-link">Suites & Villas <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="dining.html" class="mobile-nav-link">Gastronomy & Bars <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="spa.html" class="mobile-nav-link">Sanctuary Spa <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="experiences.html" class="mobile-nav-link">Bespoke Adventures <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="booking.html" class="mobile-nav-link">Book / Manage Stay <i class="fa-solid fa-arrow-right"></i></a>
+      <a href="contact.html" class="mobile-nav-link">Concierge & Contact <i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <div class="mobile-drawer-footer">
+      <div class="drawer-contact-info">
+        <p><i class="fa-solid fa-location-dot" style="color: var(--color-accent);"></i> Península de la Selva, Costa Verde</p>
+        <p><i class="fa-solid fa-phone" style="color: var(--color-accent);"></i> +1 (800) 555-VERDE</p>
+        <p><i class="fa-solid fa-envelope" style="color: var(--color-accent);"></i> concierge@casaverde-resort.com</p>
+      </div>
+      <a href="booking.html" class="btn btn-accent btn-block">Check Availability</a>
+    </div>
+  </div>
+
+  <main role="main">
+    <!-- Cinematic Hotel Hero -->
+    <section class="hero-cinematic" aria-label="Introduction">
+      <div class="hero-background">
+        <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1920&q=85" alt="Casa Verde Cliffside Ocean Villa" class="hero-bg-img">
+      </div>
+      <div class="hero-overlay"></div>
+
+      <div class="container hero-content">
+        <span class="eyebrow" style="color: var(--color-accent-light);">A Secluded Coastal Sanctuary</span>
+        <h1 class="hero-title">Where Rainforest Canopy Meets the <span class="italic-word">Endless Horizon</span></h1>
+        <p class="hero-subtitle">Immerse yourself in biophilic architectural luxury, Michelin-caliber gastronomy, and profound ecological peace on Costa Verde’s pristine coastline.</p>
+
+        <!-- Booking Widget Bar -->
+        <div class="hero-booking-bar-container">
+          <div class="booking-widget-wrapper">
+            <div class="booking-widget-card">
+              <form class="booking-widget-form js-quick-booking-form" aria-label="Quick Booking Search">
+                <div class="booking-field">
+                  <label class="booking-field-label"><i class="fa-regular fa-calendar"></i> Check-in</label>
+                  <input type="date" name="checkIn" class="booking-input" required aria-label="Check-in Date">
+                </div>
+                <div class="booking-field">
+                  <label class="booking-field-label"><i class="fa-regular fa-calendar-check"></i> Check-out</label>
+                  <input type="date" name="checkOut" class="booking-input" required aria-label="Check-out Date">
+                </div>
+                <div class="booking-field">
+                  <label class="booking-field-label"><i class="fa-solid fa-user-group"></i> Guests</label>
+                  <select name="guests" class="booking-select" aria-label="Guest count">
+                    <option value="1">1 Adult</option>
+                    <option value="2" selected>2 Adults</option>
+                    <option value="3">3 Guests</option>
+                    <option value="4">4 Guests</option>
+                    <option value="6">6+ Guests (Estate)</option>
+                  </select>
+                </div>
+                <div class="booking-field">
+                  <label class="booking-field-label"><i class="fa-solid fa-bed"></i> Accommodation</label>
+                  <select name="room" class="booking-select" aria-label="Select suite category">
+                    <option value="">All Suites & Villas</option>
+                    <option value="casita-verde">Garden Casita Verde</option>
+                    <option value="cliffside-ocean-villa">Cliffside Ocean Villa</option>
+                    <option value="canopy-treehouse-suite">Canopy Treehouse Suite</option>
+                    <option value="presidential-ocean-estate">The Grand Presidential Estate</option>
+                  </select>
+                </div>
+                <div class="booking-submit-col">
+                  <button type="submit" class="btn btn-accent btn-block">
+                    Find Sanctuary <i class="fa-solid fa-arrow-right"></i>
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Philosophy & Sense of Place -->
+    <section class="section section-sand" aria-label="Resort Philosophy">
+      <div class="container">
+        <div class="grid-2" style="align-items: center;">
+          <div>
+            <span class="eyebrow eyebrow-dark">The Casa Verde Philosophy</span>
+            <h2 class="section-title">An Architecture of <span class="font-italic-accent">Silence & Wild Splendor</span></h2>
+            <p class="lead">Conceived by visionary tropical modernists, Casa Verde is more than a luxury resort; it is a sacred dialogue between human serenity and untamed nature.</p>
+            <p>Every private villa is cantilevered into the volcanic cliffside or elevated above the emerald rainforest canopy, utilizing sustainable reclaimed cedarwood, local volcanic stone, and expansive open glass walls that invite the sea breeze inside.</p>
+            <div style="margin-top: 2rem; display: flex; gap: 2rem; border-top: 1px solid var(--color-border); padding-top: 1.5rem; flex-wrap: wrap;">
+              <div>
+                <h4 style="font-size: 2.2rem; color: var(--color-primary); font-family: var(--font-serif); margin-bottom: 2px;">100%</h4>
+                <p style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted);">Solar & Hydro Powered</p>
+              </div>
+              <div>
+                <h4 style="font-size: 2.2rem; color: var(--color-primary); font-family: var(--font-serif); margin-bottom: 2px;">850</h4>
+                <p style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted);">Acres Private Reserve</p>
+              </div>
+              <div>
+                <h4 style="font-size: 2.2rem; color: var(--color-primary); font-family: var(--font-serif); margin-bottom: 2px;">1:1</h4>
+                <p style="font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.15em; color: var(--text-muted);">Dedicated Butler Ratio</p>
+              </div>
+            </div>
+          </div>
+          <div style="position: relative;">
+            <div style="aspect-ratio: 4/5; overflow: hidden; border-radius: var(--radius-xs); box-shadow: var(--shadow-lg);">
+              <img src="https://images.unsplash.com/photo-1540541338287-41700207dee6?auto=format&fit=crop&w=1200&q=80" alt="Resort Architecture" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+            <div style="position: absolute; bottom: -16px; left: -16px; background: #FFFFFF; padding: 1.25rem 1.5rem; border-radius: var(--radius-xs); box-shadow: var(--shadow-md); max-width: 250px; border-left: 4px solid var(--color-accent);">
+              <p style="font-size: 0.8rem; font-weight: 600; color: var(--color-primary-dark); margin-bottom: 2px;">Condé Nast Gold List</p>
+              <p style="font-size: 0.72rem; color: var(--text-muted); margin: 0;">Ranked #1 Eco-Luxury Sanctuary in the Americas 2026</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curated Rooms & Suites Previews -->
+    <section class="section section-white" aria-label="Featured Suites">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="eyebrow">Private Sanctuaries</span>
+          <h2 class="section-title">Suites, Casitas & Cliffside Villas</h2>
+          <p class="section-description">Crafted for profound stillness. Each residence features a private heated plunge pool, dedicated butler service, and panoramic ocean or rainforest vistas.</p>
+        </div>
+
+        <div class="grid-3" id="homeRoomPreviews">
+          <!-- Populated dynamically by main.js -->
+        </div>
+
+        <div style="text-align: center; margin-top: 3.5rem;">
+          <a href="rooms.html" class="btn btn-outline">View All 6 Suites & Estates <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Culinary Excellence / Dining -->
+    <section class="section section-dark" aria-label="Gastronomy">
+      <div class="container">
+        <div class="grid-2" style="align-items: center;">
+          <div style="order: 2;">
+            <span class="eyebrow" style="color: var(--color-accent-light);">Gastronomy of the Rainforest</span>
+            <h2 class="section-title" style="color: #FFFFFF;">Michelin-Inspired Flavors from <span class="font-italic-accent">Soil to Sea</span></h2>
+            <p style="color: var(--text-inverse-muted); font-size: var(--text-md); margin-bottom: 1.5rem;">
+              Led by Executive Chef Mateo Varela, our culinary ethos centers on hyper-local biodynamic agriculture from our 8-acre organic gardens and daily catches by artisan coastal fishermen.
+            </p>
+            <ul style="list-style: none; margin-bottom: 2rem; display: flex; flex-direction: column; gap: 0.85rem; font-size: var(--text-sm); color: var(--text-inverse-muted);">
+              <li style="display: flex; align-items: center; gap: 0.75rem;">
+                <i class="fa-solid fa-seedling" style="color: var(--color-accent);"></i>
+                <strong>Terra:</strong> Farm-to-table tasting menus with sommelier wine pairings.
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.75rem;">
+                <i class="fa-solid fa-martini-glass" style="color: var(--color-accent);"></i>
+                <strong>Sol y Sombra:</strong> Cliffside crudo bar and sunset mezcal mixology lounge.
+              </li>
+              <li style="display: flex; align-items: center; gap: 0.75rem;">
+                <i class="fa-solid fa-mug-hot" style="color: var(--color-accent);"></i>
+                <strong>The Botanical Greenhouse:</strong> Artisanal pastries and cold-pressed botanical elixirs.
+              </li>
+            </ul>
+            <div style="display: flex; gap: 1.25rem; flex-wrap: wrap;">
+              <a href="dining.html" class="btn btn-accent">Explore Menus & Venues</a>
+              <button class="btn btn-outline-white" onclick="openTableModal('Terra')">Reserve a Table</button>
+            </div>
+          </div>
+          <div style="order: 1;">
+            <div style="aspect-ratio: 4/3; border-radius: var(--radius-xs); overflow: hidden; box-shadow: var(--shadow-xl);">
+              <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1200&q=80" alt="Terra Fine Dining" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Sanctuary Spa & Wellness -->
+    <section class="section section-sand" aria-label="Sanctuary Spa">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="eyebrow eyebrow-dark">Holistic Rejuvenation</span>
+          <h2 class="section-title">The Sanctuary Spa & Hydrothermal Circuit</h2>
+          <p class="section-description">Restore equilibrium with indigenous botanical rituals, sound bath healing, volcanic mud body polishes, and open-air cliffside hydrotherapy pools.</p>
+        </div>
+
+        <div class="grid-3">
+          <div class="spa-ritual-card">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80" alt="Forest Flora Massage" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span>Signature Ritual</span>
+                <span>90 Min &bull; $280</span>
+              </div>
+              <h3 class="card-title">Forest Flora Aromatherapy</h3>
+              <p class="card-text">Essential oils distilled from wild ylang-ylang and cedarwood to release tension and align rhythmic breathing.</p>
+              <div class="card-footer">
+                <button class="btn btn-outline btn-sm" onclick="openSpaModal('Forest Flora Aromatherapy Massage')">Book Ritual</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="spa-ritual-card">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?auto=format&fit=crop&w=800&q=80" alt="Volcanic Clay Polish" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span>Body Therapy</span>
+                <span>120 Min &bull; $360</span>
+              </div>
+              <h3 class="card-title">Volcanic Mud & Cacao Glow</h3>
+              <p class="card-text">Antioxidant-rich Costa Verde mineral mud combined with organic raw cacao scrub and botanical milk bath.</p>
+              <div class="card-footer">
+                <button class="btn btn-outline btn-sm" onclick="openSpaModal('Volcanic Clay & Cacao Body Polish')">Book Ritual</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="spa-ritual-card">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?auto=format&fit=crop&w=800&q=80" alt="Sound Healing" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span>Acoustic Therapy</span>
+                <span>60 Min &bull; $190</span>
+              </div>
+              <h3 class="card-title">Sound Bath & Vibrational Reiki</h3>
+              <p class="card-text">Ancient Tibetan singing bowls and gong harmonics in an open-air bamboo pavilion suspended in the treetops.</p>
+              <div class="card-footer">
+                <button class="btn btn-outline btn-sm" onclick="openSpaModal('Private Tibetan Sound Bath & Reiki')">Book Ritual</button>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem;">
+          <a href="spa.html" class="link-editorial">Explore Full Spa Menu & Wellness Retreats <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curated Experiences -->
+    <section class="section section-white" aria-label="Bespoke Experiences">
+      <div class="container">
+        <div class="grid-2" style="align-items: center; margin-bottom: 3.5rem;">
+          <div>
+            <span class="eyebrow">Unforgettable Encounters</span>
+            <h2 class="section-title">Bespoke Expeditions & <span class="font-italic-accent">Private Curations</span></h2>
+          </div>
+          <div>
+            <p style="color: var(--text-secondary);">From private catamaran snorkeling in hidden coral bays to private helicopter flights over active volcanic craters, every adventure is privately tailored by our resident naturalists.</p>
+          </div>
+        </div>
+
+        <div class="grid-2">
+          <div class="experience-card">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1500917293891-ef795e70e1f6?auto=format&fit=crop&w=1200&q=80" alt="Private Catamaran Charter" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span>Marine Charter</span>
+                <span>5 Hours &bull; $1,400</span>
+              </div>
+              <h3 class="card-title">54ft Private Catamaran & Cove Charter</h3>
+              <p class="card-text">Private on-board chef, Laurent-Perrier champagne bar, paddleboards, and private guided snorkeling with sea turtles.</p>
+              <div class="card-footer">
+                <a href="experiences.html" class="link-editorial">Experience Details <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="experience-card">
+            <div class="card-media">
+              <img src="https://images.unsplash.com/photo-1519671482749-fd09be7ccebf?auto=format&fit=crop&w=1200&q=80" alt="Starlight Dining" loading="lazy">
+            </div>
+            <div class="card-body">
+              <div class="card-meta">
+                <span>Private Gastronomy</span>
+                <span>3 Hours &bull; $680 / couple</span>
+              </div>
+              <h3 class="card-title">Private Beach Starlight Dining & Astronomy</h3>
+              <p class="card-text">Candlelit 5-course barefoot dinner set on our private beach beneath the canopy of stars, guided by a resident astronomer.</p>
+              <div class="card-footer">
+                <a href="experiences.html" class="link-editorial">Experience Details <i class="fa-solid fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials & Press Accolades -->
+    <section class="section section-dark testimonials-section" aria-label="Editorial Press & Reviews">
+      <div class="container container-compact text-center">
+        <span class="eyebrow" style="color: var(--color-accent);">Editorial Recognition</span>
+        <div id="testimonialsSlider" style="min-height: 220px; margin-top: 1.25rem;">
+          <!-- Slider rendered by ui.js -->
+        </div>
+        <div class="carousel-indicators" style="justify-content: center;" role="tablist" aria-label="Testimonial slides">
+          <button class="carousel-dot active" role="tab" aria-selected="true" aria-label="Testimonial 1"></button>
+          <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Testimonial 2"></button>
+          <button class="carousel-dot" role="tab" aria-selected="false" aria-label="Testimonial 3"></button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Location & Live Environment Widget -->
+    <section class="section section-sand" aria-label="Location">
+      <div class="container">
+        <div class="grid-2" style="align-items: center;">
+          <div>
+            <span class="eyebrow eyebrow-dark">The Destination</span>
+            <h2 class="section-title">Península de la Selva &bull; Costa Verde</h2>
+            <p>Secluded along the dramatic Pacific coastline of Costa Verde, Casa Verde is accessed via a scenic 25-minute private helicopter transfer from San José (SJO) or private chauffeur escort.</p>
+            <div id="resortWeatherWidget" style="background: #FFFFFF; padding: 1.25rem 1.5rem; border-radius: var(--radius-xs); border: 1px solid var(--color-border); margin: 1.75rem 0;">
+              <!-- Populated by ui.js -->
+            </div>
+            <a href="contact.html" class="btn btn-primary btn-sm">Interactive Map & Directions</a>
+          </div>
+          <div>
+            <div style="aspect-ratio: 16/11; border-radius: var(--radius-xs); overflow: hidden; box-shadow: var(--shadow-md);">
+              <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=80" alt="Costa Verde Coastline" loading="lazy" style="width: 100%; height: 100%; object-fit: cover;">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Table Reservation Modal -->
+  <div class="modal-overlay" id="tableReservationModal" role="dialog" aria-modal="true" aria-labelledby="tableModalTitle">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title" id="tableModalTitle">Reserve a Culinary Experience</h3>
+        <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
+      </div>
+      <form id="tableReservationModalForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Restaurant Venue</label>
+            <select name="restaurant" class="form-control" required>
+              <option value="Terra">Terra (Fine Dining Gastronomy)</option>
+              <option value="Sol y Sombra">Sol y Sombra (Cliffside Crudo & Cocktails)</option>
+              <option value="The Botanical Greenhouse">The Botanical Greenhouse (Breakfast & High Tea)</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Date</label>
+              <input type="date" name="date" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Time</label>
+              <select name="time" class="form-control" required>
+                <option value="18:30">6:30 PM</option>
+                <option value="19:00">7:00 PM</option>
+                <option value="19:30">7:30 PM</option>
+                <option value="20:00">8:00 PM</option>
+                <option value="20:30">8:30 PM</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Guests</label>
+              <select name="guests" class="form-control" required>
+                <option value="2">2 Guests</option>
+                <option value="3">3 Guests</option>
+                <option value="4">4 Guests</option>
+                <option value="6">6 Guests</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Guest Full Name</label>
+              <input type="text" name="name" class="form-control" placeholder="e.g. Eleanor Vance" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Email</label>
+              <input type="email" name="email" class="form-control" placeholder="e.g. eleanor@example.com" required>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Dietary Preferences or Special Occasions</label>
+            <input type="text" name="requests" class="form-control" placeholder="e.g. Anniversary, Gluten-free, Sommelier pairing">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline btn-sm modal-close-btn">Cancel</button>
+          <button type="submit" class="btn btn-accent btn-sm">Confirm Table Booking</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Spa Treatment Booking Modal -->
+  <div class="modal-overlay" id="spaBookingModal" role="dialog" aria-modal="true" aria-labelledby="spaModalTitle">
+    <div class="modal-container">
+      <div class="modal-header">
+        <h3 class="modal-title" id="spaModalTitle">Reserve Spa & Wellness Ritual</h3>
+        <button class="modal-close-btn" aria-label="Close dialog">&times;</button>
+      </div>
+      <form id="spaBookingModalForm">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label">Selected Ritual</label>
+            <select name="ritual" class="form-control" required>
+              <option value="Forest Flora Aromatherapy Massage">Forest Flora Aromatherapy Massage (90 Min - $280)</option>
+              <option value="Volcanic Clay & Cacao Body Polish">Volcanic Clay & Cacao Body Polish (120 Min - $360)</option>
+              <option value="Private Tibetan Sound Bath & Reiki">Private Tibetan Sound Bath & Reiki (60 Min - $190)</option>
+              <option value="Couples Sunset Hydrothermal Journey">Couples Sunset Hydrothermal Journey (150 Min - $650)</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Date</label>
+              <input type="date" name="date" class="form-control" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Time</label>
+              <select name="time" class="form-control" required>
+                <option value="10:00">10:00 AM</option>
+                <option value="12:00">12:00 PM</option>
+                <option value="14:30">2:30 PM</option>
+                <option value="16:30">4:30 PM</option>
+                <option value="18:00">6:00 PM (Sunset)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Guests</label>
+              <select name="guests" class="form-control" required>
+                <option value="1">1 Person</option>
+                <option value="2">2 Persons</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label class="form-label">Full Name</label>
+              <input type="text" name="name" class="form-control" placeholder="e.g. Lady Sarah Montgomery" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Contact Email</label>
+              <input type="email" name="email" class="form-control" placeholder="e.g. sarah@example.com" required>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline btn-sm modal-close-btn">Cancel</button>
+          <button type="submit" class="btn btn-primary btn-sm">Confirm Appointment</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Global Footer -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-top-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-title">CASA VERDE</div>
+            <span class="brand-tagline">Eco-Sanctuary &bull; Ocean Villas</span>
+          </a>
+          <p class="footer-desc">A transcendent boutique sanctuary where untamed rainforest meets azure Pacific horizons. Sustainable luxury, Michelin gastronomy, and profound peace.</p>
+          <div class="footer-accolades">
+            <span><i class="fa-solid fa-award"></i> Condé Nast Gold List</span>
+            <span><i class="fa-solid fa-leaf"></i> 100% Eco Certified</span>
+          </div>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Navigation</h4>
+          <ul class="footer-links">
+            <li><a href="rooms.html">Suites & Villas</a></li>
+            <li><a href="dining.html">Dining & Bars</a></li>
+            <li><a href="spa.html">Sanctuary Spa</a></li>
+            <li><a href="experiences.html">Curated Experiences</a></li>
+            <li><a href="booking.html">Check Availability</a></li>
+            <li><a href="contact.html">Concierge & Access</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">Reservation Care</h4>
+          <ul class="footer-links">
+            <li><a href="booking.html">Manage Existing Booking</a></li>
+            <li><a href="contact.html">Private Chauffeur Transfers</a></li>
+            <li><a href="contact.html">Helicopter Charters</a></li>
+            <li><a href="contact.html">VIP Events & Weddings</a></li>
+            <li><a href="contact.html">Frequently Asked Questions</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-heading">The Private Circle</h4>
+          <p style="font-size: var(--text-xs); color: var(--text-inverse-muted); margin-bottom: 1rem;">
+            Subscribe to receive private seasonal invitations, chef tasting releases, and secluded retreat openings.
+          </p>
+          <form class="newsletter-form" aria-label="Newsletter subscription">
+            <div class="newsletter-input-group">
+              <input type="email" class="newsletter-input" placeholder="Your email address..." required aria-label="Email address">
+              <button type="submit" class="newsletter-btn" aria-label="Subscribe to newsletter"><i class="fa-solid fa-arrow-right"></i></button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          &copy; 2026 Casa Verde Eco-Sanctuary & Ocean Villas. All rights reserved.
+        </div>
+        <div class="footer-socials">
+          <a href="#" class="social-icon-btn" aria-label="Casa Verde Instagram" onclick="event.preventDefault(); window.showToast('Follow @CasaVerdeResort on Instagram for daily sanctuary moments.', 'info');"><i class="fa-brands fa-instagram"></i></a>
+          <a href="#" class="social-icon-btn" aria-label="Casa Verde Facebook" onclick="event.preventDefault(); window.showToast('Visit facebook.com/CasaVerdeResort for editorial features.', 'info');"><i class="fa-brands fa-facebook-f"></i></a>
+          <a href="#" class="social-icon-btn" aria-label="Casa Verde Pinterest" onclick="event.preventDefault(); window.showToast('Explore our architectural moodboards on Pinterest.', 'info');"><i class="fa-brands fa-pinterest-p"></i></a>
+        </div>
+        <div class="footer-bottom-links">
+          <button type="button" onclick="openPolicyModal('privacy')">Privacy Policy</button>
+          <button type="button" onclick="openPolicyModal('terms')">Terms of Folio</button>
+          <button type="button" onclick="openPolicyModal('sustainability')">Sustainability Report</button>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/booking-engine.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
