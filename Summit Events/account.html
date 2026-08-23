@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account Dashboard — Summit Events</title>
+  <meta name="description" content="Manage your Summit passes, favorited events, order receipts, and host organizer portal." />
+  
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/print.css" media="print" />
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Summit Events Homepage">
+        <div class="brand-icon-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 22 22 22 12 2"></polygon><polyline points="12 8 18 20 6 20"></polyline></svg>
+        </div>
+        <span>SUMMIT</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="events.html" class="nav-link">Discover Events</a>
+        <a href="venues.html" class="nav-link">Venues</a>
+        <a href="organizers.html" class="nav-link">Organizers</a>
+        <a href="organizers.html#create-wizard" class="nav-link">+ Host Event</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="header-search-bar">
+          <form action="events.html" method="GET">
+            <input type="text" name="q" id="headerSearchInput" class="header-search-input" placeholder="Search events... (/)" aria-label="Search events" />
+            <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </form>
+        </div>
+
+        <a href="account.html?tab=favorites" class="btn-icon" aria-label="Saved Events">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="badge-count badge-fav-count" style="display:none;">0</span>
+        </a>
+
+        <a href="tickets.html" class="btn-icon" aria-label="My Digital Tickets">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span class="badge-count badge-tkt-count" style="display:none;">0</span>
+        </a>
+
+        <a href="account.html" class="btn-icon" aria-label="Account Dashboard">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </a>
+
+        <button type="button" class="btn-icon theme-toggle-btn" aria-label="Toggle Theme"></button>
+        <button type="button" class="btn-icon mobile-menu-btn" aria-label="Open Mobile Menu">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 2 22 22 22 12 2"></polygon></svg>
+        </div>
+        <span>SUMMIT</span>
+      </a>
+      <button type="button" class="btn-icon drawer-close-btn" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="events.html">Discover All Events</a>
+      <a href="venues.html">Venues Directory</a>
+      <a href="organizers.html">Organizers & Creators</a>
+      <a href="organizers.html#create-wizard">+ Create / Host Event</a>
+      <a href="tickets.html">My Digital Passes</a>
+      <a href="account.html" class="active">Account & Settings</a>
+    </nav>
+  </aside>
+
+  <main>
+    <!-- Account Profile Header Banner -->
+    <section class="account-header-hero">
+      <div class="container">
+        <div class="account-profile-bar">
+          <div class="account-user-meta">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=300&q=80" alt="Avatar of Alexander Vance" class="account-avatar-large" id="account-user-avatar" />
+            <div>
+              <div style="display:flex; align-items:center; gap:0.5rem; margin-bottom:0.25rem;">
+                <h1 style="font-size:1.8rem;" id="account-user-name">Alexander Vance</h1>
+                <span class="badge badge-featured" id="account-member-tier">Summit Patron</span>
+              </div>
+              <p style="font-size:0.95rem; color:var(--text-secondary);" id="account-user-email">alexander.vance@summitevents.io</p>
+            </div>
+          </div>
+
+          <div style="display:flex; gap:2rem;">
+            <div class="meta-block">
+              <span class="meta-block-label">Passes Active</span>
+              <span class="meta-block-value" style="font-size:1.5rem; color:var(--brand-primary);" id="stat-total-tickets">1</span>
+            </div>
+            <div class="meta-block">
+              <span class="meta-block-label">Saved Wishlist</span>
+              <span class="meta-block-value" style="font-size:1.5rem;" id="stat-total-favs">2</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Main Account Dashboard Body -->
+    <div class="container" style="padding-bottom: 6rem;">
+      <!-- Tab Navigation Bar -->
+      <nav class="account-tabs-nav" aria-label="Account Dashboard Tabs">
+        <button type="button" class="account-tab-btn active" data-tab="tickets">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          My Passes
+        </button>
+        <button type="button" class="account-tab-btn" data-tab="favorites">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          Saved Wishlist
+        </button>
+        <button type="button" class="account-tab-btn" data-tab="orders">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+          Order History & Receipts
+        </button>
+        <button type="button" class="account-tab-btn" data-tab="organizer">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          Organizer Hub (<span id="stat-org-created-count">0</span>)
+        </button>
+        <button type="button" class="account-tab-btn" data-tab="settings">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"></path></svg>
+          Settings
+        </button>
+      </nav>
+
+      <!-- TAB 1: TICKETS VIEW -->
+      <div id="tab-view-tickets" class="account-tab-view active">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+          <h3 style="font-size:1.4rem;">Active Digital Passes</h3>
+          <a href="tickets.html" class="btn btn-outline btn-sm">Open Full Wallet &rarr;</a>
+        </div>
+        <div id="account-tickets-list">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- TAB 2: FAVORITES VIEW -->
+      <div id="tab-view-favorites" class="account-tab-view">
+        <h3 style="font-size:1.4rem; margin-bottom:1.5rem;">Saved Events Wishlist</h3>
+        <div id="account-favorites-grid">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- TAB 3: ORDERS VIEW -->
+      <div id="tab-view-orders" class="account-tab-view">
+        <h3 style="font-size:1.4rem; margin-bottom:1.5rem;">Order History & Receipts</h3>
+        <div id="account-orders-list">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- TAB 4: ORGANIZER HUB VIEW -->
+      <div id="tab-view-organizer" class="account-tab-view">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:1.5rem;">
+          <div>
+            <h3 style="font-size:1.4rem;">My Created Events</h3>
+            <p style="color:var(--text-secondary); font-size:0.9rem;">Events you created and published through the Organizer Studio.</p>
+          </div>
+          <a href="organizers.html#create-wizard" class="btn btn-primary btn-sm">+ Create New Event</a>
+        </div>
+        <div id="account-organizer-events-list">
+          <!-- Rendered by JS -->
+        </div>
+      </div>
+
+      <!-- TAB 5: SETTINGS VIEW -->
+      <div id="tab-view-settings" class="account-tab-view">
+        <div style="max-width: 600px; background:var(--bg-card); border:1px solid var(--border-color); border-radius:var(--radius-xl); padding:2rem;">
+          <h3 style="font-size:1.4rem; margin-bottom:1.5rem;">Profile & Preferences</h3>
+          
+          <form id="account-settings-form" class="checkout-form">
+            <div class="form-group">
+              <label for="setting-user-name" class="field-label required">Display Name</label>
+              <input type="text" id="setting-user-name" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+              <label for="setting-user-email" class="field-label required">Email Address</label>
+              <input type="email" id="setting-user-email" class="form-control" required />
+            </div>
+
+            <div class="form-group">
+              <label for="setting-user-phone" class="field-label">Mobile Phone</label>
+              <input type="tel" id="setting-user-phone" class="form-control" />
+            </div>
+
+            <button type="submit" class="btn btn-primary" style="margin-top:0.5rem;">Save Changes</button>
+          </form>
+
+          <div style="margin-top:2.5rem; padding-top:2rem; border-top:1px solid var(--border-color-subtle);">
+            <h4 style="font-size:1rem; color:var(--accent-crimson); margin-bottom:0.5rem;">Demo Data Management</h4>
+            <p style="font-size:0.85rem; color:var(--text-muted); margin-bottom:1rem;">Clear all local changes and restore original seed events and passes.</p>
+            <button type="button" class="btn btn-outline btn-sm" id="btn-reset-demo-data" style="color:var(--accent-crimson); border-color:var(--accent-crimson);">
+              Reset All Demo Data
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-icon-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 2 22 22 22 12 2"></polygon></svg>
+            </div>
+            <span>SUMMIT</span>
+          </a>
+          <p>Summit Events — Official frontend ticketing simulation and discovery platform.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Discover Events</a></li>
+            <li><a href="venues.html">Venues</a></li>
+            <li><a href="organizers.html">Organizers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Venues & Hosts</h4>
+          <ul class="footer-links-list">
+            <li><a href="organizers.html#create-wizard">Host an Event</a></li>
+            <li><a href="account.html?tab=organizer">My Drafts & Live Events</a></li>
+            <li><a href="tickets.html">Digital Passes</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Account</h4>
+          <ul class="footer-links-list">
+            <li><a href="account.html">My Profile</a></li>
+            <li><a href="account.html?tab=favorites">Saved Wishlist</a></li>
+            <li><a href="account.html?tab=orders">Orders & Invoices</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Summit Events Inc.</span>
+        <div class="footer-social-links">
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://spotify.com" target="_blank" rel="noopener noreferrer">Spotify</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/account.js"></script>
+</body>
+</html>

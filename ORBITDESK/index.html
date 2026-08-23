@@ -1,0 +1,1714 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>OrbitDesk — Unified Workspace & Execution Engine</title>
+  <meta name="description" content="OrbitDesk is the enterprise project management and execution platform engineered for high-velocity teams. Plan, track, analyze, and ship with zero friction.">
+
+  <!-- Google Fonts: Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- OrbitDesk Stylesheets -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/marketing.css">
+  <link rel="stylesheet" href="css/app.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+
+  <!-- =========================================================================
+       VIEW 1: MARKETING LANDING PAGE
+       ========================================================================= -->
+  <div id="view-landing" class="marketing-page">
+    <!-- Header / Navbar -->
+    <header class="marketing-header">
+      <div class="marketing-nav-container">
+        <a href="#/" class="brand-logo">
+          <div class="brand-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3a9 9 0 0 1 9 9"/></svg>
+          </div>
+          <span>OrbitDesk</span>
+        </a>
+
+        <ul class="nav-links">
+          <li><a href="#features" class="nav-link">Features</a></li>
+          <li><a href="#preview" class="nav-link">Live Preview</a></li>
+          <li><a href="#comparison" class="nav-link">Comparison</a></li>
+          <li><a href="#pricing" class="nav-link">Pricing</a></li>
+          <li><a href="#testimonials" class="nav-link">Testimonials</a></li>
+          <li><a href="#faq" class="nav-link">FAQ</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <button class="btn btn-ghost btn-sm" onclick="OrbitApp.toggleTheme()" title="Toggle Theme" aria-label="Toggle theme">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+          <a href="#/login" class="btn btn-outline btn-sm">Sign In</a>
+          <a href="#/app/dashboard" class="btn btn-primary btn-sm">
+            Launch App
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="9 18 15 12 9 6"/></svg>
+          </a>
+        </div>
+      </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-pill">
+        <span class="hero-pill-tag">NEW</span>
+        <span>OrbitDesk 2.0 with Real-time Velocity Engine</span>
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="12" height="12"><polyline points="9 18 15 12 9 6"/></svg>
+      </div>
+
+      <h1 class="hero-title">
+        The Unified Execution Engine for <span class="gradient-text">High-Velocity Teams</span>
+      </h1>
+
+      <p class="hero-subtitle">
+        Eliminate tool fragmentation. OrbitDesk combines structured project tracking, interactive calendars, Kanban boards, and real-time velocity analytics in a single, lightning-fast workspace.
+      </p>
+
+      <div class="hero-cta-group">
+        <a href="#/signup" class="btn btn-primary btn-lg">
+          Start Free Trial
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <a href="#/app/dashboard" class="btn btn-secondary btn-lg">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          Explore Interactive Demo
+        </a>
+      </div>
+
+      <div class="hero-metrics-strip">
+        <div class="hero-metric-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Zero Server Latency</span>
+        </div>
+        <div class="hero-metric-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>Local State Persistence</span>
+        </div>
+        <div class="hero-metric-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"/></svg>
+          <span>JSON Export & Import</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Live Interactive Preview -->
+    <section id="preview" class="preview-container">
+      <div class="preview-window">
+        <div class="preview-titlebar">
+          <div class="window-dots">
+            <span class="window-dot red"></span>
+            <span class="window-dot yellow"></span>
+            <span class="window-dot green"></span>
+          </div>
+          <div class="window-address">orbitdesk.io/app/workspace/acme-corp</div>
+          <a href="#/app/dashboard" class="btn btn-sm btn-outline" style="font-size:0.75rem;">Open Full App ↗</a>
+        </div>
+        <div class="preview-content">
+          <div class="preview-grid">
+            <div class="card" style="margin-bottom:0;">
+              <div class="card-header">
+                <div class="card-title">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                  Sprint Execution Backlog
+                </div>
+                <span class="badge badge-priority-medium">Active Sprint 42</span>
+              </div>
+              <div class="card-body" style="padding:0;">
+                <table class="data-table">
+                  <tbody>
+                    <tr>
+                      <td style="width:30px;">
+                        <input type="checkbox" class="demo-preview-checkbox" id="demo-chk-1">
+                      </td>
+                      <td><strong>Ship SAML 2.0 Okta Integration</strong></td>
+                      <td><span class="badge badge-priority-urgent">Urgent</span></td>
+                      <td><span class="badge badge-status-inprogress">In Progress</span></td>
+                      <td><span class="tag">Security</span></td>
+                    </tr>
+                    <tr>
+                      <td style="width:30px;">
+                        <input type="checkbox" class="demo-preview-checkbox" id="demo-chk-2" checked>
+                      </td>
+                      <td class="task-title"><strong>Audit WCAG 2.1 Color Contrasts</strong></td>
+                      <td><span class="badge badge-priority-high">High</span></td>
+                      <td><span class="badge badge-status-done">Done</span></td>
+                      <td><span class="tag">Design</span></td>
+                    </tr>
+                    <tr>
+                      <td style="width:30px;">
+                        <input type="checkbox" class="demo-preview-checkbox" id="demo-chk-3">
+                      </td>
+                      <td><strong>Prometheus Alertmanager Rule Engine</strong></td>
+                      <td><span class="badge badge-priority-high">High</span></td>
+                      <td><span class="badge badge-status-inreview">In Review</span></td>
+                      <td><span class="tag">Infra</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+
+            <div class="card" style="margin-bottom:0;">
+              <div class="card-header">
+                <div class="card-title">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                  Throughput Velocity
+                </div>
+                <span class="badge badge-status-done">+24% vs last week</span>
+              </div>
+              <div class="card-body">
+                <div style="font-size: 1.8rem; font-weight: 700; margin-bottom: 8px;">94.2% <span style="font-size:0.85rem; font-weight:400; color:var(--text-muted);">on-time rate</span></div>
+                <div class="progress-track" style="margin-bottom: 12px;">
+                  <div class="progress-fill success" style="width: 94%;"></div>
+                </div>
+                <div style="font-size:0.8rem; color:var(--text-secondary); line-height: 1.4;">
+                  All 4 active projects are progressing on schedule across engineering and design tracks.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trusted By Logos -->
+    <section class="logos-section">
+      <div class="logos-title">Trusted by engineering teams at industry leaders</div>
+      <div class="logos-grid">
+        <div class="logo-item">⚡ HYPERFLOW</div>
+        <div class="logo-item">◈ NEXUS LABS</div>
+        <div class="logo-item">❖ APEX CLOUD</div>
+        <div class="logo-item">▲ VORTEX DATA</div>
+        <div class="logo-item">■ SYNAPSE AI</div>
+      </div>
+    </section>
+
+    <!-- Core Features Section -->
+    <section id="features" class="features-section">
+      <div class="section-header">
+        <div class="section-tag">Engineered for Velocity</div>
+        <h2 class="section-title">Everything modern product teams need to ship</h2>
+        <p class="section-desc">From roadmap planning to daily micro-commit execution, OrbitDesk brings crystal clarity to complex workflows.</p>
+      </div>
+
+      <div class="features-grid">
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+          </div>
+          <h3 class="feature-card-title">Structured Project Hierarchies</h3>
+          <p class="feature-card-desc">Group initiatives into milestone projects with automated completion percentages, health tracking (On Track, At Risk, Delayed), and team lead ownership.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+          </div>
+          <h3 class="feature-card-title">Dual View: High-Density Table & Kanban</h3>
+          <p class="feature-card-desc">Switch seamlessly between compact 32px high-density data tables and full 5-column Kanban boards with instant multi-parameter filtering.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+          </div>
+          <h3 class="feature-card-title">Interactive Monthly Calendar</h3>
+          <p class="feature-card-desc">Visualize deadlines across your team calendar. Click any date cell to immediately allocate a task with pre-filled milestone dates.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+          </div>
+          <h3 class="feature-card-title">Live Velocity & Workload Analytics</h3>
+          <p class="feature-card-desc">Dynamic charts rendered in ultra-crisp SVG/Canvas: velocity trends, status donuts, priority bars, and team workload capacity allocation.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <h3 class="feature-card-title">Global Command Palette (Ctrl+K)</h3>
+          <p class="feature-card-desc">Keyboard-first productivity. Search across all projects, tasks, team members, and instant actions from anywhere in the app.</p>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-icon-box">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          </div>
+          <h3 class="feature-card-title">Portability & JSON Data Management</h3>
+          <p class="feature-card-desc">Complete ownership of your workspace data. Export full JSON snapshots, import existing backups, or reseed sample datasets in one click.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Feature Comparison Matrix -->
+    <section id="comparison" class="comparison-section">
+      <div class="section-header">
+        <div class="section-tag">Honest Benchmark</div>
+        <h2 class="section-title">Why high-growth teams switch to OrbitDesk</h2>
+        <p class="section-desc">See how OrbitDesk stacks up against legacy trackers and noisy bloated suites.</p>
+      </div>
+
+      <div class="comparison-wrapper">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th style="width: 40%;">Feature Capability</th>
+              <th class="comp-highlight" style="width: 25%;">OrbitDesk</th>
+              <th style="width: 17.5%;">Legacy Jira / Rally</th>
+              <th style="width: 17.5%;">Generic Spreadsheets</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Load & Interaction Latency</strong></td>
+              <td class="comp-highlight">⚡ &lt; 50ms (Zero Lag)</td>
+              <td>❌ 2500ms - 4000ms</td>
+              <td>⚠️ 800ms - 1500ms</td>
+            </tr>
+            <tr>
+              <td><strong>Table & Kanban Dual Synced Views</strong></td>
+              <td class="comp-highlight">✓ Instant Toggle</td>
+              <td>⚠️ Requires separate boards</td>
+              <td>❌ Manual formula setups</td>
+            </tr>
+            <tr>
+              <td><strong>Interactive Monthly Calendar</strong></td>
+              <td class="comp-highlight">✓ Built-in Click to Add</td>
+              <td>❌ Paid plugin required</td>
+              <td>❌ Clunky date filters</td>
+            </tr>
+            <tr>
+              <td><strong>Global Command Palette (Ctrl+K / /)</strong></td>
+              <td class="comp-highlight">✓ Native Keyboard First</td>
+              <td>⚠️ Partial search</td>
+              <td>❌ Not available</td>
+            </tr>
+            <tr>
+              <td><strong>Automated Project Health Metrics</strong></td>
+              <td class="comp-highlight">✓ Real-time Overdue Detection</td>
+              <td>⚠️ Complex JQL filters</td>
+              <td>❌ Manual status updates</td>
+            </tr>
+            <tr>
+              <td><strong>Zero-Vendor-Lockin JSON Backup</strong></td>
+              <td class="comp-highlight">✓ 1-Click Export & Import</td>
+              <td>❌ Proprietary XML export</td>
+              <td>⚠️ CSV only</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+      <div class="section-header">
+        <div class="section-tag">Transparent Pricing</div>
+        <h2 class="section-title">Simple plans that scale with your team</h2>
+        <p class="section-desc">Choose monthly or annual billing. All plans include full client-side demo persistence.</p>
+      </div>
+
+      <div class="pricing-toggle">
+        <span style="font-weight: 500;">Monthly</span>
+        <label class="checkbox-label" style="margin: 0 8px;">
+          <input type="checkbox" id="pricing-billing-toggle" checked>
+          <span class="checkbox-custom" style="width:20px; height:20px;"></span>
+        </label>
+        <span style="font-weight: 600; color: var(--primary);">Annual <span class="tag" style="background:var(--primary-light); color:var(--primary); font-weight:700;">Save 20%</span></span>
+      </div>
+
+      <div class="pricing-cards-grid">
+        <!-- Starter Plan -->
+        <div class="pricing-card">
+          <div class="plan-name">Starter</div>
+          <p class="plan-desc">For small teams and fast-moving startups looking for lean execution.</p>
+          <div class="plan-price-box">
+            <span class="plan-currency">$</span>
+            <span class="plan-amount" id="price-starter">16</span>
+            <span class="plan-period">/ user / mo (billed annually)</span>
+          </div>
+          <ul class="plan-features-list">
+            <li class="plan-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Up to 10 active projects</li>
+            <li class="plan-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Kanban & High-density Table</li>
+            <li class="plan-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Monthly Calendar View</li>
+            <li class="plan-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> JSON Data Export</li>
+          </ul>
+          <a href="#/signup" class="btn btn-secondary w-full">Start Starter Trial</a>
+        </div>
+
+        <!-- Pro Plan (Featured) -->
+        <div class="pricing-card featured">
+          <div class="featured-badge">MOST POPULAR</div>
+          <div class="plan-name">Growth & Pro</div>
+          <p class="plan-desc">For scaling teams that require deep velocity metrics and resource allocation.</p>
+          <div class="plan-price-box">
+            <span class="plan-currency">$</span>
+            <span class="plan-amount" id="price-pro">39</span>
+            <span class="plan-period">/ user / mo (billed annually)</span>
+          </div>
+          <ul class="plan-features-list">
+            <li class="plan-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Unlimited active projects & tasks</li>
+            <li class="plan-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Advanced Velocity Analytics</li>
+            <li class="plan-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Team Member Workload Allocation</li>
+            <li class="plan-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Global Command Palette (Ctrl+K)</li>
+            <li class="plan-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Activity Audit Stream</li>
+          </ul>
+          <a href="#/signup" class="btn btn-primary w-full">Start 14-Day Free Pro Trial</a>
+        </div>
+
+        <!-- Enterprise Plan -->
+        <div class="pricing-card">
+          <div class="plan-name">Enterprise</div>
+          <p class="plan-desc">For organizations needing customized governance, SSO, and dedicated SLAs.</p>
+          <div class="plan-price-box">
+            <span class="plan-currency">$</span>
+            <span class="plan-amount" id="price-enterprise">89</span>
+            <span class="plan-period">/ user / mo (billed annually)</span>
+          </div>
+          <ul class="plan-features-list">
+            <li class="plan-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> SAML 2.0 & Okta SSO Integration</li>
+            <li class="plan-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Custom RBAC Permissions Matrix</li>
+            <li class="plan-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> 99.99% Uptime SLA Agreement</li>
+            <li class="plan-feature-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg> Dedicated Solutions Architect</li>
+          </ul>
+          <a href="#/login" class="btn btn-secondary w-full">Contact Enterprise Sales</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="testimonials-section">
+      <div class="section-header">
+        <div class="section-tag">Customer Stories</div>
+        <h2 class="section-title">Loved by operators and builders worldwide</h2>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <p class="testimonial-quote">“OrbitDesk completely replaced Jira and three chaotic spreadsheets for our engineering org. Our sprint cycle time dropped by 34% in the first quarter.”</p>
+          <div class="testimonial-author">
+            <div class="avatar avatar-md" style="background-color:#4f46e5; color:white;">ER</div>
+            <div class="author-info">
+              <h4>Elena Rostova</h4>
+              <p>VP of Engineering @ Hyperflow</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">“The combination of high-density tables and instant keyboard search (Ctrl+K) makes updating tasks feel instantaneous. It’s the fastest SaaS app we use daily.”</p>
+          <div class="testimonial-author">
+            <div class="avatar avatar-md" style="background-color:#0ea5e9; color:white;">MC</div>
+            <div class="author-info">
+              <h4>Marcus Chen</h4>
+              <p>Lead Architect @ Nexus Labs</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <p class="testimonial-quote">“The automated project health indicators and calendar integration keep our design and frontend teams in lockstep without endless sync meetings.”</p>
+          <div class="testimonial-author">
+            <div class="avatar avatar-md" style="background-color:#f59e0b; color:white;">SJ</div>
+            <div class="author-info">
+              <h4>Sarah Jenkins</h4>
+              <p>Head of Product @ Synapse AI</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Accordion -->
+    <section id="faq" class="faq-section">
+      <div class="section-header">
+        <div class="section-tag">Frequently Asked Questions</div>
+        <h2 class="section-title">Got questions? We've got answers.</h2>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item active">
+          <button class="faq-question">
+            <span>How does OrbitDesk maintain state without an external database?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            OrbitDesk utilizes an optimized, reactive LocalStorage caching architecture combined with instant JSON export and import capabilities. Every task, project, activity log, and user profile modification is immediately persisted locally across browser sessions with zero server latency.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I switch between the Table list view and Kanban board view?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            Yes! Both views share the exact same underlying reactive state store. Any task status change or priority update in the Table view is instantly reflected in the Kanban columns and on the monthly Calendar.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>How is project completion percentage calculated?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            OrbitDesk automatically computes project completion by aggregating all tasks linked to that project ID: <code>(Completed Tasks / Total Tasks) × 100</code>. If any task is overdue, the project health indicator automatically transitions to 'At Risk' or 'Delayed'.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Does OrbitDesk support keyboard shortcuts?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            Yes. Pressing <kbd>Ctrl+K</kbd>, <kbd>Cmd+K</kbd>, or simply <kbd>/</kbd> anywhere opens the Command Palette, enabling rapid fuzzy searching across tasks, projects, teammates, and quick navigation.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <button class="faq-question">
+            <span>Can I export and back up my workspace data?</span>
+            <svg class="faq-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 12 15 18 9"/></svg>
+          </button>
+          <div class="faq-answer">
+            Absolutely. In the Settings tab under Data Management, you can download a complete JSON snapshot file of your entire workspace or import previous backups at any time.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Marketing CTA Banner -->
+    <section class="cta-banner-section">
+      <div class="cta-banner-card">
+        <h2>Ready to ship at maximum velocity?</h2>
+        <p>Join thousands of high-performance product teams building the future with OrbitDesk.</p>
+        <div style="display:flex; justify-content:center; gap: 16px; flex-wrap: wrap;">
+          <a href="#/signup" class="btn btn-primary btn-lg" style="background:white; color:var(--text-primary); border-color:white;">Get Started for Free</a>
+          <a href="#/app/dashboard" class="btn btn-outline btn-lg" style="color:white; border-color:rgba(255,255,255,0.4);">Launch Live Demo Workspace</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="marketing-footer">
+      <div class="footer-container">
+        <div class="footer-brand">
+          <a href="#/" class="brand-logo">
+            <div class="brand-icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3a9 9 0 0 1 9 9"/></svg>
+            </div>
+            <span>OrbitDesk</span>
+          </a>
+          <p>The structured execution engine designed for high-velocity software and product teams.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Product</h4>
+          <ul class="footer-links">
+            <li><a href="#/app/dashboard">Dashboard</a></li>
+            <li><a href="#/app/projects">Projects</a></li>
+            <li><a href="#/app/tasks">Tasks & Kanban</a></li>
+            <li><a href="#/app/calendar">Calendar</a></li>
+            <li><a href="#/app/analytics">Analytics</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Company</h4>
+          <ul class="footer-links">
+            <li><a href="#features">Features</a></li>
+            <li><a href="#pricing">Pricing</a></li>
+            <li><a href="#comparison">Comparison</a></li>
+            <li><a href="#faq">FAQ</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Security & Data</h4>
+          <ul class="footer-links">
+            <li><a href="#/app/settings">JSON Export</a></li>
+            <li><a href="#/login">Client Authentication</a></li>
+            <li><a href="#/signup">Enterprise Workspace</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>© 2026 OrbitDesk Technologies Inc. All rights reserved.</div>
+        <div class="system-status">
+          <span class="system-status-dot"></span>
+          <span>All Systems Operational (GitHub Pages Ready)</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <!-- =========================================================================
+       VIEW 2: CLIENT AUTHENTICATION (LOGIN & SIGNUP)
+       ========================================================================= -->
+  <div id="view-auth" class="auth-page hidden">
+    <div class="auth-card">
+      <div class="auth-header">
+        <a href="#/" class="auth-brand">
+          <div class="brand-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="3"/><path d="M12 3a9 9 0 0 1 9 9"/></svg>
+          </div>
+          <span>OrbitDesk</span>
+        </a>
+        <h2 class="auth-title">Welcome to OrbitDesk</h2>
+        <p class="auth-desc">Enterprise execution workspace for high-velocity teams</p>
+      </div>
+
+      <!-- Demo Autofill Banner -->
+      <div class="auth-demo-banner">
+        <div class="auth-demo-info">
+          <strong>Demo Mode:</strong> Pre-loaded portfolio simulation with team sessions.
+        </div>
+        <button class="btn btn-sm btn-primary" id="auth-demo-fill-btn">Auto-Fill Demo</button>
+      </div>
+
+      <!-- Auth Tab Switcher -->
+      <div style="display:flex; border-bottom:1px solid var(--border); margin-bottom: var(--space-5);">
+        <button class="btn btn-ghost" id="auth-tab-login-btn" style="flex:1; border-radius:0; border-bottom: 2px solid var(--primary); font-weight:600;" onclick="OrbitApp.showAuthTab('login')">Sign In</button>
+        <button class="btn btn-ghost" id="auth-tab-signup-btn" style="flex:1; border-radius:0; color:var(--text-muted);" onclick="OrbitApp.showAuthTab('signup')">Create Workspace</button>
+      </div>
+
+      <!-- Login Form Pane -->
+      <div id="auth-pane-login">
+        <form id="form-login">
+          <div class="form-group">
+            <label class="form-label" for="login-email">Work Email</label>
+            <input type="email" id="login-email" class="form-input" placeholder="alex@orbitdesk.io" required value="alex@orbitdesk.io">
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="login-password">Password</label>
+            <input type="password" id="login-password" class="form-input" placeholder="••••••••" required value="orbit-password-demo">
+          </div>
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom: var(--space-5);">
+            <label class="checkbox-label">
+              <input type="checkbox" id="login-remember" checked>
+              <span class="checkbox-custom"></span>
+              <span>Remember this session</span>
+            </label>
+            <a href="#/app/dashboard" style="font-size:0.78rem;">Skip directly ↗</a>
+          </div>
+          <button type="submit" class="btn btn-primary w-full btn-lg">Sign In to Workspace</button>
+        </form>
+      </div>
+
+      <!-- Signup Form Pane -->
+      <div id="auth-pane-signup" class="hidden">
+        <form id="form-signup">
+          <div class="form-group">
+            <label class="form-label" for="signup-name">Full Name</label>
+            <input type="text" id="signup-name" class="form-input" placeholder="Sarah Jenkins" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="signup-workspace">Workspace Name</label>
+            <input type="text" id="signup-workspace" class="form-input" placeholder="Acme Software Corp" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="signup-email">Work Email</label>
+            <input type="email" id="signup-email" class="form-input" placeholder="sarah@acme.io" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="signup-password">Password</label>
+            <input type="password" id="signup-password" class="form-input" placeholder="Minimum 6 characters" minlength="6" required>
+          </div>
+          <button type="submit" class="btn btn-primary w-full btn-lg" style="margin-top:var(--space-2);">Create Free Workspace</button>
+        </form>
+      </div>
+
+      <div style="text-align:center; margin-top:var(--space-6); font-size:0.8rem; color:var(--text-muted);">
+        <a href="#/" style="color:var(--text-muted);">← Return to Marketing Home</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       VIEW 3: SAAS APPLICATION SHELL
+       ========================================================================= -->
+  <div id="view-app" class="app-container hidden">
+    <!-- Backdrop for Mobile Drawer -->
+    <div id="sidebar-backdrop" class="sidebar-backdrop"></div>
+
+    <!-- App Sidebar -->
+    <aside id="app-sidebar" class="app-sidebar">
+      <div class="sidebar-header">
+        <div id="workspace-switcher-btn" class="workspace-switcher" title="Switch Workspace">
+          <div class="workspace-logo-icon">OD</div>
+          <div class="workspace-info">
+            <div id="sidebar-workspace-name" class="workspace-title text-truncate">Acme Software Corp</div>
+            <div class="workspace-plan">Enterprise Plan</div>
+          </div>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14" style="color:var(--text-muted);"><polyline points="6 9 12 15 18 9"/></svg>
+        </div>
+
+        <!-- Workspace Dropdown Popover -->
+        <div id="workspace-dropdown-menu" class="card hidden" style="position:absolute; top:54px; left:12px; right:12px; z-index:200; box-shadow:var(--shadow-dropdown);">
+          <div style="padding: 8px 12px; font-size: 0.7rem; font-weight:700; color:var(--text-muted); text-transform:uppercase;">Switch Workspace</div>
+          <div style="padding: 4px;">
+            <div class="cmd-item" onclick="OrbitStore.switchWorkspace('ws-1')">
+              <strong>Acme Software Corp</strong>
+              <span class="badge badge-priority-medium">Active</span>
+            </div>
+            <div class="cmd-item" onclick="OrbitStore.switchWorkspace('ws-2')">
+              <span>OrbitLabs Research</span>
+            </div>
+            <div class="cmd-item" onclick="OrbitStore.switchWorkspace('ws-3')">
+              <span>Personal Playground</span>
+            </div>
+          </div>
+          <div style="border-top:1px solid var(--border); padding: 6px 12px;">
+            <button class="btn btn-ghost btn-sm w-full" style="justify-content:flex-start;" onclick="OrbitModal.openProjectModal()">+ New Project</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="sidebar-body">
+        <div>
+          <div class="nav-group-title">Execution</div>
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item">
+              <a href="#/app/dashboard">
+                <div class="sidebar-nav-link-content">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                  <span>Dashboard</span>
+                </div>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#/app/projects">
+                <div class="sidebar-nav-link-content">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                  <span>Projects</span>
+                </div>
+                <span class="badge-count" id="sidebar-badge-projects">4</span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#/app/tasks">
+                <div class="sidebar-nav-link-content">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+                  <span>Tasks & Board</span>
+                </div>
+                <span class="badge-count" id="sidebar-badge-tasks">8</span>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#/app/calendar">
+                <div class="sidebar-nav-link-content">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  <span>Calendar</span>
+                </div>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#/app/analytics">
+                <div class="sidebar-nav-link-content">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+                  <span>Analytics</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="nav-group-title">Organization</div>
+          <ul class="sidebar-nav-list">
+            <li class="sidebar-nav-item">
+              <a href="#/app/settings">
+                <div class="sidebar-nav-link-content">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1 0 2.83 2 2 0 0 1-2.83 0l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-2 2 2 2 0 0 1-2-2v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83 0 2 2 0 0 1 0-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1-2-2 2 2 0 0 1 2-2h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 0-2.83 2 2 0 0 1 2.83 0l.06.06a1.65 1.65 0 0 0 1.82.33H9a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 2-2 2 2 0 0 1 2 2v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 0 2 2 0 0 1 0 2.83l-.06.06a1.65 1.65 0 0 0-.33 1.82V9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 2 2 2 2 0 0 1-2 2h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg>
+                  <span>Settings & Data</span>
+                </div>
+              </a>
+            </li>
+            <li class="sidebar-nav-item">
+              <a href="#/app/profile">
+                <div class="sidebar-nav-link-content">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                  <span>My Profile</span>
+                </div>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- User Profile Summary in Footer -->
+      <div class="sidebar-footer">
+        <div class="user-profile-summary" onclick="window.location.hash = '#/app/profile'">
+          <div id="sidebar-user-avatar" class="avatar avatar-sm">AR</div>
+          <div class="user-profile-meta">
+            <div id="sidebar-user-name" class="user-profile-name text-truncate">Alex Rivera</div>
+            <div id="sidebar-user-role" class="user-profile-role text-truncate">Product Lead</div>
+          </div>
+        </div>
+        <button class="btn btn-ghost btn-icon" title="Sign Out" onclick="OrbitAuth.logout()" aria-label="Sign out">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></svg>
+        </button>
+      </div>
+    </aside>
+
+    <!-- App Main Container -->
+    <main class="app-main">
+      <!-- Topbar -->
+      <header class="app-topbar">
+        <div class="topbar-left">
+          <button id="mobile-menu-toggle-btn" class="btn btn-ghost btn-icon mobile-menu-toggle" aria-label="Toggle menu">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+          </button>
+          <div class="breadcrumbs">
+            <span class="breadcrumb-root">OrbitDesk</span>
+            <span class="breadcrumb-sep">/</span>
+            <span id="breadcrumb-current-text" class="breadcrumb-current">Dashboard</span>
+          </div>
+        </div>
+
+        <div class="topbar-right">
+          <!-- Command Palette Trigger Button -->
+          <button class="search-command-btn" onclick="OrbitCommandPalette.open()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            <span class="search-command-text">Search workspace...</span>
+            <kbd>Ctrl K</kbd>
+          </button>
+
+          <!-- Quick Create Task Action Button -->
+          <button class="btn btn-primary btn-sm" onclick="OrbitModal.openTaskModal()">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+            <span>New Task</span>
+          </button>
+
+          <!-- Theme Switcher -->
+          <button class="btn btn-ghost btn-icon" onclick="OrbitApp.toggleTheme()" title="Toggle Theme" aria-label="Toggle theme">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+          </button>
+
+          <!-- Notifications Center -->
+          <div style="position:relative;">
+            <button id="topbar-notifications-btn" class="btn btn-ghost btn-icon" title="Notifications" aria-label="Notifications">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 0 1-3.46 0"/></svg>
+            </button>
+            <div id="topbar-notifications-dropdown" class="card hidden" style="position:absolute; right:0; top:40px; width:300px; z-index:200; box-shadow:var(--shadow-dropdown);">
+              <div class="card-header" style="padding:10px 14px;">
+                <span style="font-weight:600; font-size:0.85rem;">Activity Alerts</span>
+                <span class="tag">Live Feed</span>
+              </div>
+              <div id="notifications-dropdown-list" style="max-height:260px; overflow-y:auto;"></div>
+            </div>
+          </div>
+
+          <!-- User Profile Dropdown -->
+          <div style="position:relative;">
+            <div id="topbar-user-btn" class="avatar avatar-sm" style="cursor:pointer;" title="User menu">
+              <span id="topbar-user-avatar">AR</span>
+            </div>
+            <div id="topbar-user-dropdown" class="card hidden" style="position:absolute; right:0; top:40px; width:200px; z-index:200; box-shadow:var(--shadow-dropdown); padding: 4px;">
+              <div class="cmd-item" onclick="window.location.hash = '#/app/profile'">My Profile</div>
+              <div class="cmd-item" onclick="window.location.hash = '#/app/settings'">Workspace Settings</div>
+              <div class="cmd-item" onclick="OrbitData.exportJSON()">Export JSON Backup</div>
+              <div style="border-top:1px solid var(--border); margin:4px 0;"></div>
+              <div class="cmd-item" style="color:var(--danger);" onclick="OrbitAuth.logout()">Sign Out</div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- App Subviews Container -->
+      <div class="app-content">
+
+        <!-- SUBVIEW: DASHBOARD -->
+        <div id="subview-dashboard">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h2>Executive Dashboard</h2>
+              <p>Real-time execution metrics, throughput velocity, and active sprint health.</p>
+            </div>
+            <div class="view-actions">
+              <button class="btn btn-secondary btn-sm" onclick="OrbitData.exportJSON()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                Export Backup
+              </button>
+              <button class="btn btn-primary btn-sm" onclick="OrbitModal.openTaskModal()">
+                + Create Task
+              </button>
+            </div>
+          </div>
+
+          <!-- KPI Metric Cards Grid -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-header">
+                <span>Active Projects</span>
+                <svg class="kpi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+              </div>
+              <div class="kpi-value-row">
+                <span id="dash-kpi-projects" class="kpi-value">4</span>
+                <span class="kpi-trend positive">↑ 100% on schedule</span>
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-header">
+                <span>Open Backlog Tasks</span>
+                <svg class="kpi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="9 11 12 14 22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg>
+              </div>
+              <div class="kpi-value-row">
+                <span id="dash-kpi-tasks" class="kpi-value">8</span>
+                <span class="kpi-trend neutral">Across 5 engineers</span>
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-header">
+                <span>Completion Velocity</span>
+                <svg class="kpi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>
+              </div>
+              <div class="kpi-value-row">
+                <span id="dash-kpi-rate" class="kpi-value">62%</span>
+                <span class="kpi-trend positive">↑ +14% vs avg</span>
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-header">
+                <span>Overdue Tasks</span>
+                <svg class="kpi-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+              </div>
+              <div class="kpi-value-row">
+                <span id="dash-kpi-overdue" class="kpi-value" style="color:var(--danger);">1</span>
+                <span class="kpi-trend negative">Requires attention</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- 2-Column Dashboard Grid -->
+          <div class="dashboard-grid-2col">
+            <!-- Left Column: Velocity Chart & Projects -->
+            <div style="display:flex; flex-direction:column; gap: var(--space-6);">
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+                    Weekly Task Velocity & Throughput
+                  </div>
+                  <div style="display:flex; gap:12px; font-size:0.75rem; color:var(--text-muted);">
+                    <span style="display:flex; align-items:center; gap:4px;"><span style="width:8px; height:8px; background-color:#4f46e5; border-radius:2px;"></span> Completed</span>
+                    <span style="display:flex; align-items:center; gap:4px;"><span style="width:8px; height:8px; background-color:#0ea5e9; border-radius:2px;"></span> Created</span>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <div class="chart-container">
+                    <canvas id="dash-velocity-canvas" class="chart-canvas"></canvas>
+                  </div>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"/></svg>
+                    Active Projects Health
+                  </div>
+                  <a href="#/app/projects" class="btn btn-ghost btn-sm">View All ↗</a>
+                </div>
+                <div class="card-body" id="dash-projects-list">
+                  <!-- Injected via dashboard.js -->
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Deadlines & Activity Stream -->
+            <div style="display:flex; flex-direction:column; gap: var(--space-6);">
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                    Upcoming Deadlines
+                  </div>
+                  <a href="#/app/tasks" class="btn btn-ghost btn-sm">All Tasks ↗</a>
+                </div>
+                <div class="card-body" id="dash-upcoming-list" style="padding-top: var(--space-2);">
+                  <!-- Injected via dashboard.js -->
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                    Live Team Activity
+                  </div>
+                  <span class="tag">Auto-updating</span>
+                </div>
+                <div class="card-body" id="dash-activity-list">
+                  <!-- Injected via dashboard.js -->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBVIEW: PROJECTS -->
+        <div id="subview-projects" class="hidden">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h2>Projects Management</h2>
+              <p>Track initiatives, milestone roadmaps, and auto-calculated completion percentages.</p>
+            </div>
+            <div class="view-actions">
+              <button class="btn btn-primary btn-sm" onclick="OrbitModal.openProjectModal()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                + New Project
+              </button>
+            </div>
+          </div>
+
+          <!-- Project Filter Toolbar -->
+          <div class="filter-toolbar">
+            <div class="filter-group">
+              <input type="text" id="project-search-input" class="form-input" style="width:240px; padding:0.35rem 0.65rem;" placeholder="Search projects by name...">
+              <select id="project-status-filter" class="form-select" style="width:160px; padding:0.35rem 0.65rem;">
+                <option value="all">All Projects</option>
+                <option value="active">Active Only</option>
+                <option value="inprogress">In Progress</option>
+                <option value="todo">Planning</option>
+                <option value="archived">Archived</option>
+              </select>
+            </div>
+
+            <div class="view-switcher-toggle">
+              <button id="project-view-grid-btn" class="view-switch-btn active" onclick="OrbitProjectsView.setViewMode('grid')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/><rect x="14" y="14" width="7" height="7"/><rect x="3" y="14" width="7" height="7"/></svg>
+                Grid
+              </button>
+              <button id="project-view-list-btn" class="view-switch-btn" onclick="OrbitProjectsView.setViewMode('list')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                Table
+              </button>
+            </div>
+          </div>
+
+          <div id="projects-container" class="projects-grid">
+            <!-- Injected via projects.js -->
+          </div>
+        </div>
+
+        <!-- SUBVIEW: TASKS & BOARD -->
+        <div id="subview-tasks" class="hidden">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h2>Task Execution Center</h2>
+              <p>High-density data table and 5-column Kanban board with real-time multi-filtering.</p>
+            </div>
+            <div class="view-actions">
+              <button class="btn btn-secondary btn-sm" onclick="OrbitTasksView.resetFilters()">Reset Filters</button>
+              <button class="btn btn-primary btn-sm" onclick="OrbitModal.openTaskModal()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" width="14" height="14"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+                + New Task
+              </button>
+            </div>
+          </div>
+
+          <!-- Multi-Parameter Filter Toolbar -->
+          <div class="filter-toolbar">
+            <div class="filter-group">
+              <input type="text" id="task-search-input" class="form-input" style="width:200px; padding:0.35rem 0.65rem;" placeholder="Search tasks or tags...">
+              <select id="task-filter-project" class="form-select" style="width:150px; padding:0.35rem 0.65rem;"><option value="all">All Projects</option></select>
+              <select id="task-filter-assignee" class="form-select" style="width:140px; padding:0.35rem 0.65rem;"><option value="all">All Assignees</option></select>
+              <select id="task-filter-priority" class="form-select" style="width:120px; padding:0.35rem 0.65rem;">
+                <option value="all">All Priority</option>
+                <option value="urgent">Urgent</option>
+                <option value="high">High</option>
+                <option value="medium">Medium</option>
+                <option value="low">Low</option>
+              </select>
+              <select id="task-filter-status" class="form-select" style="width:120px; padding:0.35rem 0.65rem;">
+                <option value="all">All Status</option>
+                <option value="backlog">Backlog</option>
+                <option value="todo">To Do</option>
+                <option value="inprogress">In Progress</option>
+                <option value="inreview">In Review</option>
+                <option value="done">Done</option>
+              </select>
+              <select id="task-filter-due" class="form-select" style="width:120px; padding:0.35rem 0.65rem;">
+                <option value="all">All Dates</option>
+                <option value="overdue">Overdue</option>
+                <option value="today">Due Today</option>
+                <option value="upcoming">Upcoming</option>
+              </select>
+            </div>
+
+            <div class="view-switcher-toggle">
+              <button id="task-view-table-btn" class="view-switch-btn active" onclick="OrbitTasksView.setViewMode('table')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><line x1="8" y1="6" x2="21" y2="6"/><line x1="8" y1="12" x2="21" y2="12"/><line x1="8" y1="18" x2="21" y2="18"/><line x1="3" y1="6" x2="3.01" y2="6"/><line x1="3" y1="12" x2="3.01" y2="12"/><line x1="3" y1="18" x2="3.01" y2="18"/></svg>
+                Table
+              </button>
+              <button id="task-view-kanban-btn" class="view-switch-btn" onclick="OrbitTasksView.setViewMode('kanban')">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><rect x="3" y="3" width="5" height="18" rx="1"/><rect x="10" y="3" width="5" height="18" rx="1"/><rect x="17" y="3" width="5" height="18" rx="1"/></svg>
+                Kanban
+              </button>
+            </div>
+          </div>
+
+          <!-- Batch Action Bar -->
+          <div id="tasks-batch-bar" style="display:none; align-items:center; justify-content:space-between; background-color:var(--primary-light); border:1px solid var(--primary-border); border-radius:var(--radius-md); padding: 8px 16px; margin-bottom: var(--space-4);">
+            <div style="font-size:0.85rem; font-weight:600; color:var(--primary-text);" id="tasks-selected-count">0 selected</div>
+            <div style="display:flex; gap:8px;">
+              <button class="btn btn-sm btn-primary" onclick="OrbitTasksView.batchMarkDone()">Mark Done</button>
+              <button class="btn btn-sm btn-danger" onclick="OrbitTasksView.batchDelete()">Delete Selected</button>
+            </div>
+          </div>
+
+          <!-- Main Tasks Container -->
+          <div id="tasks-view-container">
+            <!-- Injected via tasks.js -->
+          </div>
+        </div>
+
+        <!-- SUBVIEW: CALENDAR -->
+        <div id="subview-calendar" class="hidden">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h2>Schedule & Milestone Calendar</h2>
+              <p>Click any date cell to allocate and schedule sprint tasks.</p>
+            </div>
+            <div class="view-actions">
+              <button class="btn btn-primary btn-sm" onclick="OrbitModal.openTaskModal()">+ Add Task</button>
+            </div>
+          </div>
+
+          <div class="calendar-wrapper">
+            <div class="calendar-header">
+              <div style="display:flex; align-items:center; gap: 12px;">
+                <h3 id="cal-current-month-title" style="font-size:1.15rem; font-weight:700;">Month Year</h3>
+                <button id="cal-today-btn" class="btn btn-sm btn-outline">Today</button>
+              </div>
+              <div style="display:flex; gap: 4px;">
+                <button id="cal-prev-month-btn" class="btn btn-icon" title="Previous Month" aria-label="Previous month">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="15 18 9 12 15 6"/></svg>
+                </button>
+                <button id="cal-next-month-btn" class="btn btn-icon" title="Next Month" aria-label="Next month">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><polyline points="9 18 15 12 9 6"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="calendar-grid-header">
+              <div>Sun</div>
+              <div>Mon</div>
+              <div>Tue</div>
+              <div>Wed</div>
+              <div>Thu</div>
+              <div>Fri</div>
+              <div>Sat</div>
+            </div>
+
+            <div id="cal-days-grid" class="calendar-grid-days">
+              <!-- Injected via calendar.js -->
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBVIEW: ANALYTICS -->
+        <div id="subview-analytics" class="hidden">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h2>Velocity & Team Analytics</h2>
+              <p>Detailed breakdown of sprint throughput, completion ratios, and workload allocation.</p>
+            </div>
+            <div class="view-actions">
+              <button class="btn btn-secondary btn-sm" onclick="window.print()">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="14" height="14"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+                Export Report
+              </button>
+            </div>
+          </div>
+
+          <!-- KPI Stats Row -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-header">Total Tasks Tracked</div>
+              <div class="kpi-value" id="analytics-total-tasks">13</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-header">Overall Completion Rate</div>
+              <div class="kpi-value" id="analytics-comp-rate" style="color:var(--success);">62%</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-header">Overdue Task Count</div>
+              <div class="kpi-value" id="analytics-overdue-count" style="color:var(--danger);">1</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-header">Active Project Tracks</div>
+              <div class="kpi-value" id="analytics-active-proj">4</div>
+            </div>
+          </div>
+
+          <!-- Charts Grid -->
+          <div class="dashboard-grid-2col">
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">Productivity Velocity (30 Days)</div>
+                <span class="tag">Area Chart</span>
+              </div>
+              <div class="card-body">
+                <div class="chart-container">
+                  <canvas id="analytics-velocity-canvas" class="chart-canvas"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">Task Status Distribution</div>
+                <span class="tag">Donut Segmented</span>
+              </div>
+              <div class="card-body">
+                <div class="chart-container">
+                  <canvas id="analytics-status-donut" class="chart-canvas"></canvas>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="dashboard-grid-2col">
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">Priority Breakdown</div>
+                <span class="tag">Bar Chart</span>
+              </div>
+              <div class="card-body">
+                <div class="chart-container">
+                  <canvas id="analytics-priority-canvas" class="chart-canvas"></canvas>
+                </div>
+              </div>
+            </div>
+
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">Team Workload & Capacity</div>
+                <span class="tag">Max 8 Tasks</span>
+              </div>
+              <div class="card-body" id="analytics-workload-list">
+                <!-- Injected via analytics.js -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBVIEW: SETTINGS -->
+        <div id="subview-settings" class="hidden">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h2>Workspace Settings & Data Management</h2>
+              <p>Configure team members, appearance, and JSON export/import backups.</p>
+            </div>
+          </div>
+
+          <!-- Settings Tab Bar -->
+          <div style="display:flex; border-bottom:1px solid var(--border); margin-bottom: var(--space-6); gap: var(--space-4);">
+            <button class="btn btn-ghost settings-tab-btn active" data-tab="general" style="border-radius:0; border-bottom:2px solid var(--primary); font-weight:600;">General</button>
+            <button class="btn btn-ghost settings-tab-btn" data-tab="members" style="border-radius:0;">Team Members</button>
+            <button class="btn btn-ghost settings-tab-btn" data-tab="preferences" style="border-radius:0;">Preferences</button>
+            <button class="btn btn-ghost settings-tab-btn" data-tab="data" style="border-radius:0;">Data Management</button>
+          </div>
+
+          <!-- Tab Pane: General -->
+          <div id="settings-pane-general" class="settings-tab-pane">
+            <div class="card" style="max-width: 640px;">
+              <div class="card-header">
+                <div class="card-title">Workspace Profile</div>
+              </div>
+              <div class="card-body">
+                <form id="form-settings-general">
+                  <div class="form-group">
+                    <label class="form-label" for="settings-ws-name">Workspace Name</label>
+                    <input type="text" id="settings-ws-name" class="form-input" value="Acme Software Corp" required>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="settings-timezone">Timezone</label>
+                    <select id="settings-timezone" class="form-select">
+                      <option value="UTC-05:00 (Eastern Time)">UTC-05:00 (Eastern Time)</option>
+                      <option value="UTC-08:00 (Pacific Time)">UTC-08:00 (Pacific Time)</option>
+                      <option value="UTC+00:00 (London, GMT)">UTC+00:00 (London, GMT)</option>
+                      <option value="UTC+01:00 (Berlin, CET)">UTC+01:00 (Berlin, CET)</option>
+                      <option value="UTC+05:30 (India Standard Time)">UTC+05:30 (India Standard Time)</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="settings-dateformat">Default Date Format</label>
+                    <select id="settings-dateformat" class="form-select">
+                      <option value="YYYY-MM-DD">YYYY-MM-DD (ISO standard)</option>
+                      <option value="MM/DD/YYYY">MM/DD/YYYY (US)</option>
+                      <option value="DD/MM/YYYY">DD/MM/YYYY (EU)</option>
+                    </select>
+                  </div>
+                  <button type="submit" class="btn btn-primary">Save Changes</button>
+                </form>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Pane: Members -->
+          <div id="settings-pane-members" class="settings-tab-pane hidden">
+            <div class="card" style="max-width: 760px;">
+              <div class="card-header">
+                <div class="card-title">Workspace Team Members</div>
+                <button class="btn btn-primary btn-sm" onclick="OrbitSettingsView.openInviteModal()">+ Invite Member</button>
+              </div>
+              <div class="card-body" style="padding:0;" id="settings-members-list">
+                <!-- Injected via settings.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Pane: Preferences -->
+          <div id="settings-pane-preferences" class="settings-tab-pane hidden">
+            <div class="card" style="max-width: 640px;">
+              <div class="card-header">
+                <div class="card-title">Workspace Preferences</div>
+              </div>
+              <div class="card-body">
+                <div style="display:flex; flex-direction:column; gap: var(--space-4);">
+                  <label class="checkbox-label">
+                    <input type="checkbox" checked onchange="OrbitToast.info('Email notification preferences saved')">
+                    <span class="checkbox-custom"></span>
+                    <div>
+                      <strong>Email Digests</strong>
+                      <div style="font-size:0.75rem; color:var(--text-muted);">Receive daily sprint summary of newly completed tasks</div>
+                    </div>
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" checked onchange="OrbitToast.info('Overdue alert preferences saved')">
+                    <span class="checkbox-custom"></span>
+                    <div>
+                      <strong>Overdue Task Escalation</strong>
+                      <div style="font-size:0.75rem; color:var(--text-muted);">Highlight tasks with red tags 24h before deadline</div>
+                    </div>
+                  </label>
+                  <label class="checkbox-label">
+                    <input type="checkbox" checked onchange="OrbitApp.toggleTheme()">
+                    <span class="checkbox-custom"></span>
+                    <div>
+                      <strong>Dark Mode Compatibility</strong>
+                      <div style="font-size:0.75rem; color:var(--text-muted);">Auto-align contrast ratios with system themes</div>
+                    </div>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab Pane: Data Management -->
+          <div id="settings-pane-data" class="settings-tab-pane hidden">
+            <div style="display:flex; flex-direction:column; gap: var(--space-6); max-width: 760px;">
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title">JSON Workspace Export</div>
+                </div>
+                <div class="card-body">
+                  <p style="font-size:0.875rem; margin-bottom:var(--space-4);">Download a complete backup containing all active and completed tasks, projects, activities, and team configurations in standard JSON format.</p>
+                  <button class="btn btn-secondary" onclick="OrbitData.exportJSON()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                    Download JSON Backup
+                  </button>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title">JSON Workspace Import</div>
+                </div>
+                <div class="card-body">
+                  <p style="font-size:0.875rem; margin-bottom:var(--space-4);">Restore previous state or import an external OrbitDesk backup file.</p>
+                  <input type="file" id="settings-json-file-input" accept=".json" style="display:none;">
+                  <button class="btn btn-outline" onclick="document.getElementById('settings-json-file-input').click()">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+                    Select JSON File to Restore
+                  </button>
+                </div>
+              </div>
+
+              <div class="card" style="border-color: var(--danger-border);">
+                <div class="card-header" style="background-color:var(--danger-light);">
+                  <div class="card-title" style="color:var(--danger-text);">Danger Zone</div>
+                </div>
+                <div class="card-body">
+                  <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom: var(--space-4);">
+                    <div>
+                      <strong>Generate Fresh Demo Sample Data</strong>
+                      <p style="font-size:0.8rem; color:var(--text-muted);">Reloads rich default tasks, projects, and activities for testing.</p>
+                    </div>
+                    <button class="btn btn-secondary btn-sm" onclick="OrbitSettingsView.generateFreshDemoData()">Load Demo Data</button>
+                  </div>
+                  <hr style="border:none; border-top:1px solid var(--border); margin:var(--space-4) 0;">
+                  <div style="display:flex; align-items:center; justify-content:space-between;">
+                    <div>
+                      <strong style="color:var(--danger);">Reset Workspace to Factory State</strong>
+                      <p style="font-size:0.8rem; color:var(--text-muted);">Permanently erases custom data and re-hydrates baseline defaults.</p>
+                    </div>
+                    <button class="btn btn-danger btn-sm" onclick="OrbitSettingsView.resetWorkspace()">Reset All Data</button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SUBVIEW: PROFILE -->
+        <div id="subview-profile" class="hidden">
+          <div class="view-header">
+            <div class="view-title-group">
+              <h2>User Profile & Security</h2>
+              <p>Manage your identity, role permissions, and individual execution history.</p>
+            </div>
+          </div>
+
+          <div class="dashboard-grid-2col">
+            <div style="display:flex; flex-direction:column; gap:var(--space-6);">
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title">Personal Information</div>
+                </div>
+                <div class="card-body">
+                  <div style="display:flex; align-items:center; gap: 16px; margin-bottom: var(--space-5);">
+                    <div id="profile-avatar-display" class="avatar avatar-lg" style="background-color:#4f46e5; color:white;">AR</div>
+                    <div>
+                      <div style="font-weight:600; font-size:1.1rem;" id="profile-display-name">Alex Rivera</div>
+                      <div style="font-size:0.8rem; color:var(--text-muted);">Product Lead • Acme Software Corp</div>
+                    </div>
+                  </div>
+                  <form id="form-user-profile">
+                    <div class="form-group">
+                      <label class="form-label" for="profile-name">Full Name</label>
+                      <input type="text" id="profile-name" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="profile-role">Job Title / Role</label>
+                      <input type="text" id="profile-role" class="form-input" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="profile-email">Work Email</label>
+                      <input type="email" id="profile-email" class="form-input" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Update Profile</button>
+                  </form>
+                </div>
+              </div>
+
+              <div class="card">
+                <div class="card-header">
+                  <div class="card-title">Security & Password Simulation</div>
+                </div>
+                <div class="card-body">
+                  <form id="form-user-password">
+                    <div class="form-group">
+                      <label class="form-label" for="profile-pass-current">Current Password</label>
+                      <input type="password" id="profile-pass-current" class="form-input" placeholder="••••••••" required>
+                    </div>
+                    <div class="form-group">
+                      <label class="form-label" for="profile-pass-new">New Password</label>
+                      <input type="password" id="profile-pass-new" class="form-input" placeholder="Minimum 6 characters" minlength="6" required>
+                    </div>
+                    <button type="submit" class="btn btn-secondary">Update Password</button>
+                  </form>
+                </div>
+              </div>
+            </div>
+
+            <!-- Right Column: Personal Activity Stream -->
+            <div class="card">
+              <div class="card-header">
+                <div class="card-title">My Recent Activity</div>
+              </div>
+              <div class="card-body" id="profile-activity-list">
+                <!-- Injected via profile.js -->
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- =========================================================================
+       UNIVERSAL MODALS & COMMAND PALETTE
+       ========================================================================= -->
+
+  <!-- 1. Global Command Palette Modal (Ctrl+K) -->
+  <div id="modal-command-palette" class="modal-overlay">
+    <div class="cmd-dialog">
+      <div class="cmd-search-wrapper">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="color:var(--text-muted);"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="text" id="cmd-search-input" class="cmd-search-input" placeholder="Search tasks, projects, teammates, or jump to view..." autocomplete="off">
+        <kbd>ESC to exit</kbd>
+      </div>
+      <div id="cmd-results-list" class="cmd-results">
+        <!-- Injected via command-palette.js -->
+      </div>
+      <div class="cmd-footer">
+        <div>Navigate with <kbd>↑</kbd> <kbd>↓</kbd> and press <kbd>Enter</kbd> to select</div>
+        <div style="font-family:var(--font-mono); font-size:0.7rem;">OrbitDesk v2.0</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. Task Modal (Create & Edit) -->
+  <div id="modal-task" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="task-modal-title" class="modal-title">Create New Task</h3>
+        <button class="btn btn-ghost btn-icon" onclick="OrbitModal.close('modal-task')" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <form id="form-task">
+        <input type="hidden" id="task-input-id">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label" for="task-input-title">Task Title *</label>
+            <input type="text" id="task-input-title" class="form-input" placeholder="e.g., Implement SAML 2.0 Auth Callback" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="task-input-desc">Description</label>
+            <textarea id="task-input-desc" class="form-textarea" placeholder="Add details, acceptance criteria, or context..."></textarea>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+            <div class="form-group">
+              <label class="form-label" for="task-input-project">Project</label>
+              <select id="task-input-project" class="form-select"></select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="task-input-assignee">Assignee</label>
+              <select id="task-input-assignee" class="form-select"></select>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr 1fr; gap: var(--space-3);">
+            <div class="form-group">
+              <label class="form-label" for="task-input-priority">Priority</label>
+              <select id="task-input-priority" class="form-select">
+                <option value="low">Low</option>
+                <option value="medium" selected>Medium</option>
+                <option value="high">High</option>
+                <option value="urgent">Urgent</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="task-input-status">Status</label>
+              <select id="task-input-status" class="form-select">
+                <option value="backlog">Backlog</option>
+                <option value="todo" selected>To Do</option>
+                <option value="inprogress">In Progress</option>
+                <option value="inreview">In Review</option>
+                <option value="done">Done</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="task-input-duedate">Due Date</label>
+              <input type="date" id="task-input-duedate" class="form-input">
+            </div>
+          </div>
+
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label" for="task-input-tags">Tags (comma separated)</label>
+            <input type="text" id="task-input-tags" class="form-input" placeholder="Frontend, Security, API">
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="task-modal-delete-btn" class="btn btn-danger-ghost" style="margin-right:auto; display:none;">Delete Task</button>
+          <button type="button" class="btn btn-secondary" onclick="OrbitModal.close('modal-task')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Task</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. Project Modal (Create & Edit) -->
+  <div id="modal-project" class="modal-overlay">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 id="project-modal-title" class="modal-title">Create New Project</h3>
+        <button class="btn btn-ghost btn-icon" onclick="OrbitModal.close('modal-project')" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <form id="form-project">
+        <input type="hidden" id="project-input-id">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label" for="project-input-name">Project Name *</label>
+            <input type="text" id="project-input-name" class="form-input" placeholder="e.g., Enterprise SSO & RBAC" required>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label" for="project-input-desc">Description</label>
+            <textarea id="project-input-desc" class="form-textarea" placeholder="Key deliverables, objectives, and scope..."></textarea>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+            <div class="form-group">
+              <label class="form-label" for="project-input-category">Category</label>
+              <select id="project-input-category" class="form-select">
+                <option value="Engineering">Engineering</option>
+                <option value="Design & UX">Design & UX</option>
+                <option value="Security & Auth">Security & Auth</option>
+                <option value="DevOps & Infra">DevOps & Infra</option>
+                <option value="Mobile Engine">Mobile Engine</option>
+                <option value="Marketing">Marketing</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="project-input-lead">Project Lead</label>
+              <select id="project-input-lead" class="form-select"></select>
+            </div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: 1fr 1fr; gap: var(--space-4);">
+            <div class="form-group">
+              <label class="form-label" for="project-input-targetdate">Target Milestone Date</label>
+              <input type="date" id="project-input-targetdate" class="form-input">
+            </div>
+            <div class="form-group">
+              <label class="form-label" for="project-input-color">Brand Color</label>
+              <select id="project-input-color" class="form-select">
+                <option value="#4f46e5">Indigo (#4f46e5)</option>
+                <option value="#0ea5e9">Sky Blue (#0ea5e9)</option>
+                <option value="#10b981">Emerald Green (#10b981)</option>
+                <option value="#f59e0b">Amber Gold (#f59e0b)</option>
+                <option value="#8b5cf6">Purple Violet (#8b5cf6)</option>
+                <option value="#ec4899">Pink Coral (#ec4899)</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" id="project-modal-delete-btn" class="btn btn-danger-ghost" style="margin-right:auto; display:none;">Delete Project</button>
+          <button type="button" class="btn btn-secondary" onclick="OrbitModal.close('modal-project')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Save Project</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 4. Project Detail View Modal -->
+  <div id="modal-project-detail" class="modal-overlay">
+    <div class="modal-content" style="max-width: 680px;">
+      <div class="modal-header">
+        <h3 id="project-detail-title" class="modal-title">Project Overview</h3>
+        <button class="btn btn-ghost btn-icon" onclick="OrbitModal.close('modal-project-detail')" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p id="project-detail-desc" style="font-size:0.9rem; color:var(--text-secondary); margin-bottom:var(--space-5);"></p>
+        <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom: var(--space-3);">
+          <strong style="font-size:0.85rem; text-transform:uppercase; letter-spacing:0.04em; color:var(--text-muted);">Associated Project Tasks</strong>
+          <button id="project-detail-add-task-btn" class="btn btn-sm btn-outline">+ Add Task to Project</button>
+        </div>
+        <div id="project-detail-tasks" style="max-height: 280px; overflow-y: auto;">
+          <!-- Injected via projects.js -->
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="OrbitModal.close('modal-project-detail')">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5. Confirmation Dialog Modal -->
+  <div id="modal-confirm" class="modal-overlay">
+    <div class="modal-content" style="max-width: 440px;">
+      <div class="modal-header">
+        <h3 id="confirm-modal-title" class="modal-title">Confirm Action</h3>
+        <button class="btn btn-ghost btn-icon" onclick="OrbitModal.close('modal-confirm')" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <div class="modal-body">
+        <p id="confirm-modal-msg" style="color:var(--text-secondary); font-size:0.9rem;"></p>
+      </div>
+      <div class="modal-footer">
+        <button class="btn btn-secondary" onclick="OrbitModal.close('modal-confirm')">Cancel</button>
+        <button id="confirm-modal-action-btn" class="btn btn-primary">Confirm</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. Invite Team Member Modal -->
+  <div id="modal-invite-member" class="modal-overlay">
+    <div class="modal-content" style="max-width: 460px;">
+      <div class="modal-header">
+        <h3 class="modal-title">Invite Team Member</h3>
+        <button class="btn btn-ghost btn-icon" onclick="OrbitModal.close('modal-invite-member')" aria-label="Close">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><path d="M18 6L6 18M6 6l12 12"/></svg>
+        </button>
+      </div>
+      <form id="form-invite-member">
+        <div class="modal-body">
+          <div class="form-group">
+            <label class="form-label" for="invite-member-name">Full Name *</label>
+            <input type="text" id="invite-member-name" class="form-input" placeholder="e.g., Liam O'Connor" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="invite-member-email">Work Email *</label>
+            <input type="email" id="invite-member-email" class="form-input" placeholder="liam.oconnor@orbitdesk.io" required>
+          </div>
+          <div class="form-group" style="margin-bottom:0;">
+            <label class="form-label" for="invite-member-role">Workspace Role</label>
+            <select id="invite-member-role" class="form-select">
+              <option value="Member" selected>Member (Standard Execution Rights)</option>
+              <option value="Admin">Admin (Full Workspace Management)</option>
+              <option value="Viewer">Viewer (Read-Only Auditor)</option>
+            </select>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" onclick="OrbitModal.close('modal-invite-member')">Cancel</button>
+          <button type="submit" class="btn btn-primary">Send Workspace Invitation</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SCRIPTS
+       ========================================================================= -->
+  <script src="js/data.js"></script>
+  <script src="js/state.js"></script>
+  <script src="js/auth.js"></script>
+  <script src="js/toast.js"></script>
+  <script src="js/charts.js"></script>
+  <script src="js/modal.js"></script>
+  <script src="js/command-palette.js"></script>
+  <script src="js/views/landing.js"></script>
+  <script src="js/views/dashboard.js"></script>
+  <script src="js/views/projects.js"></script>
+  <script src="js/views/tasks.js"></script>
+  <script src="js/views/calendar.js"></script>
+  <script src="js/views/analytics.js"></script>
+  <script src="js/views/settings.js"></script>
+  <script src="js/views/profile.js"></script>
+  <script src="js/router.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

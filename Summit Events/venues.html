@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Venues Directory — Summit Events</title>
+  <meta name="description" content="Explore premier event spaces, world-class acoustic arenas, tech campuses, and historic theatres." />
+  
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/print.css" media="print" />
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="index.html" class="brand-logo" aria-label="Summit Events Homepage">
+        <div class="brand-icon-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 22 22 22 12 2"></polygon><polyline points="12 8 18 20 6 20"></polyline></svg>
+        </div>
+        <span>SUMMIT</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="events.html" class="nav-link">Discover Events</a>
+        <a href="venues.html" class="nav-link active">Venues</a>
+        <a href="organizers.html" class="nav-link">Organizers</a>
+        <a href="organizers.html#create-wizard" class="nav-link">+ Host Event</a>
+      </nav>
+
+      <div class="header-actions">
+        <div class="header-search-bar">
+          <form action="events.html" method="GET">
+            <input type="text" name="q" id="headerSearchInput" class="header-search-input" placeholder="Search events... (/)" aria-label="Search events" />
+            <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </form>
+        </div>
+
+        <a href="account.html?tab=favorites" class="btn-icon" aria-label="Saved Events">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="badge-count badge-fav-count" style="display:none;">0</span>
+        </a>
+
+        <a href="tickets.html" class="btn-icon" aria-label="My Digital Tickets">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span class="badge-count badge-tkt-count" style="display:none;">0</span>
+        </a>
+
+        <a href="account.html" class="btn-icon" aria-label="Account Dashboard">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </a>
+
+        <button type="button" class="btn-icon theme-toggle-btn" aria-label="Toggle Theme"></button>
+        <button type="button" class="btn-icon mobile-menu-btn" aria-label="Open Mobile Menu">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Navigation">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 2 22 22 22 12 2"></polygon></svg>
+        </div>
+        <span>SUMMIT</span>
+      </a>
+      <button type="button" class="btn-icon drawer-close-btn" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="index.html">Home</a>
+      <a href="events.html">Discover All Events</a>
+      <a href="venues.html" class="active">Venues Directory</a>
+      <a href="organizers.html">Organizers & Creators</a>
+      <a href="organizers.html#create-wizard">+ Create / Host Event</a>
+      <a href="tickets.html">My Digital Passes</a>
+      <a href="account.html">Account & Settings</a>
+    </nav>
+  </aside>
+
+  <main class="container" style="padding-top: 3rem; padding-bottom: 5rem;">
+    <!-- Section Header -->
+    <div style="margin-bottom: 2.5rem; text-align: center; max-width: 700px; margin-left: auto; margin-right: auto;">
+      <span class="badge badge-featured" style="margin-bottom: 0.75rem;">World-Class Architecture</span>
+      <h1 style="font-size: 3rem; letter-spacing: -0.03em; margin-bottom: 0.75rem;">Premier Venues & Spaces</h1>
+      <p style="font-size: 1.1rem; color: var(--text-secondary);">
+        Explore the landmark auditoriums, covered sports domes, glasshouse centers, and underground warehouse sanctuaries powering Summit live experiences.
+      </p>
+
+      <!-- Venue Type Filter Pills -->
+      <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 0.5rem; margin-top: 2rem;">
+        <button type="button" class="btn btn-secondary btn-sm venue-filter-tab active" data-type="all">All Spaces</button>
+        <button type="button" class="btn btn-secondary btn-sm venue-filter-tab" data-type="Arena">Arenas & Stadiums</button>
+        <button type="button" class="btn btn-secondary btn-sm venue-filter-tab" data-type="Conference">Conference Centers</button>
+        <button type="button" class="btn btn-secondary btn-sm venue-filter-tab" data-type="Warehouse">Warehouses & Clubs</button>
+        <button type="button" class="btn btn-secondary btn-sm venue-filter-tab" data-type="Theatre">Historic Theatres</button>
+        <button type="button" class="btn btn-secondary btn-sm venue-filter-tab" data-type="Tech">Tech Auditoriums</button>
+      </div>
+    </div>
+
+    <!-- Venues List Grid -->
+    <div class="venues-grid" id="venues-list-container">
+      <!-- Rendered by JS -->
+    </div>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-icon-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 2 22 22 22 12 2"></polygon></svg>
+            </div>
+            <span>SUMMIT</span>
+          </a>
+          <p>Summit Events — Official frontend ticketing simulation and discovery platform.</p>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Navigation</h4>
+          <ul class="footer-links-list">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="events.html">Discover Events</a></li>
+            <li><a href="venues.html">Venues</a></li>
+            <li><a href="organizers.html">Organizers</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Venues & Hosts</h4>
+          <ul class="footer-links-list">
+            <li><a href="organizers.html#create-wizard">Host an Event</a></li>
+            <li><a href="account.html?tab=organizer">My Drafts & Live Events</a></li>
+            <li><a href="tickets.html">Digital Passes</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer-col-title">Account</h4>
+          <ul class="footer-links-list">
+            <li><a href="account.html">My Profile</a></li>
+            <li><a href="account.html?tab=favorites">Saved Wishlist</a></li>
+            <li><a href="account.html?tab=orders">Orders & Invoices</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Summit Events Inc.</span>
+        <div class="footer-social-links">
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer">X / Twitter</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://spotify.com" target="_blank" rel="noopener noreferrer">Spotify</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/venues.js"></script>
+</body>
+</html>

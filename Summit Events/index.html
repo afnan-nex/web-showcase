@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Summit Events — Premier Live Experiences, Concerts & Summits</title>
+  <meta name="description" content="Discover and book premier concerts, technology conferences, design workshops, extreme sports invitationals, and founder networking salons." />
+  
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/main.css" />
+  <link rel="stylesheet" href="css/pages.css" />
+  <link rel="stylesheet" href="css/print.css" media="print" />
+</head>
+<body>
+
+  <!-- Site Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <!-- Logo -->
+      <a href="index.html" class="brand-logo" aria-label="Summit Events Homepage">
+        <div class="brand-icon-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 2 22 22 22 12 2"></polygon><polyline points="12 8 18 20 6 20"></polyline></svg>
+        </div>
+        <span>SUMMIT</span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <a href="index.html" class="nav-link active">Home</a>
+        <a href="events.html" class="nav-link">Discover Events</a>
+        <a href="venues.html" class="nav-link">Venues</a>
+        <a href="organizers.html" class="nav-link">Organizers</a>
+        <a href="organizers.html#create-wizard" class="nav-link">+ Host Event</a>
+      </nav>
+
+      <!-- Header Controls -->
+      <div class="header-actions">
+        <!-- Quick Search -->
+        <div class="header-search-bar">
+          <form action="events.html" method="GET">
+            <input type="text" name="q" id="headerSearchInput" class="header-search-input" placeholder="Search events... (/)" aria-label="Search events" />
+            <svg class="header-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          </form>
+        </div>
+
+        <!-- Saved / Wishlist -->
+        <a href="account.html?tab=favorites" class="btn-icon" aria-label="Saved Events">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+          <span class="badge-count badge-fav-count" style="display:none;">0</span>
+        </a>
+
+        <!-- My Tickets -->
+        <a href="tickets.html" class="btn-icon" aria-label="My Digital Tickets">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg>
+          <span class="badge-count badge-tkt-count" style="display:none;">0</span>
+        </a>
+
+        <!-- Account -->
+        <a href="account.html" class="btn-icon" aria-label="Account Dashboard">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+        </a>
+
+        <!-- Theme Switcher -->
+        <button type="button" class="btn-icon theme-toggle-btn" aria-label="Toggle Theme"></button>
+
+        <!-- Mobile Menu Trigger -->
+        <button type="button" class="btn-icon mobile-menu-btn" aria-label="Open Mobile Menu">
+          <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="drawer-backdrop"></div>
+  <aside class="mobile-drawer" aria-label="Mobile Menu">
+    <div class="drawer-header">
+      <a href="index.html" class="brand-logo">
+        <div class="brand-icon-mark">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 2 22 22 22 12 2"></polygon></svg>
+        </div>
+        <span>SUMMIT</span>
+      </a>
+      <button type="button" class="btn-icon drawer-close-btn" aria-label="Close menu">&times;</button>
+    </div>
+    <nav class="mobile-nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="events.html">Discover All Events</a>
+      <a href="venues.html">Venues Directory</a>
+      <a href="organizers.html">Organizers & Creators</a>
+      <a href="organizers.html#create-wizard">+ Create / Host Event</a>
+      <a href="tickets.html">My Digital Passes</a>
+      <a href="account.html">Account & Settings</a>
+    </nav>
+  </aside>
+
+  <main>
+    <!-- EDITORIAL HERO SPOTLIGHT -->
+    <section class="hero-spotlight">
+      <div class="hero-spotlight-backdrop"></div>
+      <div class="container">
+        <div class="hero-editorial-grid">
+          <!-- Text Content -->
+          <div class="hero-text-col">
+            <div class="hero-badge-row">
+              <span class="badge badge-featured">Spotlight Headline</span>
+              <span class="badge badge-seat">Spatial Audio Installation</span>
+            </div>
+
+            <h1 class="hero-main-heading">
+              SYNTHESIS: Sonic & Audiovisual <span class="gradient-text">Biennale 2026</span>
+            </h1>
+
+            <p class="hero-tagline">
+              48 Hours of continuous modular sound synthesis, 3D laser architecture, and boundary-pushing electronic live sets at The Apex Arena.
+            </p>
+
+            <div class="hero-meta-strip">
+              <div class="meta-block">
+                <span class="meta-block-label">Date</span>
+                <span class="meta-block-value">Sep 18 – 20, 2026</span>
+              </div>
+              <div class="meta-block">
+                <span class="meta-block-label">Location</span>
+                <span class="meta-block-value">San Francisco, CA</span>
+              </div>
+              <div class="meta-block">
+                <span class="meta-block-label">Lineup Lead</span>
+                <span class="meta-block-value">Suzanne Ciani & Max Cooper</span>
+              </div>
+            </div>
+
+            <div class="hero-cta-group">
+              <button type="button" class="btn btn-primary btn-lg" id="hero-book-btn">
+                Get Tickets (From $85) &rarr;
+              </button>
+              <a href="event-detail.html?id=evt-101" class="btn btn-secondary btn-lg" id="hero-detail-link">
+                View Full Lineup & Schedule
+              </a>
+            </div>
+          </div>
+
+          <!-- Visual Artwork Poster -->
+          <div class="hero-visual-col">
+            <div class="hero-visual-card">
+              <img src="https://images.unsplash.com/photo-1514525253161-7a46d19cd819?auto=format&fit=crop&w=1200&q=85" alt="SYNTHESIS Biennale Poster" class="hero-visual-img" />
+              <div class="hero-visual-overlay">
+                <div class="hero-visual-countdown" id="hero-countdown-box">
+                  <!-- Rendered by JS countdown -->
+                </div>
+                <span style="font-size: 0.85rem; font-weight: 700; color: #FFF; letter-spacing: 0.05em;">THE APEX ARENA • SAN FRANCISCO</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- QUICK SEARCH BAR SECTION -->
+    <section class="quick-search-section">
+      <div class="container">
+        <form id="home-quick-search-form" class="quick-search-bar" role="search" aria-label="Event search bar">
+          <div class="search-field-wrap">
+            <label for="quick-search-keyword" class="search-field-label">Search</label>
+            <input type="text" id="quick-search-keyword" class="search-field-input" placeholder="Artist, festival, conference, topic..." />
+          </div>
+
+          <div class="search-field-wrap">
+            <label for="quick-search-category" class="search-field-label">Category</label>
+            <select id="quick-search-category" class="search-field-select">
+              <option value="all">All Categories</option>
+              <option value="concerts">Concerts & Music</option>
+              <option value="conferences">Conferences & Tech</option>
+              <option value="workshops">Workshops & Design</option>
+              <option value="sports">Sports & Esports</option>
+              <option value="networking">Networking & Salons</option>
+            </select>
+          </div>
+
+          <div class="search-field-wrap">
+            <label for="quick-search-location" class="search-field-label">Location</label>
+            <select id="quick-search-location" class="search-field-select">
+              <option value="all">All Locations</option>
+              <option value="San Francisco">San Francisco, CA</option>
+              <option value="New York">New York, NY</option>
+              <option value="London">London, UK</option>
+              <option value="Berlin">Berlin, Germany</option>
+              <option value="Austin">Austin, TX</option>
+              <option value="Tokyo">Tokyo, Japan</option>
+            </select>
+          </div>
+
+          <div class="search-field-wrap">
+            <label for="quick-search-date" class="search-field-label">Date</label>
+            <select id="quick-search-date" class="search-field-select">
+              <option value="all">Any Date</option>
+              <option value="today">Today</option>
+              <option value="this-week">This Week</option>
+              <option value="this-month">This Month</option>
+            </select>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-lg" aria-label="Search Events">
+            Explore Events &rarr;
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- BROWSE BY CATEGORY -->
+    <section class="container" style="padding-bottom: 2rem;">
+      <div class="section-header-row">
+        <div>
+          <h2 class="section-title">Explore by Genre & Medium</h2>
+          <p class="section-subtitle">From monumental sound design festivals to high-level venture summits</p>
+        </div>
+        <a href="events.html" class="btn btn-outline btn-sm">All 14 Events &rarr;</a>
+      </div>
+
+      <div class="category-grid" id="home-categories-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- CURATED FEATURED EVENTS -->
+    <section class="container" style="padding-bottom: 2rem;">
+      <div class="section-header-row">
+        <div>
+          <span class="badge badge-featured" style="margin-bottom: 0.5rem;">Curated Spotlight</span>
+          <h2 class="section-title">Featured Premier Events</h2>
+          <p class="section-subtitle">Hand-picked headline events with exceptional production and verified inventory</p>
+        </div>
+        <a href="events.html" class="btn btn-outline btn-sm">View Catalog &rarr;</a>
+      </div>
+
+      <div class="events-editorial-grid" id="home-featured-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- UPCOMING EVENTS FEED -->
+    <section class="container" style="padding-bottom: 4rem;">
+      <div class="section-header-row">
+        <div>
+          <h2 class="section-title">Upcoming On The Horizon</h2>
+          <p class="section-subtitle">Chronological calendar of confirmed global experiences</p>
+        </div>
+        <a href="events.html?sort=date-asc" class="btn btn-outline btn-sm">Full Calendar &rarr;</a>
+      </div>
+
+      <div class="events-editorial-grid" id="home-upcoming-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- PREMIER VENUES SPOTLIGHT -->
+    <section class="container" style="padding-bottom: 4rem;">
+      <div class="section-header-row">
+        <div>
+          <h2 class="section-title">Iconic Architecture & Venues</h2>
+          <p class="section-subtitle">World-class acoustic arenas, industrial brutalist warehouses, and Victorian conservatories</p>
+        </div>
+        <a href="venues.html" class="btn btn-outline btn-sm">Browse 6 Venues &rarr;</a>
+      </div>
+
+      <div class="venues-grid" id="home-venues-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- MEET TOP ORGANIZERS -->
+    <section class="container" style="padding-bottom: 4rem;">
+      <div class="section-header-row">
+        <div>
+          <h2 class="section-title">Verified Producers & Collectives</h2>
+          <p class="section-subtitle">Follow verified creators for exclusive early ticket drops</p>
+        </div>
+        <a href="organizers.html" class="btn btn-outline btn-sm">View Directory &rarr;</a>
+      </div>
+
+      <div class="organizers-grid" id="home-organizers-grid">
+        <!-- Rendered by JS -->
+      </div>
+    </section>
+
+    <!-- NEWSLETTER SUBSCRIPTION WITH PROMO REWARD -->
+    <section class="container">
+      <div class="newsletter-section">
+        <div class="newsletter-inner">
+          <span class="badge badge-featured" style="margin-bottom: 1rem;">Summit Curated Dispatch</span>
+          <h2 class="newsletter-title">Stay Ahead of Exclusive Drops</h2>
+          <p class="newsletter-desc">
+            Subscribe to our weekly editorial dispatch of secret sets, intimate masterclasses, and receive an instant <strong>20% discount code</strong> for your next booking.
+          </p>
+
+          <form id="newsletter-form" class="newsletter-form">
+            <input type="email" id="newsletter-email" class="newsletter-input" required placeholder="Enter your email address..." aria-label="Email address" />
+            <button type="submit" class="btn btn-primary">Subscribe</button>
+          </form>
+          <span style="font-size: 0.75rem; color: var(--text-muted);">Instant promo code will appear on confirmation. No spam, unsubscribe anytime.</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo">
+            <div class="brand-icon-mark">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor"><polygon points="12 2 2 22 22 22 12 2"></polygon></svg>
+            </div>
+            <span>SUMMIT</span>
+          </a>
+          <p>
+            Summit Events is an editorial discovery and ticketing platform for premier concerts, technology conferences, workshops, and sports championships worldwide.
+          </p>
+        </div>
+
+        <!-- Navigation Links -->
+        <div>
+          <h4 class="footer-col-title">Discover</h4>
+          <ul class="footer-links-list">
+            <li><a href="events.html">All Events</a></li>
+            <li><a href="events.html?category=concerts">Concerts & Music</a></li>
+            <li><a href="events.html?category=conferences">Tech Conferences</a></li>
+            <li><a href="events.html?category=workshops">Design Workshops</a></li>
+            <li><a href="events.html?category=sports">Sports & Esports</a></li>
+            <li><a href="events.html?category=networking">Founders & Networking</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Venues & Hosts</h4>
+          <ul class="footer-links-list">
+            <li><a href="venues.html">Venues Directory</a></li>
+            <li><a href="organizers.html">Organizers Hub</a></li>
+            <li><a href="organizers.html#create-wizard">Create / Host an Event</a></li>
+            <li><a href="account.html?tab=organizer">Organizer Dashboard</a></li>
+            <li><a href="tickets.html">Digital Pass Wallet</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-col-title">Account & Help</h4>
+          <ul class="footer-links-list">
+            <li><a href="account.html">My Profile</a></li>
+            <li><a href="account.html?tab=favorites">Saved Wishlist</a></li>
+            <li><a href="account.html?tab=orders">Order History & Receipts</a></li>
+            <li><a href="account.html?tab=settings">Settings & Reset</a></li>
+            <li><a href="tickets.html">Transfer Tickets</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Summit Events Inc. All rights reserved. High-fidelity frontend ticketing simulation.</span>
+        <div class="footer-social-links">
+          <a href="https://x.com" target="_blank" rel="noopener noreferrer" aria-label="Summit Events on X (Twitter)">X / Twitter</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" aria-label="Summit Events on Instagram">Instagram</a>
+          <a href="https://spotify.com" target="_blank" rel="noopener noreferrer" aria-label="Summit Events on Spotify">Spotify</a>
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" aria-label="Summit Events Source Code on GitHub">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Core Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/checkout.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

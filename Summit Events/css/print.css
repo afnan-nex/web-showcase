@@ -1,0 +1,59 @@
+/* ==========================================================================
+   SUMMIT EVENTS — PRINT STYLESHEET
+   Clean output for digital pass tickets and receipts
+   ========================================================================== */
+
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    font-size: 12pt;
+  }
+
+  .site-header,
+  .site-footer,
+  .checkout-stepper,
+  .confirmation-badge-success,
+  .confirmation-actions,
+  .btn,
+  .theme-toggle-btn,
+  .mobile-drawer,
+  .drawer-backdrop,
+  .toast-container {
+    display: none !important;
+  }
+
+  .checkout-modal-container {
+    max-width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+  }
+
+  .digital-ticket-container {
+    max-width: 100% !important;
+    border: 2px solid #000 !important;
+    box-shadow: none !important;
+    page-break-inside: avoid;
+    margin: 0 !important;
+    color: #000 !important;
+    background: #FFF !important;
+  }
+
+  .ticket-header-strip {
+    background: #000000 !important;
+    color: #FFFFFF !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .ticket-stub-details {
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+  }
+
+  .summit-qr-code {
+    border: 1px solid #000 !important;
+  }
+}

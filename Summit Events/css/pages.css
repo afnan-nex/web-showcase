@@ -1,0 +1,770 @@
+/* ==========================================================================
+   SUMMIT EVENTS — PAGE SPECIFIC STYLES
+   Event Detail, Events Catalog Filters, Venues, Organizers Wizard, Tickets & Account
+   ========================================================================== */
+
+/* ==========================================================================
+   1. EVENTS CATALOG & DISCOVERY (events.html)
+   ========================================================================== */
+
+.catalog-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 2.5rem;
+  padding: 2.5rem 0 5rem;
+}
+
+.catalog-sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.filter-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+}
+
+.filter-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--border-color-subtle);
+}
+
+.filter-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.btn-clear-filters {
+  font-size: 0.75rem;
+  color: var(--brand-primary);
+  font-weight: 700;
+}
+
+.btn-clear-filters:hover {
+  text-decoration: underline;
+}
+
+.filter-group {
+  margin-bottom: 1.25rem;
+}
+
+.filter-group:last-child {
+  margin-bottom: 0;
+}
+
+.filter-group-label {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+  display: block;
+}
+
+/* Category Pills & Radio */
+.filter-pills-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.filter-pill-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.45rem 0.65rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.filter-pill-item:hover {
+  background-color: var(--bg-surface-raised);
+  color: var(--text-primary);
+}
+
+.filter-pill-item.active {
+  background-color: var(--bg-surface-raised);
+  color: var(--brand-primary);
+  font-weight: 700;
+}
+
+.filter-count-badge {
+  font-size: 0.7rem;
+  background-color: var(--bg-surface);
+  padding: 0.15rem 0.45rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+}
+
+/* Date Range Buttons */
+.date-presets-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.4rem;
+  margin-bottom: 0.75rem;
+}
+
+.date-preset-btn {
+  padding: 0.45rem 0.5rem;
+  border-radius: var(--radius-sm);
+  background-color: var(--bg-surface-raised);
+  border: 1px solid var(--border-color);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.date-preset-btn.active {
+  background-color: var(--brand-primary);
+  border-color: var(--brand-primary);
+  color: #FFF;
+}
+
+/* Range Slider */
+.price-slider-wrap {
+  padding: 0.5rem 0;
+}
+
+.price-range-slider {
+  width: 100%;
+  accent-color: var(--brand-primary);
+}
+
+.price-slider-values {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-top: 0.35rem;
+}
+
+/* Catalog Main Content Header */
+.catalog-content-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.results-count-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+}
+
+.catalog-controls {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.sort-select {
+  padding: 0.45rem 0.85rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  font-size: 0.85rem;
+  color: var(--text-primary);
+}
+
+.view-toggle-btns {
+  display: flex;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.view-btn {
+  padding: 0.45rem 0.65rem;
+  background-color: var(--bg-card);
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+}
+
+.view-btn.active {
+  background-color: var(--bg-surface-raised);
+  color: var(--brand-primary);
+}
+
+/* Active Filter Chips */
+.active-filters-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  padding: 0.3rem 0.65rem;
+  border-radius: var(--radius-full);
+  background-color: var(--bg-surface-raised);
+  border: 1px solid var(--border-color);
+  color: var(--text-primary);
+}
+
+.filter-chip-remove {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.filter-chip-remove:hover {
+  color: var(--brand-primary);
+}
+
+/* ==========================================================================
+   2. EVENT DETAIL PAGE (event-detail.html)
+   ========================================================================== */
+
+.detail-hero-banner {
+  position: relative;
+  min-height: 520px;
+  display: flex;
+  align-items: flex-end;
+  padding: 4rem 0 3rem;
+  background-size: cover;
+  background-position: center;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.detail-hero-backdrop-tint {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11, 13, 17, 0.4) 0%, rgba(11, 13, 17, 0.95) 85%, var(--bg-main) 100%);
+}
+
+.detail-hero-content {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+}
+
+.detail-hero-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.5rem;
+}
+
+.detail-title {
+  font-size: 3.2rem;
+  margin-bottom: 0.75rem;
+  max-width: 900px;
+}
+
+.detail-tagline {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+  max-width: 800px;
+  margin-bottom: 2rem;
+}
+
+.detail-meta-pill-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.detail-meta-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.95rem;
+  font-weight: 600;
+  background-color: var(--bg-glass);
+  backdrop-filter: blur(12px);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-color);
+}
+
+/* Main Detail Grid Layout */
+.detail-content-layout {
+  display: grid;
+  grid-template-columns: 1.8fr 1fr;
+  gap: 3.5rem;
+  padding: 3rem 0 6rem;
+}
+
+/* Sticky Booking Widget */
+.booking-widget-sticky {
+  position: sticky;
+  top: calc(var(--header-height) + 1.5rem);
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 2rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.booking-widget-price-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color-subtle);
+}
+
+.widget-starting-at {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  display: block;
+}
+
+.widget-price-range {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--brand-primary);
+}
+
+.booking-perks-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin: 1.5rem 0;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+}
+
+.booking-perks-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.check-green {
+  color: var(--accent-emerald);
+  width: 16px;
+  height: 16px;
+}
+
+/* Detail Tabs & Sections */
+.detail-section-block {
+  margin-bottom: 3.5rem;
+}
+
+.detail-section-title {
+  font-size: 1.8rem;
+  margin-bottom: 1.25rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.detail-body-text {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  white-space: pre-line;
+}
+
+/* Highlights list */
+.highlights-bullet-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.highlight-box {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.925rem;
+}
+
+.highlight-bullet-icon {
+  color: var(--brand-primary);
+  margin-top: 2px;
+  flex-shrink: 0;
+}
+
+/* Artists / Speakers Grid */
+.lineup-cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+}
+
+.lineup-card {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  text-align: center;
+}
+
+.lineup-avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  border: 2px solid var(--border-color);
+}
+
+.lineup-name {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.lineup-role {
+  font-size: 0.8rem;
+  color: var(--brand-primary);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.lineup-bio {
+  font-size: 0.825rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+}
+
+/* Schedule Timeline */
+.schedule-timeline-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.schedule-day-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+.schedule-day-header {
+  background-color: var(--bg-surface-raised);
+  padding: 1rem 1.5rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.schedule-slots-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.schedule-slot {
+  display: flex;
+  align-items: center;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--border-color-subtle);
+  gap: 1.5rem;
+}
+
+.schedule-slot:last-child {
+  border-bottom: none;
+}
+
+.slot-time {
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--brand-primary);
+  font-size: 1rem;
+  width: 70px;
+}
+
+.slot-info {
+  flex: 1;
+}
+
+.slot-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.slot-stage {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+/* FAQs Accordion */
+.faq-accordion {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.faq-item {
+  background-color: var(--bg-surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+}
+
+.faq-trigger {
+  width: 100%;
+  padding: 1.15rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: left;
+  color: var(--text-primary);
+}
+
+.faq-trigger:hover {
+  color: var(--brand-primary);
+}
+
+.faq-answer {
+  padding: 0 1.5rem 1.25rem;
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  line-height: 1.5;
+  display: none;
+}
+
+.faq-item.active .faq-answer {
+  display: block;
+}
+
+/* ==========================================================================
+   3. ACCOUNT & DASHBOARD (account.html)
+   ========================================================================== */
+
+.account-header-hero {
+  padding: 3rem 0;
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.account-profile-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.account-user-meta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.account-avatar-large {
+  width: 90px;
+  height: 90px;
+  border-radius: var(--radius-full);
+  border: 3px solid var(--brand-primary);
+  object-fit: cover;
+}
+
+.account-tabs-nav {
+  display: flex;
+  gap: 0.5rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 2.5rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.account-tab-btn {
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  font-weight: 700;
+  font-size: 0.925rem;
+  color: var(--text-secondary);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.account-tab-btn.active {
+  background-color: var(--bg-surface-raised);
+  color: var(--brand-primary);
+}
+
+.account-tab-view {
+  display: none;
+}
+
+.account-tab-view.active {
+  display: block;
+}
+
+/* ==========================================================================
+   4. TICKETS WALLET & DIGITAL PASSES (tickets.html)
+   ========================================================================== */
+
+.tickets-hero-banner {
+  padding: 3rem 0;
+  text-align: center;
+  border-bottom: 1px solid var(--border-color);
+  background-color: var(--bg-surface);
+}
+
+.tickets-filter-tabs {
+  display: inline-flex;
+  background-color: var(--bg-surface-raised);
+  border-radius: var(--radius-full);
+  padding: 0.35rem;
+  border: 1px solid var(--border-color);
+  margin-top: 1.5rem;
+}
+
+.tkt-tab-btn {
+  padding: 0.5rem 1.25rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+}
+
+.tkt-tab-btn.active {
+  background-color: var(--brand-primary);
+  color: #FFF;
+}
+
+.tickets-pass-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 2rem;
+  padding: 3rem 0 5rem;
+}
+
+.pass-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+}
+
+.pass-header {
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #FFF;
+}
+
+.pass-body {
+  padding: 1.25rem;
+  flex: 1;
+}
+
+.pass-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 0.75rem;
+}
+
+.pass-footer-actions {
+  padding: 1rem 1.25rem;
+  background-color: var(--bg-surface-raised);
+  border-top: 1px solid var(--border-color-subtle);
+  display: flex;
+  gap: 0.5rem;
+}
+
+/* ==========================================================================
+   5. ORGANIZER EVENT CREATOR WIZARD
+   ========================================================================== */
+
+.organizer-wizard-container {
+  max-width: 800px;
+  margin: 2rem auto 5rem;
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.wizard-step-header {
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+}
+
+/* Responsive tweaks */
+@media (max-width: 1024px) {
+  .catalog-layout {
+    grid-template-columns: 1fr;
+  }
+  .detail-content-layout {
+    grid-template-columns: 1fr;
+  }
+  .booking-widget-sticky {
+    position: relative;
+    top: 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .detail-title {
+    font-size: 2.2rem;
+  }
+  .account-profile-bar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .highlights-bullet-grid {
+    grid-template-columns: 1fr;
+  }
+  .organizer-wizard-container {
+    padding: 1.5rem;
+  }
+  .tickets-pass-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .detail-title {
+    font-size: 1.8rem;
+  }
+  .detail-meta-pill-bar {
+    gap: 0.5rem;
+  }
+  .detail-meta-pill {
+    font-size: 0.85rem;
+    padding: 0.35rem 0.75rem;
+  }
+  .booking-widget-sticky {
+    padding: 1.25rem;
+  }
+}

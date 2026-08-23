@@ -1,0 +1,117 @@
+/* ==========================================================================
+   NORTHSTAR COMMERCE - DESIGN TOKENS & VARIABLES
+   Sophisticated Modern Retail Identity
+   ========================================================================== */
+
+:root {
+  /* Color Palette - Refined Luxury Neutrals & Accents */
+  --color-bg: #faf9f6;
+  --color-bg-alt: #f3f2ee;
+  --color-surface: #ffffff;
+  --color-surface-hover: #f7f6f2;
+  
+  --color-text-primary: #121316;
+  --color-text-secondary: #525661;
+  --color-text-muted: #848995;
+  --color-text-inverse: #ffffff;
+
+  --color-border: #e6e4df;
+  --color-border-subtle: #eeece7;
+  --color-border-dark: #121316;
+
+  --color-accent: #121316;
+  --color-accent-hover: #2c2f36;
+  --color-accent-gold: #b38b4d;
+  --color-accent-gold-light: #f7f3ec;
+  --color-accent-burgundy: #7a222b;
+  
+  /* Status Colors */
+  --color-success: #15803d;
+  --color-success-bg: #f0fdf4;
+  --color-warning: #b45309;
+  --color-warning-bg: #fffbeb;
+  --color-danger: #b91c1c;
+  --color-danger-bg: #fef2f2;
+  --color-info: #0369a1;
+  --color-info-bg: #f0f9ff;
+
+  /* Typography */
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  --font-serif: 'Newsreader', 'Cormorant Garamond', Georgia, serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+
+  /* Font Sizes */
+  --text-2xs: 0.6875rem; /* 11px */
+  --text-xs: 0.75rem;     /* 12px */
+  --text-sm: 0.84375rem;  /* 13.5px */
+  --text-base: 0.9375rem; /* 15px */
+  --text-md: 1.0625rem;   /* 17px */
+  --text-lg: 1.25rem;     /* 20px */
+  --text-xl: 1.5rem;      /* 24px */
+  --text-2xl: 1.875rem;   /* 30px */
+  --text-3xl: 2.375rem;   /* 38px */
+  --text-4xl: 3.125rem;   /* 50px */
+  --text-5xl: 4rem;       /* 64px */
+
+  /* Spacing Scale */
+  --space-1: 0.25rem;  /* 4px */
+  --space-2: 0.5rem;   /* 8px */
+  --space-3: 0.75rem;  /* 12px */
+  --space-4: 1rem;     /* 16px */
+  --space-5: 1.25rem;  /* 20px */
+  --space-6: 1.5rem;   /* 24px */
+  --space-8: 2rem;     /* 32px */
+  --space-10: 2.5rem;  /* 40px */
+  --space-12: 3rem;    /* 48px */
+  --space-16: 4rem;    /* 64px */
+  --space-20: 5rem;    /* 80px */
+  --space-24: 6rem;    /* 96px */
+
+  /* Layout */
+  --container-max-width: 1440px;
+  --container-gutter: 2rem;
+  --header-height: 72px;
+  --announcement-height: 38px;
+
+  /* Shadows (Subtle, architectural, non-muddy) */
+  --shadow-xs: 0 1px 2px rgba(18, 19, 22, 0.04);
+  --shadow-sm: 0 2px 8px rgba(18, 19, 22, 0.05);
+  --shadow-md: 0 8px 24px rgba(18, 19, 22, 0.07);
+  --shadow-lg: 0 16px 40px rgba(18, 19, 22, 0.1);
+  --shadow-xl: 0 24px 60px rgba(18, 19, 22, 0.14);
+  --shadow-drawer: -8px 0 32px rgba(18, 19, 22, 0.12);
+
+  /* Radius (Crisp, modern, architectural - avoid overly rounded bubbly shapes) */
+  --radius-none: 0;
+  --radius-xs: 2px;
+  --radius-sm: 4px;
+  --radius-md: 6px;
+  --radius-lg: 10px;
+  --radius-full: 9999px;
+
+  /* Transitions */
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-fast: 0.15s ease;
+  --transition-base: 0.25s var(--ease-out-expo);
+  --transition-smooth: 0.4s var(--ease-out-expo);
+
+  /* Z-indexes */
+  --z-base: 1;
+  --z-sticky: 100;
+  --z-header: 200;
+  --z-overlay: 500;
+  --z-drawer: 600;
+  --z-modal: 700;
+  --z-toast: 1000;
+}
+
+@media (max-width: 768px) {
+  :root {
+    --container-gutter: 1.25rem;
+    --header-height: 64px;
+    --announcement-height: 42px;
+    --text-4xl: 2.25rem;
+    --text-5xl: 2.75rem;
+  }
+}
