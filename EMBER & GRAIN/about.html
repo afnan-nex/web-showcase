@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Craft & Heritage | Ember & Grain</title>
+  <meta name="description" content="Discover the philosophy of Ember & Grain: ancestral wood-fire hearth gastronomy, ancient heritage grains, regenerative farming, and the artisans behind our kitchen.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Site Header -->
+  <header class="site-header" id="site-header">
+    <div class="container-wide header-container">
+      <a href="index.html" class="brand-logo" aria-label="Ember and Grain Homepage">
+        <span class="brand-name">Ember & Grain</span>
+        <span class="brand-tagline">Hearth & Heritage Grains</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="reservation.html" class="nav-link">Reservations</a>
+        <a href="order.html" class="nav-link">Online Order</a>
+        <a href="about.html" class="nav-link active">Our Craft</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="reservation.html" class="btn btn-primary btn-sm">Reserve Table</a>
+        <button type="button" class="btn-cart-trigger" data-action="open-cart" aria-label="View shopping bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge-count">0</span>
+        </button>
+        <button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation drawer" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="brand-logo">
+        <span class="brand-name">Ember & Grain</span>
+        <span class="brand-tagline">West Village, NY</span>
+      </div>
+      <button type="button" class="mobile-nav-close" aria-label="Close menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="menu.html" class="mobile-nav-link">Menu & Gastronomy</a>
+      <a href="reservation.html" class="mobile-nav-link">Table Reservations</a>
+      <a href="order.html" class="mobile-nav-link">Online Ordering & Pickup</a>
+      <a href="about.html" class="mobile-nav-link active">Philosophy & Team</a>
+      <a href="contact.html" class="mobile-nav-link">Concierge & Events</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="reservation.html" class="btn btn-primary btn-block">Book a Reservation</a>
+      <p class="text-dim" style="font-size: 0.78rem; text-align: center; margin-top: 12px;">482 Hudson Street, West Village, NY</p>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Page Hero Banner -->
+    <section class="page-hero">
+      <div class="page-hero-bg">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80" alt="Ember and Grain Craft & Architecture" onerror="this.src='https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=1600&q=80'">
+      </div>
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <span class="eyebrow reveal-on-scroll">The Genesis</span>
+        <h1 class="page-hero-title reveal-on-scroll delay-1">The Soul of Fire & Grain</h1>
+        <p class="page-hero-lead reveal-on-scroll delay-2">
+          An ongoing devotion to ancestral cooking techniques, untouched heirloom seeds, and the pursuit of understated architectural elegance.
+        </p>
+      </div>
+    </section>
+
+    <!-- Pillar 1: The Hearth -->
+    <section class="section-spacer">
+      <div class="container">
+        <div class="story-split-grid">
+          <div class="story-content reveal-on-scroll">
+            <span class="eyebrow">The Element of Fire</span>
+            <h2 class="heading-1" style="margin-bottom: 16px;">The 850° Dual White-Oak Hearth</h2>
+            <p class="text-muted" style="margin-bottom: 16px;">
+              At the core of Ember & Grain stands our custom dual hearth, hand-built from Pennsylvania firebrick and reclaimed Hudson River cast iron. We burn only kiln-dried white oak and seasonal fruitwoods—apple, cherry, and sugar maple—each selected for the specific aromatic profile it imparts to radiant coals.
+            </p>
+            <p class="text-muted" style="margin-bottom: 20px;">
+              Cooking over live embers requires continuous sensory vigilance. There are no dials or digital sensors. Heat is modulated purely through intuition, airflow manipulation, and elevation above glowing coals. The result is a profound, caramelized exterior enclosing delicate tenderness that modern gas ranges cannot replicate.
+            </p>
+
+            <div class="story-quote-card">
+              <p>“When you cook over wood flame, every log tells a story of weather, rain, and soil. You are capturing nature's purest energy.”</p>
+              <span class="story-quote-author">— Julian Mercer, Chef Patron</span>
+            </div>
+          </div>
+
+          <div class="story-img-collage reveal-on-scroll delay-1">
+            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1000&q=80" alt="Wood-Fired Hearth Plating" class="story-img-main" onerror="this.src='https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1000&q=80'">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Visual Mosaic Grid -->
+    <section class="container reveal-on-scroll">
+      <div class="story-mosaic-grid">
+        <div class="story-mosaic-item">
+          <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=800&q=80" alt="Sourdough Grain Fermentation" onerror="this.src='https://images.unsplash.com/photo-1584776296944-ab6fb57b0bdd?auto=format&fit=crop&w=800&q=80'">
+        </div>
+        <div class="story-mosaic-item">
+          <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80" alt="Reserve Wine Cellar Collection" onerror="this.src='https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=800&q=80'">
+        </div>
+        <div class="story-mosaic-item">
+          <img src="https://images.unsplash.com/photo-1537047902294-62a40c20a6ae?auto=format&fit=crop&w=800&q=80" alt="The Glass Veranda Solarium" onerror="this.src='https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80'">
+        </div>
+      </div>
+    </section>
+
+    <!-- Pillar 2: Ancient Grains -->
+    <section class="section-spacer">
+      <div class="container">
+        <div class="story-split-grid">
+          <div class="story-img-collage reveal-on-scroll">
+            <img src="https://images.unsplash.com/photo-1584776296944-ab6fb57b0bdd?auto=format&fit=crop&w=1000&q=80" alt="Ancient Heritage Grains" class="story-img-main" onerror="this.src='https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&w=1000&q=80'">
+          </div>
+
+          <div class="story-content reveal-on-scroll delay-1">
+            <span class="eyebrow">The Seed of Civilization</span>
+            <h2 class="heading-1" style="margin-bottom: 16px;">Heirloom Grains & 48-Hour Fermentation</h2>
+            <p class="text-muted" style="margin-bottom: 16px;">
+              Modern industrial agriculture has bred wheat for yield, stripping it of genetic complexity and deep mineral character. At Ember & Grain, we work directly with independent, certified organic farmers cultivating unhybridized heirloom grains:
+            </p>
+            <ul style="list-style: disc; margin-left: 20px; color: var(--color-text-secondary); margin-bottom: 20px; font-size: 0.92rem; line-height: 1.8;">
+              <li><strong>Einkorn:</strong> The world's oldest domesticated wheat, rich in carotenoids and nutty sweetness.</li>
+              <li><strong>Emmer Farro:</strong> Cultivated since ancient Mesopotamia, offering an earthy chew and robust mineral structure.</li>
+              <li><strong>Red Spelt:</strong> Gentle on digestion, stone-milled weekly in the Hudson Valley for our sourdough boule and pastas.</li>
+              <li><strong>Purple Karma Barley:</strong> Toasted over embers to brew our signature aperitif infusions and confectionery crisps.</li>
+            </ul>
+            <p class="text-muted">
+              Master Baker Evelyn Saint-Claire oversees our wild sourdough fermentation—a 48-hour cold-retardation process that breaks down phytates, yielding unmatched aromatics and effortless digestibility.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pillar 3: Architectural Sanctuary -->
+    <section class="section-spacer-sm" style="background-color: var(--color-bg-secondary); border-top: 1px solid var(--color-border); border-bottom: 1px solid var(--color-border);">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="eyebrow">Spatial Design</span>
+          <h2 class="heading-2">An Architecture of Warmth & Tactility</h2>
+          <p class="text-muted" style="margin-top: 8px;">Conceived in collaboration with bespoke architectural artisans, every surface celebrates natural, honest materials.</p>
+        </div>
+
+        <div class="seating-preview-grid">
+          <div class="seating-card reveal-on-scroll">
+            <div class="seating-card-content">
+              <span class="eyebrow">Materiality</span>
+              <h3 class="seating-name">Charred Shou Sugi Ban</h3>
+              <p class="seating-desc">Japanese flame-preserved cedar planks lining our dining salon, absorbing sound and creating a velvety acoustic envelope.</p>
+            </div>
+          </div>
+          <div class="seating-card reveal-on-scroll delay-1">
+            <div class="seating-card-content">
+              <span class="eyebrow">Craft</span>
+              <h3 class="seating-name">Live-Edge American Walnut</h3>
+              <p class="seating-desc">Communal and private dining tables handcrafted from 150-year-old fallen Pennsylvania timber, finished with natural beeswax.</p>
+            </div>
+          </div>
+          <div class="seating-card reveal-on-scroll delay-2">
+            <div class="seating-card-content">
+              <span class="eyebrow">Atmosphere</span>
+              <h3 class="seating-name">Smoked Glass & Brass</h3>
+              <p class="seating-desc">Custom mouth-blown lanterns cast a flattering, candlelit golden hue reminiscent of setting autumn sun.</p>
+            </div>
+          </div>
+          <div class="seating-card reveal-on-scroll delay-3">
+            <div class="seating-card-content">
+              <span class="eyebrow">Sanctuary</span>
+              <h3 class="seating-name">Limestone Vault</h3>
+              <p class="seating-desc">Subterranean arches carved from raw limestone, keeping our 1,800 reserve vintages at constant 55° humidity.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Culinary Team Full Bios -->
+    <section class="section-spacer">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="eyebrow">The Leadership</span>
+          <h2 class="heading-2">The Artisans of Ember & Grain</h2>
+        </div>
+
+        <div class="chef-team-grid">
+          <div class="chef-card reveal-on-scroll">
+            <div class="chef-img-wrap">
+              <img src="https://images.unsplash.com/photo-1577219491135-ce391730fb2c?auto=format&fit=crop&w=800&q=80" alt="Julian Mercer">
+            </div>
+            <div class="chef-info">
+              <h3 class="chef-name">Julian Mercer</h3>
+              <span class="chef-role">Chef Patron & Co-Founder</span>
+              <p class="chef-bio">
+                Julian spent over a decade honing his wood-fire craft across the Basque countryside and Scandinavia before founding Ember & Grain. His cooking is defined by primal fire, restraint, and an uncompromising respect for seasonal ingredients.
+              </p>
+              <div class="chef-quote">“The fire strips away everything superfluous, leaving only truth on the plate.”</div>
+            </div>
+          </div>
+
+          <div class="chef-card reveal-on-scroll delay-1">
+            <div class="chef-img-wrap">
+              <img src="https://images.unsplash.com/photo-1583394838336-acd977736f90?auto=format&fit=crop&w=800&q=80" alt="Evelyn Saint-Claire">
+            </div>
+            <div class="chef-info">
+              <h3 class="chef-name">Evelyn Saint-Claire</h3>
+              <span class="chef-role">Executive Baker & Pastry Chef</span>
+              <p class="chef-bio">
+                Trained in artisanal bakeries in Paris and San Francisco, Evelyn has dedicated her career to reviving ancient grain landraces. Her hearth-baked loaves and grain-infused confections form the foundational soul of our dining room.
+              </p>
+              <div class="chef-quote">“Bread is not a side dish; it is the oldest communal bond in human culture.”</div>
+            </div>
+          </div>
+
+          <div class="chef-card reveal-on-scroll delay-2">
+            <div class="chef-img-wrap">
+              <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=800&q=80" alt="Marcello Vance">
+            </div>
+            <div class="chef-info">
+              <h3 class="chef-name">Marcello Vance</h3>
+              <span class="chef-role">Head Sommelier & Cellar Director</span>
+              <p class="chef-bio">
+                An Advanced Sommelier through the Court of Master Sommeliers, Marcello directs our 1,800-bottle cellar. He works directly with small family growers in Burgundy, Piedmont, the Loire Valley, and the Finger Lakes.
+              </p>
+              <div class="chef-quote">“We champion wines made by farmers who care for their soils as much as we care for our fire.”</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Reservation & Private Dining Banner -->
+    <section class="section-spacer-sm container reveal-on-scroll">
+      <div class="reservation-cta-banner">
+        <span class="eyebrow">Experience Our Craft</span>
+        <h2>Join Us in the West Village</h2>
+        <p>Book an intimate dinner in our Hearth Room or front-row seats at the Chef's Counter.</p>
+        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+          <a href="reservation.html" class="btn btn-primary">Book Table Online</a>
+          <a href="menu.html" class="btn btn-secondary">Explore Menu</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3 class="brand-name">Ember & Grain</h3>
+        <p>Contemporary Wood-Fired Gastronomy & Ancient Heritage Grains in the West Village of New York.</p>
+        <div class="footer-awards-badge">
+          <span class="award-star">★</span>
+          <span class="award-text">Michelin Guide 2024 Selection</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Gastronomy Menu</a></li>
+          <li><a href="reservation.html">Table Reservations</a></li>
+          <li><a href="order.html">Online Ordering & Pickup</a></li>
+          <li><a href="about.html">Philosophy & Sourcing</a></li>
+          <li><a href="contact.html">Concierge & Inquiries</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Sanctuary Location</h4>
+        <div class="footer-contact-info">
+          <p>482 Hudson Street<br>West Village, New York, NY 10014</p>
+          <p>Concierge: +1 (212) 555-8930</p>
+          <p>Email: concierge@emberandgrain.com</p>
+          <p>Subway: Christopher St (1 Train) or W 4th St (A, C, E, B, D, F, M)</p>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">The Ember Salon</h4>
+        <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 12px;">
+          Join our private patron registry for seasonal menu previews, rare cellar allocation releases, and masterclass invitations.
+        </p>
+        <form class="newsletter-form footer-newsletter-form">
+          <input type="email" placeholder="Your email address" class="input-luxury" required aria-label="Email for salon newsletter">
+          <button type="submit" class="btn btn-primary btn-sm">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>&copy; 2026 Ember & Grain Restaurant Group. All Rights Reserved.</span>
+      <span>Curated with Pure HTML, CSS & Vanilla JavaScript • GitHub Pages Ready</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

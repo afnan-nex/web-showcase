@@ -1,0 +1,303 @@
+/* ==========================================================================
+   EMBER & GRAIN — RESPONSIVE DESIGN
+   Tested viewports: 320px, 375px, 390px, 430px, 768px, 1024px, 1280px, 1440px, 1920px
+   ========================================================================== */
+
+/* Ultra-Wide Screens (>= 1680px) */
+@media (min-width: 1680px) {
+  .hero-cinematic {
+    min-height: 85vh;
+  }
+}
+
+/* Desktops & Laptops (<= 1280px) */
+@media (max-width: 1280px) {
+  .container-wide {
+    padding-left: var(--space-md);
+    padding-right: var(--space-md);
+  }
+
+  .signature-dishes-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-md);
+  }
+
+  .menu-category-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-sm);
+  }
+}
+
+/* Large Tablets & Small Laptops (<= 1024px) */
+@media (max-width: 1024px) {
+  .desktop-nav {
+    display: none;
+  }
+
+  .mobile-nav-toggle {
+    display: inline-flex;
+  }
+
+  .signature-dishes-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .seating-preview-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .menu-category-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .story-split-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .story-img-main {
+    width: 100%;
+  }
+
+  .story-img-badge {
+    display: none;
+  }
+
+  .reservation-booking-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .checkout-wizard-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-split-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .qv-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .qv-img-column {
+    min-height: 260px;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+/* Tablets & Mobile Landscape (<= 768px) */
+@media (max-width: 768px) {
+  :root {
+    --space-md: 16px;
+    --space-lg: 20px;
+    --space-xl: 28px;
+    --space-2xl: 40px;
+  }
+
+  .site-header {
+    padding: 16px 0;
+  }
+
+  .site-header.is-scrolled {
+    padding: 12px 0;
+  }
+
+  .header-actions .btn-sm {
+    display: none; /* Keep header clean on mobile, accessible via mobile drawer */
+  }
+
+  .hero-cinematic {
+    padding-top: 100px;
+    padding-bottom: var(--space-xl);
+    min-height: auto;
+  }
+
+  .hero-cinematic-actions {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cinematic-actions .btn {
+    width: 100%;
+  }
+
+  .stats-bar-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .stat-item:nth-child(2) {
+    border-right: none;
+  }
+
+  .stat-item:nth-child(3), .stat-item:nth-child(4) {
+    border-top: 1px solid var(--color-border);
+  }
+
+  .chef-team-grid {
+    grid-template-columns: 1fr;
+    max-width: 440px;
+    margin: 0 auto;
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-drawer {
+    max-width: 100vw;
+  }
+
+  .modifier-modal, .quick-view-modal {
+    max-height: 94vh;
+  }
+
+  .mod-modal-header {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .mod-modal-img-wrap {
+    width: 90px;
+    height: 90px;
+  }
+
+  .time-slots-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .my-res-info-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .voucher-details-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .voucher-card {
+    padding: var(--space-md);
+  }
+
+  .voucher-actions {
+    flex-direction: column;
+  }
+
+  .voucher-actions .btn {
+    width: 100%;
+  }
+
+  .tracking-summary-panel {
+    grid-template-columns: 1fr;
+  }
+
+  .stepper-steps-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-md);
+  }
+
+  .stepper-bar {
+    display: none;
+  }
+
+  .story-mosaic-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 8px;
+    text-align: center;
+  }
+
+  .checkout-steps-bar {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+}
+
+/* Mobile Phones (<= 430px: iPhone 14/15/16 Pro Max, Pixel 8) */
+@media (max-width: 430px) {
+  .signature-dishes-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .seating-preview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .menu-category-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .table-matrix-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .time-slots-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .order-type-picker {
+    grid-template-columns: 1fr;
+  }
+
+  .tip-selector {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .menu-search-row {
+    flex-direction: column;
+  }
+
+  .party-size-pill {
+    width: 36px;
+    height: 36px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Ultra-compact Phones (<= 375px & 320px: iPhone SE, Galaxy Z Flip cover) */
+@media (max-width: 375px) {
+  :root {
+    --space-md: 12px;
+    --space-lg: 16px;
+  }
+
+  .brand-name {
+    font-size: 1.35rem;
+  }
+
+  .stats-bar-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stat-item {
+    border-right: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+
+  .stat-item:last-child {
+    border-bottom: none;
+  }
+
+  .my-res-info-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .cart-item {
+    flex-direction: column;
+  }
+
+  .cart-item-img-wrap {
+    width: 100%;
+    height: 100px;
+  }
+}

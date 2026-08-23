@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Luxury Table Reservations | Ember & Grain</title>
+  <meta name="description" content="Reserve an extraordinary dining experience at Ember & Grain. Select from the Main Hearth Room, Chef's Tasting Counter, The Glass Veranda, or Reserve Cellar Vault.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Site Header -->
+  <header class="site-header" id="site-header">
+    <div class="container-wide header-container">
+      <a href="index.html" class="brand-logo" aria-label="Ember and Grain Homepage">
+        <span class="brand-name">Ember & Grain</span>
+        <span class="brand-tagline">Hearth & Heritage Grains</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="reservation.html" class="nav-link active">Reservations</a>
+        <a href="order.html" class="nav-link">Online Order</a>
+        <a href="about.html" class="nav-link">Our Craft</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="reservation.html" class="btn btn-primary btn-sm">Reserve Table</a>
+        <button type="button" class="btn-cart-trigger" data-action="open-cart" aria-label="View shopping bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge-count">0</span>
+        </button>
+        <button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation drawer" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="brand-logo">
+        <span class="brand-name">Ember & Grain</span>
+        <span class="brand-tagline">West Village, NY</span>
+      </div>
+      <button type="button" class="mobile-nav-close" aria-label="Close menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="menu.html" class="mobile-nav-link">Menu & Gastronomy</a>
+      <a href="reservation.html" class="mobile-nav-link active">Table Reservations</a>
+      <a href="order.html" class="mobile-nav-link">Online Ordering & Pickup</a>
+      <a href="about.html" class="mobile-nav-link">Philosophy & Team</a>
+      <a href="contact.html" class="mobile-nav-link">Concierge & Events</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="reservation.html" class="btn btn-primary btn-block">Book a Reservation</a>
+      <p class="text-dim" style="font-size: 0.78rem; text-align: center; margin-top: 12px;">482 Hudson Street, West Village, NY</p>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Page Hero Banner -->
+    <section class="page-hero">
+      <div class="page-hero-bg">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1600&q=80" alt="Ember and Grain Hearth Sanctuary" onerror="this.src='https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=1600&q=80'">
+      </div>
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <span class="eyebrow reveal-on-scroll">Concierge Booking Engine</span>
+        <h1 class="page-hero-title reveal-on-scroll delay-1">Table Reservations</h1>
+        <p class="page-hero-lead reveal-on-scroll delay-2">
+          Reserve an intimate table in our wood-fired sanctuary. Reservations open 30 days in advance at 9:00 AM EST.
+        </p>
+      </div>
+    </section>
+
+    <!-- Reservation Tabs (Book vs Manage) -->
+    <section class="container section-spacer-sm">
+      <div class="reservation-tab-nav reveal-on-scroll" role="tablist" aria-label="Reservation Mode">
+        <button type="button" class="reservation-tab-btn active" data-tab-target="book" role="tab" aria-selected="true">Book a Table</button>
+        <button type="button" class="reservation-tab-btn" data-tab-target="manage" role="tab" aria-selected="false">My Reservations</button>
+      </div>
+
+      <!-- TAB 1: BOOK A TABLE -->
+      <div id="tab-book" class="reservation-tab-panel active" role="tabpanel">
+        <!-- Step 1: Select Seating Sanctuary -->
+        <div style="margin-bottom: var(--space-2xl);">
+          <div class="section-header text-center reveal-on-scroll">
+            <span class="eyebrow">Step 1 of 3</span>
+            <h2 class="heading-2">Choose Your Dining Atmosphere</h2>
+            <p class="text-muted" style="margin-top: 4px;">Each room offers a distinctly curated sensory journey.</p>
+          </div>
+          <div id="seating-areas-grid" class="seating-preview-grid">
+            <!-- Populated dynamically by js/reservation.js -->
+          </div>
+          <div id="area-capacity-warning" class="text-ember" style="display: none; font-size: 0.85rem; text-align: center; margin-top: 12px;" role="alert"></div>
+        </div>
+
+        <!-- Step 2 & 3: Date, Time, Table Matrix & Guest Details -->
+        <form id="eg-reservation-form" class="reservation-booking-layout">
+          <!-- Left Column: Date, Party Size, Time & Table Matrix -->
+          <div class="reservation-form-panel reveal-on-scroll">
+            <h3 class="res-section-title">Date, Time & Table Selection</h3>
+
+            <!-- Party Size Picker -->
+            <div class="form-group">
+              <label class="form-label" for="res-guests-input">Party Size (Number of Guests)</label>
+              <div class="party-size-picker" role="group" aria-label="Party Size Selection">
+                <button type="button" class="party-size-pill" data-count="1" onclick="ReservationEngine.setGuests(1)" aria-label="1 guest">1</button>
+                <button type="button" class="party-size-pill active" data-count="2" onclick="ReservationEngine.setGuests(2)" aria-label="2 guests">2</button>
+                <button type="button" class="party-size-pill" data-count="3" onclick="ReservationEngine.setGuests(3)" aria-label="3 guests">3</button>
+                <button type="button" class="party-size-pill" data-count="4" onclick="ReservationEngine.setGuests(4)" aria-label="4 guests">4</button>
+                <button type="button" class="party-size-pill" data-count="5" onclick="ReservationEngine.setGuests(5)" aria-label="5 guests">5</button>
+                <button type="button" class="party-size-pill" data-count="6" onclick="ReservationEngine.setGuests(6)" aria-label="6 guests">6</button>
+                <button type="button" class="party-size-pill" data-count="8" onclick="ReservationEngine.setGuests(8)" aria-label="8 guests">8</button>
+                <button type="button" class="party-size-pill" data-count="10" onclick="ReservationEngine.setGuests(10)" aria-label="10 guests">10</button>
+                <button type="button" class="party-size-pill" data-count="12" onclick="ReservationEngine.setGuests(12)" aria-label="12 guests">12</button>
+              </div>
+              <input type="hidden" id="res-guests-input" value="2">
+            </div>
+
+            <!-- Date Picker -->
+            <div class="form-group">
+              <label class="form-label" for="res-date-input">Dining Date</label>
+              <input type="date" id="res-date-input" class="input-luxury" required>
+            </div>
+
+            <!-- Time Slots Selection -->
+            <div class="form-group">
+              <label class="form-label">Lunch & Brunch Time Slots</label>
+              <div id="slots-lunch-container" class="time-slots-grid">
+                <!-- Lunch slots dynamically populated -->
+              </div>
+
+              <label class="form-label" style="margin-top: 16px;">Dinner Time Slots</label>
+              <div id="slots-dinner-container" class="time-slots-grid">
+                <!-- Dinner slots dynamically populated -->
+              </div>
+            </div>
+
+            <!-- Visual Table Availability Matrix -->
+            <div class="form-group" style="margin-top: var(--space-lg); padding-top: var(--space-md); border-top: 1px solid var(--color-border);">
+              <div style="display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px;">
+                <label class="form-label" style="margin-bottom: 0;">Available Tables in Selected Area</label>
+                <span class="text-dim" style="font-size: 0.75rem;">Live capacity simulation</span>
+              </div>
+              <div id="table-matrix-grid" class="table-matrix-grid">
+                <!-- Populated dynamically by js/reservation.js -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Guest Information & Confirmation CTA -->
+          <div class="reservation-form-panel reveal-on-scroll delay-1">
+            <h3 class="res-section-title">Guest & Concierge Details</h3>
+
+            <div class="form-group">
+              <label class="form-label" for="res-name">Primary Guest Full Name *</label>
+              <input type="text" id="res-name" class="input-luxury" placeholder="e.g. Lord Alexander Wright" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="res-email">Email Address (For Digital Pass & iCal) *</label>
+              <input type="email" id="res-email" class="input-luxury" placeholder="alexander@luxury.com" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="res-phone">Mobile Phone (For SMS Concierge Confirmation) *</label>
+              <input type="tel" id="res-phone" class="input-luxury" placeholder="+1 (212) 555-0192" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="res-occasion">Dining Occasion</label>
+              <select id="res-occasion" class="select-luxury">
+                <option value="Casual Fine Dining">Casual Fine Dining</option>
+                <option value="Anniversary Celebration">Anniversary Celebration</option>
+                <option value="Birthday Dinner">Birthday Dinner</option>
+                <option value="Executive Business Dinner">Executive Business Dinner</option>
+                <option value="Romantic Date Night">Romantic Date Night</option>
+                <option value="Chef Tasting Experience">Chef Tasting Experience</option>
+              </select>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="res-notes">Dietary Nuances & Special Requests</label>
+              <textarea id="res-notes" class="textarea-luxury textarea-sm" placeholder="Please list allergies (celiac, shellfish, dairy), anniversary wishes, or seating preferences..."></textarea>
+            </div>
+
+            <div style="background-color: var(--color-bg-tertiary); padding: 12px 16px; border-left: 2px solid var(--color-accent-ember); margin-bottom: var(--space-lg); font-size: 0.82rem; color: var(--color-text-secondary);">
+              <strong>Cancellation Courtesy:</strong> Standard reservations may be cancelled without penalty up to 24 hours prior. Chef's Counter and Cellar Vault seatings require 48 hours notice.
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-block">
+              <span>Confirm Luxury Reservation</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12"></polyline>
+              </svg>
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <!-- TAB 2: MY RESERVATIONS PORTAL -->
+      <div id="tab-manage" class="reservation-tab-panel" role="tabpanel">
+        <div class="section-header text-center reveal-on-scroll">
+          <span class="eyebrow">Patron Management</span>
+          <h2 class="heading-2">Your Dining Itineraries</h2>
+          <p class="text-muted" style="margin-top: 4px;">View, modify, download digital passes, or cancel bookings saved on this device.</p>
+        </div>
+
+        <div id="my-reservations-list" class="my-reservations-list">
+          <!-- Dynamically populated by js/reservation.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3 class="brand-name">Ember & Grain</h3>
+        <p>Contemporary Wood-Fired Gastronomy & Ancient Heritage Grains in the West Village of New York.</p>
+        <div class="footer-awards-badge">
+          <span class="award-star">★</span>
+          <span class="award-text">Michelin Guide 2024 Selection</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Gastronomy Menu</a></li>
+          <li><a href="reservation.html">Table Reservations</a></li>
+          <li><a href="order.html">Online Ordering & Pickup</a></li>
+          <li><a href="about.html">Philosophy & Sourcing</a></li>
+          <li><a href="contact.html">Concierge & Inquiries</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Sanctuary Location</h4>
+        <div class="footer-contact-info">
+          <p>482 Hudson Street<br>West Village, New York, NY 10014</p>
+          <p>Concierge: +1 (212) 555-8930</p>
+          <p>Email: concierge@emberandgrain.com</p>
+          <p>Subway: Christopher St (1 Train) or W 4th St (A, C, E, B, D, F, M)</p>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">The Ember Salon</h4>
+        <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 12px;">
+          Join our private patron registry for seasonal menu previews, rare cellar allocation releases, and masterclass invitations.
+        </p>
+        <form class="newsletter-form footer-newsletter-form">
+          <input type="email" placeholder="Your email address" class="input-luxury" required aria-label="Email for salon newsletter">
+          <button type="submit" class="btn btn-primary btn-sm">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>&copy; 2026 Ember & Grain Restaurant Group. All Rights Reserved.</span>
+      <span>Curated with Pure HTML, CSS & Vanilla JavaScript • GitHub Pages Ready</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/reservation.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

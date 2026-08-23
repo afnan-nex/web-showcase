@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Online Ordering & Live Tracking | Ember & Grain</title>
+  <meta name="description" content="Order wood-fired culinary dishes for curbside pickup or white-glove delivery in Manhattan. Live step-by-step hearth order tracking.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Site Header -->
+  <header class="site-header" id="site-header">
+    <div class="container-wide header-container">
+      <a href="index.html" class="brand-logo" aria-label="Ember and Grain Homepage">
+        <span class="brand-name">Ember & Grain</span>
+        <span class="brand-tagline">Hearth & Heritage Grains</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link">Menu</a>
+        <a href="reservation.html" class="nav-link">Reservations</a>
+        <a href="order.html" class="nav-link active">Online Order</a>
+        <a href="about.html" class="nav-link">Our Craft</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="reservation.html" class="btn btn-primary btn-sm">Reserve Table</a>
+        <button type="button" class="btn-cart-trigger" data-action="open-cart" aria-label="View shopping bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge-count">0</span>
+        </button>
+        <button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation drawer" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="brand-logo">
+        <span class="brand-name">Ember & Grain</span>
+        <span class="brand-tagline">West Village, NY</span>
+      </div>
+      <button type="button" class="mobile-nav-close" aria-label="Close menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="menu.html" class="mobile-nav-link">Menu & Gastronomy</a>
+      <a href="reservation.html" class="mobile-nav-link">Table Reservations</a>
+      <a href="order.html" class="mobile-nav-link active">Online Ordering & Pickup</a>
+      <a href="about.html" class="mobile-nav-link">Philosophy & Team</a>
+      <a href="contact.html" class="mobile-nav-link">Concierge & Events</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="reservation.html" class="btn btn-primary btn-block">Book a Reservation</a>
+      <p class="text-dim" style="font-size: 0.78rem; text-align: center; margin-top: 12px;">482 Hudson Street, West Village, NY</p>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Page Hero Banner -->
+    <section class="page-hero">
+      <div class="page-hero-bg">
+        <img src="https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=80" alt="Ember and Grain Online Ordering" onerror="this.src='https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1600&q=80'">
+      </div>
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <span class="eyebrow reveal-on-scroll">Direct Hearth Kitchen Service</span>
+        <h1 class="page-hero-title reveal-on-scroll delay-1">Online Ordering & Tracking</h1>
+        <p class="page-hero-lead reveal-on-scroll delay-2">
+          Curated wood-fired dishes, artisanal breads, and paired elixirs prepared fresh to order for curbside pickup or expedited courier delivery.
+        </p>
+      </div>
+    </section>
+
+    <!-- Ordering & Checkout Wizard Container -->
+    <section class="container section-spacer-sm" id="checkout-wizard-container">
+      <!-- Steps Indicator -->
+      <div class="checkout-steps-bar reveal-on-scroll" role="tablist" aria-label="Checkout Progression">
+        <div class="checkout-step-indicator-item active" data-step="1">
+          <div class="step-circle">1</div>
+          <span>Selection & Type</span>
+        </div>
+        <div class="checkout-step-indicator-item" data-step="2">
+          <div class="step-circle">2</div>
+          <span>Guest Details</span>
+        </div>
+        <div class="checkout-step-indicator-item" data-step="3">
+          <div class="step-circle">3</div>
+          <span>Payment</span>
+        </div>
+        <div class="checkout-step-indicator-item" data-step="4">
+          <div class="step-circle">4</div>
+          <span>Live Tracking</span>
+        </div>
+      </div>
+
+      <!-- Empty Cart Notice -->
+      <div id="order-empty-notice" class="menu-empty-state" style="display: none;">
+        <div class="empty-icon">
+          <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.2" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+        </div>
+        <h3>Your Order Is Currently Empty</h3>
+        <p>Explore our menu to select wood-fired dishes, dry-aged meats, and artisanal breads before checking out.</p>
+        <a href="menu.html" class="btn btn-primary btn-sm" style="margin-top: 16px;">Browse Menu Catalog</a>
+      </div>
+
+      <!-- STEP SECTIONS 1, 2, 3 LAYOUT -->
+      <div id="order-checkout-panels" class="checkout-wizard-layout">
+        <!-- Left Wizard Steps Container -->
+        <div class="checkout-main-content">
+
+          <!-- STEP 1: Order Type & Cart Review -->
+          <div class="checkout-step-section active" data-step-section="1">
+            <div class="reservation-form-panel">
+              <h3 class="res-section-title">1. Choose Fulfillment Method</h3>
+              
+              <div class="order-type-picker">
+                <div class="order-type-btn active" data-type="pickup" onclick="OrderController.setOrderType('pickup')" tabindex="0" role="button" aria-label="Curbside Host Pickup at 482 Hudson St">
+                  <h4>Curbside Host Pickup</h4>
+                  <p>Ready in 25-35 mins at 482 Hudson St host stand. Complimentary.</p>
+                </div>
+                <div class="order-type-btn" data-type="delivery" onclick="OrderController.setOrderType('delivery')" tabindex="0" role="button" aria-label="Expedited Courier Delivery in Manhattan">
+                  <h4>Expedited Courier Delivery</h4>
+                  <p>Delivered in 45-55 mins within Manhattan. $7.50 (Free over $100).</p>
+                </div>
+              </div>
+
+              <!-- Pickup Time Slot Selection -->
+              <div id="pickup-time-fields" class="form-group">
+                <label class="form-label" for="pickup-time-slot">Preferred Pickup Window</label>
+                <select class="select-luxury" id="pickup-time-slot">
+                  <option value="asap">As Soon As Ready (~30 mins)</option>
+                  <option value="12:00">12:00 PM</option>
+                  <option value="12:30">12:30 PM</option>
+                  <option value="13:00">1:00 PM</option>
+                  <option value="17:30">5:30 PM</option>
+                  <option value="18:00">6:00 PM</option>
+                  <option value="18:30">6:30 PM</option>
+                  <option value="19:00">7:00 PM</option>
+                  <option value="19:30">7:30 PM</option>
+                  <option value="20:00">8:00 PM</option>
+                </select>
+              </div>
+
+              <h3 class="res-section-title" style="margin-top: var(--space-xl);">Dishes in Your Order</h3>
+              <div id="order-cart-items">
+                <!-- Dynamically populated by js/order.js -->
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--space-lg);">
+                <a href="menu.html" class="luxury-link">+ Add More Dishes</a>
+                <button type="button" class="btn btn-primary" onclick="OrderController.goToStep(2)">
+                  <span>Continue to Guest Details ➔</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 2: Customer Contact & Delivery Details -->
+          <div class="checkout-step-section" data-step-section="2">
+            <div class="reservation-form-panel">
+              <h3 class="res-section-title">2. Patron Contact & Instructions</h3>
+
+              <div class="form-group">
+                <label class="form-label" for="cust-name">Full Name *</label>
+                <input type="text" id="cust-name" class="input-luxury" placeholder="e.g. Lady Clara Morgan" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cust-email">Email Address (For Receipt & Tracking Link) *</label>
+                <input type="email" id="cust-email" class="input-luxury" placeholder="clara.morgan@luxury.com" required>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="cust-phone">Mobile Phone (For Order Arrival SMS) *</label>
+                <input type="tel" id="cust-phone" class="input-luxury" placeholder="+1 (212) 555-0182" required>
+              </div>
+
+              <!-- Delivery Address Fields -->
+              <div id="delivery-address-fields" style="display: none; border-top: 1px solid var(--color-border); padding-top: var(--space-md); margin-top: var(--space-md);">
+                <h4 style="font-size: 1.05rem; margin-bottom: 12px; color: var(--color-accent-ember);">Manhattan Delivery Address</h4>
+                
+                <div class="form-group">
+                  <label class="form-label" for="deliv-street">Street Address *</label>
+                  <input type="text" id="deliv-street" class="input-luxury" placeholder="e.g. 450 West 14th Street">
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
+                  <div class="form-group">
+                    <label class="form-label" for="deliv-apt">Apt / Suite / Floor</label>
+                    <input type="text" id="deliv-apt" class="input-luxury" placeholder="Apt 12B">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="deliv-zip">ZIP Code (NYC) *</label>
+                    <input type="text" id="deliv-zip" class="input-luxury" placeholder="10014">
+                  </div>
+                </div>
+
+                <div class="form-group">
+                  <label class="form-label" for="deliv-instructions">Delivery Notes / Doorman Instructions</label>
+                  <input type="text" id="deliv-instructions" class="input-luxury" placeholder="e.g. Leave with front desk doorman, call upon arrival">
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label" for="order-special-notes">Kitchen Notes / Utensils Preference</label>
+                <textarea id="order-special-notes" class="textarea-luxury textarea-sm" placeholder="Please include compostable cutlery, extra bread bag, dressing on side..."></textarea>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--space-lg);">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="OrderController.goToStep(1)">
+                  <span>← Back to Dishes</span>
+                </button>
+                <button type="button" class="btn btn-primary" onclick="OrderController.validateAndProceedToPayment()">
+                  <span>Proceed to Payment ➔</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- STEP 3: Payment Simulation -->
+          <div class="checkout-step-section" data-step-section="3">
+            <div class="reservation-form-panel">
+              <h3 class="res-section-title">3. Secure Payment & Gratuity</h3>
+
+              <!-- Gratuity Selection -->
+              <div class="form-group">
+                <label class="form-label">Culinary Team Gratuity</label>
+                <div class="tip-selector">
+                  <button type="button" class="tip-pill" data-rate="0.18">18%</button>
+                  <button type="button" class="tip-pill active" data-rate="0.20">20% (Standard)</button>
+                  <button type="button" class="tip-pill" data-rate="0.22">22%</button>
+                  <button type="button" class="tip-pill" data-rate="0.25">25% (Generous)</button>
+                </div>
+              </div>
+
+              <!-- Apple Pay Mockup -->
+              <button type="button" class="apple-pay-btn-mock" onclick="OrderController.processPayment('apple_pay')" aria-label="Pay with Apple Pay">
+                <svg width="20" height="20" viewBox="0 0 170 170" fill="currentColor" aria-hidden="true">
+                  <path d="M150.37 130.25c-2.45 5.66-5.35 10.87-8.71 15.66-4.58 6.53-8.33 11.05-11.22 13.56-4.48 4.12-9.28 6.23-14.42 6.35-3.69 0-8.14-1.05-13.32-3.18-5.19-2.12-9.97-3.17-14.34-3.17-4.58 0-9.49 1.05-14.75 3.17-5.26 2.13-9.5 3.24-12.74 3.35-5.35.21-10.39-1.96-15.11-6.52-3.26-3.04-7.23-7.93-11.91-14.67-6.84-9.88-12.27-21.08-16.29-33.6-4.02-12.51-6.03-24.33-6.03-35.46 0-14.12 3.69-26.07 11.07-35.85 7.39-9.78 16.51-14.78 27.38-15.01 4.58 0 9.88 1.25 15.9 3.75 6.02 2.5 9.94 3.75 11.76 3.75 1.62 0 5.66-1.3 12.11-3.9 6.45-2.6 11.83-3.79 16.14-3.58 12.06.65 21.6 5.21 28.62 13.68-10.65 6.41-15.86 15.2-15.64 26.39.22 8.69 3.53 16.02 9.94 21.99 6.41 5.97 14.12 9.39 23.13 10.26-2.28 7.06-5.26 14.66-8.94 22.8zM119.22 31.84c0-7.39 2.66-14.34 7.99-20.85 5.33-6.52 11.84-10.54 19.54-12.06.65 1.09.98 2.39.98 3.91 0 7.39-2.77 14.45-8.31 21.18-5.54 6.73-12.27 10.65-20.2 11.74-.22-1.3-.33-2.6-.33-3.92z"/>
+                </svg>
+                <span>Express Pay with Apple Pay</span>
+              </button>
+
+              <div class="payment-divider">Or Pay with Credit Card</div>
+
+              <!-- Credit Card Fields -->
+              <div class="payment-simulation-box">
+                <div class="form-group">
+                  <label class="form-label" for="cc-number">Card Number</label>
+                  <input type="text" id="cc-number" class="input-luxury" placeholder="4532 •••• •••• 8842" maxlength="19" value="4532 8901 2345 6789">
+                </div>
+
+                <div style="display: grid; grid-template-columns: 1fr 1fr; gap: var(--space-md);">
+                  <div class="form-group">
+                    <label class="form-label" for="cc-expiry">Expiration (MM/YY)</label>
+                    <input type="text" id="cc-expiry" class="input-luxury" placeholder="08/28" maxlength="5" value="12/28">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label" for="cc-cvv">Security Code (CVV)</label>
+                    <input type="password" id="cc-cvv" class="input-luxury" placeholder="•••" maxlength="4" value="882">
+                  </div>
+                </div>
+
+                <div class="form-group" style="margin-bottom: 0;">
+                  <label class="form-label" for="cc-name">Cardholder Name</label>
+                  <input type="text" id="cc-name" class="input-luxury" placeholder="Name on card" value="Lady Clara Morgan">
+                </div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; margin-top: var(--space-lg);">
+                <button type="button" class="btn btn-secondary btn-sm" onclick="OrderController.goToStep(2)">
+                  <span>← Back to Details</span>
+                </button>
+                <button type="button" class="btn btn-primary" onclick="OrderController.processPayment('credit_card')">
+                  <span id="btn-pay-total">Pay $0.00</span>
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Right Order Summary Sidebar -->
+        <aside class="checkout-sidebar">
+          <div class="reservation-form-panel">
+            <h3 class="res-section-title">Order Breakdown</h3>
+
+            <div class="cart-summary-breakdown" style="font-size: 0.88rem;">
+              <div class="summary-row">
+                <span>Dishes Subtotal</span>
+                <span id="checkout-subtotal">$0.00</span>
+              </div>
+              <div class="summary-row">
+                <span>NYC Sales Tax (8.875%)</span>
+                <span id="checkout-tax">$0.00</span>
+              </div>
+              <div class="summary-row">
+                <span>Staff Gratuity</span>
+                <span id="checkout-gratuity">$0.00</span>
+              </div>
+              <div class="summary-row">
+                <span>Culinary Service Fee</span>
+                <span id="checkout-service">$2.50</span>
+              </div>
+              <div class="summary-row">
+                <span>Delivery Fee</span>
+                <span id="checkout-delivery">N/A (Pickup)</span>
+              </div>
+              <div class="summary-row summary-total">
+                <span>Total Amount</span>
+                <span id="checkout-total" style="color: var(--color-accent-gold); font-size: 1.25rem;">$0.00</span>
+              </div>
+            </div>
+
+            <div style="margin-top: var(--space-md); padding-top: var(--space-sm); border-top: 1px solid var(--color-border); font-size: 0.76rem; color: var(--color-text-tertiary); line-height: 1.4;">
+              🔒 256-Bit Encrypted Simulated Checkout. Prepared fresh in our White Oak Wood-Fired Hearth.
+            </div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- STEP 4: LIVE ORDER TRACKING -->
+      <div class="checkout-step-section" data-step-section="4">
+        <div id="order-tracking-container">
+          <!-- Dynamically populated by js/order.js -->
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3 class="brand-name">Ember & Grain</h3>
+        <p>Contemporary Wood-Fired Gastronomy & Ancient Heritage Grains in the West Village of New York.</p>
+        <div class="footer-awards-badge">
+          <span class="award-star">★</span>
+          <span class="award-text">Michelin Guide 2024 Selection</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Gastronomy Menu</a></li>
+          <li><a href="reservation.html">Table Reservations</a></li>
+          <li><a href="order.html">Online Ordering & Pickup</a></li>
+          <li><a href="about.html">Philosophy & Sourcing</a></li>
+          <li><a href="contact.html">Concierge & Inquiries</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Sanctuary Location</h4>
+        <div class="footer-contact-info">
+          <p>482 Hudson Street<br>West Village, New York, NY 10014</p>
+          <p>Concierge: +1 (212) 555-8930</p>
+          <p>Email: concierge@emberandgrain.com</p>
+          <p>Subway: Christopher St (1 Train) or W 4th St (A, C, E, B, D, F, M)</p>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">The Ember Salon</h4>
+        <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 12px;">
+          Join our private patron registry for seasonal menu previews, rare cellar allocation releases, and masterclass invitations.
+        </p>
+        <form class="newsletter-form footer-newsletter-form">
+          <input type="email" placeholder="Your email address" class="input-luxury" required aria-label="Email for salon newsletter">
+          <button type="submit" class="btn btn-primary btn-sm">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>&copy; 2026 Ember & Grain Restaurant Group. All Rights Reserved.</span>
+      <span>Curated with Pure HTML, CSS & Vanilla JavaScript • GitHub Pages Ready</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/order.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

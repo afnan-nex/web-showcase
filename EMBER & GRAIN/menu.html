@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Editorial Gastronomy Menu | Ember & Grain</title>
+  <meta name="description" content="Explore our seasonal wood-fired hearth menu: ancient grain brunch, dry-aged meats, wild seafood crudos, stone-milled sourdoughs, and botanical cocktails.">
+  
+  <!-- CSS Stylesheets -->
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/pages.css">
+  <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body>
+  <!-- Accessible Skip Link -->
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+  <!-- Site Header -->
+  <header class="site-header" id="site-header">
+    <div class="container-wide header-container">
+      <a href="index.html" class="brand-logo" aria-label="Ember and Grain Homepage">
+        <span class="brand-name">Ember & Grain</span>
+        <span class="brand-tagline">Hearth & Heritage Grains</span>
+      </a>
+
+      <nav class="desktop-nav" aria-label="Main Navigation">
+        <a href="index.html" class="nav-link">Home</a>
+        <a href="menu.html" class="nav-link active">Menu</a>
+        <a href="reservation.html" class="nav-link">Reservations</a>
+        <a href="order.html" class="nav-link">Online Order</a>
+        <a href="about.html" class="nav-link">Our Craft</a>
+        <a href="contact.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="header-actions">
+        <a href="reservation.html" class="btn btn-primary btn-sm">Reserve Table</a>
+        <button type="button" class="btn-cart-trigger" data-action="open-cart" aria-label="View shopping bag">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <path d="M16 10a4 4 0 0 1-8 0"></path>
+          </svg>
+          <span class="cart-badge-count">0</span>
+        </button>
+        <button type="button" class="mobile-nav-toggle" aria-label="Toggle navigation drawer" aria-expanded="false">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Navigation Drawer -->
+  <div class="mobile-nav-backdrop"></div>
+  <aside class="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation">
+    <div class="mobile-nav-header">
+      <div class="brand-logo">
+        <span class="brand-name">Ember & Grain</span>
+        <span class="brand-tagline">West Village, NY</span>
+      </div>
+      <button type="button" class="mobile-nav-close" aria-label="Close menu">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+          <line x1="18" y1="6" x2="6" y2="18"></line>
+          <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+      </button>
+    </div>
+    <div class="mobile-nav-links">
+      <a href="index.html" class="mobile-nav-link">Home</a>
+      <a href="menu.html" class="mobile-nav-link active">Menu & Gastronomy</a>
+      <a href="reservation.html" class="mobile-nav-link">Table Reservations</a>
+      <a href="order.html" class="mobile-nav-link">Online Ordering & Pickup</a>
+      <a href="about.html" class="mobile-nav-link">Philosophy & Team</a>
+      <a href="contact.html" class="mobile-nav-link">Concierge & Events</a>
+    </div>
+    <div class="mobile-nav-footer">
+      <a href="reservation.html" class="btn btn-primary btn-block">Book a Reservation</a>
+      <p class="text-dim" style="font-size: 0.78rem; text-align: center; margin-top: 12px;">482 Hudson Street, West Village, NY</p>
+    </div>
+  </aside>
+
+  <!-- Main Content -->
+  <main id="main-content">
+    <!-- Page Hero Banner -->
+    <section class="page-hero">
+      <div class="page-hero-bg">
+        <img src="https://images.unsplash.com/photo-1558030006-450675393462?auto=format&fit=crop&w=1600&q=80" alt="Ember and Grain Wood-Fired Menu" onerror="this.src='https://images.unsplash.com/photo-1544025162-d76694265947?auto=format&fit=crop&w=1600&q=80'">
+      </div>
+      <div class="page-hero-overlay"></div>
+      <div class="page-hero-content">
+        <span class="eyebrow reveal-on-scroll">Seasonal Gastronomy</span>
+        <h1 class="page-hero-title reveal-on-scroll delay-1">The Editorial Menu</h1>
+        <p class="page-hero-lead reveal-on-scroll delay-2">
+          An ongoing dialogue between radiant white-oak charcoal, freshly stone-ground heirloom grains, and regenerative seasonal harvests.
+        </p>
+      </div>
+    </section>
+
+    <!-- Menu Control Bar & Search -->
+    <section class="container" style="margin-top: -30px; position: relative; z-index: 10;">
+      <div class="menu-control-bar reveal-on-scroll">
+        <!-- Search Row -->
+        <div class="menu-search-row">
+          <div class="menu-search-wrap">
+            <div class="menu-search-icon" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                <circle cx="11" cy="11" r="8"></circle>
+                <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+              </svg>
+            </div>
+            <input 
+              type="text" 
+              id="menu-search-input" 
+              class="input-luxury menu-search-input" 
+              placeholder="Search by dish name, ingredient (e.g. farro, black cod, truffle), or flavor note..." 
+              autocomplete="off"
+              aria-label="Search gastronomy dishes"
+            >
+          </div>
+
+          <div style="min-width: 170px;">
+            <select id="menu-sort-select" class="select-luxury" aria-label="Sort dishes">
+              <option value="default">Chef's Sequence</option>
+              <option value="price-asc">Price: Low to High</option>
+              <option value="price-desc">Price: High to Low</option>
+              <option value="name-asc">Name: A to Z</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Filters Row -->
+        <div class="menu-filters-row">
+          <!-- Category Tabs -->
+          <div class="menu-category-tabs" role="tablist" aria-label="Menu Categories">
+            <button type="button" class="category-tab-btn active" data-menu-category="all" role="tab" aria-selected="true">All Dishes</button>
+            <button type="button" class="category-tab-btn" data-menu-category="breakfast" role="tab" aria-selected="false">Breakfast & Brunch</button>
+            <button type="button" class="category-tab-btn" data-menu-category="starters" role="tab" aria-selected="false">Starters & Crudo</button>
+            <button type="button" class="category-tab-btn" data-menu-category="mains" role="tab" aria-selected="false">Hearth Mains</button>
+            <button type="button" class="category-tab-btn" data-menu-category="desserts" role="tab" aria-selected="false">Pastry & Desserts</button>
+            <button type="button" class="category-tab-btn" data-menu-category="drinks" role="tab" aria-selected="false">Libations & Cellar</button>
+          </div>
+
+          <!-- Dietary & Favorite Pills -->
+          <div class="menu-dietary-pills">
+            <button type="button" class="dietary-pill-btn" data-dietary-filter="Vegetarian">Vegetarian</button>
+            <button type="button" class="dietary-pill-btn" data-dietary-filter="Vegan">Vegan</button>
+            <button type="button" class="dietary-pill-btn" data-dietary-filter="Gluten-Free">Gluten-Free</button>
+            <button type="button" class="dietary-pill-btn" data-dietary-filter="Signature">Chef's Signature</button>
+            <button type="button" id="toggle-favorites-filter" class="btn-fav-filter" aria-label="Show saved dishes only">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path>
+              </svg>
+              <span>Saved Favorites</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Live Count Indicator -->
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--space-lg);">
+        <span id="menu-results-count" class="text-dim" style="font-size: 0.82rem; letter-spacing: 0.06em; text-transform: uppercase;">Showing 27 culinary creations</span>
+        <span class="text-dim" style="font-size: 0.8rem;">Click any dish for pairing notes & culinary backstory</span>
+      </div>
+    </section>
+
+    <!-- Dynamic Menu Grid Container -->
+    <section class="container section-spacer-sm" style="padding-top: 0;">
+      <div id="menu-grid-container">
+        <!-- Rendered dynamically by js/menu.js -->
+      </div>
+    </section>
+
+    <!-- Dietary & Sourcing Footer Callout -->
+    <section class="section-spacer-sm" style="background-color: var(--color-bg-secondary); border-top: 1px solid var(--color-border);">
+      <div class="container">
+        <div style="max-width: 760px; margin: 0 auto; text-align: center;">
+          <span class="eyebrow">Dietary Integrity & Allergens</span>
+          <h2 class="heading-3" style="margin-bottom: 12px;">Prepared to Order with Exacting Care</h2>
+          <p class="text-muted" style="font-size: 0.9rem; line-height: 1.6;">
+            We accommodate celiac, dairy-free, vegetarian, and vegan dietary preferences. Please inform your server or note allergies during online checkout so Chef Mercer's team can adjust preparation methods.
+          </p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Site Footer -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <h3 class="brand-name">Ember & Grain</h3>
+        <p>Contemporary Wood-Fired Gastronomy & Ancient Heritage Grains in the West Village of New York.</p>
+        <div class="footer-awards-badge">
+          <span class="award-star">★</span>
+          <span class="award-text">Michelin Guide 2024 Selection</span>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Navigation</h4>
+        <ul class="footer-links-list">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="menu.html">Gastronomy Menu</a></li>
+          <li><a href="reservation.html">Table Reservations</a></li>
+          <li><a href="order.html">Online Ordering & Pickup</a></li>
+          <li><a href="about.html">Philosophy & Sourcing</a></li>
+          <li><a href="contact.html">Concierge & Inquiries</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">Sanctuary Location</h4>
+        <div class="footer-contact-info">
+          <p>482 Hudson Street<br>West Village, New York, NY 10014</p>
+          <p>Concierge: +1 (212) 555-8930</p>
+          <p>Email: concierge@emberandgrain.com</p>
+          <p>Subway: Christopher St (1 Train) or W 4th St (A, C, E, B, D, F, M)</p>
+        </div>
+      </div>
+
+      <div>
+        <h4 class="footer-heading">The Ember Salon</h4>
+        <p style="font-size: 0.85rem; color: var(--color-text-secondary); margin-bottom: 12px;">
+          Join our private patron registry for seasonal menu previews, rare cellar allocation releases, and masterclass invitations.
+        </p>
+        <form class="newsletter-form footer-newsletter-form">
+          <input type="email" placeholder="Your email address" class="input-luxury" required aria-label="Email for salon newsletter">
+          <button type="submit" class="btn btn-primary btn-sm">Join</button>
+        </form>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <span>&copy; 2026 Ember & Grain Restaurant Group. All Rights Reserved.</span>
+      <span>Curated with Pure HTML, CSS & Vanilla JavaScript • GitHub Pages Ready</span>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/data.js"></script>
+  <script src="js/store.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/menu.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
